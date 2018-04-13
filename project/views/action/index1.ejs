@@ -54,10 +54,11 @@
             height:1.5rem;
             position: absolute;
             top: 8.3rem;
-            left:1.1rem;
+            left:1.2rem;
         }
         .chat img{
-            width:100%
+            width:100%;
+            display: block;
         }
         #foo{
             position: absolute;
@@ -69,7 +70,7 @@
 </head>
 <body>
     <div class="wrap">
-        <img src="img/bg2.png"/>
+        <img src="/img/bg1.png"/>
         <div class="btn"></div>
         
         <textarea id="foo"></textarea>
@@ -88,8 +89,8 @@
             }
         };
         btn.onclick=function(){
-            copy()
             alert("复制成功");
+            copy()
         }
         function refresh() {
             var width = document.documentElement.clientWidth;
