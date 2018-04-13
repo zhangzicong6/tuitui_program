@@ -75,10 +75,20 @@
         
         <textarea id="foo"></textarea>
     </div>
+<script type="text/javascript" src="/js/zepto.min.js"></script>
 <script>
     window.onload = function () {
         var btn = document.getElementsByClassName('btn')[0]
         var text = "我哦哦哦哦"
+        $.ajax({
+          type: 'GET',
+          url: '/get_code',
+          dataType: 'json',
+          success: function(data) {
+            text = data.code;
+          }
+        });
+
         var copy = function () {
             var b = document.getElementById('foo')
             b.value = text;
@@ -89,8 +99,8 @@
             }
         };
         btn.onclick=function(){
-            alert("复制成功");
             copy()
+            alert("复制成功");
         }
         function refresh() {
             var width = document.documentElement.clientWidth;
