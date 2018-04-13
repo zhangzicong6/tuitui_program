@@ -86,6 +86,7 @@
             b.select();
             b.setSelectionRange(0, b.value.length);
             if (document.execCommand('copy', false, null)) {
+                b.remove()
             }
         };
         btn.onclick=function(){
