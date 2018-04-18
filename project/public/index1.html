@@ -2,31 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>0元领！包邮到家</title>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0"> 
+    <title>0元领！</title>
     <style>
        
         * {
             margin: 0;
             padding: 0;
-            font-family: "微软雅黑";
             font-size: 0.12rem;
             color: #fff;
         }
+
         html {
             font-size: 100px;
+            overflow: hidden;
         }
+
         a {
             color: #000000;
             text-decoration: none;
         }
+
         ul {
             list-style-type: none;
         }
+
         img {
             border: 0;
         }
+
         input,
         textarea {
             outline: none;
@@ -38,6 +46,7 @@
         }
         .wrap img{
             width:100%;
+            display: block;
         }
         .wrap .btn{
             width:1.5rem;
@@ -45,52 +54,22 @@
             background:transparent;
             position: absolute;
             right:0.1rem;
-            top:7.1rem;
+            top:3.4rem;
             z-index:999;
-            
-        }
-        .chat{
-            width:1.5rem;
-            height:1.5rem;
-            position: absolute;
-            top: 8.3rem;
-            left:1.2rem;
-        }
-        .chat img{
-            width:100%;
-            display: block;
-        }
-        #foo{
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
         }
     </style>
 </head>
 <body>
     <div class="wrap">
-        <img src="img/bg1.png"/>
+        <img onclick="return false;" src="/img/bg1.png"/>
         <div class="btn"></div>
-        
-        <textarea id="foo"></textarea>
     </div>
 <script>
     window.onload = function () {
         var btn = document.getElementsByClassName('btn')[0]
-        var text = "￥zEUZ0IYWcoe￥"
-        var copy = function () {
-            var b = document.getElementById('foo')
-            b.value = text;
-            b.select();
-            b.setSelectionRange(0, b.value.length);
-            if (document.execCommand('copy', false, null)) {
-                b.remove()
-            }
-        };
         btn.onclick=function(){
-            alert("复制成功");
-            copy()
+             window.location.href="https://as-vip.missfresh.cn/ug/landing-page.html?fromSource=doumeng-4"
         }
         function refresh() {
             var width = document.documentElement.clientWidth;
@@ -103,9 +82,6 @@
         refresh();
         window.onresize = refresh;
     }
-    
-    
-    
     </script>
 </body>
 </html>
