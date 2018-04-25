@@ -104,9 +104,8 @@
             }
         }
 
-        $('.wrap img').tap(function(){
-            _ai_analysis(['trackEvent','erweima', 'shibie', 'longPress']);
-            alert('长按');
+        $('.wrap img').on('longTap',function(){
+             _ai_analysis(['trackEvent','erweima', 'shibie', 'longPress'])
         });
 
         refresh();
