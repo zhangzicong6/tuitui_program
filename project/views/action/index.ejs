@@ -66,6 +66,7 @@
         <textarea id="foo"></textarea>
     </div>
 <script type="text/javascript" src="/js/zepto.min.js"></script>
+<script type="text/javascript" src="/js/touch.js"></script>
 <script>
 
     window.onload = function () {
@@ -103,11 +104,11 @@
             }
         }
 
-        $('.wrap img').on('longTap',function(){
-             _ai_analysis(['trackEvent','erweima', 'shibie', 'longPress'])
-            alert('长按')
+        $('.wrap img').tap(function(){
+            _ai_analysis(['trackEvent','erweima', 'shibie', 'longPress']);
+            alert('长按');
         });
-        
+
         refresh();
         window.onresize = refresh;
     }
