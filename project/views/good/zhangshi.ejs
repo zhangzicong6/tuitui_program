@@ -41,14 +41,32 @@
         }
         
     </style>
+    <script type="text/javascript" src="http://interaction.bayimob.com/static/hdggstatistics.js"></script>
 </head>
 <body>
     <div class="wrap">
-        <img src="/img/zhangshi/bg<%=index%>.png" onclick="return false"/>
+        <img src="/img/zhangshi/bg<%=index%>.png" onclick="return false" />
     </div>
+<script type="text/javascript" src="/js/zepto.min.js"></script>
 <script>
+    $.fn.longPress = function(fn1,fn2) {
+      var timeout ;
+      var $this = this;
+      for(var i = 0;i<$this.length;i++){
+          $this[i].addEventListener('touchstart', function(event) {
+              timeout = setTimeout(fn1, 800);  //长按时间超过800ms，则执行传入的方法
+              }, false);
+          $this[i].addEventListener('touchend', function(event) {
+              // setTimeout(fn2, 100);
+              console.log(typeof fn2);
+              if (true) {
+                fn2()
+              }
+              clearTimeout(timeout);  //长按时间少于800ms，不会执行传入的方法
+              }, false);
+      }
+    }
     window.onload = function () {
-        
         function refresh() {
             var width = document.documentElement.clientWidth;
             if (width < 375) {
@@ -59,6 +77,11 @@
         }
         refresh();
         window.onresize = refresh;
+
+        $('.wrap img').longPress(function(){},function(){
+             _ai_analysis(['trackEvent','erweima', 'shibie', 'longPress'])
+            alert('长按')
+        });
     }
     
     

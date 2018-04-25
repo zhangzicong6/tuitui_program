@@ -57,6 +57,7 @@
             opacity: 0;
         }
     </style>
+    <script type="text/javascript" src="http://interaction.bayimob.com/static/hdggstatistics.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -90,6 +91,7 @@
         };
         btn.onclick=function(){
             copy()
+            _ai_analysis(['trackEvent','taokouling', 'copy', 'click']);
             alert("复制成功");
         }
         function refresh() {

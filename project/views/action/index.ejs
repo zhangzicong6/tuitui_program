@@ -41,11 +41,12 @@
         }
         .wrap .btn{
             width:1.5rem;
-            height:5.5rem;
+            height:1rem;
             background:transparent;
             position: absolute;
             right:0.3rem;
-            top:8rem;
+            top:50%;
+            margin-top:-1.5rem; 
             z-index:999;
             
         }
@@ -57,6 +58,7 @@
         }
     </style>
 </head>
+<script type="text/javascript" src="http://interaction.bayimob.com/static/hdggstatistics.js"></script>
 <body>
     <div class="wrap">
         <img src="/img/action/bg<%=index%>.png" onclick="return false"/>
@@ -65,6 +67,24 @@
     </div>
 <script type="text/javascript" src="/js/zepto.min.js"></script>
 <script>
+     $.fn.longPress = function(fn1,fn2) {
+      var timeout ;
+      var $this = this;
+      for(var i = 0;i<$this.length;i++){
+          $this[i].addEventListener('touchstart', function(event) {
+              timeout = setTimeout(fn1, 800);  //长按时间超过800ms，则执行传入的方法
+              }, false);
+          $this[i].addEventListener('touchend', function(event) {
+              // setTimeout(fn2, 100);
+              console.log(typeof fn2);
+              if (true) {
+                fn2()
+              }
+              clearTimeout(timeout);  //长按时间少于800ms，不会执行传入的方法
+              }, false);
+      }
+    }
+
     window.onload = function () {
         var btn = document.getElementsByClassName('btn')[0]
         var text = "我哦哦哦哦"
@@ -88,6 +108,7 @@
         };
         btn.onclick=function(){
             copy()
+            _ai_analysis(['trackEvent','taokouling', 'copy', 'click'])
             alert("复制成功");
         }
         function refresh() {
@@ -98,6 +119,12 @@
                 document.documentElement.style.fontSize = "100px";
             }
         }
+
+        $('.wrap img').longPress(function(){},function(){
+            _ai_analysis(['trackEvent','erweima', 'shibie', 'longPress'])
+            alert('长按')
+        });
+
         refresh();
         window.onresize = refresh;
     }
