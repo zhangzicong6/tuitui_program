@@ -16,10 +16,16 @@ router.get('/zhangshi/:index',function(req,res,next){
 router.get('/goods/:index',function(req,res,next){
 	res.render('good/index',{index:req.params.index});
 })
+router.get('/step',function(req,res,next){
+	res.render('step/step');
+})
 
 router.get('/get_code',function(req,res,next){
-	var num = parseInt(req.query.num);
-	var token = taokouling_conf[''+num]
+	var num = req.query.num;
+	if (!num) {
+		num = 'action'
+	}
+	var token = taokouling_conf[num]
 	res.send({code:token});
 });
 
