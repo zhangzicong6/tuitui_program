@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>领取教程</title>
+    <title><%= title %></title>
     <style>
        
         * {
@@ -70,7 +70,7 @@
         var text = "我哦哦哦哦"
         $.ajax({
           type: 'GET',
-          url: '/get_code',
+          url: '/get_code?num=<%= index %>',
           dataType: 'json',
           success: function(data) {
             text = data.code;

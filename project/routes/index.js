@@ -19,8 +19,8 @@ router.get('/goods/:index',function(req,res,next){
 	res.render('good/index',{index:req.params.index});
 });
 
-router.get('/step',function(req,res,next){
-	res.render('step/step');
+router.get('/step/:index',function(req,res,next){
+	res.render('step/step',{index:req.params.index, title: taokouling_conf[req.params.index].title});
 })
 
 router.get('/get_code',function(req,res,next){
@@ -28,7 +28,7 @@ router.get('/get_code',function(req,res,next){
 	if (!num) {
 		num = 'action'
 	}
-	var token = taokouling_conf[num]
+	var token = taokouling_conf[num].code
 	res.send({code:token});
 });
 
