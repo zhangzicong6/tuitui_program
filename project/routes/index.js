@@ -32,5 +32,27 @@ router.get('/get_code',function(req,res,next){
 	res.send({code:token});
 });
 
+router.get('/shucheng/:index',function(req,res,next){
+	var num = req.params.index, img = '';
+	if (num == 1) {
+		img = '6.25-14.jpg'
+	}
+	if (num == 2) {
+		img = '6.26-1.jpg'
+	}
+	if (num == 3) {
+		img = '6.29-1.jpg'
+	}
+	if (num == 4) {
+		img = '闺蜜蜜语.gif'
+	}
+	if (num == 5) {
+		img = '乐摇摇IV.gif'
+	}
+	if (num == 6) {
+		img = '拾点书屋.gif'
+	}
+	res.render('shucheng/shucheng',{img:img});
+})
 
 module.exports = router;
