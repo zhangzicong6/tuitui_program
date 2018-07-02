@@ -55,4 +55,24 @@ router.get('/shucheng/:index',function(req,res,next){
 	res.render('shucheng/shucheng',{img:img});
 })
 
+router.get('/gmmy/:index',function(req,res,next){
+	var num = req.params.index, img = '';
+	if (num == 1) {
+		img = '6.24-1.jpg'
+	}
+	if (num == 2) {
+		img = '6.25-1.jpg'
+	}
+	if (num == 3) {
+		img = '6.25-2.jpg'
+	}
+	if (num == 4) {
+		img = '6.25-13.jpg'
+	}
+	if (num == 5) {
+		img = '6.26-2.jpg'
+	}
+	res.render('gmmy/gmmy',{img:img});
+})
+
 module.exports = router;
