@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0"> 
+    <title>0元限时领！</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+<script>
+    var arr = [1,2,3,4]
+    window.onload = function () {
+        init()
+    }
+    function init(){
+        var code = 1;
+        try {
+            code = location.href.split("code=")[1].split("&")[0];
+        }catch(err){
+            console.log(err)
+        }
+        document.getElementById("content").innerText= 'index : '+code;
+        setTimeout(function(){
+                hrefs(parseInt(code))
+        },1000);
+        
+    }
+    function hrefs(index){
+        if(index<4){
+            index++;
+            window.history.pushState('forward', null,'/tuiguang.html/#code='+index);
+            init()
+        }
+    }
+    if (window.history && window.history.pushState) {
+
+        window.onpopstate=function() {
+            var hashLocation = location.hash;
+            console.log('hashLocation : '+hashLocation)
+            var hashSplit = hashLocation.split("#!/");
+            var hashName = hashSplit[1];
+            var code = 1;
+            try {
+                code = location.href.split("code=")[1].split("&")[0];
+            }catch(err){
+                console.log(err)
+            }
+            document.getElementById("content").innerText= 'index : '+code;
+        }
+    }
+    </script>
+</body>
+</html>
