@@ -35,7 +35,7 @@ router.get('/get_code',function(req,res,next){
 router.get('/shucheng/:index',function(req,res,next){
 	var num = req.params.index, img = '';
 	if (num == 1) {
-		img = '6.25-14.jpg'
+		img = '222.gif'
 	}
 	if (num == 2) {
 		img = '6.26-1.jpg'
