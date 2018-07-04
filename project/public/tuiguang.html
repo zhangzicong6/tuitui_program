@@ -21,7 +21,7 @@
     window.onload = function () {
         init()
     }
-    function init(){
+    function init(back=false){
         var code = 1;
         try {
             code = location.href.split("code=")[1].split("&")[0];
@@ -29,9 +29,12 @@
             console.log(err)
         }
         document.getElementById("content").innerText= 'index : '+code;
-        setTimeout(function(){
+        if(!back){
+            setTimeout(function(){
                 hrefs(parseInt(code))
-        },1000);
+            },1000);
+        }
+        
         
     }
     function hrefs(index){
@@ -48,13 +51,7 @@
             console.log('hashLocation : '+hashLocation)
             var hashSplit = hashLocation.split("#!/");
             var hashName = hashSplit[1];
-            var code = 1;
-            try {
-                code = location.href.split("code=")[1].split("&")[0];
-            }catch(err){
-                console.log(err)
-            }
-            document.getElementById("content").innerText= 'index : '+code;
+            init(true);
         }
     }
     </script>
