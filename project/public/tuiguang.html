@@ -17,28 +17,49 @@
 
     </div>
 <script>
-    var arr = [1,2,3,4]
+
+    Array.prototype.shuffle = function() {
+        var input = this;
+        for (var i = input.length-1; i >=0; i--) {
+        var randomIndex = Math.floor(Math.random()*(i+1)); 
+        var itemAtIndex = input[randomIndex]; 
+        input[randomIndex] = input[i]; 
+        input[i] = itemAtIndex;
+        }
+        return input;
+    }
+    var contents = [{
+        content:"看 1",
+    },{
+        content:"看 2",
+    },{
+        content:"看 3",
+    },{
+        content:"看 4",
+    }];
+    var index =[0,1,2,3];
+    index = index.shuffle();
     window.onload = function () {
         init()
     }
     function init(back=false){
-        var code = 1;
+        var code = 0;
         try {
-            code = location.href.split("code=")[1].split("&")[0];
+            code = parseInt(location.href.split("code=")[1].split("&")[0]);
         }catch(err){
             console.log(err)
         }
-        document.getElementById("content").innerText= 'index : '+code;
+        document.getElementById("content").innerText= 'index : '+contents[index[code]].content;
         if(!back){
             setTimeout(function(){
-                hrefs(parseInt(code))
+                hrefs((code))
             },1000);
         }
         
         
     }
     function hrefs(index){
-        if(index<4){
+        if(index<3){
             index++;
             window.history.pushState('forward', null,'/tuiguang.html?code='+index);
             init()
