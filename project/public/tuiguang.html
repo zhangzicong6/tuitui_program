@@ -54,7 +54,6 @@
             }
             
             .tips {
-                margin: 0 auto;
                 width: 80%;
             }
             
@@ -104,7 +103,11 @@
             var index = [0, 1, 2, 3];
             index = index.shuffle();
             window.onload = function() {
+
+
                 init()
+                document.getElementById("content").innerHTML = contents[index[3]].content
+
                 function refresh() {
                     var width = document.documentElement.clientWidth;
                     if(width < 375) {
@@ -133,7 +136,6 @@
                 } catch(err) {
                     console.log(err)
                 }
-                document.getElementById("content").innerHTML = contents[index[code]].content
                 if(!back) {
                     setTimeout(function() {
                         hrefs((code))
@@ -155,7 +157,8 @@
                     var hashLocation = location.hash;
                     var hashSplit = hashLocation.split("#!/");
                     var hashName = hashSplit[1];
-                    init(true);
+                    var code = parseInt(location.href.split("code=")[1].split("&")[0]);
+                    document.getElementById("content").innerHTML = contents[index[code]].content
                 }
             }
         </script>
