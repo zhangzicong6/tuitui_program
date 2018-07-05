@@ -20,8 +20,19 @@
                 display: flex;
                 flex-direction: column;
                 width: 90%;
-                margin: .2rem auto;
+                position: absolute;
+                top: .2rem;
+                left: 50%;
+                margin-bottom: .2rem;
                 overflow: hidden;
+            }
+
+            .android {
+                margin-left: -45%;
+            }
+
+            .ios {
+                margin-left: -43%;
             }
 
             #content p {
@@ -71,6 +82,18 @@
 
     <body>
         <div id="content"></div>
+        <script type="text/javascript">
+            window.onload=function(){
+                var u = navigator.userAgent;
+                var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+                var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+                if (isAndroid) {
+                    document.getElementById('content').className = 'android'
+                } else if (isiOS) {
+                    document.getElementById('content').className = 'ios'
+                }
+            }
+        </script>
         <script>
             Array.prototype.shuffle = function() {
                 var input = this;
