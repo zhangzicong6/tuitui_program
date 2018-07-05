@@ -146,9 +146,8 @@
             function hrefs(index) {
                 if(index < 3) {
                     index++;
-                    window.history.pushState('forward', null, '/tuiguang.html?code=' + index);
-                    // init()
-                document.getElementById("content").innerHTML = contents[index[code]].content
+                    window.history.pushState('forward', null, '/tuiguang1.html?code=' + index);
+                    init()
                 }
             }
             if(window.history && window.history.pushState) {
