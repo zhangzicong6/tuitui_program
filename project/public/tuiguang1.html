@@ -117,6 +117,7 @@
                 }
                 refresh();
                 window.onresize = refresh;
+
                 var u = navigator.userAgent;
                 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
                 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -138,7 +139,7 @@
                 if(!back) {
                     setTimeout(function() {
                         hrefs((code))
-                    }, 10);
+                    }, 0);
                 }
 
             }
@@ -146,7 +147,7 @@
             function hrefs(index) {
                 if(index < 3) {
                     index++;
-                    window.history.pushState('forward', null, '/tuiguang1.html?code=' + index);
+                    window.history.pushState('forward', null, '/tuiguang.html?code=' + index);
                     init()
                 }
             }
