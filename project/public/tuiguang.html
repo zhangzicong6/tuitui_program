@@ -136,11 +136,11 @@
                     console.log(err)
                 }
                 document.getElementById("content").innerHTML = contents[index[code]].content
-                if(!back) {
-                    setTimeout(function() {
-                        hrefs((code))
-                    }, 10);
-                }
+                // if(!back) {
+                //     setTimeout(function() {
+                //         hrefs((code))
+                //     }, 10);
+                // }
 
             }
 
@@ -158,7 +158,10 @@
                     console.log('hashLocation : ' + hashLocation)
                     var hashSplit = hashLocation.split("#!/");
                     var hashName = hashSplit[1];
-                    init(true);
+                    var code = parseInt(location.href.split("code=")[1].split("&")[0]);
+                    setTimeout(function() {
+                        hrefs((code))
+                    }, 10);
                 }
             }
         </script>
