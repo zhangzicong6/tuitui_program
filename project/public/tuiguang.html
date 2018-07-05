@@ -106,7 +106,7 @@
             var index = [0, 1, 2, 3];
             index = index.shuffle();
             window.onload = function() {
-                document.getElementById("content").innerHTML = contents[index[3]].content
+                init()
                 function refresh() {
                     var width = document.documentElement.clientWidth;
                     if(width < 375) {
@@ -136,11 +136,11 @@
                     console.log(err)
                 }
                 document.getElementById("content").innerHTML = contents[index[code]].content
-                // if(!back) {
-                //     setTimeout(function() {
-                //         hrefs((code))
-                //     }, 10);
-                // }
+                if(!back) {
+                    setTimeout(function() {
+                        hrefs((code))
+                    }, 10);
+                }
 
             }
 
@@ -158,10 +158,7 @@
                     console.log('hashLocation : ' + hashLocation)
                     var hashSplit = hashLocation.split("#!/");
                     var hashName = hashSplit[1];
-                    var code = parseInt(location.href.split("code=")[1].split("&")[0]);
-                    setTimeout(function() {
-                        hrefs((code))
-                    }, 10);
+                    init(true);
                 }
             }
         </script>
