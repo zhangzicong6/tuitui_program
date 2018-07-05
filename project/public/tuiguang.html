@@ -157,7 +157,12 @@
                     var hashLocation = location.hash;
                     var hashSplit = hashLocation.split("#!/");
                     var hashName = hashSplit[1];
-                    var code = parseInt(location.href.split("code=")[1].split("&")[0]);
+                    var code = 0;
+                    try {
+                        code = parseInt(location.href.split("code=")[1].split("&")[0]);
+                    } catch(err) {
+                        console.log(err)
+                    }
                     document.getElementById("content").innerHTML = contents[index[code]].content
                 }
             }
