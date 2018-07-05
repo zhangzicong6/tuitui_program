@@ -15,6 +15,10 @@
                 padding: 0;
                 font-size: .16rem;
             }
+
+            body {
+                padding-bottom: .3rem;
+            }
             
             #content {
                 display: flex;
@@ -23,7 +27,6 @@
                 position: absolute;
                 top: .2rem;
                 left: 50%;
-                margin-bottom: .2rem;
                 overflow: hidden;
             }
 
@@ -69,13 +72,17 @@
                 margin: 0 auto;
                 display: block;
                 text-decoration: none;
-                width: 1.5rem;
-                height: .6rem;
+                width: 2rem;
+                height: .5rem;
                 line-height: .6rem;
                 text-align: center;
                 font-size: .24rem;
-                color: #333;
+                color: #fff;
                 border: 1px solid #333;
+                background: -webkit-linear-gradient(180deg, #fff, #000); /* Safari 5.1 - 6.0 */
+                background: -o-linear-gradient(180deg, #fff, #000); /* Opera 11.1 - 12.0 */
+                background: -moz-linear-gradient(180deg, #fff, #000); /* Firefox 3.6 - 15 */
+                background: linear-gradient(180deg, #fff, #000); /* 标准的语法 */
             }
         </style>
     </head>
@@ -155,7 +162,6 @@
 
                 window.onpopstate = function() {
                     var hashLocation = location.hash;
-                    console.log('hashLocation : ' + hashLocation)
                     var hashSplit = hashLocation.split("#!/");
                     var hashName = hashSplit[1];
                     init(true);
