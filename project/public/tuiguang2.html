@@ -1,180 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-        <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
-        <META HTTP-EQUIV="Expires" CONTENT="0">
-        <title>免费读书</title>
-        <style>
-            *{
-                margin: 0;
-                padding: 0;
-                font-size: .16rem;
-            }
-            
-            #content {
-                display: flex;
-                flex-direction: column;
-                width: 90%;
-                position: absolute;
-                top: .2rem;
-                left: 50%;
-                overflow: hidden;
-                padding-bottom: .3rem;
-            }
-
-            .android {
-                margin-left: -45%;
-            }
-
-            .ios {
-                margin-left: -43%;
-            }
-
-            #content p {
-                background: transparent !important;
-            }
-            
-            .title {
-                font-size: .30rem;
-            }
-            
-            .avator {
-                width: 100%;
-            }
-            
-            .author-wrap {
-                margin: .15rem 0;
-            }
-            
-            .author {
-                font-size: .16rem;
-                color: cornflowerblue;
-            }
-            
-            .date {
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+		<META HTTP-EQUIV="Expires" CONTENT="0">
+		<title>冒死推荐，多看一本是一本</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font-size: .16rem;
+			}
+			
+			#content {
+				display: flex;
+				flex-direction: column;
+				width: 96%;
+				position: absolute;
+				top: .2rem;
+				left: 50%;
+				margin-left: -48%;
+				overflow: hidden;
+				padding-bottom: .3rem;
+			}
+			
+			#content p {
+				background: transparent !important;
+			}
+			
+			.title {
+				font-size: .28rem;
+				margin-bottom: .2rem;
+			}
+			
+			.avator {
+				width: 100%;
+				margin-top: .2rem;
+				border-radius: 5px;
+			}
+			
+			.author-wrap {
+				width: 96%;
+				margin: 0 auto;
+			}
+			
+			.author {
+				font-size: .16rem;
+				color: cornflowerblue;
+			}
+			
+			.date {
+				font-size: .12rem;
                 color: #7E7E7E;
                 margin-left: .1rem;
             }
-            
-            .tips {
-                width: 80%;
-            }
-            
-            .btn {
-                margin: 0 auto;
-                display: block;
-                text-decoration: none;
-                width: 2rem;
-                height: .5rem;
-                line-height: .5rem;
-                text-align: center;
-                font-size: .24rem;
-                color: #fff;
-                border: 1px solid #333;
-                background: -webkit-linear-gradient(180deg, #fff, #000); /* Safari 5.1 - 6.0 */
-                background: -o-linear-gradient(180deg, #fff, #000); /* Opera 11.1 - 12.0 */
-                background: -moz-linear-gradient(180deg, #fff, #000); /* Firefox 3.6 - 15 */
-                background: linear-gradient(180deg, #fff, #000); /* 标准的语法 */
-                border-radius: 5px;
-            }
-        </style>
-    </head>
+			
+			.p-content {
+				padding: .2rem .1rem;
+				border-radius: .1rem;
+				margin: .2rem .08rem;
+				box-shadow: 0 0 8px rgba(0, 0, 0, 0.5)
+			}
+			
+			.p-content p {
+				line-height: 2;
+			}
+			
+			.mask {
+				line-height: 2;
+				padding: .3rem 0;
+				text-align: left;
+				font-size: 18px;
+				-webkit-filter: blur(3px);
+				filter: blur(3px);
+				color: #525252;
+				text-indent: 2em;
+			}
+			
+			.more {
+				text-indent: 1em;
+				font-size: .18rem;
+			}
+			
+			.more span {
+				display: inline-block;
+				font-size: .2rem;
+				padding: 0 .1rem;
+				text-indent: 0;
+				animation: myfirst 1s infinite;
+				-moz-animation: myfirst 1s infinite;
+				/* Firefox */
+				-webkit-animation: myfirst 1s infinite;
+				/* Safari 和 Chrome */
+				-o-animation: myfirst 1s infinite;
+				/* Opera */
+			}
+			
+			.tips-con {
+				text-align: right;
+			}
+			
+			.tips {
+				width: 1rem;
+				margin-right: .2rem;
+			}
+			
+			.btn {
+				text-decoration: none;
+				width: 87%;
+				white-space: normal;
+				border-image: initial;
+				margin: 0 auto;
+				padding: .1rem;
+				font-size: .18rem;
+				font-weight: bold;
+				line-height: .25rem;
+				font-family: arial, helvetica, sans-serif;
+				text-shadow: #225F87 0px 1px 0px;
+				color: #F2F2F2;
+				border-radius: 4px;
+				box-shadow: #999999 2px 2px 4px;
+				background-color: #e64e5a;
+				text-align: center;
+			}
+			
+			@keyframes myfirst {
+				0% {
+					color: rgb(112, 207, 204);
+				}
+				25% {
+					color: rgb(0, 229, 120);
+				}
+				50% {
+					color: rgb(1961, 33, 44);
+				}
+				100% {
+					color: rgb(15, 76, 122);
+				}
+			}
+			
+			@-moz-keyframes myfirst
+			/* Firefox */
+			
+			{
+				0% {
+					color: rgb(112, 207, 204);
+				}
+				25% {
+					color: rgb(0, 229, 120);
+				}
+				50% {
+					color: rgb(1961, 33, 44);
+				}
+				100% {
+					color: rgb(15, 76, 122);
+				}
+			}
+			
+			@-webkit-keyframes myfirst
+			/* Safari 和 Chrome */
+			
+			{
+				0% {
+					color: rgb(112, 207, 204);
+				}
+				25% {
+					color: rgb(0, 229, 120);
+				}
+				50% {
+					color: rgb(1961, 33, 44);
+				}
+				100% {
+					color: rgb(15, 76, 122);
+				}
+			}
+			
+			@-o-keyframes myfirst
+			/* Opera */
+			
+			{
+				0% {
+					color: rgb(112, 207, 204);
+				}
+				25% {
+					color: rgb(0, 229, 120);
+				}
+				50% {
+					color: rgb(1961, 33, 44);
+				}
+				100% {
+					color: rgb(15, 76, 122);
+				}
+			}
+		</style>
+	</head>
 
-    <body>
-        <div id="content">
-            
-                 <h2 class="title">女人骚不骚，只看一个地方</h2> 
-              <div class="author-wrap"> 
-               <span class="author">玄翌小说</span> 
-               <span class="date">今天</span> 
-              </div>                
-          
-          <p style="text-align: center;"><img class="avator" src="/img/tuiguang/2.jpg" /></p> 
-          <p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">几天前，我的美女班主任林雨薇和她男朋友搬到我出租房的隔壁。<br></p>
-          <p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">我们的卧室只有一墙之隔，她每天晚上和她男朋友办事，我都听的一清二楚，尤其是她发出的那种声音，和她在学校里那股高冷的模样，形成强烈的反差，让我脑子里全都是她趴在床上的场景！</p>
-          <p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">这让我发疯的想看，我们这个平常很高冷的美女班主任，被那啥的时候是什么样子，所以我就趁着周末林雨薇不在家时，在墙上打了个洞，来看她。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">虽然我挺怕被她和她男朋友发现的，但根本抵挡不住我内心的想法！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">刚挖的第一天，晚上九点多，我就隐约听到了一声：“亲爱的，咱们开始吧！”。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">当即我就知道，林雨薇要和她男朋友开始了，我想都没有想，就狠狠的咽了咽口水，跑到了我的床上，掀开了我用来遮盖洞口的海报，眼睛对准了我挖的洞，我就心脏狂跳的看了过去。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">刚刚看过去，映入我眼帘的景象，就让我心头大震起来。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">林雨薇居然穿着一件低胸短裙的空姐衣服，半跪在她男朋友面前，扭动着她那柳叶般的细腰，不停求着让她的男朋友，快点行动。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">那样子和她在学校，那股高冷的模样，简直天差地别！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">这真的是我们的班那个高冷的班主任林雨薇？！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">我眼睛都瞪直了，死死地盯着里面，再也不想移开了。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">她男友原本还坐在床上玩手机，面对林雨薇这样的大美女主动，他哪里能拒绝，说了句，我马上来，他就上前一把抱住了林雨薇。手也不老实的，在她身上行动了起来，这引得林雨薇一阵叫。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">她的声音，似乎激到了她男友，开始拉林雨薇的衣服。林雨薇似乎非常喜欢这种强硬的调调，脸上写满了开心！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">她身上的空姐服，被她男友一件一件，拉了下来，我看的清清楚楚，让我口水都快出来了。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">最后，不等她男朋友动手，林雨薇，竟然就主动的，将双手伸到背后，解开了内衣。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">不等我多想，她自己的衣服，全部拉了下来。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">我那曰思夜想的身体，此刻，毫无遮掩的，全都显露在我的眼前。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">我都惊呆了！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">这就是林雨薇的身子！！！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">我死死盯着她的各个部位，我感觉呼吸，都要快窒息了，无论怎么咽口水，我都无法淡定，全身像是火烧了一样。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">这可是我们班男同学都想那啥的，高冷美女林雨薇啊！我就这么看到她的身子了....</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">当时我真是激动的都差点叫起来！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">而接下来，我还能看到她和男朋友做那种事情！想着，我浑身一震！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">很快，他们就实现了我的愿望！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">林雨薇非常的主动，她就声音里透着股那啥的说：“亲爱的，快点吧，不要磨蹭了。”</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">“雨薇，你可真是个小妖精！”她男友狠狠的摸了一把，直接将她压，倒在身下。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">“人家就是个小妖精，老公，求你了！来吧！”被压倒在身下的林雨薇毫无遮掩自己情绪的说。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">“好，我马上！”面对林雨薇的主动，他男友再也控制不住了，两个人很快，就开始了那种事情。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">那一幕幕，都特别清楚的展现在我眼前，我看着感觉鼻血都快出来！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">林雨薇和她男朋友那啥，原来是这个样子的....</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">而且，林雨薇真的玩的很开，不停的换着各种姿势，甚至林雨薇在弄了一会儿之后，竟然拿出来手机，开始拍她和她男朋友那啥，不仅是自拍，还拍摆出各种姿势，详细的拍……</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">当然这些细节也被我看的清清楚楚....</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">我就是一个初哥，哪里能经受这些，都快要吐血了。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">后来两人差不多做了二十多分钟，她男朋友就不行了，就在我以为他们马上要完事，却发现，她男友并没有让林雨薇感觉到满意！！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">她还是那么的想继续，见男朋友不行，她不停的扭动着她的身子，撒着娇，让她男友再继续，可是他男友却怎么都不愿意，说次数太多了，他已经吃不消了，摇了摇头，就一个人去了浴室去洗澡。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">林雨薇气哼哼的骂他真没用，但是他男友却没有回应，她只好拿着手机，躺在了床上。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">此刻，我看着躺在床上，那里正好对着我的林雨薇，想着她还想继续，我浑身的血液都沸腾了！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">我真想跑过去，向她男友那样对她做那种事情，我虽然没有做过，但她男朋友刚弄过，我再去的话，绝对可以让她满意！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">只可惜她可是我的班主任，我对于她有种天然的畏惧感，根本就没有那个胆子。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">不过也是因为她是我的班主任，让我那种心思越来越重，本来打算看完就走的，现在我是一点都不想走了。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">让我更受不了的是，没一会儿，他男友洗好澡了，还想继续的林雨薇再次缠了上去，他男友真的是彻底不行了，林雨薇没有办法，只好躺在床上，将她修长的手指，伸向了她那里....</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">这种情况似乎经常发生，她男友竟然也不惊讶，只低着头在那玩手机，我大骂了一句傻x，觉得林雨薇和他睡，真是暴殄天物，他长相一般，那方面不咋滴，两个人还住在这种廉价的出租屋里，我真不知道，他哪点被林雨薇看上了，如果是我的话，绝对比他强多了。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">但瞧着她那迷离的眼神，强烈吸引着我，我的心思完全被这些给勾走了！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">自从这一次没有被抓住，我就像是上瘾了一般，每天放了学，我都会偷偷的，通过我挖的小洞，来看我的班主任林雨薇。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">每一次林雨薇和她男友做时，还都会玩着花样，今天穿空姐，明天穿护士，后天就玩角色互换，把我激的不行不行的，心里发疯的想对她做，她和她男友做的事情！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">有一次他们俩做的时候，林雨薇的声音太大了，她男友说让她小声一点，不怕隔壁的人听到吗？</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">结果林雨薇却非常不屑的说，隔壁住着的，是她的一个傻x学生，平时上课听讲的时候耳朵就给聋的似得，他根本听不到的！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">听到她叫我傻x，我心里那个气，想和她做那种事的念头，更加的强烈了起来，甚至在上课时看到她那冷冷的面容时，我都情不自禁的想到，要把她压倒在我的身下，想让她臣服于我。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">也不知道怎么着了，自从她在办事时，骂了我一句傻x之后，她在班级里处处开始针对我，什么都和我过不去，故意找我的麻烦。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">有一次也不知道是谁，往我桌子上，扔了个tt，我正好拿起来扔掉，却一眼就被林雨薇给看到了，她虽然在家里骚的不行，但在班里却是表现的自己非常恶心讨厌这种行为，当即林雨薇就劈头盖脸的对着我教训起来说：</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">“秦守，你知不知道你上课，拿着这种肮脏的东西，会给学校带来多大影响？你才这么小，就有这么不纯洁的心思，那长大还得了啊？”</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">当着全班人的面，林雨薇把那个玩意给大家看，我真是觉得羞耻极了，就差没钻进桌子底下去了，林雨薇站在道德的制高点上，狠狠的批评我！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">而我的同桌江瑶，还嫌火烧的不够旺，添油加醋，说：“就是就是，秦守真是不要脸，上次他还偷看我裙底呢，我都没说他，这种人啊，就是下流！”</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">江瑶是我们班的班花，我根本就没看过她，她这都是在冤枉我，不过我不敢顶嘴，林雨薇我惹不起，江瑶，我更惹不起，据说她哥是学校的高层，万一把我开除了咋办，所以我也只能忍气吞声。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">林雨薇还没解气，指着我说：“你脑袋装的都是什么东西啊？你书都读到肚子里去了是吧？我有教过你这些吗？要多跟我学着点，我二十多岁了，还是洁身自好，要以我为榜样，知道吗？”</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">洁身自好？以她为榜样？</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">我觉得林雨薇真是虚伪到了极点，她在家里都成那副模样了，却还大庭广众的说自己洁身自好！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">我真想把她和她男朋友做的事情，都公之于众，不过，我却没有那个胆子，如果说出来的话，我挖洞的事情，她不就全知道了？我只好忍着心中的悸动，点头说知道了，说我一定改正，她这才肯罢休。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">可到了放学的时候，林雨薇还是我叫到办公室，当着所有老师的面再批评我一次，还拿东西出来给其他老师看，所有老师都带着嘲笑性的批评我，当时站在那里，我脸红得滚烫，简直丢人丢到家了。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">这还没有完，她又是站在道德制高点上，狠狠批了我一顿。</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">她的这一系列的行为，彻底的激怒了我，让我更加的想那个她了，让他对我做的这一切，都付出代价！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">接着我就开始琢磨，到底该怎么样，才能让她和我那啥呢？</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">思来想去，我发现除了来强的，我就想不到其他办法了，然而上天都是眷顾好人的，过了没几天我竟然就找到了个能要她的机会！</p><p style="margin-bottom: 1em;max-width: 100%;font-size: 18px;line-height: 2.1em;min-height: 1em;color: rgb(62, 62, 62);white-space: normal;widows: 1;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">一个能让她臣服于我的机会！！！</p><p style="margin-bottom: 1em;font-size: 18px;"><span style="color: rgb(255, 76, 65);font-family: Arial;font-weight: 700;letter-spacing: 0.544px;font-size: 18px;">未完待续……</span></p><p style="margin-bottom: 1em;font-size: 18px;"><span style="color: rgb(255, 76, 65);font-family: Arial;font-weight: 700;letter-spacing: 0.544px;font-size: 16px;">篇幅有限，后续内容和情节更加精彩！</span></p><p style="font-size: 16px;"><span style="color: rgb(255, 76, 65);font-family: Arial;font-weight: 700;letter-spacing: 0.544px;font-size: 16px;">更多精彩内容，点击【下一章】进入公众号阅读</span></p><p><br></p>
-           
-            <p style="max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;"> <img class="tips" src="/img/tuiguang/640.gif" /> </p> 
-            <a href="http://jump.ui879.com/WeChat/?k=300cafa7ccdc672a66b2a348ccf1c90&i=845" class="btn">下一章</a>
-  </div>
-  <div style="display:none">
-    <script src="https://s22.cnzz.com/z_stat.php?id=1274131239&web_id=1274131239" language="JavaScript"></script>
-</div>
+	<body>
+		<div id="content">
+			<div class="author-wrap">
+				<h2 class="title">女人最多能承受多少厘米</h2>
+				<span class="author"> 先森小说 </span>
+				<span class="date">一个陪你过夜的小说站</span>
+				<p style="text-align: center;">
+					<img class="avator" src="./img/tuiguang/2.jpg" />
+				</p>
+			</div>
+			<div class="p-content">
+	            <p style="margin-bottom: 1em;font-size: 18px;">几天前，我的美女班主任林雨薇和她男朋友搬到我出租房的隔壁。<br style="font-size: 0.16rem;"></p><p style="margin-bottom: 1em;font-size: 18px;">我们的卧室只有一墙之隔，她每天晚上和她男朋友办事，我都听的一清二楚，尤其是她发出的那种声音，和她在学校里那股高冷的模样，形成强烈的反差，让我脑子里全都是她趴在床上的场景！</p><p style="margin-bottom: 1em;font-size: 18px;">这让我发疯的想看，我们这个平常很高冷的美女班主任，被那啥的时候是什么样子，所以我就趁着周末林雨薇不在家时，在墙上打了个洞，来看她。</p><p style="margin-bottom: 1em;font-size: 18px;">虽然我挺怕被她和她男朋友发现的，但根本抵挡不住我内心的想法！</p><p style="margin-bottom: 1em;font-size: 18px;">刚挖的第一天，晚上九点多，我就隐约听到了一声：“亲爱的，咱们开始吧！”。</p><p style="margin-bottom: 1em;font-size: 18px;">当即我就知道，林雨薇要和她男朋友开始了，我想都没有想，就狠狠的咽了咽口水，跑到了我的床上，掀开了我用来遮盖洞口的海报，眼睛对准了我挖的洞，我就心脏狂跳的看了过去。</p><p style="margin-bottom: 1em;font-size: 18px;">刚刚看过去，映入我眼帘的景象，就让我心头大震起来。</p><p style="margin-bottom: 1em;font-size: 18px;">林雨薇居然穿着一件低胸短裙的空姐衣服，半跪在她男朋友面前，扭动着她那柳叶般的细腰，不停求着让她的男朋友，快点行动。</p><p style="margin-bottom: 1em;font-size: 18px;">那样子和她在学校，那股高冷的模样，简直天差地别！</p><p style="margin-bottom: 1em;font-size: 18px;">这真的是我们的班那个高冷的班主任林雨薇？！</p><p style="margin-bottom: 1em;font-size: 18px;">我眼睛都瞪直了，死死地盯着里面，再也不想移开了。</p><p style="margin-bottom: 1em;font-size: 18px;">她男友原本还坐在床上玩手机，面对林雨薇这样的大美女主动，他哪里能拒绝，说了句，我马上来，他就上前一把抱住了林雨薇。手也不老实的，在她身上行动了起来，这引得林雨薇一阵叫。</p><p style="margin-bottom: 1em;font-size: 18px;">她的声音，似乎激到了她男友，开始拉林雨薇的衣服。林雨薇似乎非常喜欢这种强硬的调调，脸上写满了开心！</p><p style="margin-bottom: 1em;font-size: 18px;">她身上的空姐服，被她男友一件一件，拉了下来，我看的清清楚楚，让我口水都快出来了。</p><p style="margin-bottom: 1em;font-size: 18px;">最后，不等她男朋友动手，林雨薇，竟然就主动的，将双手伸到背后，解开了内衣。</p><p style="margin-bottom: 1em;font-size: 18px;">不等我多想，她自己的衣服，全部拉了下来。</p><p style="margin-bottom: 1em;font-size: 18px;">我那曰思夜想的身体，此刻，毫无遮掩的，全都显露在我的眼前。</p><p style="margin-bottom: 1em;font-size: 18px;">我都惊呆了！</p><p style="margin-bottom: 1em;font-size: 18px;">这就是林雨薇的身子！！！</p><p style="margin-bottom: 1em;font-size: 18px;">我死死盯着她的各个部位，我感觉呼吸，都要快窒息了，无论怎么咽口水，我都无法淡定，全身像是火烧了一样。</p><p style="margin-bottom: 1em;font-size: 18px;">这可是我们班男同学都想那啥的，高冷美女林雨薇啊！我就这么看到她的身子了....</p><p style="margin-bottom: 1em;font-size: 18px;">当时我真是激动的都差点叫起来！</p><p style="margin-bottom: 1em;font-size: 18px;">而接下来，我还能看到她和男朋友做那种事情！想着，我浑身一震！</p><p style="margin-bottom: 1em;font-size: 18px;">很快，他们就实现了我的愿望！</p><p style="margin-bottom: 1em;font-size: 18px;">林雨薇非常的主动，她就声音里透着股那啥的说：“亲爱的，快点吧，不要磨蹭了。”</p><p style="margin-bottom: 1em;font-size: 18px;">“雨薇，你可真是个小妖精！”她男友狠狠的摸了一把，直接将她压，倒在身下。</p><p style="margin-bottom: 1em;font-size: 18px;">“人家就是个小妖精，老公，求你了！来吧！”被压倒在身下的林雨薇毫无遮掩自己情绪的说。</p><p style="margin-bottom: 1em;font-size: 18px;">“好，我马上！”面对林雨薇的主动，他男友再也控制不住了，两个人很快，就开始了那种事情。</p><p style="margin-bottom: 1em;font-size: 18px;">那一幕幕，都特别清楚的展现在我眼前，我看着感觉鼻血都快出来！</p><p style="margin-bottom: 1em;font-size: 18px;">林雨薇和她男朋友那啥，原来是这个样子的....</p><p style="margin-bottom: 1em;font-size: 18px;">而且，林雨薇真的玩的很开，不停的换着各种姿势，甚至林雨薇在弄了一会儿之后，竟然拿出来手机，开始拍她和她男朋友那啥，不仅是自拍，还拍摆出各种姿势，详细的拍……</p><p style="margin-bottom: 1em;font-size: 18px;">当然这些细节也被我看的清清楚楚....</p><p style="margin-bottom: 1em;font-size: 18px;">我就是一个初哥，哪里能经受这些，都快要吐血了。</p><p style="margin-bottom: 1em;font-size: 18px;">后来两人差不多做了二十多分钟，她男朋友就不行了，就在我以为他们马上要完事，却发现，她男友并没有让林雨薇感觉到满意！！</p><p style="margin-bottom: 1em;font-size: 18px;">她还是那么的想继续，见男朋友不行，她不停的扭动着她的身子，撒着娇，让她男友再继续，可是他男友却怎么都不愿意，说次数太多了，他已经吃不消了，摇了摇头，就一个人去了浴室去洗澡。</p><p style="margin-bottom: 1em;font-size: 18px;">林雨薇气哼哼的骂他真没用，但是他男友却没有回应，她只好拿着手机，躺在了床上。</p><p style="margin-bottom: 1em;font-size: 18px;">此刻，我看着躺在床上，那里正好对着我的林雨薇，想着她还想继续，我浑身的血液都沸腾了！</p><p style="margin-bottom: 1em;font-size: 18px;">我真想跑过去，向她男友那样对她做那种事情，我虽然没有做过，但她男朋友刚弄过，我再去的话，绝对可以让她满意！</p><p style="margin-bottom: 1em;font-size: 18px;">只可惜她可是我的班主任，我对于她有种天然的畏惧感，根本就没有那个胆子。</p><p style="margin-bottom: 1em;font-size: 18px;">不过也是因为她是我的班主任，让我那种心思越来越重，本来打算看完就走的，现在我是一点都不想走了。</p><p style="margin-bottom: 1em;font-size: 18px;">让我更受不了的是，没一会儿，他男友洗好澡了，还想继续的林雨薇再次缠了上去，他男友真的是彻底不行了，林雨薇没有办法，只好躺在床上，将她修长的手指，伸向了她那里....</p><p style="margin-bottom: 1em;font-size: 18px;">这种情况似乎经常发生，她男友竟然也不惊讶，只低着头在那玩手机，我大骂了一句傻x，觉得林雨薇和他睡，真是暴殄天物，他长相一般，那方面不咋滴，两个人还住在这种廉价的出租屋里，我真不知道，他哪点被林雨薇看上了，如果是我的话，绝对比他强多了。</p><p style="margin-bottom: 1em;font-size: 18px;">但瞧着她那迷离的眼神，强烈吸引着我，我的心思完全被这些给勾走了！</p><p style="margin-bottom: 1em;font-size: 18px;">自从这一次没有被抓住，我就像是上瘾了一般，每天放了学，我都会偷偷的，通过我挖的小洞，来看我的班主任林雨薇。</p><p style="margin-bottom: 1em;font-size: 18px;">每一次林雨薇和她男友做时，还都会玩着花样，今天穿空姐，明天穿护士，后天就玩角色互换，把我激的不行不行的，心里发疯的想对她做，她和她男友做的事情！</p><p style="margin-bottom: 1em;font-size: 18px;">有一次他们俩做的时候，林雨薇的声音太大了，她男友说让她小声一点，不怕隔壁的人听到吗？</p><p style="margin-bottom: 1em;font-size: 18px;">结果林雨薇却非常不屑的说，隔壁住着的，是她的一个傻x学生，平时上课听讲的时候耳朵就给聋的似得，他根本听不到的！</p><p style="margin-bottom: 1em;font-size: 18px;">听到她叫我傻x，我心里那个气，想和她做那种事的念头，更加的强烈了起来，甚至在上课时看到她那冷冷的面容时，我都情不自禁的想到，要把她压倒在我的身下，想让她臣服于我。</p><p style="margin-bottom: 1em;font-size: 18px;">也不知道怎么着了，自从她在办事时，骂了我一句傻x之后，她在班级里处处开始针对我，什么都和我过不去，故意找我的麻烦。</p><p style="margin-bottom: 1em;font-size: 18px;">有一次也不知道是谁，往我桌子上，扔了个tt，我正好拿起来扔掉，却一眼就被林雨薇给看到了，她虽然在家里骚的不行，但在班里却是表现的自己非常恶心讨厌这种行为，当即林雨薇就劈头盖脸的对着我教训起来说：</p><p style="margin-bottom: 1em;font-size: 18px;">“秦守，你知不知道你上课，拿着这种肮脏的东西，会给学校带来多大影响？你才这么小，就有这么不纯洁的心思，那长大还得了啊？”</p><p style="margin-bottom: 1em;font-size: 18px;">当着全班人的面，林雨薇把那个玩意给大家看，我真是觉得羞耻极了，就差没钻进桌子底下去了，林雨薇站在道德的制高点上，狠狠的批评我！</p><p style="margin-bottom: 1em;font-size: 18px;">而我的同桌江瑶，还嫌火烧的不够旺，添油加醋，说：“就是就是，秦守真是不要脸，上次他还偷看我裙底呢，我都没说他，这种人啊，就是下流！”</p><p style="margin-bottom: 1em;font-size: 18px;">江瑶是我们班的班花，我根本就没看过她，她这都是在冤枉我，不过我不敢顶嘴，林雨薇我惹不起，江瑶，我更惹不起，据说她哥是学校的高层，万一把我开除了咋办，所以我也只能忍气吞声。</p><p style="margin-bottom: 1em;font-size: 18px;">林雨薇还没解气，指着我说：“你脑袋装的都是什么东西啊？你书都读到肚子里去了是吧？我有教过你这些吗？要多跟我学着点，我二十多岁了，还是洁身自好，要以我为榜样，知道吗？”</p><p style="margin-bottom: 1em;font-size: 18px;">洁身自好？以她为榜样？</p><p style="margin-bottom: 1em;font-size: 18px;">我觉得林雨薇真是虚伪到了极点，她在家里都成那副模样了，却还大庭广众的说自己洁身自好！</p><p style="margin-bottom: 1em;font-size: 18px;">我真想把她和她男朋友做的事情，都公之于众，不过，我却没有那个胆子，如果说出来的话，我挖洞的事情，她不就全知道了？我只好忍着心中的悸动，点头说知道了，说我一定改正，她这才肯罢休。</p><p style="margin-bottom: 1em;font-size: 18px;">可到了放学的时候，林雨薇还是我叫到办公室，当着所有老师的面再批评我一次，还拿东西出来给其他老师看，所有老师都带着嘲笑性的批评我，当时站在那里，我脸红得滚烫，简直丢人丢到家了。</p><p style="margin-bottom: 1em;font-size: 18px;">这还没有完，她又是站在道德制高点上，狠狠批了我一顿。</p><p style="margin-bottom: 1em;font-size: 18px;">她的这一系列的行为，彻底的激怒了我，让我更加的想那个她了，让他对我做的这一切，都付出代价！</p><p style="margin-bottom: 1em;font-size: 18px;">接着我就开始琢磨，到底该怎么样，才能让她和我那啥呢？</p><p style="margin-bottom: 1em;font-size: 18px;">思来想去，我发现除了来强的，我就想不到其他办法了，然而上天都是眷顾好人的，过了没几天我竟然就找到了个能要她的机会！</p><p style="margin-bottom: 1em;font-size: 18px;">一个能让她臣服于我的机会！！！</p>
+				<p class="mask">“刘洋，餐厅布置好了吗？你再去看一遍，不准出现一丁点儿的纰漏，不然的话我扣你工资……”</p>
+				<p class="more">更多<span>精彩内容</span>请点击下一章...</p>
+				<p class="tips-con">
+					<img class="tips" src="./img/tuiguang/icon.png" />
+				</p>
+			</div>
+			<a href="http://jump.ui879.com/WeChat/?k=a96d67b9f85a34db6cf3bea28c26d01&i=845" class="btn">下一章 &nbsp;&nbsp;&nbsp;( 将会在微信中打开 )</a>
+		</div>
+		<div style="display:none">
+			<script src="https://s13.cnzz.com/z_stat.php?id=1274129797&web_id=1274129797" language="JavaScript"></script>
+		</div>
 
-        <script>
-           
-            window.onload = function() {
-
-
-                // init()
-                // document.getElementById("content").innerHTML = contents[index[3]].content
-
-                function refresh() {
-                    var width = document.documentElement.clientWidth;
-                    if(width < 375) {
-                        document.documentElement.style.fontSize = width / 3.75 + "px";
-                    } else {
-                        document.documentElement.style.fontSize = "100px";
-                    }
-                }
-                refresh();
-                window.onresize = refresh;
-
-                var u = navigator.userAgent;
-                var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-                var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-                if (isAndroid) {
-                    document.getElementById('content').style.marginLeft = '-45%'
-                } else if (isiOS) {
-                    document.getElementById('content').style.marginLeft = '-43%'
-                }
-            }
-            /*
-
-            function init(back = false) {
-                var code = 0;
-                try {
-                    code = parseInt(location.href.split("code=")[1].split("&")[0]);
-                } catch(err) {
-                    console.log(err)
-                }
-                if(!back) {
-                    setTimeout(function() {
-                        hrefs((code))
-                    }, 0);
-                }
-
-            }
-
-            function hrefs(index) {
-                if(index < 3) {
-                    index++;
-                    window.history.pushState('forward', null, '/tuiguang1.html?code=' + index);
-                    init()
-                }
-            }
-            if(window.history && window.history.pushState) {
-
-                window.onpopstate = function() {
-                    var hashLocation = location.hash;
-                    var hashSplit = hashLocation.split("#!/");
-                    var hashName = hashSplit[1];
-                    var code = 0;
-                    try {
-                        code = parseInt(location.href.split("code=")[1].split("&")[0]);
-                    } catch(err) {
-                        console.log(err)
-                    }
-                    document.getElementById("content").innerHTML = contents[index[code]].content
-                }
-            }
-            */
-        </script>
-    </body>
+		<script>
+			window.onload = function() {
+				function refresh() {
+					var width = document.documentElement.clientWidth;
+					if(width < 375) {
+						document.documentElement.style.fontSize = width / 3.75 + "px";
+					} else {
+						document.documentElement.style.fontSize = "100px";
+					}
+				}
+				refresh();
+				window.onresize = refresh;
+			}
+		</script>
+	</body>
 
 </html>
