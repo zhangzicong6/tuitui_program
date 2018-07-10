@@ -7,6 +7,8 @@ router.get('/novel/:index', function(req, res, next) {
     mem.get('tuiguang_'+req.params.index).then(function(value){
         if(value){
             console.log('---------get tuiguang value---------')
+            console.log(value);
+            console.log('------------------')
             var res_data = JSON.parse(value);
             res.render('tuiguang/tuiguang',res_data);
         }else{
