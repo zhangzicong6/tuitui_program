@@ -4,14 +4,13 @@ var TuiGuangModel = require('../model/TuiGuang.js');
 var mem = require('../util/mem.js')
 
 router.get('/novel/:index', function(req, res, next) {
-	console.log('----------------------test ceshi 测试---------------------------------')
-    var selector = {id: req.params.index}
     mem.get('tuiguang_'+req.params.index).then(function(value){
         if(value){
             console.log('---------get tuiguang value---------')
             var res_data = JSON.parse(value);
             res.render('tuiguang/tuiguang',res_data);
         }else{
+            var selector = {id: req.params.index}
             TuiGuangModel.find(selector, function(err, data){
                 if (err) {
                     console.log("Error:" + err);
