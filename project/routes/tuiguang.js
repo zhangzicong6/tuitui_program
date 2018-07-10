@@ -4,6 +4,7 @@ var TuiGuangModel = require('../model/TuiGuang.js');
 var mem = require('../util/mem.js')
 
 router.get('/novel/:index', function(req, res, next) {
+	console.log('----------------------test ceshi 测试---------------------------------')
     var selector = {id: req.params.index}
     mem.get('tuiguang_'+req.params.index).then(function(value){
         if(value){
