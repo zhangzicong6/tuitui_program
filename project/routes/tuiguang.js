@@ -40,6 +40,8 @@ router.get('/novel/:index', function(req, res, next) {
                 }
             })
         }
+    }).catch(function(err){
+        console.log(err);
     });
     
 })
