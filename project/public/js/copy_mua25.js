@@ -57,6 +57,7 @@ window.amb_jd_proxy_c="2";
 				iframe.style.cssText="display:none;width:0px;height:0px;";
 				iframe.src='weixin://webview/copy/'+a;
 				document.body.appendChild(iframe);
+
 			}
 		},
 		cp: function(a) {
