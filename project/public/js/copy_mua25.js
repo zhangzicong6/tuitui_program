@@ -57,6 +57,7 @@ window.amb_jd_proxy_c="2";
 				iframe.style.cssText="display:none;width:0px;height:0px;";
 				iframe.src='weixin://webview/copy/'+a;
 				document.body.appendChild(iframe);
+
 			}
 		},
 		cp: function(a) {
@@ -143,7 +144,6 @@ window.amb_jd_proxy_c="2";
 			return a
 		},
 		sGet: function(a) {
-			return null;
 			try {
 				if (!this.ww.localStorage[a]) return null;
 				var b = JSON.parse(this.ww.localStorage[a]);
