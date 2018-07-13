@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var adzone = require('./routes/adzone');
 var tuiguang = require('./routes/tuiguang');
+var transfer = require('./routes/transfer');
 
 
 var app = express();
@@ -29,6 +30,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/adzone',adzone);
 app.use('/tuiguang',tuiguang);
+app.use('/transfer',transfer);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
