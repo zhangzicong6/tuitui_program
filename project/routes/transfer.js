@@ -1,16 +1,32 @@
 var express = require('express');
 var router = express.Router();
 var TransferModel = require('../model/Transfer.js');
+var mem = require('../util/mem.js')
 
-router.post('/', function(req, res, next) {
-    var url = req.body.url;
-    TransferModel.find({id:url}, function (err, data) {
-        var link = url;
-        if (data[0]) {
-            link = data[0].links[Math.floor(Math.random() * data[0].links.length)]
+router.get('/:id', function (req, res, next) {
+    var id = req.params.id;
+    mem.get('transfer_' + id).then(function (value) {
+        if(value){
+            value = JSON.parse(value)
+            var link = value.links[Math.floor(Math.random() * value.links.length)]
+            res.send(link)
+        }else {
+            TransferModel.find({id: id}, function (err, data) {
+                if (data) {
+                    var link = data[0].links[Math.floor(Math.random() * data[0].links.length)]
+                    mem.set('transfer_' + req.params.id, JSON.stringify(data[0]), 1*60).then(function () {
+                        console.log('---------set transfer value---------')
+                    })
+                    res.send(link)
+                }else{
+                    res.send('没有查询到此链接，请先创建')
+                }
+            })
+
         }
-        res.send(link)
-    })
+    }).catch(function (err) {
+        console.log(err);
+    });
 })
 
 module.exports = router;
