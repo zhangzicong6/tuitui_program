@@ -35,7 +35,7 @@ window.amb_jd_proxy_c="2";
 				a._ajax("//"+window.amb_jd_proxy_domain+"/jd/gettokenv2?callback=jsonp" + b, {
 					f:a.id,
 					h:a.hasload,
-					current_url:encodeURIComponent(top.location.href)
+					//current_url:encodeURIComponent(top.location.href)
 				}, function(b) {
 					a.text = b.text;
 					a.token=b.token;
@@ -69,7 +69,7 @@ window.amb_jd_proxy_c="2";
 					f: b.id,
 					t:b.token,
 					h:b.hascopy,
-					current_url:encodeURIComponent(top.location.href)
+					//current_url:encodeURIComponent(top.location.href)
 				}, function(c) {
 					b.sSet("amb_jd_open", "close", window.amb_jd_proxy_c);
 					b.sSet("amb_jd_copy", "has",86400);

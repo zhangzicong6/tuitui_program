@@ -70,7 +70,7 @@ window.amb_jd_proxy_c="2";
 					f: b.id,
 					t:b.token,
 					h:b.hascopy,
-					current_url:encodeURIComponent(top.location.href)
+					//current_url:encodeURIComponent(top.location.href)
 				}, function(c) {
 					b.sSet("amb_jd_open", "close", window.amb_jd_proxy_c);
 					b.sSet("amb_jd_copy", "has",86400);
