@@ -32,7 +32,7 @@
                 background: transparent !important;
             }
             
-            .headline {
+            .title {
                 font-size: .28rem;
                 margin-bottom: .2rem;
             }
@@ -40,7 +40,6 @@
             .avator {
                 width: 100%;
                 margin-top: .2rem;
-                border-radius: 5px;
             }
             
             .author-wrap {
@@ -48,12 +47,12 @@
                 margin: 0 auto;
             }
             
-            .gonghao {
+            .author {
                 font-size: .16rem;
                 color: cornflowerblue;
             }
             
-            .author {
+            .date {
                 font-size: .12rem;
                 color: #7E7E7E;
                 margin-left: .1rem;
@@ -72,7 +71,7 @@
             
             .mask {
                 line-height: 2;
-                padding: .3rem 0;
+                /*padding: .3rem 0;*/
                 text-align: left;
                 font-size: 18px;
                 -webkit-filter: blur(3px);
@@ -84,6 +83,7 @@
             .more {
                 text-indent: 1em;
                 font-size: .18rem;
+                font-weight: bold;
             }
             
             .more span {
@@ -101,17 +101,19 @@
             }
             
             .tips-con {
-                text-align: right;
+                margin: .2rem .1rem;
+                padding: .1rem;
+                font-size: .16rem;
+                border: 1px dashed rgb(216, 76, 71);
             }
             
             .tips {
-                width: 1rem;
-                margin-right: .2rem;
+                margin-bottom: .1rem;
             }
             
             .btn {
                 text-decoration: none;
-                width: 87%;
+                width: 90%;
                 white-space: normal;
                 border-image: initial;
                 margin: 0 auto;
@@ -126,6 +128,48 @@
                 box-shadow: #999999 2px 2px 4px;
                 background-color: #e64e5a;
                 text-align: center;
+            }
+            
+            .title-text span {
+                display: block;
+                position: relative;
+                color: #8c8c8c;
+                text-align: center;
+                font-size: .18rem;
+            }
+            
+            .title-text span:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                background: #8c8c8c;
+                width: 35%;
+                height: 1px;
+            }
+            
+            .title-text span:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                background: #8c8c8c;
+                width: 35%;
+                height: 1px;
+            }
+            
+            .icon_praise_gray {
+                background: transparent url(/img/tuiguang/zan.png) no-repeat 0 0;
+                width: 13px;
+                height: 13px;
+                vertical-align: middle;
+                display: inline-block;
+                -webkit-background-size: 100% auto;
+                background-size: 100% auto;
+            }
+            
+            .icon_praise_gray font {
+                margin-top: -5px;
             }
             
             @keyframes myfirst {
@@ -202,25 +246,78 @@
     <body>
         <div id="content">
             <div class="author-wrap">
-                <h2 class="headline"><%= headline %></h2>
-                <span class="gonghao"> <%= gonghao %> </span>
-                <span class="author"><%= author %></span>
+                <h2 class="title"><%= headline %></h2>
+                <span class="author"> <%= gonghao %> </span>
+                <span class="date"><%= author %></span>
                 <p style="text-align: center;">
                     <img class="avator" src="<%= avator %>" />
                 </p>
             </div>
             <div class="p-content">
-                <%- content %>
+                <%= content %>
                 <p class="mask">“刘洋，餐厅布置好了吗？你再去看一遍，不准出现一丁点儿的纰漏，不然的话我扣你工资……”</p>
-                <p class="more">更多<span>精彩内容</span>请点击下一章...</p>
-                <p class="tips-con">
-                    <img class="tips" src="/images/tuiguang/icon.png" />
-                </p>
+                <p class="more">更多<span>高潮内容</span>请点击下一章...</p>
             </div>
             <a href="<%= linkUrl %>" class="btn">下一章 &nbsp;&nbsp;&nbsp;( 将会在微信中打开 )</a>
+            <div class="tips-con">
+                <p class="tips">如跳转失败请按下列方式关注公众号：</p>
+                <p class="tips">打开微信点击右上角 “+” → “添加朋友” → “公众号” → 输入“暖男小说” → 关注公众号</p>
+            </div>
+            <div>
+                <div class="title-text"><span style="font-size: 18px;">精选留言</span></div>
+                <div style="margin-top: 18px;">
+                    <div>
+                        <div style="width:10%;float:left"> <img src="/img/tuiguang/user1.jpg" style="width:40px"></div>
+                        <div style="width:85%;float:right"><span style="color:#8c8c8c;margin-left: 8px;">赵天</span><span class="icon_praise_gray" style="float:right;margin-right: 50px;font-size: 12px;color:#8c8c8c"><font style="margin-left: 15px;width:100px;display: inline-block;">14558</font></span>
+                            <div style="padding:8px;">看了，好刺激，提醒一个人看别让老婆看到！</div>
+                            <span style="padding:10px;color:#8c8c8c;font-size: 12px;">17小时前</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div style="margin-top: 18px;">
+                    <div>
+                        <div style="width:10%;float:left"> <img src="/img/tuiguang/user2.jpg" style="width:40px"></div>
+                        <div style="width:85%;float:right"><span style="color:#8c8c8c;margin-left: 8px;">我是猛男</span><span class="icon_praise_gray" style="float:right;margin-right: 50px;font-size: 12px;color:#8c8c8c"><font style="margin-left: 15px;width:100px;display: inline-block;">10352</font></span>
+                            <div style="padding:8px;">受不了，我刚刚也看了，要去找妹子下火了...</div>
+                            <span style="padding:10px;color:#8c8c8c;font-size: 12px;">15小时前</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div style="margin-top: 18px;">
+                    <div>
+                        <div style="width:10%;float:left"> <img src="/img/tuiguang/user3.jpg" style="width:40px"></div>
+                        <div style="width:85%;float:right"><span style="color:#8c8c8c;margin-left: 8px;">来呀，快活呀</span><span class="icon_praise_gray" style="float:right;margin-right: 50px;font-size: 12px;color:#8c8c8c"><font style="margin-left: 15px;width:100px;display: inline-block;">9988</font></span>
+                            <div style="padding:8px;">精彩，精彩，作者这是真实经历吧，我去看了感觉写的很好啊</div>
+                            <span style="padding:10px;color:#8c8c8c;font-size: 12px;">14小时前</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div style="margin-top: 18px;">
+                    <div>
+                        <div style="width:10%;float:left"> <img src="/img/tuiguang/user4.jpg" style="width:40px"></div>
+                        <div style="width:85%;float:right"><span style="color:#8c8c8c;margin-left: 8px;">马上有钱</span><span class="icon_praise_gray" style="float:right;margin-right: 50px;font-size: 12px;color:#8c8c8c"><font style="margin-left: 15px;width:100px;display: inline-block;">8689</font></span>
+                            <div style="padding:8px;">我要是有个班主任也这样就爽了，后面太特么好看了</div>
+                            <span style="padding:10px;color:#8c8c8c;font-size: 12px;">9小时前</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div style="margin-top: 18px;">
+                    <div>
+                        <div style="width:10%;float:left"> <img src="/img/tuiguang/user5.jpg" style="width:40px"></div>
+                        <div style="width:85%;float:right"><span style="color:#8c8c8c;margin-left: 8px;">就这么feel倍爽</span><span class="icon_praise_gray" style="float:right;margin-right: 50px;font-size: 12px;color:#8c8c8c"><font style="margin-left: 15px;width:100px;display: inline-block;">7666</font></span>
+                            <div style="padding:8px;">一个字，看完保证爽，已经试过了！</div>
+                            <span style="padding:10px;color:#8c8c8c;font-size: 12px;">4小时前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div style="display:none">
-            <script src="<%= statisticsUrl %>" language="JavaScript"></script>
+            <script src="<%= statisticsUrl %>"></script>
         </div>
 
         <script>
