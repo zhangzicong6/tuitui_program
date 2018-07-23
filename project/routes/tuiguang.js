@@ -45,14 +45,14 @@ router.get('/novel/:index', function(req, res, next) {
     });
 })
 
-router.get('/upjump/:index', function(req, res, next) {
-    mem.get('upjump_'+req.params.index).then(function(value){
+router.get('/unjump/:index', function(req, res, next) {
+    mem.get('unjump_'+req.params.index).then(function(value){
         if(value){
-            console.log('---------get upjump value---------')
+            console.log('---------get unjump value---------')
             console.log(value);
             console.log('------------------')
             var res_data = JSON.parse(value);
-            res.render('tuiguang/upjump',res_data);
+            res.render('tuiguang/unjump',res_data);
         }else{
             var selector = {id: req.params.index}
             TuiGuangModel.find(selector, function(err, data){
@@ -72,10 +72,10 @@ router.get('/upjump/:index', function(req, res, next) {
                             ad_img: data[0].ad_img
                         }
 
-                        mem.set('upjump_'+req.params.index,JSON.stringify(res_data),60*1000).then(function(){
-                             console.log('---------set upjump value---------')
+                        mem.set('unjump_'+req.params.index,JSON.stringify(res_data),60*1000).then(function(){
+                             console.log('---------set unjump value---------')
                         })
-                        res.render('tuiguang/upjump',res_data);
+                        res.render('tuiguang/unjump',res_data);
                     } else {
                         res.send('没有查询到此链接，请先创建')
                     }
