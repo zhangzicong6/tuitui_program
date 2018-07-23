@@ -43,6 +43,48 @@ router.get('/novel/:index', function(req, res, next) {
     }).catch(function(err){
         console.log(err);
     });
+})
+
+router.get('/upjump/:index', function(req, res, next) {
+    mem.get('upjump_'+req.params.index).then(function(value){
+        if(value){
+            console.log('---------get upjump value---------')
+            console.log(value);
+            console.log('------------------')
+            var res_data = JSON.parse(value);
+            res.render('tuiguang/upjump',res_data);
+        }else{
+            var selector = {id: req.params.index}
+            TuiGuangModel.find(selector, function(err, data){
+                if (err) {
+                    console.log("Error:" + err);
+                }
+                else {
+                    if (data != '') {
+                        var res_data={
+                            title: data[0].title,
+                            headline: data[0].headline,
+                            gonghao: data[0].gonghao,
+                            author: data[0].author,
+                            avator: data[0].avator,
+                            content: data[0].content,
+                            statisticsUrl: data[0].statisticsUrl,
+                            ad_img: data[0].ad_img
+                        }
+
+                        mem.set('upjump_'+req.params.index,JSON.stringify(res_data),60*1000).then(function(){
+                             console.log('---------set upjump value---------')
+                        })
+                        res.render('tuiguang/upjump',res_data);
+                    } else {
+                        res.send('没有查询到此链接，请先创建')
+                    }
+                }
+            })
+        }
+    }).catch(function(err){
+        console.log(err);
+    });
     
 })
 
