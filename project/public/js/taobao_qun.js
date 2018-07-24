@@ -49,40 +49,15 @@ var copy = function() {
   }
 };
 
+
+
 window.onload= function(){
   var arr=[
-          "€SsF2bZD63nx€",
-          "€OjzLbZD6RA6€",
-          "€RsS2bZDhvR7€",
-          "€Zn8ZbZDSRa8€",
-          "€XuX4bZDSuOr€",
-          "€ibrRbZD74XK€",
-          "€KtqwbZD7ykQ€",
-          "€zkiSbZDiZmD€",
-          "€tcFrbZDis8Z€",
-          "€h5iBbZDiA1X€",
-          "€vqVDbZDRlEZ€",
-          "€7LJ9bZD8VdZ€",
-          "€OZ6ZbZD8r2g€",
-          "€Xu4wbZDj6j4€",
-          "€zFUxbZDjC0C€",
-          "€2lacbZDQiRQ€",
-          "€zM01bZDZ1JG€",
-          "€PLj6bZD2HI4€",
-          "€UdnrbZDdhI3€",
-          "€OHkBbZDdw9i€",
-          "€oVutbZDWeYf€",
-          "€wVHrbZD3afU€",
-          "€4SlzbZD3MqF€",
-          "€o1yYbZD3wj5€",
-          "€H717bZDeFhU€",
-          "€DBChbZDVelB€",
-          "€ZeeibZDVqj3€",
-          "€JCkmbZD4vg5€",
-          "€n1KKbZDUbwq€",
-          "€egKGbZDU5YI€",
-          "€00aKbZD5iqx€",
-          "€zMUMbZDgqNA€"
+          "€l6gMb0NKO0T€",
+          "€UYrxb0Nqu5p€",
+          "€mMxrb0NJ0qr€",
+          "€YBsJb0NJ9br€",
+          "€iQmhb0NpMgL€",
         ];
   get_copy(arr);
 }
