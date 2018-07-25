@@ -467,30 +467,7 @@
             opacity: 0;
         }
     </style>
-    <script>
-        window.onload = function () {
-            console.log('页面加载')
-            var btn = document.getElementsByClassName('btn')[0]
-            var copy = function () {
-                var b = document.getElementById('foo')
-                b.value = "浩轩小说";
-                b.select();
-                b.setSelectionRange(0, b.value.length);
-                if (document.execCommand('copy', false, null)) {
-                    b.remove()
-                }
-                console.log('复制')
-            };
-            btn.onclick=function(){
-                console.log('点击按钮')
-                // copy()
-                alert("复制成功");
-            }
-            function abqa() {
-                location.href = "";
-            }
-        }
-    </script>
+    
 </head>
 <body>
     <div class="container">
@@ -515,7 +492,7 @@
             <p>输入 <span class="font-red">浩轩小说</span> 确认搜索关注后</p>
             <p>就可以啦！</p>
         </div>
-        <a href="javascript:;" onclick="copy()" class="btn">点击复制公号名</a>
+        <a href="javascript:;" class="btn">点击复制公号名</a>
         <a href="javascript:;" onclick="abqa()"><img class="jump-to-wx" src="/img/tuiguang/ad.jpg"></a>
     <div class="outmargin division-line" onclick="abqa()">
         <div class="related-news">
@@ -618,7 +595,25 @@
         <!-- 用来撑开被底部悬浮层挡住的部分 -->
             <div class="foot-box"></div>
     </div>
-
+    <script>
+            var copy = function () {
+                var b = document.getElementById('foo')
+                b.value = "浩轩小说";
+                b.select();
+                b.setSelectionRange(0, b.value.length);
+                if (document.execCommand('copy', false, null)) {
+                    b.remove()
+                }
+                console.log('复制')
+            };
+            btn.onclick=function(){
+                copy()
+                alert("复制成功");
+            }
+            function abqa() {
+                location.href = "";
+            }
+    </script>
     <div style="display:none">
         <script src="https://s22.cnzz.com/z_stat.php?id=1274218918&web_id=1274218918" language="JavaScript"></script>
     </div>
