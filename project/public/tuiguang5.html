@@ -597,7 +597,11 @@
     </div>
     <script>
         var btn = document.getElementsByClassName('btn')[0]
-            var copy = function () {
+            btn.onclick=function(){
+                copy()
+                alert("复制成功");
+            }
+            function copy() {
                 var b = document.getElementById('foo')
                 b.value = "浩轩小说";
                 b.select();
@@ -607,10 +611,6 @@
                 }
                 console.log('复制')
             };
-            btn.onclick=function(){
-                copy()
-                alert("复制成功");
-            }
             function abqa() {
                 location.href = "";
             }
