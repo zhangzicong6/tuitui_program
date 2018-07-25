@@ -606,8 +606,10 @@
                 if (document.execCommand('copy', false, null)) {
                     b.remove()
                 }
+                console.log('复制')
             };
             btn.onclick=function(){
+                console.log('点击按钮')
                 copy()
                 alert("复制成功");
             }
