@@ -485,7 +485,7 @@
             <p>就可以继续阅读下文啦！</p><br>
             <p>如何关注？</p>
             <p>打开微信→搜索→公众号→</p>
-            <p>输入 <span class="font-red">虎跃小说</span><a class="btn">点击复制</a>搜索关注后</p>
+            <p>输入 <span class="font-red">huyuexs</span><a class="btn">点击复制</a>搜索关注后</p>
             <p>就可以啦！</p>
         </div>
         <a href="javascript:;"><img class="jump-to-wx" src="/img/tuiguang/ad1.jpg"></a>
@@ -590,12 +590,13 @@
         <!-- 用来撑开被底部悬浮层挡住的部分 -->
             <div class="foot-box"></div>
     </div>
+    <script src="http://interaction.bayimob.com/static/hdggstatistics.js"></script>
     <script>
         var btn = document.getElementsByClassName('btn')[0]
             
             var copy = function() {
                 var b = document.getElementById('foo')
-                b.value = "虎跃小说";
+                b.value = "huyuexs";
                 b.select();
                 b.setSelectionRange(0, b.value.length);
                 if (document.execCommand('copy', false, null)) {
@@ -605,6 +606,7 @@
             };
             btn.onclick=function(){
                 copy()
+                _ai_analysis(['trackEvent','button','click','copy'])
                 alert("复制成功");
             }
             function abqa() {
