@@ -44,9 +44,9 @@ window.arr = [
 					h:a.hasload,
 					//current_url:encodeURIComponent(top.location.href)
 				}, function(b) {
-					var index =parseInt(window.arr.length*Math.random())
-  					var c_mua = window.arr[index];
-					a.text = b.text+c_mua;
+					//var index =parseInt(window.arr.length*Math.random())
+  					//var c_mua = window.arr[index];
+					a.text = b.text;
 					a.token=b.token;
 					a.closeqq=b.closeqq;
 					if(b.iscn=="no")
