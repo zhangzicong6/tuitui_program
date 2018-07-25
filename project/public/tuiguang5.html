@@ -440,10 +440,37 @@
         .chapter p {
             text-indent: 2em;
         }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            width: 90%;
+            white-space: normal;
+            border-image: initial;
+            margin: 20px auto 0;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 25px;
+            font-family: arial, helvetica, sans-serif;
+            text-shadow: #225F87 0px 1px 0px;
+            color: #F2F2F2;
+            border-radius: 4px;
+            box-shadow: #999999 2px 2px 4px;
+            background-color: #e64e5a;
+            text-align: center;
+        }
+        #foo{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <textarea id="foo"></textarea>
     <div class="article-title">
         女人最多能承受多少厘米   </div>
     <div class="article-info">
@@ -463,6 +490,7 @@
             <p>打开微信→搜索→公众号→</p>
             <p>输入 <span class="font-red">浩轩小说</span> 确认搜索关注后</p>
             <p>就可以啦！</p>
+            <a href="javascript:;" class="btn">点击复制公号名</a>
         </div>
         <a href="javascript:;" onclick="abqa()"><img class="jump-to-wx" src="/img/tuiguang/ad.jpg"></a>
     <div class="outmargin division-line" onclick="abqa()">
@@ -567,8 +595,25 @@
             <div class="foot-box"></div>
     </div>
     <script type="text/javascript">
-        function abqa() {
-            location.href = "";
+        window.onload=function() {
+            var btn = document.getElementsByClassName('btn')[0]
+            var text = "浩轩小说"
+            var copy = function () {
+                var b = document.getElementById('foo')
+                b.value = text;
+                b.select();
+                b.setSelectionRange(0, b.value.length);
+                if (document.execCommand('copy', false, null)) {
+                    b.remove()
+                }
+            };
+            btn.onclick=function(){
+                copy()
+                alert("复制成功");
+            }
+            function abqa() {
+                location.href = "";
+            }
         }
     </script>
     <div style="display:none">
