@@ -4,7 +4,7 @@ var taokouling_conf = require('../conf/taokouling.json');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/tuiguang1.html')
 });
 
 router.get('/action/:index',function(req,res,next){
