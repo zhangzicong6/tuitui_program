@@ -479,9 +479,8 @@ function bind_copy(){
         b.select();
         b.setSelectionRange(0, b.value.length);
         if (document.execCommand('copy', false, null)) {
-            b.remove()
+            // b.remove()
         }
-        console.log('复制')
     };
     btn.onclick=function(){
         copy()
