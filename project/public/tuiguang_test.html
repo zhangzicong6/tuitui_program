@@ -469,7 +469,6 @@
         点击关注公号继续阅读
     </div>
 </div>
-<script src="http://interaction.bayimob.com/static/hdggstatistics.js"></script>
 <script>
 function bind_copy(){
     var btn = document.getElementsByClassName('copy-btn')[0]
@@ -480,7 +479,7 @@ function bind_copy(){
         b.select();
         b.setSelectionRange(0, b.value.length);
         if (document.execCommand('copy', false, null)) {
-            // b.remove()
+            b.remove()
         }
         console.log('复制')
     };
@@ -493,9 +492,7 @@ function bind_copy(){
 }
 bind_copy()
 </script>
-
     <div style="display:none">
-         <script src="https://s22.cnzz.com/z_stat.php?id=1274131239&web_id=1274131239" language="JavaScript"></script>
     </div>
 </body>
 </html>
