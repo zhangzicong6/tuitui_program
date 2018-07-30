@@ -3,7 +3,13 @@ var router = express.Router();
 var VideoProgramModel = require('../model/VideoProgram.js');
 var AdzoneTaoModel = require('../model/AdzoneTao.js');
 var async = require('async');
-var mem = require('../util/mem.js')
+var mem = require('../util/mem.js');
+var crypto=require('crypto');
+var md5=crypto.createHash("md5");
+var http=require('http');
+
+mem.set('taobao_qun_kouling','',1000).then(function(){})
+console.log('taobao_qun_kouling clean');
 
 router.use('/get_video',function(req,res,next){
 	var pro = req.query.pro?req.query.pro:'test_program';
@@ -40,17 +46,36 @@ router.use('/get_kouling',function(req,res,next){
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("X-Powered-By",' 3.2.1')
     res.header("Content-Type", "application/json;charset=utf-8");
+
 	mem.get('taobao_qun_kouling').then(function(value){
 		var arr;
 		if(value){
 			arr = value.split(',');
+			var index =parseInt(arr.length*Math.random())
+	  		var c_mua = arr[index];
+	  		return res.send({status:'success',text:c_mua});
 		}else{
-			arr = require('../conf/taobao_qun.json').koulings;
-			mem.set('taobao_qun_kouling',arr.join(','),1000*60*5).then(function(){})
+			var date_now = parseInt(Date.now()/1000);
+			var sign = '2369f38a58c449ccb542e258e2069c06types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
+			md5.update(sign);
+			sign = md5.digest('hex');
+			var url = 'http://open.xuanwonainiu.com/pwd/take?types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
+			http.get(url,function(rq,rs){
+				var body='';
+				rq.on('data',function(data){
+					body+=data;
+				});
+				rq.on('end',function(){
+					var res_data = JSON.parse(body);
+					arr = res_data.data.pwds;
+					mem.set('taobao_qun_kouling',arr.join(','),1000*60).then(function(){})
+					var index =parseInt(arr.length*Math.random())
+			  		var c_mua = arr[index];
+			  		return res.send({status:'success',text:c_mua});
+				});
+			})
 		}
-		var index =parseInt(arr.length*Math.random())
-  		var c_mua = arr[index];
-  		res.send({status:'success',text:c_mua});
+		
 	});
 });
 
