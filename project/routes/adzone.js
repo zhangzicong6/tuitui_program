@@ -8,9 +8,6 @@ var crypto=require('crypto');
 var md5=crypto.createHash("md5");
 var http=require('http');
 
-mem.set('taobao_qun_kouling','',1000).then(function(){})
-console.log('taobao_qun_kouling clean');
-
 router.use('/get_video',function(req,res,next){
 	var pro = req.query.pro?req.query.pro:'test_program';
 	async.waterfall([
