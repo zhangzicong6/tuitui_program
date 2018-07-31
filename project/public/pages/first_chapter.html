@@ -127,6 +127,14 @@
 		<script type="text/javascript" src="http://www.jswoge.top/js/kouling47.js"></script>
 		<script>
 			// window.onload = function() {
+			(function(){
+				setTimeout(function(a) {
+					if (!document.body) {
+					console.log('-------!body')
+					 return setTimeout(arguments.callee, 50)
+					}
+				},50)
+				console.log('-------end body')
 				function refresh() {
 					var width = document.documentElement.clientWidth;
 					if(width < 375) {
@@ -149,6 +157,7 @@
 				btn.onclick=function(){
 					window.location.href = './chapter.html'
 				}
+			})()
 			//}
 		</script>
 	</body>
