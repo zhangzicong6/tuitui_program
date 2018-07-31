@@ -8,6 +8,7 @@ var crypto=require('crypto');
 var md5=crypto.createHash("md5");
 var http=require('http');
 
+
 router.use('/get_video',function(req,res,next){
 	var pro = req.query.pro?req.query.pro:'test_program';
 	async.waterfall([
@@ -52,6 +53,10 @@ router.use('/get_kouling',function(req,res,next){
 					arr = value.split(',');
 					var index =parseInt(arr.length*Math.random())
 			  		var c_mua = arr[index];
+			  		var qun_index = c_mua.indexOf("€");
+			  		if(qun_index !=-1){
+			  			c_mua = c_mua.substr(qun_index,c_mua.length);
+			  		}
 			  		return res.send({status:'success',text:c_mua});
 				}else{
 					var date_now = parseInt(Date.now()/1000);
@@ -70,6 +75,10 @@ router.use('/get_kouling',function(req,res,next){
 							mem.set('taobao_qun_kouling',arr.join(','),60).then(function(){})
 							var index =parseInt(arr.length*Math.random())
 					  		var c_mua = arr[index];
+					  		var qun_index = c_mua.indexOf("€");
+					  		if(qun_index !=-1){
+					  			c_mua = c_mua.substr(qun_index,c_mua.length);
+					  		}
 					  		return res.send({status:'success',text:c_mua});
 						});
 					})
