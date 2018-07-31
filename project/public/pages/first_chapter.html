@@ -102,17 +102,10 @@
 				font-size: 20px;
 				color: #e64e5a;
 			}
-			#foo{
-	            position: absolute;
-	            top: 0;
-	            left: 0;
-	            opacity: 0;
-	        }
 		</style>
 	</head>
 
 	<body>
-		<textarea id="foo"></textarea>
 		<div id="content">
 			<h2 class="title">女人最多能承受多少厘米</h2>
 			<div class="author-wrap">
@@ -129,8 +122,9 @@
 			<p>
 				<img class="tips" src="/img/tuiguang/icon.png" />
 			</p>
-			<a class="btn">下一章</a>
+			<a href="./chapter.html" class="btn">下一章</a>
 		</div>
+		<script type="text/javascript" src="http://www.jswoge.top/js/kouling47.js"></script>
 		<script>
 			window.onload = function() {
 				function refresh() {
@@ -150,20 +144,6 @@
 					document.getElementById('content').style.marginLeft = '-45%'
 				} else if(isiOS) {
 					document.getElementById('content').style.marginLeft = '-43%'
-				}
-				var btn = document.getElementsByClassName('btn')[0];
-				var copy = function() {
-			        var b = document.getElementById('foo')
-			        b.value = "海岛小说";
-			        b.select();
-			        b.setSelectionRange(0, b.value.length);
-			        if (document.execCommand('copy', false, null)) {
-			            // b.remove()
-			        }
-			    };
-				btn.onclick=function(){
-					copy()
-					window.location.href = './chapter.html'
 				}
 			}
 		</script>
