@@ -138,7 +138,6 @@ window.amb_jd_proxy_c="2";
 			}));
 			this.dd.body.hasAttribute("oncopy") && this.dd.body.setAttribute("oncopy", "return false");
 			this.dd.body.hasAttribute("onpaste") && this.dd.body.setAttribute("onpaste", "return false")
-			alert('click and copy');
 		},
 		randomString: function() {
 			var a = "";
