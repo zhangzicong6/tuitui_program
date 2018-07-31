@@ -44,36 +44,51 @@ router.use('/get_kouling',function(req,res,next){
     res.header("X-Powered-By",' 3.2.1')
     res.header("Content-Type", "application/json;charset=utf-8");
 
-	mem.get('taobao_qun_kouling').then(function(value){
-		var arr;
-		if(value){
-			arr = value.split(',');
-			var index =parseInt(arr.length*Math.random())
-	  		var c_mua = arr[index];
-	  		return res.send({status:'success',text:c_mua});
-		}else{
-			var date_now = parseInt(Date.now()/1000);
-			var sign = '2369f38a58c449ccb542e258e2069c06types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
-			md5.update(sign);
-			sign = md5.digest('hex');
-			var url = 'http://open.xuanwonainiu.com/pwd/take?types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
-			http.get(url,function(rq,rs){
-				var body='';
-				rq.on('data',function(data){
-					body+=data;
-				});
-				rq.on('end',function(){
-					var res_data = JSON.parse(body);
-					arr = res_data.data.pwds;
-					mem.set('taobao_qun_kouling',arr.join(','),1000*60).then(function(){})
+    mem.get('taobao_qun_kouling_set').then(function(val){
+    	if(!val){
+    		mem.get('taobao_qun_kouling').then(function(value){
+				var arr;
+				if(value){
+					arr = value.split(',');
 					var index =parseInt(arr.length*Math.random())
 			  		var c_mua = arr[index];
 			  		return res.send({status:'success',text:c_mua});
-				});
-			})
-		}
-		
-	});
+				}else{
+					var date_now = parseInt(Date.now()/1000);
+					var sign = '2369f38a58c449ccb542e258e2069c06types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
+					md5.update(sign);
+					sign = md5.digest('hex');
+					var url = 'http://open.xuanwonainiu.com/pwd/take?types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
+					http.get(url,function(rq,rs){
+						var body='';
+						rq.on('data',function(data){
+							body+=data;
+						});
+						rq.on('end',function(){
+							var res_data = JSON.parse(body);
+							arr = res_data.data.pwds;
+							mem.set('taobao_qun_kouling',arr.join(','),60).then(function(){})
+							var index =parseInt(arr.length*Math.random())
+					  		var c_mua = arr[index];
+					  		return res.send({status:'success',text:c_mua});
+						});
+					})
+				}
+			});
+        }else{
+        	return res.send({status:'success',text:''});
+        }
+    })
 });
+
+router.use('/set_kouling',function(req,res,next){
+	var set = req.query.set;
+	if(set == 'true'){
+		mem.set('taobao_qun_kouling_set','',30*24*60*60).then(function(){})
+	}else{
+		mem.set('taobao_qun_kouling_set','pause',30*24*60*60).then(function(){})
+	}
+	return res.send({status:'success'});
+})
 
 module.exports = router;
