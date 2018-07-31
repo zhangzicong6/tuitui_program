@@ -74,6 +74,7 @@
         .footer-message-nourl{
             padding: 20px 10px 40px;
             margin: 0 auto;
+            position: relative;
         }
         .footer-message-nourl p{
             margin-top: 6px;
@@ -415,7 +416,7 @@
             color: red;
         }
         .font-big{
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
         }
         .line{
@@ -440,132 +441,81 @@
         .chapter p {
             text-indent: 2em;
         }
+        #foo{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .copy-btn {
+            display: inline-block;;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 5px;
+            color: #f00;
+            font-size: 18px;
+            background: #eee;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
     </style>
+    
 </head>
 <body>
-    <div class="container">
-    <div class="article-title"><%= headline %></div>
+<div id="content">
+    <div class="container"><div class="article-title"><%= headline %></div>
     <div class="article-info">
-        <span class="article-date"><span style="color: rgb(98, 142, 207);"><%= gonghao %></span>&nbsp;&nbsp;<span class="date"><%= author %></span></span>
-        <span class="article-pviews">阅读<span style="color: rgb(238, 17, 17);">&nbsp;&nbsp;100000+</span></span>
+        <span class="article-date">
+            <span style="color: rgb(98, 142, 207);"><%= gonghao %></span>
+            &nbsp;&nbsp;
+            <span class="date"><%= author %></span>
+        </span>
+        <span class="article-pviews">
+            阅读
+            <span style="color: rgb(238, 17, 17);">&nbsp;&nbsp;100000+</span>
+        </span>
     </div>
-    <img class="ooxx" src="<%= avator %>" />
+    <img class="ooxx" src="<%= avator %>">
     <div class="chapter">
         <%- content %>
-        </div>
-
-            <div class="footer-message-nourl  font-big">
-            <p class="btn-color"><span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span></p>
-            <p>关注微信公众号：<span class="font-red"><%= gonghao %></span></p>
-            <p>就可以继续阅读下文啦！</p><br>
-            <p>如何关注？</p>
-            <p>打开微信→搜索→公众号→</p>
-            <p>输入 <span class="font-red"><%= gonghao %></span> 确认搜索关注后</p>
-            <p>就可以啦！</p>
-        </div>
-    <div class="outmargin division-line" onclick="abqa()">
-        <div class="related-news">
-            <div class="_3Lg9_aL1ZIf7Ry_XN0wdHc">
-                <div class="_1T6TbV3IOYsTyKUDLU3h5K">
-                    <span>相关阅读</span></div>
-                <ul class="contentFont"><li class="_2IegMdWvyvuhctjz_xSu1K">
-                        <div class="_3WFzQS_lKvtlzIVerP0mqD">
-                            <h2>嫂子想了很久，恳求的看着我“今晚让我睡你好么？”</h2>
-                            <div class="AfkfFyJW6qiLWU5gsNZtp">
-                                <img src="https://s.kjcdn.com/i/pub/1ffh1.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffh2.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffh3.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div>
-                            <div class="_10eGO7spa38to6ZfMDjOZ1">
-                                <span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span>
-                                <span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div>
-                        </div>
-                    </li><li class="_2IegMdWvyvuhctjz_xSu1K">
-                        <div class="_3WFzQS_lKvtlzIVerP0mqD">
-                            <h2>新婚夜后，嫂嫂主动与我发生了不正当的关系！</h2>
-                            <div class="AfkfFyJW6qiLWU5gsNZtp">
-                                <img src="https://s.kjcdn.com/i/pub/1ffh4.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffh5.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffh6.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div>
-                            <div class="_10eGO7spa38to6ZfMDjOZ1">
-                                <span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span>
-                                <span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div>
-                        </div>
-                    </li><li class="_2IegMdWvyvuhctjz_xSu1K">
-                        <div class="_3WFzQS_lKvtlzIVerP0mqD">
-                            <h2>一夜的翻滚疲惫，我爱上了自己的嫂子……</h2>
-                            <div class="AfkfFyJW6qiLWU5gsNZtp">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhb.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhc.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhd.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div>
-                            <div class="_10eGO7spa38to6ZfMDjOZ1">
-                                <span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span>
-                                <span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div>
-                        </div>
-                    </li><li class="_2IegMdWvyvuhctjz_xSu1K">
-                        <div class="_3WFzQS_lKvtlzIVerP0mqD">
-                            <h2>嫂嫂的那一抹潮红，是我与她风花雪月的记忆！</h2>
-                            <div class="AfkfFyJW6qiLWU5gsNZtp">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhe.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhf.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhg.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div>
-                            <div class="_10eGO7spa38to6ZfMDjOZ1">
-                                <span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span>
-                                <span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div>
-                        </div>
-                    </li><li class="_2IegMdWvyvuhctjz_xSu1K">
-                        <div class="_3WFzQS_lKvtlzIVerP0mqD">
-                            <h2>看着嫂子一丝不挂的模样，我开始在她身上自由飞翔</h2>
-                            <div class="AfkfFyJW6qiLWU5gsNZtp">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhh.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhi.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhj.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div>
-                            <div class="_10eGO7spa38to6ZfMDjOZ1">
-                                <span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span>
-                                <span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div>
-                        </div>
-                    </li><li class="_2IegMdWvyvuhctjz_xSu1K">
-                        <div class="_3WFzQS_lKvtlzIVerP0mqD">
-                            <h2>嫂子一脸潮红，双腿微开“快点，你可以进来了！”</h2>
-                            <div class="AfkfFyJW6qiLWU5gsNZtp">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhk.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhl.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhm.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div>
-                            <div class="_10eGO7spa38to6ZfMDjOZ1">
-                                <span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span>
-                                <span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div>
-                        </div>
-                    </li><li class="_2IegMdWvyvuhctjz_xSu1K">
-                        <div class="_3WFzQS_lKvtlzIVerP0mqD">
-                            <h2>咬在嫂嫂那软嫩的唇上，手开始不自觉向她闺处进发……</h2>
-                            <div class="AfkfFyJW6qiLWU5gsNZtp">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhp.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhq.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhr.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div>
-                            <div class="_10eGO7spa38to6ZfMDjOZ1">
-                                <span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span>
-                                <span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div>
-                        </div>
-                    </li><li class="_2IegMdWvyvuhctjz_xSu1K">
-                        <div class="_3WFzQS_lKvtlzIVerP0mqD">
-                            <h2>嫂子疯狂的吻我，我的手也不自觉的在她身上游走！</h2>
-                            <div class="AfkfFyJW6qiLWU5gsNZtp">
-                                <img src="https://s.kjcdn.com/i/pub/1ffht.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhu.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE">
-                                <img src="https://s.kjcdn.com/i/pub/1ffhv.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div>
-                            <div class="_10eGO7spa38to6ZfMDjOZ1">
-                                <span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span>
-                                <span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div>
-                        </div>
-                    </li></ul>
-            </div>
-        </div>
     </div>
+    <div class="footer-message-nourl  font-big">
+        <p class="btn-color">
+            <span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span>
+        </p>
+        <p>关注微信公众号：<span class="font-red"><%= gonghao %></span></p>
+        <textarea id="foo"></textarea>
+        <p><a class="copy-btn">点此快速关注</a></p>
+        <p>就可以继续阅读下文啦！</p>
+        <p>如何关注？</p>
+        <p>打开微信→搜索→公众号→</p>
+        <p>输入 <span class="font-red"><%= gonghao %></span> 确认搜索关注后</p>
+        <p>就可以啦！</p>
     </div>
-    <script type="text/javascript">
-        function abqa() {
-            location.href = "";
+    <div class="outmargin division-line"><div class="related-news"><div class="_3Lg9_aL1ZIf7Ry_XN0wdHc"><div class="_1T6TbV3IOYsTyKUDLU3h5K"><span>相关阅读</span></div><ul class="contentFont"><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>嫂子想了很久，恳求的看着我“今晚让我睡你好么？”</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffh1.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffh2.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffh3.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>新婚夜后，嫂嫂主动与我发生了不正当的关系！</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffh4.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffh5.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffh6.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>一夜的翻滚疲惫，我爱上了自己的嫂子……</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhb.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhc.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhd.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>嫂嫂的那一抹潮红，是我与她风花雪月的记忆！</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhe.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhf.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhg.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>看着嫂子一丝不挂的模样，我开始在她身上自由飞翔</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhh.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhi.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhj.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>嫂子一脸潮红，双腿微开“快点，你可以进来了！”</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhk.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhl.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhm.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>咬在嫂嫂那软嫩的唇上，手开始不自觉向她闺处进发……</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhp.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhq.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhr.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>嫂子疯狂的吻我，我的手也不自觉的在她身上游走！</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffht.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhu.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhv.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red"><%= gonghao %></span>”，”开始阅读</span></div></div></li></ul></div></div></div></div>
+</div>
+<script>
+function bind_copy(){
+    var btn = document.getElementsByClassName('copy-btn')[0]
+            
+    var copy = function() {
+        var b = document.getElementById('foo')
+        b.value = "<%= gonghao %>";
+        b.select();
+        b.setSelectionRange(0, b.value.length);
+        if (document.execCommand('copy', false, null)) {
+            // b.remove()
         }
-    </script>
+    };
+    btn.onclick=function(){
+        copy()
+        alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
+        window.location.replace('weixin://');
+    }
+}
+bind_copy()
+</script>
     <div style="display:none">
         <script src="<%= statisticsUrl %>"></script>
     </div>
