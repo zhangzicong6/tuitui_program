@@ -33,8 +33,7 @@ router.use('/get_video',function(req,res,next){
 			}
 		],function(error,vp){
 			res.send(vp);
-	});
-	
+	});	
 });
 
 router.use('/get_kouling',function(req,res,next){
@@ -64,6 +63,7 @@ router.use('/get_kouling',function(req,res,next){
 					md5.update(sign);
 					sign = md5.digest('hex');
 					var url = 'http://open.xuanwonainiu.com/pwd/take?types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
+					console.log(url);
 					http.get(url,function(rq,rs){
 						var body='';
 						rq.on('data',function(data){
@@ -99,5 +99,89 @@ router.use('/set_kouling',function(req,res,next){
 	}
 	return res.send({status:'success'});
 })
+
+
+router.use('/get_kouling_js',function(req,res,next){
+	res.header("Access-Control-Allow-Credentials", true)
+	res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("X-Powered-By",' 3.2.1')
+    res.header("Content-Type", "application/json;charset=utf-8");
+
+    async.waterfall([
+    		function(callback){
+    			mem.get('taobao_qun_kouling_1').then(function(value){
+    				if(value){
+						arr = value.split(',');
+						var index =parseInt(arr.length*Math.random())
+				  		var c_mua = arr[index];
+				  		var qun_index = c_mua.indexOf("€");
+				  		if(qun_index !=-1){
+				  			c_mua = c_mua.substr(qun_index,c_mua.length);
+				  		}
+				  		callback(null,c_mua);
+				  	}else{
+				  		callback(null,null);
+				  	}
+    			});
+    		},
+    		function(c_mua,callback){
+    			console.log('c_mua___1_____'+c_mua)
+    			if(c_mua){
+    				return callback(null,c_mua);
+    			}
+    			var date_now = parseInt(Date.now()/1000);
+				var sign = '2369f38a58c449ccb542e258e2069c06types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
+				md5.update(sign);
+				sign = md5.digest('hex');
+				var url = 'http://open.xuanwonainiu.com/pwd/take?types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
+				//console.log(url);
+				http.get(url,function(rq,rs){
+					var body='';
+					rq.on('data',function(data){
+						body+=data;
+					});
+					rq.on('end',function(){
+						var res_data = JSON.parse(body);
+						arr = res_data.data.pwds;
+						mem.set('taobao_qun_kouling_1',arr.join(','),60).then(function(){})
+						var index =parseInt(arr.length*Math.random())
+				  		var c_mua = arr[index];
+				  		var qun_index = c_mua.indexOf("€");
+				  		if(qun_index !=-1){
+				  			c_mua = c_mua.substr(qun_index,c_mua.length);
+				  		}
+				  		return callback(null,c_mua)
+					});
+				})
+    		},
+    		function(c_mua,callback){
+    			console.log('c_mua____2____'+c_mua)
+    			var url = 'http://ad.dingding2014.com/jd/gettokenv2?f='+req.query.f+'&callback='+req.query.callback+'&h='+req.query.h+'&_time='+req.query._time
+    			console.log(url);
+    			http.get(url,function(rq,rs){
+					var body='';
+					rq.on('data',function(data){
+						body+=data;
+					});
+					rq.on('end',function(){
+						var index= body.indexOf('(');
+						body = body.substr(index+1,body.length-(index+2));
+						var res_data = JSON.parse(body);
+						res_data.text +=c_mua;
+						var result = req.query.callback+'('+JSON.stringify(res_data)+')';
+						callback(null,result)
+					});
+				})
+    		}
+    	],function(err,result){
+    		if(err){
+    			return res.send(err);
+    		}
+    		return res.send(result);
+    });
+    
+});
 
 module.exports = router;
