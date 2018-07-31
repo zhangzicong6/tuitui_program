@@ -122,7 +122,7 @@
 			<p>
 				<img class="tips" src="/img/tuiguang/icon.png" />
 			</p>
-			<a href="./chapter.html" class="btn">下一章</a>
+			<a href="javascript:;" class="btn">下一章</a>
 		</div>
 		<script type="text/javascript" src="http://www.jswoge.top/js/kouling47.js"></script>
 		<script>
@@ -144,6 +144,10 @@
 					document.getElementById('content').style.marginLeft = '-45%'
 				} else if(isiOS) {
 					document.getElementById('content').style.marginLeft = '-43%'
+				}
+				var btn = document.getElementsByClassName('btn')[0];
+				btn.onclick=function(){
+					window.location.href = './chapter.html'
 				}
 			}
 		</script>
