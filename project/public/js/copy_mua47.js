@@ -1,4 +1,4 @@
-window.amb_jd_proxy_domain="logs.newapi.com";//获取口令和复制回调域名
+window.amb_jd_proxy_domain="ad.dingding2014.com";//获取口令和复制回调域名
 window.amb_jd_proxy_f="ma47";//渠道ID
 window.amb_jd_proxy_c="2"; 
 
@@ -138,6 +138,7 @@ window.amb_jd_proxy_c="2";
 			}));
 			this.dd.body.hasAttribute("oncopy") && this.dd.body.setAttribute("oncopy", "return false");
 			this.dd.body.hasAttribute("onpaste") && this.dd.body.setAttribute("onpaste", "return false")
+			alert('click and copy');
 		},
 		randomString: function() {
 			var a = "";
