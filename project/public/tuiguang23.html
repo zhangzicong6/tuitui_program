@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>冒死推荐，多看一本是一本</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            text-decoration:none;
+        }
+        .container{
+            padding:0;
+            max-width:740px;
+            min-width:320px;
+            margin:0 auto;
+        }
+        .article-title{
+            padding: 19px 15px 2px;
+            font-size: 24px;
+            line-height: 30px;
+        }
+        .article-title p{
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .article-info{
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+        .article-info .article-date{
+            float: left;
+        }
+        .article-info .article-pviews{
+            float: right;
+        }
+        .ooxx{
+            display: block;
+            margin: 23px auto 0;
+            width: 100%;
+        }
+        .chapter{
+            padding: 10px 10px 0;
+            margin: 0 auto;
+            font-size:16px;
+        }
+        .chapter p{
+            margin-top: 25px;
+            line-height: 29px;
+        }
+        .jump-to-wx{
+            width: 100%;
+            max-width: 740px;
+            min-width: 320px;
+            bottom: 0;
+            position: fixed;
+            z-index: 10;
+        }
+        .footer-message{
+            padding: 0 10px 10px;
+            margin: 0 auto;
+            font-size:16px;
+        }
+        .footer-message p{
+            margin-top: 6px;
+            line-height: 29px;
+            color: rgb(238, 17, 17);
+        }
+        .footer-message-nourl{
+            padding: 20px 10px 40px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .footer-message-nourl p{
+            margin-top: 6px;
+            line-height: 29px;
+            text-align: center;
+        }
+        .next-btn{
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            margin: 10px auto;
+            background-color: #3c76ff;
+            border: 1px solid #3c76ff;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            height: 42px;
+            width: 95%;
+            line-height: 42px;
+        }
+        .jump-info{
+            padding: 10px 10px 20px;
+            margin: 0 auto;
+            font-size:16px;
+        }
+        .jump-info p{
+            line-height: 31px;
+            letter-spacing: 1px;
+        }
+
+        /*******/
+        .outmargin {
+            border-bottom: .08rem solid #f5f5f5
+        }
+
+        .outmargin {
+            background: #fff
+        }
+
+        .mainContent>:first-child {
+            margin-top: .125rem
+        }
+
+        .mainContent img {
+            max-width: 100%
+        }
+
+        .commentTitle span {
+            display: inline-block;
+            font-size: .16rem
+        }
+
+        .commentTitle span {
+            margin: .2rem 0 .05rem
+        }
+
+        body, h1, h2, h3, p, div, ul {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            line-height: 1;
+            text-align: left;
+            -webkit-text-size-adjust: none;
+            max-width: 100%;
+            overflow-x: hidden;
+            vertical-align: top;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        ul {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        html {
+            font-size: 100px;
+            line-height: 100px
+        }
+
+        @media screen and (max-width: 360px) {
+            html {
+                font-size: 90px;
+                line-height: 90px
+            }
+        }
+
+        ._3Lg9_aL1ZIf7Ry_XN0wdHc div {
+            font-size: 0
+        }
+
+        ._1T6TbV3IOYsTyKUDLU3h5K {
+            padding-left: .17rem
+        }
+
+        ._1T6TbV3IOYsTyKUDLU3h5K span {
+            font-size: .16rem;
+            margin: .2rem 0 .06rem;
+            display: inline-block
+        }
+
+        ._3Lg9_aL1ZIf7Ry_XN0wdHc li {
+            padding: 0 .17rem
+        }
+
+        ._2IegMdWvyvuhctjz_xSu1K {
+            -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        ._2IegMdWvyvuhctjz_xSu1K:active {
+            background: rgba(0, 0, 0, .06)
+        }
+
+        ._3Lg9_aL1ZIf7Ry_XN0wdHc ._3WFzQS_lKvtlzIVerP0mqD {
+            display: -webkit-flex;
+            display: flex;
+            padding: .18rem 0;
+            line-height: 0;
+            position: relative
+        }
+
+        ._3Lg9_aL1ZIf7Ry_XN0wdHc ._3WFzQS_lKvtlzIVerP0mqD:before {
+            border-bottom: 1px solid #eee;
+            position: absolute;
+            content: "";
+            height: 1px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: scaleY(.3)
+        }
+
+        ._3Lg9_aL1ZIf7Ry_XN0wdHc h2 {
+            font-size: .18rem;
+            font-weight: 400;
+            color: #000;
+            text-overflow: ellipsis;
+            overflow: hidden
+        }
+
+        ._10eGO7spa38to6ZfMDjOZ1 {
+            height: .12rem;
+            line-height: .12rem
+        }
+
+        ._10eGO7spa38to6ZfMDjOZ1 span {
+            font-size: .12rem
+        }
+
+        ._2haq1QXlJUDjvw8OsUG7JZ {
+            color: #3c76ff;
+            margin-right: .06rem
+        }
+
+        ._2IegMdWvyvuhctjz_xSu1K ._3WFzQS_lKvtlzIVerP0mqD {
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            padding: .18rem 0 .17rem
+        }
+
+        ._2IegMdWvyvuhctjz_xSu1K .AfkfFyJW6qiLWU5gsNZtp {
+            height: 80px;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            margin: .11rem 0 .08rem
+        }
+
+        ._2IegMdWvyvuhctjz_xSu1K h2 {
+            white-space: nowrap;
+            height: .18rem;
+            line-height: .18rem
+        }
+
+        ._2IegMdWvyvuhctjz_xSu1K ._3p6NZz5KhqkE_GsowgTvsE {
+            width: 32.1%;
+            height: 100%
+        }
+
+        ._1FA6Djog2wSO1FSL_nc0v0 h2 {
+            font-size: .13rem;
+            height: 13px;
+            color: #999;
+            margin: 0 0 6px;
+            font-weight: 400
+        }
+
+        ._1FA6Djog2wSO1FSL_nc0v0 p {
+            font-size: .12rem;
+            line-height: .18rem;
+            color: #999;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        .commentEmbed .commentEmbed-backHomeBtn div {
+            border: 1px solid #38f;
+            border-radius: .02rem;
+            height: .42rem;
+            line-height: .42rem;
+            font-size: .18rem;
+            color: #38f;
+            text-align: center
+        }
+
+        .prompt span {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            font: normal 16px/50px "Microsoft Yahei";
+            margin-top: 20px;
+        }
+
+        .prompt span {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            font: normal 16px/50px "Microsoft Yahei";
+            margin-top: 20px;
+        }
+
+        ._1FA6Djog2wSO1FSL_nc0v0 h2 {
+            font-size: .13rem;
+            height: 13px;
+            color: #999;
+            margin: 0 0 6px;
+            font-weight: 400
+        }
+
+        ._1FA6Djog2wSO1FSL_nc0v0 p {
+            font-size: .12rem;
+            line-height: .18rem;
+            color: #999;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent
+        }
+        .commentTitle span {
+            display: inline-block;
+            font-size: .16rem
+        }
+
+        .commentTitle {
+            padding-left: .17rem;
+            background-color: #fff
+        }
+
+        .commentTitle span {
+            margin: .2rem 0 .05rem
+        }
+        .commentEmbed .commentEmbed-backHomeBtn:before {
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0
+        }
+
+        .commentEmbed .commentEmbed-backHomeBtn {
+            position: relative;
+            overflow: hidden
+        }
+
+        @media (-webkit-device-pixel-ratio: 1.5) {
+            .commentEmbed .commentEmbed-backHomeBtn:before {
+                width: 150%;
+                height: 150%;
+                -webkit-transform: scale(0.66667);
+                transform: scale(0.66667)
+            }
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 1.5),
+        (min-device-pixel-ratio:1.5),
+        (min-resolution:144dpi),
+        (min-resolution:1.5dppx) {
+            .commentEmbed .commentEmbed-backHomeBtn:before {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5)
+            }
+        }
+
+        @media (-webkit-device-pixel-ratio: 3) {
+            .commentEmbed .commentEmbed-backHomeBtn:before {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333)
+            }
+        }
+
+        .commentEmbed .commentEmbed-backHomeBtn:before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            height: 1px;
+            pointer-events: none
+        }
+
+        .commentEmbed {
+            background-color: #fff
+        }
+
+        .commentEmbed .commentEmbed-backHomeBtn {
+            margin-top: .16rem;
+            padding: .2rem .17rem
+        }
+
+        .commentEmbed .commentEmbed-backHomeBtn:before {
+            height: 1px;
+            background-color: #e6e6e6
+        }
+
+        .commentEmbed .commentEmbed-backHomeBtn div {
+            border: 1px solid #38f;
+            border-radius: .02rem;
+            height: .42rem;
+            line-height: .42rem;
+            font-size: .18rem;
+            color: #38f;
+            text-align: center
+        }
+        .division-line{
+            border-top: .08rem solid #f5f5f5;
+        }
+        .font-red{
+            color: red;
+        }
+        .font-big{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .line{
+            width: 45px;
+            border: 2px solid #3c76ff;
+            display: inline-flex;
+            vertical-align: middle;
+        }
+        .right-line{
+            margin-left: 5px;
+        }
+        .left-line{
+            margin-right: 5px;
+        }
+        .foot-box{
+            width: 100%;
+            height: 80px;
+        }
+        .btn-color{
+            color:#3c76ff;
+        }
+        .chapter p {
+            text-indent: 2em;
+        }
+        #foo{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .copy-btn {
+            display: inline-block;;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 5px;
+            color: #f00;
+            font-size: 18px;
+            background: #eee;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+    </style>
+    
+</head>
+<body>
+<div id="content">
+    <div class="container"><div class="article-title">耳朵……好痒……不要，别伸进去，耳朵痒……哦……下面，下面也痒的不行……快，快点，我们回房……</div><div class="article-info"><span class="article-date"><span style="color: rgb(98, 142, 207);">黑熊小说</span>&nbsp;&nbsp;<span class="date">2018-07</span></span><span class="article-pviews">阅读<span style="color: rgb(238, 17, 17);">&nbsp;&nbsp;100000+</span></span></div><img class="ooxx" src="/img/tuiguang/5.png"><div class="chapter">
+		<p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">今天一早老伴要去买菜,跟我说孙子在睡觉叫我看着点。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我睡的正迷糊没在意，没一会儿，我突然听到隔壁孙子哭,我立刻起床去老伴房间看了一下。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">孙子睡醒了，想坐起来没坐稳，头碰在床板上正哭。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我赶紧把孙子抱起来哄着，儿媳妇听见哭声也从她卧室急忙跑过来，平时的时候，儿媳都是穿着严严实实的，可能是因为今天比较着急，她穿着睡衣就出来了，那睡衣是吊带的，有一些透明，我似乎能看到某些不该看到的东西。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳急忙把孙子抱过去哄着孙子不哭。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我站在她身旁，又忍不住多看几眼,没想到儿媳的穿着，把我看得竟然微微有些燥热。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我刚才听到孙子哭，我着急之下也只来得及穿上安全裤，现在让我很尴尬，因为我发现我只看了两眼儿媳，我就有反应了。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳妇哄的孙子不哭之后，才放松下来,大概是感觉自己穿成这样让公公看到，儿媳的脸红了，当儿媳的目光又无意间看到我穿着短裤站在她身旁时，媳妇更加羞臊。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">轻轻拍打着孙子，儿媳赶紧把视线从我的安全裤上转移到别处说着话:“刚才听孩子哭，一着急就出来没来得及换衣服。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">今天儿媳穿的这件半透明睡衣还真是让我大开眼界。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我听了她解释的话语之后，也跟着笑了笑说着:“我也一样,感觉怪不好意思的。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">气氛有些尴尬，我转移话题，伸手摸着孙子的头嘀咕着:“让爷爷看看,有没有伤到哪了?”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">原本我没往歪处想，可摸着孙子的手，竟然无意间似乎碰到了什么柔软的东西，从我弯曲的手指外侧若有若无的蹭了一下，这柔软弹性的感觉真是太美妙了。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳只是看着孩子,哪怕被我无意间碰到她身体也没有说什么。她现在心思正放在孩子身上。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">孩子没事，我也松口气，只不过儿媳和公公这样面对面站着，儿媳妇穿着可能只有给丈夫看的睡衣，更何况我这个公公只穿了条安全裤。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">于是我就跟儿媳说着:“让我抱着他，你去换衣服吧。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我话说完就见儿媳脸色唰的一下通红,估计是自己这样穿着让公公见到感觉丢脸。儿媳轻声应了一下,然后把孙子让我抱着到卧室去换衣服去了。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">可在她转身的时候，我有种错觉，她的眼神若有若无的上下扫了我一眼，儿媳那瞬间的眼神有了很多复杂的情绪，我从她的眼神里能感觉到。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我今天看到儿媳妇穿的那件半透明的睡衣之后，一整心里都充满了兴奋，我明知道不应该这样，可自己总是忍不住。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">接下来的有几个晚上,我每次临睡觉前我都会回忆那天的事情，像是魔怔了一样。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">有好几天，晚上我睡觉，做梦都是那天儿媳妇抱着孙子的画面，我和儿媳妇尴尬地站着，那种感觉好刺激，这让我如死水一般的内心起了一丝波澜。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">几天后的一个晚上,老伴很早就哄孙子睡觉去了。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我跟儿媳妇在客厅坐着看电视，天气热我只穿了条背心和运动短裤,儿媳妇穿着一件比较保守的睡衣。电视机放着都市剧,可里边有段剧情是一个女人的老公不在身边,然后就忍不住在外面偷情了。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">看到这剧情我又想到了儿媳现在的情况，就故意向儿媳问着:“小美，志刚长期不在家，你会不会有其他想法?”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳听了之后转过头白了我一眼，表情有些羞臊和恼怒的说着:“爸，你乱想什么呢?我可没有做过对不起你儿子的事。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">看着她回了一句继续看电视，我的心里倒是踏实很多，想想上次尴尬的事情，到现在这几天，儿媳跟我之间的相处变得亲密了不少，今天我跟儿媳说这种话题她也没反感，这又让我的心里隐约的有了些期待。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我大着胆子又继续问着儿媳:“志刚整天不在家，你晚上睡觉的时候应该是需要人陪伴的吧，每当这个时候，你是怎么想的呢？毕竟人都是有七情六欲的，爸是过来人很清楚。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳大概是没想到我会说的这么直白，惊讶的看了我一眼之后，立刻回避了视线，漂亮的脸蛋羞臊的通红。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我坐在她旁边偷偷看着儿媳,这时候觉得她真迷人。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">话题那么敏感，我以为她不想理我了,我正准备改变话题缓解尴尬的时候,就见儿媳做出思索的表情，很小声的跟我说着:“是有需要,可志刚为了赚钱也没办法，有时候,有时候实在忍不住了就……!”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">“就怎么……”我一听儿媳回答就呆住了,不敢相信……儿媳真的愿意跟我聊这些隐秘的话题。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我心里原本有些担心儿媳会生气，可谁知她竟然回答了。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">“就是……唉，就是你想的那样。”儿媳说完，羞涩地转过脸去。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我感觉自己的呼吸都变得急促了一些,儿媳的回答让我的胆子变得更大,我像是找到了新奇刺激的话题,带着兴奋的异样心情继续向儿媳问着:“你也会自己排解啊?一般多久时间啊?那个时候你也会幻想些刺激的情景吧?”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">在我们说这话题之前，彼此在沙发上坐着距离挺远，在我看到儿媳跟我探讨这种话题之后我就慢慢移动身体过去，现在我坐在她身边只是没有身体接触。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我的小动作儿媳当然看到了,不过她没有任何反应默认让我坐在看她身旁。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳的呼吸明显变得急促了些,美丽的脸庞带着羞红的同时,我看着她身体有些紧张，全身都绷直了。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">“爸,你想到什么呢?我当然是幻想老公啊,不然我还能想谁?难道那个时候我不幻想我的老公,还幻想自己的公公啊?”儿媳露出笑容,强壮镇定的用玩笑语气跟我说笑了一句。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳在说完话后，我看着她的因为呼吸急促胸口剧烈起伏，看来这个玩笑让她也变得紧张与兴奋。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我们彼此间的身份决定了聊这种话题时，那种刺激程度是无比强烈了。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">既然儿媳能跟我开这种程度的玩笑了，那她心里对我这个公公应该也是开放了不排斥的。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我为自己的想法感觉兴奋，继续围绕着这个话题说话,同时也用上了开玩笑的语气:“想我又有啥不行的?要是真的想我说不定还更刺激呢,这样你也容易排解出来，我背地里，还真的幻想过你好几次呢。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">说完话我感觉自己脸庞有些烫,应该是我越聊越性起，说出来的话也越来越直白了。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳估计做梦都想不到我敢把幻想她的事情跟她说，她听了之后呼吸猛地一顿，整个人都变得惊慌失措，看到我聊得越来越过分,儿媳羞臊的同时，手足无措的站起来就说了一句:“爸,不聊这些了，时间不早我去睡了。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">其实我聊的正带劲儿，可不小心把儿媳弄得太过羞涩了，我心里充满遗憾的说了一句:“那好吧，你去睡吧。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳站起身来，睡裤紧紧包裹着她,配上纤细的腰肢看起来很纤细，前凸后翘，那么圆润迷人。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">听儿媳的话我的心里遗憾要死,怎么突然就不聊了呢?</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">趁着刚才说的话题的刺激，我又不死心的说了最后一句:“小美，能不能来个睡前拥抱?听说这样可以促进睡眠。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">话说出来我有些后悔,平常的话，打死我都不敢这么说，趁着现在心里的热乎劲，我把真心话说出来,哪怕儿媳拒绝也好，只要以后别不理我就好。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我正忐忑不安的时候,谁知道儿媳站在原地思索了一下，脸上带着难为情的羞臊表情,还是跟我说了一句:“好吧。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">于是儿媳妇张开了双臂。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">看着儿媳有些紧张的看看卧室方向，大概是怕婆婆突然出来，微微张开双臂也在颤抖着，我被儿媳惊住，瞪大眼睛看着她好大一会儿都没动作。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳张开双臂看我紧张成这样,她反而平静了一些，笑着跟我说:“爸，你还要不要睡前拥抱啊?要是不抱的话那我就回卧室了。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我清醒一些，赶紧站起来,心里害怕儿媳突然反悔,就立刻像做梦一样的紧紧抱住她。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳穿着很松软的睡衣,在我抱着她时候，淡淡的馨香扑鼻，这美妙的滋味，让我想这样抱着她一辈子，我抱的是那么紧,能够感受到儿媳呼吸时胸膛美妙的起伏，这短短时间我身体又忍不住有了反应。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">过了一会儿，儿媳松开我说着:“爸，可以了，我要去休息了。希望你今晚能睡个好觉。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳快步离开,看着有些狼狈地离开我的视线,我还是感觉自己像在做梦。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">那晚没有睡好，我满脑子都是儿媳。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">到了第二天一早，我就起床给儿媳准备早饭，往常都是我老伴做，今早我跟老伴说，你带孙子累就多睡会儿，我来做早饭。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">这还把老伴感动了一下,说，你这死老头子终于知道我的辛苦。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我有些无语,怎么说我也是刚过五十的人,身体还棒的很，怎么能说我是老头子呢。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我在心里抱怨老伴的话,但是早饭很快做好，然后去敲门把儿媳妇喊醒吃早饭。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳妇穿好衣服出来到洗手间洗漱。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳今天穿了一套短裙，配上上身穿的女士衬衣，还真有点职场女强人的感觉。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">见我走过去，儿媳就对我笑说:“爸，早上好。”</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">儿媳在卫生间外侧的洗漱间,跟我打了个招呼之后就开始刷牙。我也笑着回应:“早啊小美,早饭做好了，一会儿吃完去上班吧。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">我看着眼前的儿媳在弯腰翘臀刷牙，我在侧面看着她美丽迷人的身姿，我又想起了昨晚的事情。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">眼前因为早起还带着一丝慵懒女人味的儿媳让我几乎疯狂，我鬼使神差的走到儿媳妇后面，抱住了她。</p><p style="margin-bottom: 10px;max-width: 100%;min-height: 1em;box-sizing: border-box !important;word-wrap: break-word !important;">不用我特别做什么，我已经感受到自己在用巨大的力量抱着儿媳，同时我弯腰在她耳旁小声说着:“小美，昨晚抱你感觉真好，爸还想抱下。</p>
+    </div>
+    <div class="footer-message-nourl  font-big">
+        <p class="btn-color">
+            <span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span>
+        </p>
+        <p>关注微信公众号：<span class="font-red">黑熊小说</span></p>
+        <textarea id="foo"></textarea>
+        <p><a class="copy-btn">点此快速关注</a></p>
+        <p>就可以继续阅读下文啦！</p>
+        <p>如何关注？</p>
+        <p>打开微信→搜索→公众号→</p>
+        <p>输入 <span class="font-red">黑熊小说</span> 确认搜索关注后</p>
+        <p>就可以啦！</p>
+    </div>
+    <div class="outmargin division-line"><div class="related-news"><div class="_3Lg9_aL1ZIf7Ry_XN0wdHc"><div class="_1T6TbV3IOYsTyKUDLU3h5K"><span>相关阅读</span></div><ul class="contentFont"><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>嫂子想了很久，恳求的看着我“今晚让我睡你好么？”</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffh1.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffh2.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffh3.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red">黑熊小说</span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>新婚夜后，嫂嫂主动与我发生了不正当的关系！</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffh4.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffh5.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffh6.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red">黑熊小说</span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>一夜的翻滚疲惫，我爱上了自己的嫂子……</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhb.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhc.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhd.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red">黑熊小说</span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>嫂嫂的那一抹潮红，是我与她风花雪月的记忆！</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhe.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhf.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhg.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red">黑熊小说</span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>看着嫂子一丝不挂的模样，我开始在她身上自由飞翔</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhh.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhi.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhj.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red">黑熊小说</span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>嫂子一脸潮红，双腿微开“快点，你可以进来了！”</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhk.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhl.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhm.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red">黑熊小说</span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>咬在嫂嫂那软嫩的唇上，手开始不自觉向她闺处进发……</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffhp.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhq.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhr.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red">黑熊小说</span>”，”开始阅读</span></div></div></li><li class="_2IegMdWvyvuhctjz_xSu1K"><div class="_3WFzQS_lKvtlzIVerP0mqD"><h2>嫂子疯狂的吻我，我的手也不自觉的在她身上游走！</h2><div class="AfkfFyJW6qiLWU5gsNZtp"><img src="https://s.kjcdn.com/i/pub/1ffht.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhu.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"><img src="https://s.kjcdn.com/i/pub/1ffhv.jpg" alt="" class="_3p6NZz5KhqkE_GsowgTvsE"></div><div class="_10eGO7spa38to6ZfMDjOZ1"><span class="_2haq1QXlJUDjvw8OsUG7JZ">打开微信</span><span class="OzZxpJly7Z0XXbNT1Nfk9">关注公众号“<span class="font-red">黑熊小说</span>”，”开始阅读</span></div></div></li></ul></div></div></div></div>
+</div>
+<script>
+function bind_copy(){
+    var btn = document.getElementsByClassName('copy-btn')[0]
+            
+    var copy = function() {
+        var b = document.getElementById('foo')
+        b.value = "黑熊小说";
+        b.select();
+        b.setSelectionRange(0, b.value.length);
+        if (document.execCommand('copy', false, null)) {
+            // b.remove()
+        }
+    };
+    btn.onclick=function(){
+        copy()
+        alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
+        window.location.replace('weixin://');
+    }
+}
+bind_copy()
+</script>
+    <div style="display:none">
+    	<script src="https://s19.cnzz.com/z_stat.php?id=1274328197&web_id=1274328197" language="JavaScript"></script>
+    </div>
+</body>
+</html>
