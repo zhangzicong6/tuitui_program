@@ -5,7 +5,6 @@ var AdzoneTaoModel = require('../model/AdzoneTao.js');
 var async = require('async');
 var mem = require('../util/mem.js');
 var crypto=require('crypto');
-var md5=crypto.createHash("md5");
 var http=require('http');
 
 
@@ -60,6 +59,7 @@ router.use('/get_kouling',function(req,res,next){
 				}else{
 					var date_now = parseInt(Date.now()/1000);
 					var sign = '2369f38a58c449ccb542e258e2069c06types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
+					var md5=crypto.createHash("md5");
 					md5.update(sign);
 					sign = md5.digest('hex');
 					var url = 'http://open.xuanwonainiu.com/pwd/take?types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
@@ -139,12 +139,12 @@ router.use('/get_kouling_js',function(req,res,next){
 		        });
     		},
     		function(c_mua,callback){
-    			
     			if(c_mua){
     				return callback(null,c_mua);
     			}
     			var date_now = parseInt(Date.now()/1000);
 				var sign = '2369f38a58c449ccb542e258e2069c06types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
+				var md5=crypto.createHash("md5");
 				md5.update(sign);
 				sign = md5.digest('hex');
 				var url = 'http://open.xuanwonainiu.com/pwd/take?types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
