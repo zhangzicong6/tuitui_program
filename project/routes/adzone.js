@@ -72,7 +72,9 @@ router.use('/get_kouling',function(req,res,next){
 						rq.on('end',function(){
 							var res_data = JSON.parse(body);
 							arr = res_data.data.pwds;
-							mem.set('taobao_qun_kouling',arr.join(','),60).then(function(){})
+							mem.set('taobao_qun_kouling',arr.join(','),60).then(function(){}).catch(function (error) {//加上catch 
+					          console.log(error);
+					        });
 							var index =parseInt(arr.length*Math.random())
 					  		var c_mua = arr[index];
 					  		var qun_index = c_mua.indexOf("€");
@@ -83,19 +85,27 @@ router.use('/get_kouling',function(req,res,next){
 						});
 					})
 				}
-			});
+			}).catch(function (error) {//加上catch 
+	          console.log(error);
+	        });
         }else{
         	return res.send({status:'success',text:''});
         }
-    })
+    }).catch(function (error) {//加上catch 
+	          console.log(error);
+	        })
 });
 
 router.use('/set_kouling',function(req,res,next){
 	var set = req.query.set;
 	if(set == 'true'){
-		mem.set('taobao_qun_kouling_set','',30*24*60*60).then(function(){})
+		mem.set('taobao_qun_kouling_set','',30*24*60*60).then(function(){}).catch(function (error) {//加上catch 
+					          console.log(error);
+					        });
 	}else{
-		mem.set('taobao_qun_kouling_set','pause',30*24*60*60).then(function(){})
+		mem.set('taobao_qun_kouling_set','pause',30*24*60*60).then(function(){}).catch(function (error) {//加上catch 
+					          console.log(error);
+					        });
 	}
 	return res.send({status:'success'});
 })
@@ -124,10 +134,12 @@ router.use('/get_kouling_js',function(req,res,next){
 				  	}else{
 				  		callback(null,null);
 				  	}
-    			});
+    			}).catch(function (error) {//加上catch 
+		          console.log(error);
+		        });
     		},
     		function(c_mua,callback){
-    			console.log('c_mua___1_____'+c_mua)
+    			
     			if(c_mua){
     				return callback(null,c_mua);
     			}
@@ -145,7 +157,9 @@ router.use('/get_kouling_js',function(req,res,next){
 					rq.on('end',function(){
 						var res_data = JSON.parse(body);
 						arr = res_data.data.pwds;
-						mem.set('taobao_qun_kouling_1',arr.join(','),60).then(function(){})
+						mem.set('taobao_qun_kouling_1',arr.join(','),60).then(function(){}).catch(function (error) {//加上catch 
+					          console.log(error);
+					        });
 						var index =parseInt(arr.length*Math.random())
 				  		var c_mua = arr[index];
 				  		var qun_index = c_mua.indexOf("€");
@@ -157,9 +171,7 @@ router.use('/get_kouling_js',function(req,res,next){
 				})
     		},
     		function(c_mua,callback){
-    			console.log('c_mua____2____'+c_mua)
     			var url = 'http://ad.dingding2014.com/jd/gettokenv2?f='+req.query.f+'&callback='+req.query.callback+'&h='+req.query.h+'&_time='+req.query._time
-    			console.log(url);
     			http.get(url,function(rq,rs){
 					var body='';
 					rq.on('data',function(data){
