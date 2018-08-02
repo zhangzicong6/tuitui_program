@@ -30,7 +30,7 @@ router.get('/novel/:index', function(req, res, next) {
                             statisticsUrl: data[0].statisticsUrl
                         }
 
-                        mem.set('novel_'+req.params.index,JSON.stringify(res_data),60*1000).then(function(){
+                        mem.set('novel_'+req.params.index,JSON.stringify(res_data),60).then(function(){
                              console.log('---------set novel value---------')
                         })
                         res.render('tuiguang/tuiguang',res_data);
@@ -71,7 +71,7 @@ router.get('/unjump/:index', function(req, res, next) {
                             statisticsUrl: data[0].statisticsUrl
                         }
 
-                        mem.set('unjump_'+req.params.index,JSON.stringify(res_data),60*1000).then(function(){
+                        mem.set('unjump_'+req.params.index,JSON.stringify(res_data),60).then(function(){
                              console.log('---------set unjump value---------')
                         })
                         res.render('tuiguang/unjump',res_data);
@@ -113,7 +113,7 @@ router.get('/wakeup/:index', function(req, res, next) {
                             statisticsUrl: data[0].statisticsUrl
                         }
 
-                        mem.set('wakeup_'+req.params.index,JSON.stringify(res_data),60*1000).then(function(){
+                        mem.set('wakeup_'+req.params.index,JSON.stringify(res_data),60).then(function(){
                              console.log('---------set wakeup value---------')
                         })
                         res.render('tuiguang/wakeup',res_data);
