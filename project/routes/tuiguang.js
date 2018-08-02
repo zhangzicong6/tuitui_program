@@ -20,14 +20,14 @@ router.get('/weitiao/:index', function(req, res, next) {
                 else {
                     if (data != '') {
                         var res_data={
-                            title: data[0].title,
-                            headline: data[0].headline,
-                            gonghao: data[0].gonghao,
-                            author: data[0].author,
-                            avator: data[0].avator,
-                            content: data[0].content,
+                            pageTitle: data[0].pageTitle,
+                            articleTit: data[0].articleTit,
+                            name: data[0].name,
+                            desc: data[0].desc,
+                            picurl: data[0].picurl,
+                            capter1: data[0].capter1,
                             linkUrl: data[0].linkUrl,
-                            statisticsUrl: data[0].statisticsUrl
+                            statisticsUrl1: data[0].statisticsUrl1
                         }
 
                         mem.set('weitiao_'+req.params.index,JSON.stringify(res_data),60).then(function(){
@@ -62,13 +62,13 @@ router.get('/singlepage/:index', function(req, res, next) {
                 else {
                     if (data != '') {
                         var res_data={
-                            title: data[0].title,
-                            headline: data[0].headline,
-                            gonghao: data[0].gonghao,
-                            author: data[0].author,
-                            avator: data[0].avator,
-                            content: data[0].content,
-                            statisticsUrl: data[0].statisticsUrl
+                            pageTitle: data[0].pageTitle,
+                            articleTit: data[0].articleTit,
+                            name: data[0].name,
+                            desc: data[0].desc,
+                            picurl: data[0].picurl,
+                            capter1: data[0].capter1,
+                            statisticsUrl1: data[0].statisticsUrl1
                         }
 
                         mem.set('singlepage_'+req.params.index,JSON.stringify(res_data),60).then(function(){
@@ -104,13 +104,15 @@ router.get('/multipage/:index', function(req, res, next) {
                 else {
                     if (data != '') {
                         var res_data={
-                            title: data[0].title,
-                            headline: data[0].headline,
-                            gonghao: data[0].gonghao,
-                            author: data[0].author,
-                            avator: data[0].avator,
-                            content: data[0].content,
-                            statisticsUrl: data[0].statisticsUrl
+                            pageTitle: data[0].pageTitle,
+                            articleTit: data[0].articleTit,
+                            name: data[0].name,
+                            desc: data[0].desc,
+                            picurl: data[0].picurl,
+                            capter1: data[0].capter1,
+                            capter2: data[0].capter2,
+                            statisticsUrl1: data[0].statisticsUrl1,
+                            statisticsUrl2: data[0].statisticsUrl2
                         }
 
                         mem.set('multipage_'+req.params.index,JSON.stringify(res_data),60).then(function(){
