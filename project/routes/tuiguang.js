@@ -3,14 +3,14 @@ var router = express.Router();
 var TuiGuangModel = require('../model/TuiGuang.js');
 var mem = require('../util/mem.js')
 
-router.get('/novel/:index', function(req, res, next) {
-    mem.get('novel_'+req.params.index).then(function(value){
+router.get('/weitiao/:index', function(req, res, next) {
+    mem.get('weitiao_'+req.params.index).then(function(value){
         if(value){
-            console.log('---------get tuiguang value---------')
+            console.log('---------get weitiao value---------')
             console.log(value);
             console.log('------------------')
             var res_data = JSON.parse(value);
-            res.render('tuiguang/tuiguang',res_data);
+            res.render('tuiguang/weitiao',res_data);
         }else{
             var selector = {id: req.params.index}
             TuiGuangModel.find(selector, function(err, data){
@@ -30,10 +30,10 @@ router.get('/novel/:index', function(req, res, next) {
                             statisticsUrl: data[0].statisticsUrl
                         }
 
-                        mem.set('novel_'+req.params.index,JSON.stringify(res_data),60).then(function(){
-                             console.log('---------set novel value---------')
+                        mem.set('weitiao_'+req.params.index,JSON.stringify(res_data),60).then(function(){
+                             console.log('---------set weitiao value---------')
                         })
-                        res.render('tuiguang/tuiguang',res_data);
+                        res.render('tuiguang/weitiao',res_data);
                     } else {
                         res.send('没有查询到此链接，请先创建')
                     }
@@ -45,14 +45,14 @@ router.get('/novel/:index', function(req, res, next) {
     });
 })
 
-router.get('/unjump/:index', function(req, res, next) {
-    mem.get('unjump_'+req.params.index).then(function(value){
+router.get('/singlepage/:index', function(req, res, next) {
+    mem.get('singlepage_'+req.params.index).then(function(value){
         if(value){
-            console.log('---------get unjump value---------')
+            console.log('---------get singlepage value---------')
             console.log(value);
             console.log('------------------')
             var res_data = JSON.parse(value);
-            res.render('tuiguang/unjump',res_data);
+            res.render('tuiguang/singlepage',res_data);
         }else{
             var selector = {id: req.params.index}
             TuiGuangModel.find(selector, function(err, data){
@@ -71,10 +71,10 @@ router.get('/unjump/:index', function(req, res, next) {
                             statisticsUrl: data[0].statisticsUrl
                         }
 
-                        mem.set('unjump_'+req.params.index,JSON.stringify(res_data),60).then(function(){
-                             console.log('---------set unjump value---------')
+                        mem.set('singlepage_'+req.params.index,JSON.stringify(res_data),60).then(function(){
+                             console.log('---------set singlepage value---------')
                         })
-                        res.render('tuiguang/unjump',res_data);
+                        res.render('tuiguang/singlepage',res_data);
                     } else {
                         res.send('没有查询到此链接，请先创建')
                     }
@@ -87,14 +87,14 @@ router.get('/unjump/:index', function(req, res, next) {
     
 })
 
-router.get('/wakeup/:index', function(req, res, next) {
-    mem.get('wakeup_'+req.params.index).then(function(value){
+router.get('/multipage/:index', function(req, res, next) {
+    mem.get('multipage_'+req.params.index).then(function(value){
         if(value){
-            console.log('---------get wakeup value---------')
+            console.log('---------get multipage value---------')
             console.log(value);
             console.log('------------------')
             var res_data = JSON.parse(value);
-            res.render('tuiguang/wakeup',res_data);
+            res.render('tuiguang/multipage',res_data);
         }else{
             var selector = {id: req.params.index}
             TuiGuangModel.find(selector, function(err, data){
@@ -113,10 +113,10 @@ router.get('/wakeup/:index', function(req, res, next) {
                             statisticsUrl: data[0].statisticsUrl
                         }
 
-                        mem.set('wakeup_'+req.params.index,JSON.stringify(res_data),60).then(function(){
-                             console.log('---------set wakeup value---------')
+                        mem.set('multipage_'+req.params.index,JSON.stringify(res_data),60).then(function(){
+                             console.log('---------set multipage value---------')
                         })
-                        res.render('tuiguang/wakeup',res_data);
+                        res.render('tuiguang/multipage',res_data);
                     } else {
                         res.send('没有查询到此链接，请先创建')
                     }
