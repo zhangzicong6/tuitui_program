@@ -440,6 +440,24 @@
         .chapter p {
             text-indent: 2em;
         }
+        #foo{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .copy-btn {
+            display: inline-block;;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 5px;
+            color: #f00;
+            font-size: 18px;
+            background: #eee;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -458,6 +476,8 @@
             <div class="footer-message-nourl  font-big">
             <p class="btn-color"><span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span></p>
             <p>关注微信公众号：<span class="font-red">烈熊小说</span></p>
+            <textarea id="foo"></textarea>
+        	<p><a class="copy-btn">点此快速关注</a></p>
             <p>就可以继续阅读下文啦！</p><br>
             <p>如何关注？</p>
             <p>打开微信→搜索→公众号→</p>
@@ -562,11 +582,27 @@
         </div>
     </div>
     </div>
-    <script type="text/javascript">
-        function abqa() {
-            location.href = "";
+<script>
+function bind_copy(){
+    var btn = document.getElementsByClassName('copy-btn')[0]
+            
+    var copy = function() {
+        var b = document.getElementById('foo')
+        b.value = "虎鲨小说";
+        b.select();
+        b.setSelectionRange(0, b.value.length);
+        if (document.execCommand('copy', false, null)) {
+            // b.remove()
         }
-    </script>
+    };
+    btn.onclick=function(){
+        copy()
+        alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
+        window.location.replace('weixin://');
+    }
+}
+bind_copy()
+</script>
     <div style="display:none">
             <script src="https://s22.cnzz.com/z_stat.php?id=1274290556&web_id=1274290556" language="JavaScript"></script>
     </div>
