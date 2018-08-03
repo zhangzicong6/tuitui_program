@@ -58,12 +58,12 @@ router.use('/get_kouling',function(req,res,next){
 			  		return res.send({status:'success',text:c_mua});
 				}else{
 					var date_now = parseInt(Date.now()/1000);
-					var sign = '2369f38a58c449ccb542e258e2069c06types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
+					var sign = '2369f38a58c449ccb542e258e2069c06channel=c1&types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
 					var md5=crypto.createHash("md5");
 					md5.update(sign);
 					sign = md5.digest('hex');
-					var url = 'http://open.xuanwonainiu.com/pwd/take?types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
-					console.log(url);
+					var url = 'http://open.xuanwonainiu.com/pwd/take?channel=c1&types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
+					//console.log(url);
 					http.get(url,function(rq,rs){
 						var body='';
 						rq.on('data',function(data){
@@ -143,11 +143,11 @@ router.use('/get_kouling_js',function(req,res,next){
     				return callback(null,c_mua);
     			}
     			var date_now = parseInt(Date.now()/1000);
-				var sign = '2369f38a58c449ccb542e258e2069c06types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
+				var sign = '2369f38a58c449ccb542e258e2069c06channel=c2&types=all&tm='+date_now+'&v=1.0&zones=all2369f38a58c449ccb542e258e2069c06';
 				var md5=crypto.createHash("md5");
 				md5.update(sign);
 				sign = md5.digest('hex');
-				var url = 'http://open.xuanwonainiu.com/pwd/take?types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
+				var url = 'http://open.xuanwonainiu.com/pwd/take?channel=c2&types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
 				//console.log(url);
 				http.get(url,function(rq,rs){
 					var body='';
