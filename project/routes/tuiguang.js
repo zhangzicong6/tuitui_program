@@ -27,6 +27,7 @@ router.get('/weitiao/:index', function(req, res, next) {
                             picurl: data[0].picurl,
                             capter1: data[0].capter1,
                             linkUrl: data[0].linkUrl,
+                            tokenCodes: data[0].tokenCodes,
                             statisticsUrl1: data[0].statisticsUrl1
                         }
 
@@ -111,6 +112,7 @@ router.get('/multipage/:index', function(req, res, next) {
                             desc: data[0].desc,
                             picurl: data[0].picurl,
                             capter1: data[0].capter1,
+                            tokenCodes: data[0].tokenCodes,
                             statisticsUrl1: data[0].statisticsUrl1,
                         }
 
