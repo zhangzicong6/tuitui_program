@@ -12,7 +12,7 @@ router.get('/:id', function (req, res, next) {
             res.redirect(link)
         }else {
             TransferModel.find({id: id}, function (err, data) {
-                if (data) {
+                if (data && data[0]) {
                     var link = data[0].links[Math.floor(Math.random() * data[0].links.length)]
                     mem.set('transfer_' + req.params.id, JSON.stringify(data[0]), 1*60).then(function () {
                         console.log('---------set transfer value---------')
