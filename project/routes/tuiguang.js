@@ -104,21 +104,61 @@ router.get('/multipage/:index', function(req, res, next) {
                 else {
                     if (data != '') {
                         var res_data={
+                        	id: data[0].id,
                             pageTitle: data[0].pageTitle,
                             articleTit: data[0].articleTit,
                             name: data[0].name,
                             desc: data[0].desc,
                             picurl: data[0].picurl,
                             capter1: data[0].capter1,
-                            capter2: data[0].capter2,
                             statisticsUrl1: data[0].statisticsUrl1,
-                            statisticsUrl2: data[0].statisticsUrl2
                         }
 
                         mem.set('multipage_'+req.params.index,JSON.stringify(res_data),60).then(function(){
                              console.log('---------set multipage value---------')
                         })
                         res.render('tuiguang/multipage',res_data);
+                    } else {
+                        res.send('没有查询到此链接，请先创建')
+                    }
+                }
+            })
+        }
+    }).catch(function(err){
+        console.log(err);
+    });
+    
+})
+
+router.get('/capter/:index', function(req, res, next) {
+    mem.get('capter_'+req.params.index).then(function(value){
+        if(value){
+            console.log('---------get capter value---------')
+            console.log(value);
+            console.log('------------------')
+            var res_data = JSON.parse(value);
+            res.render('tuiguang/capter',res_data);
+        }else{
+            var selector = {id: req.params.index}
+            TuiGuangModel.find(selector, function(err, data){
+                if (err) {
+                    console.log("Error:" + err);
+                }
+                else {
+                    if (data != '') {
+                        var res_data={
+                            pageTitle: data[0].pageTitle,
+                            articleTit: data[0].articleTit,
+                            name: data[0].name,
+                            desc: data[0].desc,
+                            capter2: data[0].capter2,
+                            statisticsUrl2: data[0].statisticsUrl2
+                        }
+
+                        mem.set('capter_'+req.params.index,JSON.stringify(res_data),60).then(function(){
+                             console.log('---------set capter value---------')
+                        })
+                        res.render('tuiguang/capter',res_data);
                     } else {
                         res.send('没有查询到此链接，请先创建')
                     }
