@@ -6,9 +6,9 @@ var mem = require('../util/mem.js')
 router.get('/weitiao/:index', function(req, res, next) {
     mem.get('weitiao_'+req.params.index).then(function(value){
         if(value){
-            console.log('---------get weitiao value---------')
+            /*console.log('---------get weitiao value---------')
             console.log(value);
-            console.log('------------------')
+            console.log('------------------')*/
             var res_data = JSON.parse(value);
             res.render('tuiguang/weitiao',res_data);
         }else{
@@ -32,7 +32,7 @@ router.get('/weitiao/:index', function(req, res, next) {
                         }
 
                         mem.set('weitiao_'+req.params.index,JSON.stringify(res_data),60).then(function(){
-                             console.log('---------set weitiao value---------')
+                             //console.log('---------set weitiao value---------')
                         })
                         res.render('tuiguang/weitiao',res_data);
                     } else {
@@ -49,9 +49,9 @@ router.get('/weitiao/:index', function(req, res, next) {
 router.get('/singlepage/:index', function(req, res, next) {
     mem.get('singlepage_'+req.params.index).then(function(value){
         if(value){
-            console.log('---------get singlepage value---------')
+            /*console.log('---------get singlepage value---------')
             console.log(value);
-            console.log('------------------')
+            console.log('------------------')*/
             var res_data = JSON.parse(value);
             res.render('tuiguang/singlepage',res_data);
         }else{
@@ -73,7 +73,7 @@ router.get('/singlepage/:index', function(req, res, next) {
                         }
 
                         mem.set('singlepage_'+req.params.index,JSON.stringify(res_data),60).then(function(){
-                             console.log('---------set singlepage value---------')
+                             //console.log('---------set singlepage value---------')
                         })
                         res.render('tuiguang/singlepage',res_data);
                     } else {
@@ -91,9 +91,9 @@ router.get('/singlepage/:index', function(req, res, next) {
 router.get('/multipage/:index', function(req, res, next) {
     mem.get('multipage_'+req.params.index).then(function(value){
         if(value){
-            console.log('---------get multipage value---------')
+            /*console.log('---------get multipage value---------')
             console.log(value);
-            console.log('------------------')
+            console.log('------------------')*/
             var res_data = JSON.parse(value);
             res.render('tuiguang/multipage',res_data);
         }else{
@@ -117,7 +117,7 @@ router.get('/multipage/:index', function(req, res, next) {
                         }
 
                         mem.set('multipage_'+req.params.index,JSON.stringify(res_data),60).then(function(){
-                             console.log('---------set multipage value---------')
+                             //console.log('---------set multipage value---------')
                         })
                         res.render('tuiguang/multipage',res_data);
                     } else {
@@ -135,9 +135,9 @@ router.get('/multipage/:index', function(req, res, next) {
 router.get('/capter/:index', function(req, res, next) {
     mem.get('capter_'+req.params.index).then(function(value){
         if(value){
-            console.log('---------get capter value---------')
+            /*console.log('---------get capter value---------')
             console.log(value);
-            console.log('------------------')
+            console.log('------------------')*/
             var res_data = JSON.parse(value);
             res.render('tuiguang/capter',res_data);
         }else{
@@ -158,7 +158,7 @@ router.get('/capter/:index', function(req, res, next) {
                         }
 
                         mem.set('capter_'+req.params.index,JSON.stringify(res_data),60).then(function(){
-                             console.log('---------set capter value---------')
+                             //console.log('---------set capter value---------')
                         })
                         res.render('tuiguang/capter',res_data);
                     } else {
