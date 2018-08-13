@@ -121,6 +121,7 @@ router.use('/get_kouling_js',function(req,res,next){
 
     async.waterfall([
     		function(callback){
+    			return callback(null,"");
     			mem.get('taobao_qun_kouling_1').then(function(value){
     				if(value){
 						arr = value.split(',');
@@ -139,6 +140,7 @@ router.use('/get_kouling_js',function(req,res,next){
 		        });
     		},
     		function(c_mua,callback){
+    			return callback(null,"");
     			if(c_mua){
     				return callback(null,c_mua);
     			}
