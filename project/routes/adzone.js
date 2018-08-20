@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var VideoProgramModel = require('../model/VideoProgram.js');
 var AdzoneTaoModel = require('../model/AdzoneTao.js');
+var BannerModel = require('../model/Banner.js');
 var async = require('async');
 var mem = require('../util/mem.js');
 var crypto=require('crypto');
@@ -196,6 +197,39 @@ router.use('/get_kouling_js',function(req,res,next){
     		return res.send(result);
     });
     
+});
+
+router.use('/mxs_js',function(req,res,next){
+	async.waterfall([
+			function(callback){
+    			mem.get('adzone_mxs_js').then(function(value){
+    				callback(null,value);
+    			}).catch(function (error) {//加上catch 
+		          console.log(error);
+		          callback(error,null)
+		        });
+    		},
+    		function(value,callback){
+    			if(value){
+    				callback(null,JSON.parse(value));
+    			}else{
+    				BannerModel.findById('5b76aa2ac3ed4a4798d7045d',function(err,banner){
+    					if(err){
+    						callback(err,null)
+    					}else{
+    						mem.set('adzone_mxs_js',JSON.stringify(banner),60).then(function(){}).catch(function (error) {//加上catch 
+					          console.log(error);
+					        });
+					        callback(null,banner);
+    					}
+    				})
+    			}
+    		},
+		],function(err,result){
+			if(!err){
+				res.render('action/adzone',result)
+			}
+	})
 });
 
 module.exports = router;
