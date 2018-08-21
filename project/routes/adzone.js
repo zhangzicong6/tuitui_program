@@ -174,7 +174,7 @@ router.use('/get_kouling_js',function(req,res,next){
 				})
     		},
     		function(c_mua,callback){
-    			var url = 'http://ad.dingding2014.com/jd/gettokenv2?f='+req.query.f+'&callback='+req.query.callback+'&h='+req.query.h+'&_time='+req.query._time
+    			var url = 'http://ajax.aiwen520.com./jd/getkl?qd='+req.query.f+'&callback='+req.query.callback+'&h='+req.query.h+'&_time='+req.query._time
     			http.get(url,function(rq,rs){
 					var body='';
 					rq.on('data',function(data){
