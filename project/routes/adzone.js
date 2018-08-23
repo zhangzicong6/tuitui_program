@@ -9,6 +9,7 @@ var crypto=require('crypto');
 var http=require('http');
 
 
+
 router.use('/get_video',function(req,res,next){
 	var pro = req.query.pro?req.query.pro:'test_program';
 	async.waterfall([
@@ -230,6 +231,21 @@ router.use('/mxs_js',function(req,res,next){
 				res.render('action/adzone',result)
 			}
 	})
+});
+
+router.use('/program',function(req,res,next){
+	mem.get('mingxingshuo_programs').then(function(value){
+		var games;
+		if(value){
+			games = JSON.parse(value);
+		}else{
+			games = require('../conf/game_box.json');
+			mem.set('mingxingshuo_programs',JSON.stringify(games),10).then(function(){});
+		}
+		return res.send(games);
+	});
+	
+
 });
 
 module.exports = router;
