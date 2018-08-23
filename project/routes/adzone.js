@@ -244,8 +244,9 @@ router.use('/program',function(req,res,next){
 		}
 		return res.send(games);
 	});
-	
-
+});
+router.use('/set_program',function(req,res,next){
+	mem.set('mingxingshuo_programs','',10).then(function(){});
 });
 
 module.exports = router;
