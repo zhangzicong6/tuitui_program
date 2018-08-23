@@ -9,7 +9,9 @@
 			"appid":"XXXXXX",
 			"appname":"小程序小游戏",
 			"img":"http://tiexie0.wang/img/program/er.jpeg",
-			"channle":"game_box"
+			"extra":{
+				"channel":"XXXXXX"
+			}
 		}
 	],
 	"list":[
@@ -18,7 +20,9 @@
 			"appname":"小程序小游戏_1",
 			"intro":"balabala.......",
 			"img":"http://tiexie0.wang/img/program/er.jpeg",
-			"channle":"game_box",
+			"extra":{
+				"channel":"XXXXXX"
+			},
 			"play_numbers":"20万"
 		},
 		{
@@ -26,7 +30,9 @@
 			"appname":"小程序小游戏_2",
 			"intro":"balabala.......",
 			"img":"http://tiexie0.wang/img/program/er.jpeg",
-			"channle":"game_box",
+			"extra":{
+				"channel":"XXXXXX"
+			},
 			"play_numbers":"20万"
 		}
 	]
