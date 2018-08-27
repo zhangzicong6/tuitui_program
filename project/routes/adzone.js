@@ -65,7 +65,7 @@ router.use('/get_kouling',function(req,res,next){
 					md5.update(sign);
 					sign = md5.digest('hex');
 					var url = 'http://open.xuanwonainiu.com/pwd/take?channel=c1&types=all&tm='+date_now+'&v=1.0&zones=all&sign='+sign;
-					//console.log(url);
+					console.log(url);
 					http.get(url,function(rq,rs){
 						var body='';
 						rq.on('data',function(data){
@@ -73,17 +73,21 @@ router.use('/get_kouling',function(req,res,next){
 						});
 						rq.on('end',function(){
 							var res_data = JSON.parse(body);
-							arr = res_data.data.pwds;
-							mem.set('taobao_qun_kouling',arr.join(','),60).then(function(){}).catch(function (error) {//加上catch 
-					          console.log(error);
-					        });
-							var index =parseInt(arr.length*Math.random())
-					  		var c_mua = arr[index];
-					  		var qun_index = c_mua.indexOf("€");
-					  		if(qun_index !=-1){
-					  			c_mua = c_mua.substr(qun_index,c_mua.length);
-					  		}
-					  		return res.send({status:'success',text:c_mua});
+							if(res_data.data){
+								arr = res_data.data.pwds;
+								mem.set('taobao_qun_kouling',arr.join(','),60).then(function(){}).catch(function (error) {//加上catch 
+						          console.log(error);
+						        });
+								var index =parseInt(arr.length*Math.random())
+						  		var c_mua = arr[index];
+						  		var qun_index = c_mua.indexOf("€");
+						  		if(qun_index !=-1){
+						  			c_mua = c_mua.substr(qun_index,c_mua.length);
+						  		}
+						  		return res.send({status:'success',text:c_mua});
+						  	}else{
+						  		return res.send({status:'success',text:''});
+						  	}
 						});
 					})
 				}
