@@ -9,9 +9,8 @@
 			"appid":"XXXXXX",
 			"appname":"小程序小游戏",
 			"img":"http://tiexie0.wang/img/program/er.jpeg",
-			"extra":{
-				"channel":"XXXXXX"
-			}
+			"extra":{},
+			"path":"page/login/login?channel=mxs2018518"
 		}
 	],
 	"list":[
@@ -20,20 +19,18 @@
 			"appname":"小程序小游戏_1",
 			"intro":"balabala.......",
 			"img":"http://tiexie0.wang/img/program/er.jpeg",
-			"extra":{
-				"channel":"XXXXXX"
-			},
-			"play_numbers":"20万"
+			"extra":{},
+			"play_numbers":"20万",
+			"path":"page/login/login?channel=mxs2018518"
 		},
 		{
 			"appid":"XXXXXX",
 			"appname":"小程序小游戏_2",
 			"intro":"balabala.......",
 			"img":"http://tiexie0.wang/img/program/er.jpeg",
-			"extra":{
-				"channel":"XXXXXX"
-			},
-			"play_numbers":"20万"
+			"extra":{},
+			"play_numbers":"20万",
+			"path":"page/login/login?channel=mxs2018518"
 		}
 	]
 }
