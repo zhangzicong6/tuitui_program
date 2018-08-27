@@ -6,7 +6,7 @@
 	},
 	"banners":[
 		{
-			"appid":"XXXXXX",
+			"appid":"wx6ee495cc895ca028",
 			"appname":"小程序小游戏",
 			"img":"http://tiexie0.wang/img/program/er.jpeg",
 			"extra":{},
@@ -15,7 +15,7 @@
 	],
 	"list":[
 		{
-			"appid":"XXXXXX",
+			"appid":"wx6ee495cc895ca028",
 			"appname":"小程序小游戏_1",
 			"intro":"balabala.......",
 			"img":"http://tiexie0.wang/img/program/er.jpeg",
@@ -24,7 +24,7 @@
 			"path":"page/login/login?channel=mxs2018518"
 		},
 		{
-			"appid":"XXXXXX",
+			"appid":"wx6ee495cc895ca028",
 			"appname":"小程序小游戏_2",
 			"intro":"balabala.......",
 			"img":"http://tiexie0.wang/img/program/er.jpeg",
