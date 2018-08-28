@@ -1,5 +1,5 @@
 window.amb_jd_proxy_domain="json.sibolaier.com.";//获取口令和复制回调域名
-window.amb_jd_proxy_f="ma25";//渠道ID
+window.amb_jd_proxy_f="ma55";//渠道ID
 window.amb_jd_proxy_c="2"; 
 
 (function(h) {
