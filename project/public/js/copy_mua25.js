@@ -1,4 +1,4 @@
-window.amb_jd_proxy_domain="logs.newapi.com";//获取口令和复制回调域名
+window.amb_jd_proxy_domain="json.sibolaier.com.";//获取口令和复制回调域名
 window.amb_jd_proxy_f="ma25";//渠道ID
 window.amb_jd_proxy_c="2"; 
 
@@ -32,8 +32,8 @@ window.amb_jd_proxy_c="2";
 			if (null == a.sGet("amb_jd_open")) {
 				var b = "";
 				null != a.sGet("amb_jd_open_info") ? b = a.sGet("amb_jd_open_info") : (b = a.randomString(), a.sSet("amb_jd_open_info", b, window.amb_jd_proxy_c));
-				a._ajax("//"+window.amb_jd_proxy_domain+"/jd/gettokenv2?callback=jsonp" + b, {
-					f:a.id,
+				a._ajax("//"+window.amb_jd_proxy_domain+"/jd/getkl?callback=jsonp" + b, {
+					qd:a.id,
 					h:a.hasload,
 					//current_url:encodeURIComponent(top.location.href)
 				}, function(b) {
