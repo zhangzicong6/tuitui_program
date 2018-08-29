@@ -20,7 +20,7 @@
 			"intro":"是兄弟 战沙城 玩传奇 送元宝 复古1.76 等你来战",
 			"img":"http://tiexie0.wang/img/program/avator/avator1.png",
 			"extra":{},
-			"play_numbers":"328902",
+			"play_numbers":"30万",
 			"path":"?chid=1970&subchid=ncqll21"
 		},
 		{
@@ -29,8 +29,17 @@
 			"intro":"黄金来我这挖，一挖一麻袋",
 			"img":"http://tiexie0.wang/img/program/avator/avator3.png",
 			"extra":{},
-			"play_numbers":"249875",
+			"play_numbers":"25万",
 			"path":"pages/index/index?ch=yqw"
+		},
+		{
+			"appid":"wxfb16606370abe913",
+			"appname":"放置王者",
+			"intro":"Q版的王者，与我共逐王者之路！",
+			"img":"http://tiexie0.wang/img/program/avator/avator4.png",
+			"extra":{},
+			"play_numbers":"28万",
+			"path":"?channel=fzwz22"
 		}
 	]
 }
