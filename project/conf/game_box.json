@@ -7,30 +7,30 @@
 	"banners":[
 		{
 			"appid":"wx6ee495cc895ca028",
-			"appname":"小程序小游戏",
-			"img":"http://tiexie0.wang/img/program/er.jpeg",
+			"appname":"呆呆打僵尸",
+			"img":"http://tiexie0.wang/img/program/banner/banner1.png",
 			"extra":{},
-			"path":"/page/login/login?channel=mxs2018518"
+			"path":"page/login/login?channel=mxsxcx"
 		}
 	],
 	"list":[
 		{
-			"appid":"wx6ee495cc895ca028",
-			"appname":"小程序小游戏_1",
-			"intro":"balabala.......",
-			"img":"http://tiexie0.wang/img/program/er.jpeg",
+			"appid":"wx79ade44c39cefc7f",
+			"appname":"传奇来了",
+			"intro":"是兄弟 战沙城 玩传奇 送元宝 复古1.76 等你来战",
+			"img":"http://tiexie0.wang/img/program/avator/avator2.jpg",
 			"extra":{},
 			"play_numbers":"20万",
-			"path":"/page/login/login?channel=mxs2018518"
+			"path":"?chid=1970&subchid=ncqll21"
 		},
 		{
-			"appid":"wx6ee495cc895ca028",
-			"appname":"小程序小游戏_2",
-			"intro":"balabala.......",
-			"img":"http://tiexie0.wang/img/program/er.jpeg",
+			"appid":"wxc021569276c9f0ec",
+			"appname":"挖矿小队",
+			"intro":"",
+			"img":"http://tiexie0.wang/img/program/avator/avator3.png",
 			"extra":{},
 			"play_numbers":"20万",
-			"path":"/page/login/login?channel=mxs2018518"
+			"path":"pages/index/index?ch=yqw"
 		}
 	]
 }
