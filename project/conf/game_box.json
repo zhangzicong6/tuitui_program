@@ -1,5 +1,5 @@
 {
-	"shenhe":"0.0",
+	"shenhe":"1.0",
 	"title":{
 		"shenhe":"一起玩GoGoGo",
 		"common":"一起玩GoGoGo"
@@ -20,16 +20,16 @@
 			"intro":"是兄弟 战沙城 玩传奇 送元宝 复古1.76 等你来战",
 			"img":"http://tiexie0.wang/img/program/avator/avator2.jpg",
 			"extra":{},
-			"play_numbers":"20万",
+			"play_numbers":"328902",
 			"path":"?chid=1970&subchid=ncqll21"
 		},
 		{
 			"appid":"wxc021569276c9f0ec",
 			"appname":"挖矿小队",
-			"intro":"",
+			"intro":"是兄弟 来挖矿 ",
 			"img":"http://tiexie0.wang/img/program/avator/avator3.png",
 			"extra":{},
-			"play_numbers":"20万",
+			"play_numbers":"249875",
 			"path":"pages/index/index?ch=yqw"
 		}
 	]
