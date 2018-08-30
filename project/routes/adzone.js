@@ -238,19 +238,19 @@ router.use('/mxs_js',function(req,res,next){
 });
 
 router.use('/program',function(req,res,next){
-	mem.get('mingxingshuo_programs').then(function(value){
+	mem.get('12345_conf').then(function(value){
 		var games;
 		if(value){
 			games = JSON.parse(value);
 		}else{
 			games = require('../conf/game_box.json');
-			mem.set('mingxingshuo_programs',JSON.stringify(games),10).then(function(){});
+			mem.set('12345_conf',JSON.stringify(games),10).then(function(){});
 		}
 		return res.send(games);
 	});
 });
 router.use('/set_program',function(req,res,next){
-	mem.set('mingxingshuo_programs','',10).then(function(){});
+	mem.set('12345_conf','',10).then(function(){});
 });
 
 module.exports = router;
