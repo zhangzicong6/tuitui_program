@@ -3,6 +3,7 @@ var router = express.Router();
 var MPModel = require('../model/MiniProgram.js');
 var mem = require('../util/mem.js');
 var async = require('async');
+var http=require('http');
 
 router.get('/', function (req, res, next) {
     mem.get('miniprogram').then(function (value) {
@@ -33,6 +34,23 @@ router.get('/', function (req, res, next) {
     }).catch(function (err) {
         console.log(err);
     });
+});
+
+router.get('/kouling',function(req,res,next){
+    var cb = 'jsonp'+parseInt(Math.random()*10000)
+    var url = 'http://ajax.aiwen520.com./jd/getkl?qd=47&callback='+cb
+    http.get(url,function(rq,rs){
+        var body='';
+        rq.on('data',function(data){
+            body+=data;
+        });
+        rq.on('end',function(){
+            var index= body.indexOf('(');
+            body = body.substr(index+1,body.length-(index+2));
+            var res_data = JSON.parse(body);
+            res.send(res_data)
+        });
+    })
 })
 
 

@@ -32,7 +32,7 @@ app.use('/users', users);
 app.use('/adzone',adzone);
 app.use('/tuiguang',tuiguang);
 app.use('/transfer',transfer);
-app.use('/program',mp);
+app.use('/miniprogram',mp);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
