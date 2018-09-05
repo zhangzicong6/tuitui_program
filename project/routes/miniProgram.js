@@ -14,12 +14,12 @@ router.get('/', function (req, res, next) {
             var game_set = require('../conf/game_box.json');
             async.parallel([
                     function(callback){
-                        MPModel.find({"isBanner":true,isShow:true},function(error,result){
+                        MPModel.find({"isBanner":true,isShow:true}).sort({index:-1}).exec(function(error,result){
                             callback(error,result);
                         })
                     },
                     function(callback){
-                        MPModel.find({"isBanner":false,isShow:true},function(error,result){
+                        MPModel.find({"isBanner":false,isShow:true}).sort({index:-1}).exec(function(error,result){
                             callback(error,result);
                         })
                     }
