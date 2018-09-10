@@ -37,20 +37,20 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/kouling',function(req,res,next){
-    var cb = 'jsonp'+parseInt(Math.random()*10000)
-    var url = 'http://ajax.aiwen520.com./jd/getkl?qd=47&callback='+cb
-    http.get(url,function(rq,rs){
-        var body='';
-        rq.on('data',function(data){
-            body+=data;
-        });
-        rq.on('end',function(){
-            var index= body.indexOf('(');
-            body = body.substr(index+1,body.length-(index+2));
-            var res_data = JSON.parse(body);
-            res.send(res_data)
-        });
-    })
+    // var cb = 'jsonp'+parseInt(Math.random()*10000)
+    // var url = 'http://ajax.aiwen520.com./jd/getkl?qd=47&callback='+cb
+    // http.get(url,function(rq,rs){
+    //     var body='';
+    //     rq.on('data',function(data){
+    //         body+=data;
+    //     });
+    //     rq.on('end',function(){
+    //         var index= body.indexOf('(');
+    //         body = body.substr(index+1,body.length-(index+2));
+    //         var res_data = JSON.parse(body);
+    //         res.send(res_data)
+    //     });
+    // })
 })
 
 
