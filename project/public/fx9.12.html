@@ -8,6 +8,7 @@
 			* {
 				margin: 0;
 				padding: 0;
+				font-family: "微软雅黑";
 			}
 			
 			a {
@@ -206,7 +207,7 @@
 				padding: .15rem;
 				line-height: 1.49;
 				display: block;
-				font-size: .3rem;
+				font-size: .14rem;
 				text-indent: 2em;
 				text-align: left;
 			}
@@ -223,7 +224,7 @@
 			}
 			
 			#case p {
-				font-size: .3rem;
+				font-size: .14rem;
 				line-height: .5rem;
 				color: #000;
 			}
@@ -1125,8 +1126,8 @@
 		window.onload = function() {
 			function refresh() {
 				var width = document.documentElement.clientWidth;
-				if(width < 375) {
-					document.documentElement.style.fontSize = width / 3.75 + "px";
+				if(width < 750) {
+					document.documentElement.style.fontSize = width / 7.5 + "px";
 				} else {
 					document.documentElement.style.fontSize = "100px";
 				}
