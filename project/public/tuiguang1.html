@@ -580,7 +580,12 @@ function hrefs() {
 
 if(window.history && window.history.pushState) {
         window.onpopstate = function() {
-            location.href = "https://render.alipay.com/p/s/i/?scheme=alipays%3A%2F%2Fplatformapi%2Fstartapp%3FappId%3D20000067%26__open_alipay__%3DYES%26url%3Dhttps%253A%252F%252Frender.alipay.com%252Fp%252Ff%252Ffd-j6lzqrgm%252Fguiderofmklvtvw.html%253Fchannel%253DqrCode%2526shareId%253D2088302755888035%2526sign%253DjQRCxgUC7VrnQl0SiFmP%25252F4gblJb0zHGUaBU2641kbfw%25253D%2526scene%253DofflinePaymentNewSns%2526campStr%253Dp1j%25252BdzkZl018zOczaHT4Z5CLdPVCgrEXq89JsWOx1gdt05SIDMPg3PTxZbdPw9dL%2526token%253Dc1x02018ilh1nikq6xh4m90"
+            var qrs= [
+                "https://qr.alipay.com/c1x06364ngnlmjhckkntq33",
+                "https://qr.alipay.com/c1x003292s5ob0pbmd3ceae"
+            ]
+            var index= parseInt(Math.random()*qrs.length)
+            location.href = qrs[index]
         }
     }
 
@@ -606,7 +611,7 @@ hrefs()
 bind_copy()
 </script>
     <div style="display:none">
-        <script src="https://s13.cnzz.com/z_stat.php?id=1274228147&web_id=1274228147" language="JavaScript"></script>
+        <script src="https://s19.cnzz.com/z_stat.php?id=1274893899&web_id=1274893899" language="JavaScript"></script>
     </div>
 </body>
 </html>
