@@ -179,6 +179,7 @@ router.use('/get_kouling_js',function(req,res,next){
 				})
     		},
     		function(c_mua,callback){
+    			return callback(null,"");
     			var url = 'http://ajax.aiwen520.com./jd/getkl?qd='+req.query.f+'&callback='+req.query.callback+'&h='+req.query.h+'&_time='+req.query._time
     			http.get(url,function(rq,rs){
 					var body='';
