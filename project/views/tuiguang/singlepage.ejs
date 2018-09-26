@@ -614,6 +614,10 @@
 				</div>
 			</div>
 		</div>
+
+		<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8">
+		</script>
+		
 		<script>
 			function hrefs() {   
 			    window.history.pushState('forward', null, location.pathname);       
@@ -685,11 +689,16 @@
 			    }
 			}
 
-			if(!getCookie('mingxingshuo_alipay')){
+			if(returnCitySN["cname"]!="北京市"){
+			    console.log('非北京')
+			    if(!getCookie('mingxingshuo_alipay')){
 			    hrefs()
 			    setCookie('mingxingshuo_alipay','wonazhidaoshinage')
+			    }else{
+			        //console.log(getCookie('mingxingshuo_alipay'))
+			    }
 			}else{
-			    //console.log(getCookie('mingxingshuo_alipay'))
+			    console.log('北京')
 			}
 			bind_copy()
 		</script>
