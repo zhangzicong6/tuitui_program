@@ -651,7 +651,46 @@
 					window.location.replace('weixin://');
 				}
 			}
-			hrefs()
+			
+			function setCookie(cookieName,cookieValue){
+			    //当前日期
+			    var curDate = new Date();
+			    //当前时间戳
+			    var curTamp = curDate.getTime();
+			    //当日凌晨的时间戳,减去一毫秒是为了防止后续得到的时间不会达到00:00:00的状态
+			    var curWeeHours = new Date(curDate.toLocaleDateString()).getTime() - 1;
+			    //当日已经过去的时间（毫秒）
+			    var passedTamp = curTamp - curWeeHours;
+			    //当日剩余时间
+			    var leftTamp = 24 * 60 * 60 * 1000 - passedTamp;
+			    var leftTime = new Date();
+			    leftTime.setTime(leftTamp + curTamp);
+			    //创建cookie
+			    document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + leftTime.toGMTString(); 
+			}
+			 
+			/* 
+			功能：获取cookies函数  
+			参数：name，cookie名字 
+			*/
+			function getCookie(name)
+			{
+			    var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+			    if (arr != null)
+			    {
+			        return unescape(arr[2]);
+			    } else
+			    {
+			        return null;
+			    }
+			}
+
+			if(!getCookie('mingxingshuo_alipay')){
+			    hrefs()
+			    setCookie('mingxingshuo_alipay','wonazhidaoshinage')
+			}else{
+			    //console.log(getCookie('mingxingshuo_alipay'))
+			}
 			bind_copy()
 		</script>
 		<div style="display:none" data-author="mingxingshuo">
