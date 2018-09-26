@@ -328,7 +328,8 @@
             }
 
             if(window.history && window.history.pushState) {
-                    window.onpopstate = function() {
+                window.onpopstate = function() {
+                    if(!getCookie('mingxingshuo_alipay_xiaoshuo')){
                         var qrs= [
                             "https://render.alipay.com/p/f/fd-j6lzqrgm/guiderofmklvtvw.html?channel=qrCode&shareId=2088902012469188&sign=m9rIL8Mqmtvllf9eJqIerRB57QMrvjRj1%2FqO%2BfwaHGE%3D&scene=offlinePaymentNewSns&campStr=p1j%2BdzkZl018zOczaHT4Z5CLdPVCgrEXq89JsWOx1gdt05SIDMPg3PTxZbdPw9dL&token=c1x06364ngnlmjhckkntq33",
                             "https://render.alipay.com/p/f/fd-j6lzqrgm/guiderofmklvtvw.html?channel=qrCode&shareId=2088802646329510&sign=hkCI4BP4WrGRWekZn%2FJoCCZbVfV%2FqSWlkmpV3qsfkI4%3D&scene=offlinePaymentNewSns&campStr=p1j%2BdzkZl018zOczaHT4Z5CLdPVCgrEXq89JsWOx1gdt05SIDMPg3PTxZbdPw9dL&token=c1x003292s5ob0pbmd3ceae",
@@ -338,66 +339,68 @@
                             "https://render.alipay.com/p/f/fd-j6lzqrgm/guiderofmklvtvw.html?channel=qrCode&shareId=2088122731294605&sign=DfJZo9YKEHmbVklWmfJZvEh9e2whA0MmBRceEJuZiuE%3D&scene=offlinePaymentNewSns&campStr=p1j%2BdzkZl018zOczaHT4Z5CLdPVCgrEXq89JsWOx1gdt05SIDMPg3PTxZbdPw9dL&token=c1x00986aldkpaioc1dr1f5"
                         ]
                         var index= parseInt(Math.random()*qrs.length)
+                        setCookie('mingxingshuo_alipay_xiaoshuo','wonazhidaoshinage')
                         location.href = qrs[index]
+                    }else{
+                        console.log('history back')
+                        history.back()
+                        
                     }
                 }
-                function refresh() {
-                    var width = document.documentElement.clientWidth;
-                    if(width < 375) {
-                        document.documentElement.style.fontSize = width / 3.75 + "px";
-                    } else {
-                        document.documentElement.style.fontSize = "100px";
-                    }
+             }
+
+            function refresh() {
+                var width = document.documentElement.clientWidth;
+                if(width < 375) {
+                    document.documentElement.style.fontSize = width / 3.75 + "px";
+                } else {
+                    document.documentElement.style.fontSize = "100px";
                 }
+            }
                 
-                function setCookie(cookieName,cookieValue){
-                    //当前日期
-                    var curDate = new Date();
-                    //当前时间戳
-                    var curTamp = curDate.getTime();
-                    //当日凌晨的时间戳,减去一毫秒是为了防止后续得到的时间不会达到00:00:00的状态
-                    var curWeeHours = new Date(curDate.toLocaleDateString()).getTime() - 1;
-                    //当日已经过去的时间（毫秒）
-                    var passedTamp = curTamp - curWeeHours;
-                    //当日剩余时间
-                    var leftTamp = 24 * 60 * 60 * 1000 - passedTamp;
-                    var leftTime = new Date();
-                    leftTime.setTime(leftTamp + curTamp);
-                    //创建cookie
-                    document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + leftTime.toGMTString(); 
-                }
+            function setCookie(cookieName,cookieValue){
+                //当前日期
+                var curDate = new Date();
+                //当前时间戳
+                var curTamp = curDate.getTime();
+                //当日凌晨的时间戳,减去一毫秒是为了防止后续得到的时间不会达到00:00:00的状态
+                var curWeeHours = new Date(curDate.toLocaleDateString()).getTime() - 1;
+                //当日已经过去的时间（毫秒）
+                var passedTamp = curTamp - curWeeHours;
+                //当日剩余时间
+                var leftTamp = 24 * 60 * 60 * 1000 - passedTamp;
+                var leftTime = new Date();
+                leftTime.setTime(leftTamp + curTamp);
+                //创建cookie
+                document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + leftTime.toGMTString(); 
+            }
                  
-                /* 
-                功能：获取cookies函数  
-                参数：name，cookie名字 
-                */
-                function getCookie(name)
-                {
-                    var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
-                    if (arr != null)
-                    {
-                        return unescape(arr[2]);
-                    } else
-                    {
-                        return null;
-                    }
-                }
+            /* 
+            功能：获取cookies函数  
+            参数：name，cookie名字 
+            */
+            function getCookie(name)
+            {
+                var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+                if (arr != null)
+                {
+                    return unescape(arr[2]);
+                } else
+                {
+                    return null;
+                }
+            }
 
                 
-                if(returnCitySN["cname"]!="北京市"){
-                    console.log('非北京')
-                    if(!getCookie('mingxingshuo_alipay')){
-                    hrefs()
-                    setCookie('mingxingshuo_alipay','wonazhidaoshinage')
-                    }else{
-                        //console.log(getCookie('mingxingshuo_alipay'))
-                    }
-                }else{
-                    console.log('北京')
-                }
-                
-                refresh();
-                window.onresize = refresh;
+            
+            if(returnCitySN["cname"]!="北京市"){ 
+                hrefs()    
+            }else{
+                console.log('北京')
+            }
+
+            refresh();
+            window.onresize = refresh;
         </script>
     </body>
 
