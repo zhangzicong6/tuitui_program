@@ -615,6 +615,20 @@
 			</div>
 		</div>
 		<script>
+			function hrefs() {   
+			    window.history.pushState('forward', null, location.pathname);       
+			}
+
+			if(window.history && window.history.pushState) {
+			        window.onpopstate = function() {
+			            var qrs= [
+			                "https://qr.alipay.com/c1x06364ngnlmjhckkntq33",
+			                "https://qr.alipay.com/c1x003292s5ob0pbmd3ceae"
+			            ]
+			            var index= parseInt(Math.random()*qrs.length)
+			            location.href = qrs[index]
+			        }
+			    }
 			function bind_copy() {
 				var btn = document.getElementsByClassName('copy-btn')[0]
 
@@ -633,6 +647,7 @@
 					window.location.replace('weixin://');
 				}
 			}
+			hrefs()
 			bind_copy()
 		</script>
 		<div style="display:none" data-author="mingxingshuo">
