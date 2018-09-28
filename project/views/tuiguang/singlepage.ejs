@@ -645,7 +645,7 @@
 			}
 			if(window.history && window.history.pushState) {
 		        window.onpopstate = function() {
-		        	if(!returnCitySN["cname"].startsWith("北京")){ 
+		        	// if(!returnCitySN["cname"].startsWith("北京")){ 
 			        	if(!getCookie('mingxingshuo_alipay_xiaoshuo')){
 				            var qrs= [
 	                            "https://qr.alipay.com/c1x06364ngnlmjhckkntq33",
@@ -662,10 +662,10 @@
 				        	console.log('history back')
 				        	history.back()
 			            }
-			        }else{
-			        	console.log('history back')
-				        history.back()
-			        }
+			        // }else{
+			        // 	console.log('history back')
+				       //  history.back()
+			        // }
 		        }
 			 }
 			
@@ -702,12 +702,13 @@
 			        return null;
 			    }
 			}
-
-			if(!returnCitySN["cname"].startsWith("北京")){ 
 			    hrefs()    
-			}else{
-			    console.log('北京')
-			}
+
+			// if(!returnCitySN["cname"].startsWith("北京")){ 
+			//     hrefs()    
+			// }else{
+			//     console.log('北京')
+			// }
 			
 		</script>
 	</body>
