@@ -614,6 +614,9 @@
 				</div>
 			</div>
 		</div>
+		<div style="display:none" data-author="mingxingshuo">
+			<%- statisticsUrl1 %>
+		</div>
 
 		<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8">
 		</script>
@@ -630,11 +633,11 @@
 						// b.remove()
 					}
 				};
-				btn.onclick = function() {
+				btn.addEventListener('click', function(){
 					copy()
 					alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
 					window.location.replace('weixin://');
-				}
+				});
 			}
 			bind_copy()
 			// function hrefs() {   
@@ -687,7 +690,7 @@
 			/* 
 			功能：获取cookies函数  
 			参数：name，cookie名字 
-			*/
+			
 			// function getCookie(name)
 			// {
 			//     var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
@@ -704,12 +707,9 @@
 			//     hrefs()    
 			// }else{
 			//     console.log('北京')
-			// }
+			// }*/
 			
 		</script>
-		<div style="display:none" data-author="mingxingshuo">
-			<%- statisticsUrl1 %>
-		</div>
 	</body>
 
 </html>
