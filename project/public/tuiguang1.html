@@ -671,11 +671,11 @@ function copy_manhua() {
             // b.remove()
         }
     };
-    btn1.onclick=function(){
-        copy()
-        alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
-        window.location.replace('weixin://');
-    }
+    btn1.addEventListener('click', function(){
+                    copy()
+                    alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
+                    window.location.replace('weixin://');
+                });
 }
 
 function setCookie(cookieName,cookieValue){
