@@ -661,7 +661,7 @@ function bind_copy(){
 }
 
 function copy_manhua() {
-    var btn = document.getElementById("manhua");
+    var btn1 = document.getElementById("manhua");
     var copy = function() {
         var b = document.getElementById('foo1')
         b.value = "懂点文学";
@@ -671,7 +671,7 @@ function copy_manhua() {
             // b.remove()
         }
     };
-    btn.onclick=function(){
+    btn1.onclick=function(){
         copy()
         alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
         window.location.replace('weixin://');
