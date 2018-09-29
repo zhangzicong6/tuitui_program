@@ -1,7 +1,7 @@
 function hrefs() {
-	window.history.pushState('forward', null, '/tuiguang1.html?index=1');
-	window.history.pushState('forward', null, '/tuiguang1.html?index=2');
-	window.history.pushState('forward', null, '/tuiguang1.html?index=3');
+	window.history.pushState('forward', null, location.pathname + '?index=1');
+	window.history.pushState('forward', null, location.pathname + '?index=2');
+	window.history.pushState('forward', null, location.pathname + '?index=3');
 }
 
 if(window.history && window.history.pushState) {
