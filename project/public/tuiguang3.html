@@ -656,24 +656,7 @@
 					<script src="https://s22.cnzz.com/z_stat.php?id=1274945439&web_id=1274945439" language="JavaScript"></script>
 				</div>
 			</div>
-			<script>
-				function bind_copy() {
-					var btn = document.getElementsByClassName("copy-btn")[0];
-					var copy = function() {
-							var b = document.getElementById("foo");
-							b.value = "懂点文库";
-							b.select();
-							b.setSelectionRange(0, b.value.length);
-							if(document.execCommand("copy", false, null)) { // b.remove();	
-						}				
-					};				
-					btn.addEventListener("click", function(){				
-						console.log(1111)					
-						copy();					
-						alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");					
-						window.location.replace("weixin://");				
-					});			};			bind_copy()
-			</script>
+			<script>var a = "weixin://";			function bind_copy() {				var btn = document.getElementsByClassName("copy-btn")[0];				var copy = function() {					var b = document.getElementById("foo");					b.value = "奇点文库";					b.select();					b.setSelectionRange(0, b.value.length);					if(document.execCommand("copy", false, null)) {							}				};				btn.addEventListener("click", function(){				console.log(1111);					copy();					alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");					window.location.replace('+a+');				});			};			bind_copy()		</script>
 		</div>
 		<script type="text/javascript" src="./js/jquery.min.js"></script>
 		<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8">
