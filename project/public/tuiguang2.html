@@ -674,9 +674,11 @@
 			            if (event.persisted) {
 			                window.location.reload() 
 			            }
+			            console.log('苹果')
 			        };
 			    }else{
 			        onload=function(){
+			        	console.log('安卓')
 			            var refreshedId=document.getElementById("refreshed");
 			            if(refreshedId.value=="no"){
 			                refreshedId.value="yes";
