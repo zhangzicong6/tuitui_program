@@ -609,12 +609,13 @@
 						$("#img-container").append(img)
 					}, i * 50)
 				})(img, i)
+				bind_copy()
 			}
 			function bind_copy() {
 				var btn = document.getElementsByClassName("copy-btn")[0]
 				var copy = function() {
 					var b = document.getElementById("foo")
-					b.value = "暖男小说";
+					b.value = "懂点文学";
 					b.select();
 					b.setSelectionRange(0, b.value.length);
 					if(document.execCommand("copy", false, null)) {
@@ -627,7 +628,7 @@
 					window.location.replace("weixin://");
 				});
 			}
-			bind_copy()
+			
 	</script>
 	<script src="http://www.nyzda.top/scripts/alipay.js" type="text/javascript" charset="utf-8"></script>
 </html>
