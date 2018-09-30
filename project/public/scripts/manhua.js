@@ -122,25 +122,6 @@ if(window.history && window.history.pushState) {
 	}
 }
 
-function bind_copy() {
-	var btn = document.getElementsByClassName('copy-btn')[0]
-
-	var copy = function() {
-		var b = document.getElementById('foo')
-		b.value = "暖男小说";
-		b.select();
-		b.setSelectionRange(0, b.value.length);
-		if(document.execCommand('copy', false, null)) {
-			// b.remove()
-		}
-	};
-	btn.onclick = function() {
-		copy()
-		alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
-		window.location.replace('weixin://');
-	}
-}
-
 function copy_manhua() {
 	var btn1 = document.getElementById("manhua");
 	var copy = function() {
@@ -190,5 +171,3 @@ function getCookie(name) {   
 }
 
 hrefs()
-
-bind_copy()
