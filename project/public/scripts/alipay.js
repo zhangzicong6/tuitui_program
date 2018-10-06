@@ -6,15 +6,9 @@ if(window.history && window.history.pushState) {
 		// if(!returnCitySN["cname"].startsWith("北京")){ 
 		if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
 			var qrs = [
-				"https://qr.alipay.com/c1x06364ngnlmjhckkntq33",
-				"https://qr.alipay.com/c1x003292s5ob0pbmd3ceae",
-				"https://qr.alipay.com/c1x04011nalgfalptge2wc1",
-				"https://qr.alipay.com/c1x02503i2gftzldufvba81",
-				"https://render.alipay.com/p/f/fd-j6lzqrgm/guiderofmklvtvw.html?channel=qrCode&shareId=2088402029799363&sign=vWdKNye%2B3KlYGpkBk9YqacP5wCNzIKetcNldSheRUWI%3D&scene=offlinePaymentNewSns&campStr=p1j%2BdzkZl018zOczaHT4Z5CLdPVCgrEXq89JsWOx1gdt05SIDMPg3PTxZbdPw9dL&token=c1x09226hlteb1by2u1dj3e", // 孙琪
-				"https://render.alipay.com/p/f/fd-j6lzqrgm/guiderofmklvtvw.html?channel=qrCode&shareId=2088122731294605&sign=DfJZo9YKEHmbVklWmfJZvEh9e2whA0MmBRceEJuZiuE%3D&scene=offlinePaymentNewSns&campStr=p1j%2BdzkZl018zOczaHT4Z5CLdPVCgrEXq89JsWOx1gdt05SIDMPg3PTxZbdPw9dL&token=c1x00986aldkpaioc1dr1f5", // 刘佳伟
-				"https://qr.alipay.com/c1x09866i9jqril3scgs878",
 				"https://qr.alipay.com/c1x05209ejmfgp9jr1lpz1f",
-				"https://qr.alipay.com/c1x00208zhzv2awdofwwnd8"
+				"https://qr.alipay.com/c1x05209ejmfgp9jr1lpz1f",
+				"https://qr.alipay.com/c1x09866i9jqril3scgs878"
 			]
 			var index = parseInt(Math.random() * qrs.length)
 			setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
