@@ -87,9 +87,6 @@ if(window.history && window.history.pushState) {
 			}, {
 				"url": "https:\/\/r2qn.flgwx.com\/comics\/571\/24494\/5ba34d462bc32.jpg",
 				"reading": ""
-			}, {
-				"url": "https:\/\/r2qn.flgwx.com\/comics\/571\/24494\/5ba34d462b18e.jpg",
-				"reading": ""
 			}]
 			for(var i = 0; i < imgList.length; i++) {
 				var img = '<img src=' + imgList[i].url + ' />';
