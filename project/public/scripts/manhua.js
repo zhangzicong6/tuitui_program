@@ -99,9 +99,9 @@ if(window.history && window.history.pushState) {
 			var btnHtml = '<div class="footer-message-nourl  font-big"><p class="btn-color"><span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span></p><p>关注公众号：<span class="font-red">懂点文学</span></p><textarea id="foo1"></textarea><p><a class="copy-btn" id="manhua">点此快速关注</a></p><p style="color:red !important;">关注后回复数字“111”</p><p>就可以继续阅读下文啦！</p><p>如何关注？</p><p>打开微信→搜索→公众号→</p><p>输入 <span class="font-red">懂点文学</span> 确认搜索关注后</p><p>就可以啦！</p></div></div>'
 			var t1 = setTimeout(function(){
 				$("#btn-container").append(btnHtml)
+				copy_manhua()
 			},1000);
 			clearTimeout(t1);
-			copy_manhua()
 		} else {
 			if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
 				var qrs = [
