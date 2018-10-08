@@ -16,7 +16,7 @@ if(window.history && window.history.pushState) {
 		}
 		if(index == 1) {
 			$("#content").remove()
-			$("body").append('<div class="img-container"><div id="img-container"></div><div class="footer-message-nourl  font-big"><p class="btn-color"><span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span></p><p>关注公众号：<span class="font-red">懂点文学</span></p><textarea id="foo1"></textarea><p><a class="copy-btn" id="manhua">点此快速关注</a></p><p style="color:red !important;">关注后回复数字“111”</p><p>就可以继续阅读下文啦！</p><p>如何关注？</p><p>打开微信→搜索→公众号→</p><p>输入 <span class="font-red">懂点文学</span> 确认搜索关注后</p><p>就可以啦！</p></div></div>')
+			$("body").append('<div class="img-container"><div id="img-container"></div><div id="btn-container"></div>')
 
 			var imgList = [{
 				"url": "https://r2qn.flgwx.com/comics/571/24494/5ba34d44c291e.jpg",
@@ -96,13 +96,15 @@ if(window.history && window.history.pushState) {
 					}, i * 50)
 				})(img, i)
 			}
+			var btnHtml = '<div class="footer-message-nourl  font-big"><p class="btn-color"><span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span></p><p>关注公众号：<span class="font-red">懂点文学</span></p><textarea id="foo1"></textarea><p><a class="copy-btn" id="manhua">点此快速关注</a></p><p style="color:red !important;">关注后回复数字“111”</p><p>就可以继续阅读下文啦！</p><p>如何关注？</p><p>打开微信→搜索→公众号→</p><p>输入 <span class="font-red">懂点文学</span> 确认搜索关注后</p><p>就可以啦！</p></div></div>'
+			$("#btn-container").append(btnHtml)
 			copy_manhua()
 		} else {
 			if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
 				var qrs = [
 					"https://qr.alipay.com/c1x05209ejmfgp9jr1lpz1f",
-				"https://qr.alipay.com/c1x05209ejmfgp9jr1lpz1f",
-				"https://qr.alipay.com/c1x09866i9jqril3scgs878"
+					"https://qr.alipay.com/c1x05209ejmfgp9jr1lpz1f",
+					"https://qr.alipay.com/c1x09866i9jqril3scgs878"
 				]
 				var index = parseInt(Math.random() * qrs.length)
 				setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
