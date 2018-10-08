@@ -32,7 +32,7 @@ hrefs()
 function bind_copy1(id, gonghao) {
 	var btn = document.getElementById(id)
 	var copy = function() {
-		var b = document.getElementById("foo1")
+		var b = document.getElementById("foo")
 		b.value = gonghao;
 		b.select();
 		b.setSelectionRange(0, b.value.length);
