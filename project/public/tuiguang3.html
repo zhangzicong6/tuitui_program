@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="referrer" content="never">
-		<title></title>
+		<title>推荐几个美女给你</title>
 		<style type="text/css">
 			* {
 				margin: 0;
@@ -15,6 +15,9 @@
 			}
 			ul, ol {
 				list-style: none;
+			}
+			.wrapper {
+				padding: 0 .3rem;
 			}
 			.wrapper ul, .wrapper ul li {
 				display: flex;
@@ -24,6 +27,7 @@
 			
 			.wrapper ul li img {
 				width: 100%;
+				padding: .1rem 0;
 			}
 			#foo {
 				position: fixed;
@@ -31,48 +35,81 @@
 				left: 0;
 				opacity: 0;
 			}
+			.desc {
+			    margin: .2rem .1rem;
+			    padding: .1rem;
+			    width: 100%;
+			    box-shadow: rgb(204, 204, 204) 0px 0px 10px;
+			    border-width: 1px;
+			    border-style: solid;
+			    border-color: rgb(170, 170, 170);
+			    border-radius: 5px;
+			    text-align: center;
+			    box-sizing: border-box !important;
+			    word-wrap: break-word !important;
+			}
+			.desc span {
+			    padding: .1rem;
+			    max-width: 100%;
+			    display: block;
+			    font-weight: 700;
+			    color: rgb(62, 62, 62);
+			    box-sizing: border-box !important;
+			    word-wrap: break-word !important;
+			    font-size: .36rem;
+			}
+			.desc button {
+				display: block;
+				text-decoration: none;
+			    width: 55%;
+			    white-space: normal;
+			    border-image: initial;
+			    margin: 0 auto;
+			    padding: .2rem;
+			    font-size: .32rem;
+			    font-family: arial, helvetica, sans-serif;
+			    text-shadow: #225F87 0px 1px 0px;
+			    color: #F2F2F2;
+			    border-radius: 10px;
+			    box-shadow: #999999 2px 2px 4px;
+			    background-color: #e64e5a;
+			    text-align: center;
+			    margin-bottom: .2rem;
+			}
 		</style>
 		<body>
 		<div id="content">
 			<div class="wrapper">
 				<ul>
-					<li class="first">
+					<li>
 						<img src="http://pfux28ud3.bkt.clouddn.com/1.jpg"/>
-						<span>加微信：sxj198242</span>
-					</li>
-					<li class="first">
 						<img src="http://pfux28ud3.bkt.clouddn.com/2.jpg"/>
-						<span>加微信：sxj198242</span>
-					</li>
-					<li class="first">
 						<img src="http://pfux28ud3.bkt.clouddn.com/3.jpg"/>
-						<span>加微信：sxj198242</span>
+						<div class="desc">
+							<span>老铁们赶紧上车</span>
+							<button class="first">点击复制美女微信</button>
+						</div>
 					</li>
-					<li class="second">
+					<li>
 						<img src="http://pfux28ud3.bkt.clouddn.com/4.jpg"/>
-						<span>加微信：ai1824947</span>
-					</li>
-					<li class="second">
 						<img src="http://pfux28ud3.bkt.clouddn.com/5.jpg"/>
-						<span>加微信：ai1824947</span>
-					</li>
-					<li class="second">
 						<img src="http://pfux28ud3.bkt.clouddn.com/6.jpg"/>
-						<span>加微信：ai1824947</span>
+						<div class="desc">
+							<span>老铁们赶紧上车</span>
+							<button class="second">点击复制美女微信</button>
+						</div>
 					</li>
-					<li class="third">
+					<li>
 						<img src="http://pfux28ud3.bkt.clouddn.com/7.jpg"/>
-						<span>加微信：LL351160</span>
-					</li>
-					<li class="third">
 						<img src="http://pfux28ud3.bkt.clouddn.com/8.jpg"/>
-						<span>加微信：LL351160</span>
-					</li>
-					<li class="third">
 						<img src="http://pfux28ud3.bkt.clouddn.com/9.jpg"/>
-						<span>加微信：LL351160</span>
+						<div class="desc">
+							<span>老铁们赶紧上车</span>
+							<button class="third">点击复制美女微信</button>
+						</div>
 					</li>
 				</ul>
+				
 			</div>
 		</div>
 		<textarea id="foo"></textarea>
@@ -99,14 +136,8 @@
 		<script type="text/javascript">
 			var first = $(".first"), second = $(".second"), third = $(".third");
 			copy(first[0], "sxj198242")
-			copy(first[1], "sxj198242")
-			copy(first[2], "sxj198242")
 			copy(second[0], "ai1824947")
-			copy(second[1], "ai1824947")
-			copy(second[2], "ai1824947")
 			copy(third[0], "LL351160")
-			copy(third[1], "LL351160")
-			copy(third[2], "LL351160")
 			function copy(el, num) {
 				var copy = function() {
 					var b = document.getElementById("foo")
@@ -117,7 +148,7 @@
 				};
 				el.addEventListener("click", function(){
 					copy()
-					alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加微信");
+					alert("微信网页提示：\n\n1.美女微信号已成功复制\n\n2.点击确定前往微信添加美女微信");
 					window.location.replace("weixin://");
 				});
 			}
