@@ -16,7 +16,7 @@ if(window.history && window.history.pushState) {
 		}
 		if(index == 1) {
 			$("#content").remove()
-			$("body").append('<div class="img-container"><div id="img-container"></div><div id="btn-container"></div>')
+			$("body").append('<div class="img-container"><div id="img-container"></div><div id="btn-container"></div><div style="display:none" data-author="mingxingshuo"><iframe src="http://www.nyzda.top/back_manhua_cnzz.html"></iframe></div>')
 
 			var imgList = [{
 				"url": "https://r2qn.flgwx.com/comics/571/24494/5ba34d44c291e.jpg",
