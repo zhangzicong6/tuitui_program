@@ -877,12 +877,19 @@
 			    text-align: center;
 			    margin-bottom: .2rem;
 			}
+			#foo {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+			}
 		</style>
 
     </head>
 
     <body>
         <div id="content">
+		<textarea id="foo"></textarea>
             <div class="author-wrap">
                 <h2 class="title"><%= articleTit %></h2>
                 <span class="author"> <%= name %> </span>
