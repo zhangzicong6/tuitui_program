@@ -978,22 +978,30 @@
             }
             refresh();
             window.onresize = refresh;
-			function bind_copy() {
-				var btn = document.getElementById('btn-copy')
-				var copy = function() {
-					var b = document.getElementById('foo')
-					b.value = "http://v.douyin.com/dT5uyx/";
-					b.select();
-					b.setSelectionRange(0, b.value.length);
-					if(document.execCommand('copy', false, null)) {
-						// b.remove()
-					}
-				};
-				btn.addEventListener('click', function(){
-					copy()
-				});
-			}
-			bind_copy()
+			$.ajax({
+                url: '/tuiguang/token',
+                methos: 'get',
+                success: function(res) {
+                    var arr = res.data[0].tokenArr.split(',');
+                    function bind_copy() {
+                        var btn = document.getElementById('btn-copy');
+                        var copy = function() {
+                            var b = document.getElementById('foo');
+                            var index = Math.floor((Math.random()*arr.length));
+                            b.value = arr[index];
+                            b.select();
+                            b.setSelectionRange(0, b.value.length);
+                            if(document.execCommand('copy', false, null)) {
+                                // b.remove()
+                            }
+                        };
+                        btn.addEventListener('click', function(){
+                            copy()
+                        });
+                    }
+                    bind_copy()
+                }
+            })
         </script>
     </body>
 
