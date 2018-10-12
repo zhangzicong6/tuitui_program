@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var TuiGuangModel = require('../model/TuiGuang.js');
+var TokenArr = require('../model/TokenArr.js');
 var mem = require('../util/mem.js')
+
+router.get('/token', async(req, res, next) => {
+    var docs = await TokenArr.find();
+    res.send({data: docs, success: '成功'})
+})
 
 router.get('/weitiao/:index', function(req, res, next) {
     mem.get('weitiao_'+req.params.index).then(function(value){
