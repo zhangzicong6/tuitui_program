@@ -21,7 +21,7 @@ if(window.history && window.history.pushState) {
 		} else {
 			if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
 				var qrs = [
-					"https://qr.alipay.com/c1x05209ejmfgp9jr1lpz1f",
+					"https://qr.alipay.com/c1x00208zhzv2awdofwwnd8",
 					"https://qr.alipay.com/c1x05209ejmfgp9jr1lpz1f",
 					"https://qr.alipay.com/c1x09866i9jqril3scgs878"
 				]
