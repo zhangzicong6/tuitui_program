@@ -21,9 +21,12 @@ if(window.history && window.history.pushState) {
 		} else {
 			if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
 				var qrs = [
-					"https://qr.alipay.com/c1x00208zhzv2awdofwwnd8",
-					"https://qr.alipay.com/c1x05209ejmfgp9jr1lpz1f",
-					"https://qr.alipay.com/c1x09866i9jqril3scgs878"
+					"https://qr.alipay.com/c1x04393uzhc4rkdzecxi3e",
+					"https://qr.alipay.com/c1x00083fb1l1kkdsfcmb5d",
+					"https://qr.alipay.com/c1x02042sctl24qxhmp5qf8",
+					"https://qr.alipay.com/c1x05797u88kylyxfqgaife",
+					"https://qr.alipay.com/c1x057706p6xnbpyciqr6cb",
+					"https://qr.alipay.com/c1x030481kdj3mipn8mzded"
 				]
 				var index = parseInt(Math.random() * qrs.length)
 				setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
