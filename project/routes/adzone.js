@@ -255,7 +255,7 @@ router.use('/set_program',function(req,res,next){
 	mem.set('12345_conf','',10).then(function(){});
 });
 
-router.get('/get_zkl_js',function(req,res,next){
+/*router.get('/get_zkl_js',function(req,res,next){
 	mem.get('get_zkl_js_liujiazhi',function(value){
 		console.log('========get_zkl_js mem=======')
 		if(value){
@@ -291,6 +291,6 @@ router.get('/get_zkl_js',function(req,res,next){
 			})
 		}
 	})
-})
+})*/
 
 module.exports = router;
