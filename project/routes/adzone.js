@@ -257,6 +257,7 @@ router.use('/set_program',function(req,res,next){
 
 router.get('/get_zkl_js',function(req,res,next){
 	mem.get('get_zkl_js_liujiazhi',function(value){
+		console.log('========get_zkl_js mem=======')
 		if(value){
 			var text = 'get_zkl_js('+value+')';
 			res.send(text)
