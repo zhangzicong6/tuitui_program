@@ -285,7 +285,7 @@ router.get('/get_zkl_js',function(req,res,next){
 						res.send(text)
 					}catch(e){
 						console.log(e)
-						res.send(err)
+						res.send('')
 					}
 				});
 			})
