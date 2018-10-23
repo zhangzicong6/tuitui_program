@@ -8,6 +8,7 @@ var mem = require('../util/mem.js');
 var crypto=require('crypto');
 var http=require('http');
 
+var https = require("https");
 
 
 router.use('/get_video',function(req,res,next){
@@ -253,5 +254,29 @@ router.use('/program',function(req,res,next){
 router.use('/set_program',function(req,res,next){
 	mem.set('12345_conf','',10).then(function(){});
 });
+
+router.get('/get_zkl_js',function(req,res,next){
+	var url = "https://alipay.yuchuantech.com/zkl/zkl.php?qudao=liujiazhi"
+	https.get(url,function(rq,rs){
+		var datas = [];  
+        var size = 0;  
+		rq.on('data',function(data){
+			datas.push(data);  
+            size += data.length;  
+		});
+		rq.on('end',function(){
+			var buff = Buffer.concat(datas, size);  
+            //var result = iconv.decode(buff, "utf8");
+            var result = buff.toString();
+            var data = JSON.parse(result);
+            var zkl;
+            for (var key in data) {
+            	zkl = data[key].zkl
+            }
+			var text = 'get_zkl_js('+JSON.stringify(zkl)+')';
+			res.send(text)
+		});
+	})
+})
 
 module.exports = router;
