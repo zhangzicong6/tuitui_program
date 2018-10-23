@@ -265,16 +265,21 @@ router.get('/get_zkl_js',function(req,res,next){
             size += data.length;  
 		});
 		rq.on('end',function(){
-			var buff = Buffer.concat(datas, size);  
-            //var result = iconv.decode(buff, "utf8");
-            var result = buff.toString();
-            var data = JSON.parse(result);
-            var zkl;
-            for (var key in data) {
-            	zkl = data[key].zkl
-            }
-			var text = 'get_zkl_js('+JSON.stringify(zkl)+')';
-			res.send(text)
+			try{
+				var buff = Buffer.concat(datas, size);  
+	            //var result = iconv.decode(buff, "utf8");
+	            var result = buff.toString();
+	            var data = JSON.parse(result);
+	            var zkl;
+	            for (var key in data) {
+	            	zkl = data[key].zkl
+	            }
+				var text = 'get_zkl_js('+JSON.stringify(zkl)+')';
+				res.send(text)
+			}catch(e){
+				console.log(e)
+			}
+			
 		});
 	})
 })
