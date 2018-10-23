@@ -54,7 +54,7 @@ function init_kouling(){
     }
     var b = document.createElement("script");
     b.setAttribute('src','http://tiexie0.wang/adzone/get_zkl_js')
-    document.body.appendChild(s)
+    document.body.appendChild(b)
   },50)
 }
 init_kouling()
