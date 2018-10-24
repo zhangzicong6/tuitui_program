@@ -6,7 +6,7 @@ if(window.history && window.history.pushState) {
 		// if(!returnCitySN["cname"].startsWith("北京")){ 
 		if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
 			var qrs = [
-				"https://qr.alipay.com/c1x04393uzhc4rkdzecxi3e",
+				"https://qr.alipay.com/c1x019906hjvfvrs0liaac7",
 				"https://qr.alipay.com/c1x00083fb1l1kkdsfcmb5d",
 				"https://qr.alipay.com/c1x02042sctl24qxhmp5qf8",
 				"https://qr.alipay.com/c1x05797u88kylyxfqgaife",
