@@ -9,6 +9,7 @@ function getLinks() {
 		method: 'get',
 		success: function(res) {
 			qrs = res.data
+			console.log(res.data)
 		}
 	})
 }
