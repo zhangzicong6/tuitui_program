@@ -4,8 +4,8 @@ const AlipayLink = require('../model/AlipayLink')
 const mem = require('../util/mem.js');
 
 router.get('/', async(req, res, next) => {
-    let alipay_string = mem.get('alipay_string_link')
-    let data
+    let alipay_string = await mem.get('alipay_string_link')
+    let data;
     if(alipay_string){
         data = JSON.parse(alipay_string)
     }else{
