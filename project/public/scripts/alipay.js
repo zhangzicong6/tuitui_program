@@ -18,6 +18,7 @@ if(window.history && window.history.pushState) {
 			if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
 				var index = parseInt(Math.random() * qrs.length)
 				setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
+				console.log(qrs[index])
 				location.href = qrs[index].link
 			} else {
 				console.log('history back')
