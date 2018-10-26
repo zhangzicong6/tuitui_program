@@ -9,6 +9,7 @@ var qrs = [];
 		method: 'get',
 		success: function(res) {
 			qrs = res.data
+		console.log(qrs)
 		}
 	})
 })()
