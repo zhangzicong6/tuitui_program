@@ -3,16 +3,17 @@ function hrefs() {
 }
 var qrs = [];
 
-(function() {
+$(function() {
 	$.ajax({
 		url: '/alipayLink',
 		method: 'get',
 		success: function(res) {
 			qrs = res.data
-		console.log(qrs)
+			console.log(qrs)
 		}
 	})
-})();
+})
+
 if(window.history && window.history.pushState) {
 	window.onpopstate = function() {
 		console.log(qrs)
