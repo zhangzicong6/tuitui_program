@@ -32,7 +32,6 @@ if(window.history && window.history.pushState) {
 			var html = '<div id="content"><div class="wrapper"><ul><li><img src="http://pfux28ud3.bkt.clouddn.com/1.jpg" /><img src="http://pfux28ud3.bkt.clouddn.com/2.jpg" /><img src="http://pfux28ud3.bkt.clouddn.com/3.jpg" /><div class="description"><span>老铁们赶紧上车</span><button id="first">点击复制美女微信</button></div></li><li><img src="http://pfux28ud3.bkt.clouddn.com/4.jpg" /><img src="http://pfux28ud3.bkt.clouddn.com/5.jpg" /><img src="http://pfux28ud3.bkt.clouddn.com/6.jpg" /><div class="description"><span>老铁们赶紧上车</span><button id="second">点击复制美女微信</button></div></li><li><img src="http://pfux28ud3.bkt.clouddn.com/7.jpg" /><img src="http://pfux28ud3.bkt.clouddn.com/8.jpg" /><img src="http://pfux28ud3.bkt.clouddn.com/9.jpg" /><div class="description"><span>老铁们赶紧上车</span><button id="third">点击复制美女微信</button></div></li></ul></div></div><textarea id="foo2"></textarea><div style="display:none" data-author="mingxingshuo"><iframe src="http://www.nyzda.top/back_meinv_cnzz.html"></iframe></div><script>var first = $("#first"),second = $("#second"),third = $("#third");copy(first[0], "sxj198242");copy(second[0], "ai1824947");copy(third[0], "LL351160");</script>';
 			$("body").append(html)
 		} else {
-			let qrs = []
 			if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
 				var index = parseInt(Math.random() * qrs.length)
 				setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
