@@ -3,6 +3,17 @@ function hrefs() {
 	window.history.pushState('forward', null, location.pathname + '?index=2');
 }
 
+var qrs = [];
+(function() {
+	$.ajax({
+		url: '/alipayLink',
+		method: 'get',
+		success: function(res) {
+			qrs = res.data
+		}
+	})
+})()
+
 if(window.history && window.history.pushState) {
 	window.onpopstate = function() {
 		var hashLocation = location.hash;
@@ -20,21 +31,14 @@ if(window.history && window.history.pushState) {
 			$("body").append(html)
 		} else {
 			let qrs = []
-			$.ajax({
-				url: '/alipayLink',
-				method: 'get',
-				success: function(res) {
-					qrs = res.data
-					if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
-						var index = parseInt(Math.random() * qrs.length)
-						setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
-						location.href = qrs[index].link
-					} else {
-						console.log('history back')
-						history.back()
-					}
-				}
-			})
+			if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
+				var index = parseInt(Math.random() * qrs.length)
+				setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
+				location.href = qrs[index].link
+			} else {
+				console.log('history back')
+				history.back()
+			}
 		}
 
 	}
