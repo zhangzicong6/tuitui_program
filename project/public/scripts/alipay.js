@@ -12,7 +12,7 @@ var qrs = [];
 		console.log(qrs)
 		}
 	})
-})()
+})();
 if(window.history && window.history.pushState) {
 	window.onpopstate = function() {
 		console.log(qrs)
