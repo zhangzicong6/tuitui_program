@@ -965,7 +965,7 @@
         <div style="display:none" data-author="mingxingshuo">
         	<%- statisticsUrl1 %>
         </div>
-        <script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8">
+       
         </script> 
 		<script>
             function refresh() {
@@ -978,7 +978,7 @@
             }
             refresh();
             window.onresize = refresh;
-			$.ajax({
+			/*$.ajax({
                 url: '/tuiguang/token',
                 methos: 'get',
                 success: function(res) {
@@ -1001,8 +1001,11 @@
                     }
                     bind_copy()
                 }
-            })
+            })*/
         </script>
+        
+        <script type="text/javascript" src="/js/sharezhijin.js"></script>
+
 		<script>
 		var _hmt = _hmt || [];
 		(function() {
