@@ -100,22 +100,22 @@ if(window.history && window.history.pushState) {
 			$("#btn-container").append(btnHtml)
 			copy_manhua()
 		} else {
-			if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
-				var qrs = [
-					"https://qr.alipay.com/c1x019906hjvfvrs0liaac7",
-					"https://qr.alipay.com/c1x00083fb1l1kkdsfcmb5d",
-					"https://qr.alipay.com/c1x02042sctl24qxhmp5qf8",
-					"https://qr.alipay.com/c1x05797u88kylyxfqgaife",
-					"https://qr.alipay.com/c1x057706p6xnbpyciqr6cb",
-					"https://qr.alipay.com/c1x030481kdj3mipn8mzded"
-				]
-				var index = parseInt(Math.random() * qrs.length)
-				setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
-				location.href = qrs[index]
-			} else {
-				console.log('history back')
-				history.back()
-			}
+			let qrs = []
+			$.ajax({
+				url: '/alipayLink',
+				method: 'get',
+				success: function(res) {
+					qrs = res.data
+					if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
+						var index = parseInt(Math.random() * qrs.length)
+						setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
+						location.href = qrs[index].link
+					} else {
+						console.log('history back')
+						history.back()
+					}
+				}
+			})
 		}
 
 	}
