@@ -18,7 +18,6 @@ function getLinks() {
 if(window.history && window.history.pushState) {
 	window.onpopstate = async function() {
 		// if(!returnCitySN["cname"].startsWith("北京")){ 
-			//await getLinks()
 			if(!getCookie('mingxingshuo_alipay_xiaoshuo')) {
 				var index = parseInt(Math.random() * qrs.length)
 				setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')

@@ -3,7 +3,9 @@ function hrefs() {
 	window.history.pushState('forward', null, location.pathname + '?index=2');
 }
 var qrs = [];
-(function() {
+getLinks()
+
+function getLinks() {
 	$.ajax({
 		url: '/alipayLink',
 		method: 'get',
@@ -11,7 +13,7 @@ var qrs = [];
 			qrs = res.data
 		}
 	})
-})()
+}
 
 if(window.history && window.history.pushState) {
 	window.onpopstate = function() {
