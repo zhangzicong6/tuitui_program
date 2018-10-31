@@ -29,22 +29,24 @@
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <img onclick="return false;" src="/img/WechatIMG122.png"/>
+    <div class="container">
+        <h3>二维码</h3>
+        <p>由于版权问题，请关注后继续阅读</p>
+        <div id="content"></div>
+        <h3>长按上图，识别二维码关注</h3>
     </div>
 <script>
-    window.onload = function () {
-        function refresh() {
-            var width = document.documentElement.clientWidth;
-            if (width < 375) {
-                document.documentElement.style.fontSize = width / 3.75 + "px";
-            } else {
-                document.documentElement.style.fontSize = "100px";
-            }
-        }
-        refresh();
-        window.onresize = refresh;
+      function hrefs() {
+        window.history.pushState('forward', null, location.pathname + location.search);
     }
-    </script>
+
+    if(window.history && window.history.pushState) {
+        window.onpopstate = async function() {
+            location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU2NjY0NDYxOQ==&scene=126#wechat_redirect'
+        }
+    }
+
+    hrefs()
+</script>
 </body>
 </html>
