@@ -4,7 +4,7 @@ function hrefs() {
 
 if(window.history && window.history.pushState) {
 	window.onpopstate = async function() {
-		location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU0OTkwNTIxOA==&scene=126&subscene=0#wechat_redirect'
+		location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzUyNjA2Njk5Mw==&scene=126&sessionid=1540992403#wechat_redirect'
 	}
 }
 
