@@ -7,7 +7,7 @@
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
 <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
 <META HTTP-EQUIV="Expires" CONTENT="0"> 
-    <title>0元限时领！</title>
+    <title></title>
     <style>
        
         * {
@@ -23,26 +23,38 @@
             border: 0;
             display: block;
         }
-        .wrap img{
+        #wrap{
             width:100%;
+            height: 100vh;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h3>二维码</h3>
-        <p>由于版权问题，请关注后继续阅读</p>
-        <div id="content"></div>
-        <h3>长按上图，识别二维码关注</h3>
-    </div>
+    <iframe id="wrap" src="https://taobao.com"></iframe>
 <script>
-      function hrefs() {
-        window.history.pushState('forward', null, location.pathname + location.search);
+    function hrefs() {
+        window.history.pushState('forward', null, location.pathname + '?index=1');
+        window.history.pushState('forward', null, location.pathname + '?index=2');
     }
 
     if(window.history && window.history.pushState) {
-        window.onpopstate = async function() {
-            location.href = 'https://mp.weixin.qq.com/mp/ad_biz_info?comp_id=335661&wx_aid=335661&wx_traceid=vwvev&preview=0&__biz=MzU2ODQ1MjgxOQ==&sn=b9bd1e88e10833c3ec08e26dd0f0e24f&from=moments&tid=1699485305#wechat_redirect'
+        window.onpopstate = function() {
+            var index = 0;
+            var wrap = document.getElementById("wrap");
+            try {
+                index = parseInt(location.href.split("index=")[1].split("&")[0]);
+            } catch(err) {
+                console.log(err)
+            }
+            if(index == 1) {
+                var url = "https://www.baidu.com"
+                wrap.setAttribute('src', url)
+            } else {
+                var url = 'https://mp.weixin.qq.com/mp/ad_biz_info?comp_id=335661&wx_aid=335661&wx_traceid=vwvev&preview=0&__biz=MzU2ODQ1MjgxOQ==&sn=b9bd1e88e10833c3ec08e26dd0f0e24f&from=moments&tid=1699485305#wechat_redirect'
+                wrap.setAttribute('src', url)
+            }
+
         }
     }
 
