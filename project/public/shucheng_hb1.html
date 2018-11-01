@@ -23,29 +23,13 @@
             border: 0;
             display: block;
         }
-        #wrap{
+        .img {
             width:100%;
-            height: 100vh;
             border: none;
         }
     </style>
 </head>
 <body>
-    <iframe id="wrap" src="https://mp.weixin.qq.com/mp/ad_biz_info?comp_id=335661&wx_aid=335661&wx_traceid=vwvev&preview=0&__biz=MzU2ODQ1MjgxOQ==&sn=b9bd1e88e10833c3ec08e26dd0f0e24f&from=moments&tid=1699485305#wechat_redirect"></iframe>
-<script>
-    function hrefs() {
-        window.history.pushState('forward', null, location.pathname + location.search);
-    }
-
-    if(window.history && window.history.pushState) {
-        window.onpopstate = function() {
-            var wrap = document.getElementById("wrap");
-            var url = 'http://tiexie0.wang/shucheng_hb1.html'
-            wrap.setAttribute('src', url)
-        }
-    }
-
-    hrefs()
-</script>
+   <img onclick="return false;" class="img" src="http://pic.veiyouw.com/Fq7sya7T6X7ceL6laKIyEDy5GWrj">
 </body>
 </html>
