@@ -32,7 +32,9 @@
 <body>
    <img id="pic" onclick="return false;" class="img" src="">
    <script type="text/javascript">
-    imgUrl()
+    window.onload = function() {
+        imgUrl()
+    }
     function imgUrl(argument) {
         var imgList= [
             "/img/ad/1.1.png",
