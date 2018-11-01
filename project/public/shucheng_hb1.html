@@ -30,6 +30,19 @@
     </style>
 </head>
 <body>
-   <img onclick="return false;" class="img" src="http://pic.veiyouw.com/Fq7sya7T6X7ceL6laKIyEDy5GWrj">
+   <img id="pic" onclick="return false;" class="img" src="http://pic.veiyouw.com/Fq7sya7T6X7ceL6laKIyEDy5GWrj">
+   <script type="text/javascript">
+       var imgList= [
+            "https://qr.alipay.com/c1x06364ngnlmjhckkntq33",
+            "https://qr.alipay.com/c1x003292s5ob0pbmd3ceae",
+            "https://qr.alipay.com/c1x04011nalgfalptge2wc1",
+            "https://qr.alipay.com/c1x02503i2gftzldufvba81",
+            "https://qr.alipay.com/c1x09226hlteb1by2u1dj3e",
+            "https://qr.alipay.com/c1x00986aldkpaioc1dr1f5"
+        ]
+        var index= parseInt(Math.random()*imgList.length)
+        var oImg = document.getElementById("pic")
+        oImg.setAttribute('src', imgList[index])
+   </script>
 </body>
 </html>
