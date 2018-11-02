@@ -31,24 +31,15 @@
     </style>
 </head>
 <body>
-    <!-- <iframe id="wrap" src="https://mp.weixin.qq.com/mp/ad_biz_info?comp_id=335661&wx_aid=335661&wx_traceid=ym0ix&preview=0&__biz=MzUyOTY4MjM0Ng==&sn=4d3ac309d06560503435793b482791ac&from=moments&tid=1640056832#wechat_redirect"></iframe> -->
-
-    <!-- <iframe id="wrap" src="http://tiexie0.wang/shucheng_hb1.html"></iframe> -->
-    <!--  -->
 <script>
-    
+    window.location.href = "https://mp.weixin.qq.com/mp/ad_biz_info?__biz=MzUyOTY4MjM0Ng==&sn=4d3ac309d06560503435793b482791ac&from=moments&tid=1640056832"
     function hrefs() {
-        window.history.pushState('forward', null, 'https://mp.weixin.qq.com/mp/ad_biz_info?comp_id=335661&wx_aid=335661&wx_traceid=ym0ix&preview=0&__biz=MzUyOTY4MjM0Ng==&sn=4d3ac309d06560503435793b482791ac&from=moments&tid=1640056832#wechat_redirect');
+        window.history.pushState('forward', null, location.path);
     }
 
     if(window.history && window.history.pushState) {
         window.onpopstate = function() {
             location.href = 'http://tiexie0.wang/shucheng_hb1.html'
-            // var wrap = document.getElementById("wrap");
-            // // var url = 'http://tiexie0.wang/shucheng_hb1.html'
-            // var url = 'https://mp.weixin.qq.com/mp/ad_biz_info?__biz=MzUyOTY4MjM0Ng==&sn=4d3ac309d06560503435793b482791ac&from=moments&tid=1640056832'
-            // // wrap.setAttribute('src', url)
-            // wrap.src = url
         }
     }
 
