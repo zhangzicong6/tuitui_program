@@ -39,7 +39,25 @@
 <script>
     $(function() {
         $("body").load('shucheng_hb1.html')
+        imgUrl()
     })
+    function imgUrl(argument) {
+        var imgList= [
+            "/img/ad/1.1.png",
+            "/img/ad/2.2.png",
+            "/img/ad/3.3.png",
+            "/img/ad/4.4.png",
+            "/img/ad/5.5.png",
+            "/img/ad/6.6.png",
+            "/img/ad/7.7.png",
+            "/img/ad/8.8.png",
+            "/img/ad/9.9.png",
+            "/img/ad/10.1.png",
+        ]
+        var index= parseInt(Math.random()*imgList.length)
+        var oImg = document.getElementById("pic")
+        oImg.setAttribute('src', imgList[index])
+    }
     function hrefs() {
         window.history.pushState('forward', null, location.pathname);
     }
