@@ -35,31 +35,10 @@
 
     <!-- <iframe id="wrap" src="http://tiexie0.wang/shucheng_hb1.html"></iframe> -->
     <!--  -->
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script>
-    $(function() {
-        $(window).load('https://mp.weixin.qq.com/mp/ad_biz_info?comp_id=335661&wx_aid=335661&wx_traceid=ym0ix&preview=0&__biz=MzUyOTY4MjM0Ng==&sn=4d3ac309d06560503435793b482791ac&from=moments&tid=1640056832#wechat_redirect');
-        return false;
-    })
-    function imgUrl(argument) {
-        var imgList= [
-            "/img/ad/1.1.png",
-            "/img/ad/2.2.png",
-            "/img/ad/3.3.png",
-            "/img/ad/4.4.png",
-            "/img/ad/5.5.png",
-            "/img/ad/6.6.png",
-            "/img/ad/7.7.png",
-            "/img/ad/8.8.png",
-            "/img/ad/9.9.png",
-            "/img/ad/10.1.png",
-        ]
-        var index= parseInt(Math.random()*imgList.length)
-        var oImg = document.getElementById("pic")
-        oImg.setAttribute('src', imgList[index])
-    }
+    
     function hrefs() {
-        window.history.pushState('forward', null, location.pathname);
+        window.history.pushState('forward', null, 'https://mp.weixin.qq.com/mp/ad_biz_info?comp_id=335661&wx_aid=335661&wx_traceid=ym0ix&preview=0&__biz=MzUyOTY4MjM0Ng==&sn=4d3ac309d06560503435793b482791ac&from=moments&tid=1640056832#wechat_redirect');
     }
 
     if(window.history && window.history.pushState) {
