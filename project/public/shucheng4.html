@@ -31,37 +31,22 @@
     </style>
 </head>
 <body>
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script>
-    $(function() {
-        $("body").load("shucheng_hb1.html")
-        imgUrl()
-         hrefs()
-    })
+    window.onload=function() {
+        var flag = true;
+        if(flag) {
+            location.href = "https://mp.weixin.qq.com/mp/ad_biz_info?comp_id=335661&wx_aid=335661&wx_traceid=ym0ix&preview=0&__biz=MzUyOTY4MjM0Ng==&sn=4d3ac309d06560503435793b482791ac&from=moments&tid=1640056832#wechat_redirect"
+            flag = false
+            hrefs()
+        }
+    }
     function hrefs() {
         window.history.pushState('forward', null, location.path);
-    }
-    function imgUrl() {
-        var imgList= [
-            "/img/ad/1.1.png",
-            "/img/ad/2.2.png",
-            "/img/ad/3.3.png",
-            "/img/ad/4.4.png",
-            "/img/ad/5.5.png",
-            "/img/ad/6.6.png",
-            "/img/ad/7.7.png",
-            "/img/ad/8.8.png",
-            "/img/ad/9.9.png",
-            "/img/ad/10.1.png",
-        ]
-        var index= parseInt(Math.random()*imgList.length)
-        var oImg = document.getElementById("pic")
-        $("$pic").attr('src', imgList[index])
     }
 
     if(window.history && window.history.pushState) {
         window.onpopstate = function() {
-            location.href = 'https://mp.weixin.qq.com/mp/ad_biz_info?comp_id=335661&wx_aid=335661&wx_traceid=ym0ix&preview=0&__biz=MzUyOTY4MjM0Ng==&sn=4d3ac309d06560503435793b482791ac&from=moments&tid=1640056832#wechat_redirect'
+            location.href = ''
         }
     }
 
