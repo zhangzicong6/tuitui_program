@@ -27,6 +27,7 @@
 			});
 		})();
 	</script>
+	<script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
 	<style id="htmlzoom">
 		html {
 			font-size: 100px;
@@ -73,7 +74,17 @@
 		<div id="content"></div>
 		<h3>长按上图，识别二维码关注</h3>
 	</div>
-	<script type="text/javascript" src="/js/ali_zkl.js"></script>
+	<script type="text/javascript">
+		setTimeout(function(){
+			window.addEventListener('pageshow', function(event) {
+				//window.location.reload()
+				console.log('pageshow')
+				var index = parseInt(Math.random() * qrs.length)
+				location.href = qrs[index].link
+			})
+		},500)
+	</script>
+	<script type="text/javascript" src="/scripts/alipay.js"></script>
 </body>
 
 </html>
