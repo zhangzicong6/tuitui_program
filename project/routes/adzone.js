@@ -38,7 +38,7 @@ router.use('/get_video',function(req,res,next){
 	});	
 });
 
-router.use('/get_kouling',function(req,res,next){
+/*router.use('/get_kouling',function(req,res,next){
 	res.header("Access-Control-Allow-Credentials", true)
 	res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
@@ -73,6 +73,7 @@ router.use('/get_kouling',function(req,res,next){
 							body+=data;
 						});
 						rq.on('end',function(){
+							try{
 							var res_data = JSON.parse(body);
 							if(res_data.data){
 								arr = res_data.data.pwds;
@@ -89,6 +90,9 @@ router.use('/get_kouling',function(req,res,next){
 						  	}else{
 						  		return res.send({status:'success',text:''});
 						  	}
+						  }catch(e){
+						  	return res.send({status:'error',text:''});
+						  }
 						});
 					})
 				}
@@ -102,7 +106,7 @@ router.use('/get_kouling',function(req,res,next){
 	          console.log(error);
 	        })
 });
-
+*/
 router.use('/set_kouling',function(req,res,next){
 	var set = req.query.set;
 	if(set == 'true'){
@@ -118,7 +122,7 @@ router.use('/set_kouling',function(req,res,next){
 })
 
 
-router.use('/get_kouling_js',function(req,res,next){
+/*router.use('/get_kouling_js',function(req,res,next){
 	res.header("Access-Control-Allow-Credentials", true)
 	res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
@@ -164,6 +168,7 @@ router.use('/get_kouling_js',function(req,res,next){
 						body+=data;
 					});
 					rq.on('end',function(){
+						try{
 						var res_data = JSON.parse(body);
 						arr = res_data.data.pwds;
 						mem.set('taobao_qun_kouling_1',arr.join(','),60).then(function(){}).catch(function (error) {//加上catch 
@@ -176,6 +181,9 @@ router.use('/get_kouling_js',function(req,res,next){
 				  			c_mua = c_mua.substr(qun_index,c_mua.length);
 				  		}
 				  		return callback(null,c_mua)
+				  		}catch(e){
+						  	return callback(null,'')
+						}
 					});
 				})
     		},
@@ -204,7 +212,7 @@ router.use('/get_kouling_js',function(req,res,next){
     		return res.send(result);
     });
     
-});
+});*/
 
 router.use('/mxs_js',function(req,res,next){
 	async.waterfall([
@@ -254,43 +262,5 @@ router.use('/program',function(req,res,next){
 router.use('/set_program',function(req,res,next){
 	mem.set('12345_conf','',10).then(function(){});
 });
-
-/*router.get('/get_zkl_js',function(req,res,next){
-	mem.get('get_zkl_js_liujiazhi',function(value){
-		console.log('========get_zkl_js mem=======')
-		if(value){
-			var text = 'get_zkl_js('+value+')';
-			res.send(text)
-		}else{
-			var url = "https://alipay.yuchuantech.com/zkl/zkl.php?qudao=liujiazhi"
-			https.get(url,function(rq,rs){
-				var datas = [];  
-		        var size = 0;  
-				rq.on('data',function(data){
-					datas.push(data);  
-		            size += data.length;  
-				});
-				rq.on('end',function(){
-					try{
-						var buff = Buffer.concat(datas, size);  
-			            //var result = iconv.decode(buff, "utf8");
-			            var result = buff.toString();
-			            var data = JSON.parse(result);
-			            var zkl;
-			            for (var key in data) {
-			            	zkl = data[key].zkl
-			            }
-			            mem.set('get_zkl_js_liujiazhi',JSON.stringify(zkl),29).then(function(){});
-						var text = 'get_zkl_js('+JSON.stringify(zkl)+')';
-						res.send(text)
-					}catch(e){
-						console.log(e)
-						res.send('')
-					}
-				});
-			})
-		}
-	})
-})*/
 
 module.exports = router;
