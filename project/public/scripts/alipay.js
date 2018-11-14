@@ -18,9 +18,16 @@ function getLinks() {
 if(window.history && window.history.pushState) {
 	window.onpopstate = async function() {
 		// if(!returnCitySN["cname"].startsWith("北京")){ 
-			if(!getCookie('mingxingshuo_alipay_xiaoshuo') && qrs.length != 0) {
+//			if(!getCookie('mingxingshuo_alipay_xiaoshuo') && qrs.length != 0) {
+//				var index = parseInt(Math.random() * qrs.length)
+//				setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
+//				location.href = qrs[index].link
+//			} else {
+//				console.log('history back')
+//				history.back()
+//			}
+			if(qrs.length != 0) {
 				var index = parseInt(Math.random() * qrs.length)
-				setCookie('mingxingshuo_alipay_xiaoshuo', 'wonazhidaoshinage')
 				location.href = qrs[index].link
 			} else {
 				console.log('history back')
