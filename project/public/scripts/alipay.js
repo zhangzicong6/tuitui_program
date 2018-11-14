@@ -5,6 +5,15 @@ var qrs = [];
 
 getLinks()
 
+setTimeout(function(){
+	console.log(' on pageshow  ')
+	window.addEventListener('pageshow', function(event) {
+		console.log('pageshow')
+		var index = parseInt(Math.random() * qrs.length)
+		location.href = qrs[index].link
+	})
+},500);
+
 function getLinks() {
 	$.ajax({
 		url: '/alipayLink',
