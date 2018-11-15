@@ -1,36 +1,36 @@
 function hrefs() {
-	for (var i = 0; i < qrs.length; i++) {
-		window.history.pushState('forward', null, location.pathname + location.search);
-	}
+	window.history.pushState('forward', null, location.pathname + location.search);
 }
+
 var qrs = [];
 var qr_length = 0;
 
 function init(){
 	getLinks()
 	setTimeout(function(){
-		window.removeEventListener("pageshow")
-		window.addEventListener('pageshow', function(event) {
-			console.log('pageshow')
-			var count = parseInt(localStorage.getItem('count'))
-			count = count?count:0
-			if(count<qr_length+1){
-				if(qrs.length != 0) {
-						var index = parseInt(Math.random() * qrs.length)
-						var tmp = qrs.splice(index,1)
-						localStorage.setItem('count',(count+1).toString())
-						location.href = tmp[0].link
-				} else {
-					console.log('history back')
-					localStorage.setItem('count','0')
-					history.back()
-				}
-			}else{
-				localStorage.setItem('count','0')
-				history.back()	
-			}
-		})
-	},500);
+		window.removeEventListener("pageshow",back_pageshow)
+		window.addEventListener('pageshow',back_pageshow)
+	},1000);
+}
+
+var back_pageshow = function(event) {
+	console.log('pageshow')
+	var count = parseInt(localStorage.getItem('count'))
+	if(count<qr_length+1){
+		if(qrs.length != 0) {
+				var index = parseInt(Math.random() * qrs.length)
+				var tmp = qrs.splice(index,1)
+				localStorage.setItem('count',(count+1).toString())
+				location.href = tmp[0].link
+		} else {
+			console.log('history back')
+			localStorage.setItem('count','0')
+			history.back()
+		}
+	}else{
+		localStorage.setItem('count','0')
+		history.back()	
+	}
 }
 
 $.getScript('http://pv.sohu.com/cityjson?ie=utf-8',function(){
