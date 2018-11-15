@@ -44,6 +44,7 @@ $.getScript('http://pv.sohu.com/cityjson?ie=utf-8',function(){
 
 
 function cityJson(cityData){
+	alert(cityData.pro)
 	if(cityData.pro.startsWith("北京")||cityData.pro.startsWith("广东")){
 		console.log(cityData.pro)
 	}else{
