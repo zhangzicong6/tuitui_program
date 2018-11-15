@@ -7,8 +7,6 @@ function hrefs() {
 var qrs = [];
 var qr_length = 0;
 
-localStorage.setItem('count','0')
-
 function init(){
 	getLinks()
 	setTimeout(function(){
@@ -23,12 +21,12 @@ function init(){
 						location.href = tmp[0].link
 				} else {
 					console.log('history back')
-					history.back()
 					localStorage.setItem('count','0')
+					history.back()
 				}
 			}else{
-				history.back()
 				localStorage.setItem('count','0')
+				history.back()	
 			}
 		})
 	},1000);
@@ -79,6 +77,7 @@ if(window.history && window.history.pushState) {
 //				history.back()
 //			}
 			var count = parseInt(localStorage.getItem('count'))
+			console.log('return count :'+count)
 			if(count<qr_length+1){
 				if(qrs.length != 0) {
 						var index = parseInt(Math.random() * qrs.length)
@@ -87,12 +86,12 @@ if(window.history && window.history.pushState) {
 						location.href = tmp[0].link
 				} else {
 					console.log('history back')
-					history.back()
 					localStorage.setItem('count','0')
+					history.back()
 				}
 			}else{
-				history.back()
 				localStorage.setItem('count','0')
+				history.back()	
 			}
 		
 		// }else{
