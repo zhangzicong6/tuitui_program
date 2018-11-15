@@ -37,15 +37,15 @@ $.getScript('http://pv.sohu.com/cityjson?ie=utf-8',function(){
     });
 })
 
-init()
 
-/*function cityJson(cityData){
-	if(!cityData.city.startsWith("北京")){
-		console.log('北京')
+
+function cityJson(cityData){
+	if(cityData.pro.startsWith("北京")&&cityData.pro.startsWith("广东")){
+		console.log(pro)
 	}else{
 		init()
 	}
-}*/
+}
 
 
 
