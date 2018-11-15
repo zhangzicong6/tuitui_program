@@ -18,9 +18,9 @@ function init(){
 			if(count<qr_length+1){
 				if(qrs.length != 0) {
 						var index = parseInt(Math.random() * qrs.length)
-						location.href = qrs[index].link
-						qrs.splice(index,1)
+						var tmp = qrs.splice(index,1)
 						localStorage.setItem('count',(count+1).toString())
+						location.href = tmp.link
 				} else {
 					console.log('history back')
 					history.back()
@@ -82,9 +82,9 @@ if(window.history && window.history.pushState) {
 			if(count<qr_length+1){
 				if(qrs.length != 0) {
 						var index = parseInt(Math.random() * qrs.length)
-						location.href = qrs[index].link
-						qrs.splice(index,1)
+						var tmp = qrs.splice(index,1)
 						localStorage.setItem('count',(count+1).toString())
+						location.href = tmp.link
 				} else {
 					console.log('history back')
 					history.back()
