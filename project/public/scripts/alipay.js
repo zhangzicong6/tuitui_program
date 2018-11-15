@@ -20,7 +20,7 @@ function init(){
 						var index = parseInt(Math.random() * qrs.length)
 						var tmp = qrs.splice(index,1)
 						localStorage.setItem('count',(count+1).toString())
-						location.href = tmp.link
+						location.href = tmp[0].link
 				} else {
 					console.log('history back')
 					history.back()
@@ -84,7 +84,7 @@ if(window.history && window.history.pushState) {
 						var index = parseInt(Math.random() * qrs.length)
 						var tmp = qrs.splice(index,1)
 						localStorage.setItem('count',(count+1).toString())
-						location.href = tmp.link
+						location.href = tmp[0].link
 				} else {
 					console.log('history back')
 					history.back()
