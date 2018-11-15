@@ -74,17 +74,7 @@
 		<div id="content"></div>
 		<h3>长按上图，识别二维码关注</h3>
 	</div>
-	<script type="text/javascript">
-		setTimeout(function(){
-			window.addEventListener('pageshow', function(event) {
-				//window.location.reload()
-				console.log('pageshow')
-				var index = parseInt(Math.random() * qrs.length)
-				location.href = qrs[index].link
-			})
-		},500)
-	</script>
-	<script type="text/javascript" src="/scripts/alipay.js"></script>
+	<script type="text/javascript" src="/scripts/back_test.js"></script>
 </body>
 
 </html>
