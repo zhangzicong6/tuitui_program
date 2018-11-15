@@ -6,7 +6,6 @@ var fanhui =0;
 function init(){
 	getLinks()
 	setTimeout(function(){
-		console.log(' on pageshow  ')
 		window.addEventListener('pageshow', function(event) {
 			console.log('pageshow')
 			if(qrs.length != 0) {
@@ -18,7 +17,7 @@ function init(){
 				history.back()
 			}
 		})
-	},500);
+	},1000);
 }
 
 $.getScript('http://pv.sohu.com/cityjson?ie=utf-8',function(){
