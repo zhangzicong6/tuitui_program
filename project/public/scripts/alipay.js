@@ -1,6 +1,9 @@
 function hrefs() {
-	window.history.pushState('forward', null, location.pathname + location.search);
+	for (var i = 0; i < qrs.length; i++) {
+		window.history.pushState('forward', null, location.pathname + location.search);
+	}
 }
+
 var qrs = [];
 var qr_length = 0;
 
@@ -58,6 +61,7 @@ function getLinks() {
 		success: function(res) {
 			qrs = res.data
 			qr_length = qrs.length
+			hrefs()
 		}
 	})
 }
@@ -126,7 +130,7 @@ function getCookie(name) {   
 		return null;   
 	}
 }
-hrefs()
+
 
 // if(!returnCitySN["cname"].startsWith("北京")){ 
 //     hrefs()    
