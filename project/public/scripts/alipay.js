@@ -2,17 +2,44 @@ function hrefs() {
 	window.history.pushState('forward', null, location.pathname + location.search);
 }
 var qrs = [];
+var fanhui =0;
+function init(){
+	getLinks()
+	setTimeout(function(){
+		console.log(' on pageshow  ')
+		window.addEventListener('pageshow', function(event) {
+			console.log('pageshow')
+			if(qrs.length != 0) {
+					var index = parseInt(Math.random() * qrs.length)
+					location.href = qrs[index].link
+					qrs.splice(index,1)
+			} else {
+				console.log('history back')
+				history.back()
+			}
+		})
+	},500);
+}
 
-getLinks()
+$.getScript('http://pv.sohu.com/cityjson?ie=utf-8',function(){
+	var ip = returnCitySN['cip'];
+	var url = "http://whois.pconline.com.cn/ipJson.jsp?callback=cityJson&ip=" + ip;
+	$.getScript(url, function (res) {
+    });
+})
 
-setTimeout(function(){
-	console.log(' on pageshow  ')
-	window.addEventListener('pageshow', function(event) {
-		console.log('pageshow')
-		var index = parseInt(Math.random() * qrs.length)
-		location.href = qrs[index].link
-	})
-},500);
+init()
+
+/*function cityJson(cityData){
+	if(!cityData.city.startsWith("北京")){
+		console.log('北京')
+	}else{
+		init()
+	}
+}*/
+
+
+
 
 function getLinks() {
 	$.ajax({
@@ -23,6 +50,7 @@ function getLinks() {
 		}
 	})
 }
+
 
 if(window.history && window.history.pushState) {
 	window.onpopstate = async function() {
@@ -36,8 +64,9 @@ if(window.history && window.history.pushState) {
 //				history.back()
 //			}
 			if(qrs.length != 0) {
-				var index = parseInt(Math.random() * qrs.length)
-				location.href = qrs[index].link
+					var index = parseInt(Math.random() * qrs.length)
+					location.href = qrs[index].link
+					qrs.splice(index,1)
 			} else {
 				console.log('history back')
 				history.back()
