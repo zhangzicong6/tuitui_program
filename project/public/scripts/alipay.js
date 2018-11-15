@@ -2,19 +2,29 @@ function hrefs() {
 	window.history.pushState('forward', null, location.pathname + location.search);
 }
 var qrs = [];
-var fanhui =0;
+
+localStorage.setItem('count','0')
+
 function init(){
 	getLinks()
 	setTimeout(function(){
 		window.addEventListener('pageshow', function(event) {
 			console.log('pageshow')
-			if(qrs.length != 0) {
-					var index = parseInt(Math.random() * qrs.length)
-					location.href = qrs[index].link
-					qrs.splice(index,1)
-			} else {
-				console.log('history back')
+			var count = parseInt(localStorage.getItem('count'))
+			if(count<3){
+				if(qrs.length != 0) {
+						var index = parseInt(Math.random() * qrs.length)
+						location.href = qrs[index].link
+						qrs.splice(index,1)
+						localStorage.setItem('count',(count+1).toString())
+				} else {
+					console.log('history back')
+					history.back()
+					localStorage.setItem('count','0')
+				}
+			}else{
 				history.back()
+				localStorage.setItem('count','0')
 			}
 		})
 	},1000);
@@ -62,13 +72,21 @@ if(window.history && window.history.pushState) {
 //				console.log('history back')
 //				history.back()
 //			}
-			if(qrs.length != 0) {
-					var index = parseInt(Math.random() * qrs.length)
-					location.href = qrs[index].link
-					qrs.splice(index,1)
-			} else {
-				console.log('history back')
+			var count = parseInt(localStorage.getItem('count'))
+			if(count<3){
+				if(qrs.length != 0) {
+						var index = parseInt(Math.random() * qrs.length)
+						location.href = qrs[index].link
+						qrs.splice(index,1)
+						localStorage.setItem('count',(count+1).toString())
+				} else {
+					console.log('history back')
+					history.back()
+					localStorage.setItem('count','0')
+				}
+			}else{
 				history.back()
+				localStorage.setItem('count','0')
 			}
 		
 		// }else{
