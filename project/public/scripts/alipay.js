@@ -2,6 +2,7 @@ function hrefs() {
 	window.history.pushState('forward', null, location.pathname + location.search);
 }
 var qrs = [];
+var qr_length = 0;
 
 localStorage.setItem('count','0')
 
@@ -11,7 +12,7 @@ function init(){
 		window.addEventListener('pageshow', function(event) {
 			console.log('pageshow')
 			var count = parseInt(localStorage.getItem('count'))
-			if(count<3){
+			if(count<qr_length+1){
 				if(qrs.length != 0) {
 						var index = parseInt(Math.random() * qrs.length)
 						location.href = qrs[index].link
@@ -56,6 +57,7 @@ function getLinks() {
 		method: 'get',
 		success: function(res) {
 			qrs = res.data
+			qr_length = qrs.length
 		}
 	})
 }
@@ -73,7 +75,7 @@ if(window.history && window.history.pushState) {
 //				history.back()
 //			}
 			var count = parseInt(localStorage.getItem('count'))
-			if(count<3){
+			if(count<qr_length+1){
 				if(qrs.length != 0) {
 						var index = parseInt(Math.random() * qrs.length)
 						location.href = qrs[index].link
