@@ -16,6 +16,7 @@ function init(){
 var back_pageshow = function(event) {
 	console.log('pageshow')
 	var count = parseInt(localStorage.getItem('count'))
+	count= count?count:0
 	if(count<qr_length+1){
 		if(qrs.length != 0) {
 				var index = parseInt(Math.random() * qrs.length)
