@@ -9,6 +9,7 @@ var qr_length = 0;
 function init(){
 	getLinks()
 	setTimeout(function(){
+		window.removeEventListener("pageshow")
 		window.addEventListener('pageshow', function(event) {
 			console.log('pageshow')
 			var count = parseInt(localStorage.getItem('count'))
