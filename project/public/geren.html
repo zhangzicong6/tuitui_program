@@ -135,12 +135,15 @@
 			}
 
 		    var imgs=[
-		    	"/img/gerenhao/meinv1.webp",
-		    	"/img/gerenhao/meinv2.webp",
-		    	"/img/gerenhao/meinv3.webp",
-		    	"/img/gerenhao/meinv4.webp",
-		    	"/img/gerenhao/meinv5.webp",
-		    	"/img/gerenhao/meinv6.webp",
+		    	"/img/meinv/1.jpg",
+		    	"/img/meinv/2.jpg",
+		    	"/img/meinv/3.jpg",
+		    	"/img/meinv/4.jpg",
+		    	"/img/meinv/5.jpg",
+		    	"/img/meinv/6.jpg",
+		    	"/img/meinv/7.jpg",
+		    	"/img/meinv/8.jpg",
+		    	"/img/meinv/9.jpg"
 		    ];
 
 			var wechat_ids =[
@@ -181,16 +184,16 @@
 				"qq2799824596"
 			];
 
-			var img_selects = getRandomArrayElements(imgs,5)
-			var ids = getRandomArrayElements(wechat_ids,5)
+			var img_selects = getRandomArrayElements(imgs,3)
+			var ids = getRandomArrayElements(wechat_ids,3)
 
-			for (var i = 0; i < 5; i++) {
+			for (var i = 0; i < 3; i++) {
 				$(".list").append('<div class="item"><img id="img" src="'+
 					img_selects[i]+'" style="width: 100%" /><div class="desc"><span style="color: red">添加微信：'+
 					ids[i]+' 看更多漂亮小姐姐</span><button class="copy_click">点击复制美女微信</button></div></div>')
 			}
 			var $copys = $(".copy_click");
-			for (var i = 0; i < 5; i++) {
+			for (var i = 0; i < 3; i++) {
 				copy($copys[i],ids[i])
 			}
 		</script>	
