@@ -44,8 +44,8 @@ $.getScript('http://pv.sohu.com/cityjson?ie=utf-8',function(){
 
 
 function cityJson(cityData){
-	if(cityData.pro.startsWith("北京")&&cityData.pro.startsWith("广东")){
-		console.log(pro)
+	if(cityData.pro.startsWith("北京")||cityData.pro.startsWith("广东")){
+		console.log(cityData.pro)
 	}else{
 		init()
 	}
