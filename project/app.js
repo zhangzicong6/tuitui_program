@@ -12,6 +12,7 @@ var tuiguang = require('./routes/tuiguang');
 var transfer = require('./routes/transfer');
 var mp = require('./routes/miniProgram');
 var alipayLink = require('./routes/alipayLink');
+var novelTransfer = require('./routes/novelTransfer');
 
 
 var app = express();
@@ -36,6 +37,7 @@ app.use('/tuiguang',tuiguang);
 app.use('/transfer',transfer);
 app.use('/miniprogram',mp);
 app.use('/alipayLink',alipayLink);
+app.use('/novel_transfer',novelTransfer);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
