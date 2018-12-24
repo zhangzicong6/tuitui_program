@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>精品阅读</title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+				-webkit-tap-highlight-color: transparent;
+				-webkit-touch-callout: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-size: medium;
+				font-family: "PingFang SC", "Oxygen", Arial, "STHeiti", "Hiragino Sans GB ", "Microsoft YaHei", "微软雅黑", "WenQuanYi Micro Hei", SimSun, sans-serif;
+				font-weight: normal;
+				text-rendering: optimizeLegibility;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			input,
+			textarea {
+				outline: none;
+				padding-left: 15px;
+			}
+			
+			img {
+				display: block;
+				border: 0;
+			}
+			
+			ul,
+			ol {
+				list-style: none;
+			}
+			
+			.fl {
+				float: left;
+				display: inline-block;
+			}
+			
+			.fr {
+				float: right;
+				display: inline-block;
+			}
+			
+			.clearfix:after {
+				height: 0;
+				content: " ";
+				display: block;
+				visibility: hidden;
+				font-size: 0;
+				clear: both;
+			}
+			
+			.content-list li {
+				margin: 0 .8rem;
+				padding: 1rem 0 .8rem;
+				border-bottom: 1px solid #EFEFEF;
+				cursor: pointer;
+			}
+			
+			.content-link {}
+			
+			.content-img {
+				width: 32%
+			}
+			
+			.content-img img {
+				background: no-repeat 100% 100%;
+				background-size: cover;
+				width: 100%;
+				height: 70px;
+				cursor: pointer;
+				display: block;
+			}
+			
+			.content-inner {
+				color: #555555;
+				padding: .2rem .5rem 0 0;
+				width: 67%
+			}
+			
+			.content-inner .content-title {
+				font-size: 1.1rem;
+				font-weight: 600;
+				width: 100%;
+				color: #333;
+				line-height: 1.4rem;
+				height: 42px;
+				margin: -.2rem 0 .5rem 0;
+			}
+			
+			.content-subtitle {
+				color: #A6A6A6;
+				font-size: .6rem;
+				margin: .4rem 0 0 .1rem
+			}
+			
+			.content-subtitle span {
+				margin: 0.3rem .6rem 0 0;
+				font-size: .6rem;
+			}
+			
+			.content-subtitle span.hot {
+				border: 1px solid #fe7d39;
+				color: #fe7d39;
+				border-radius: 2px;
+				margin-left: -3px;
+				padding: 0 2px;
+			}
+			
+			.content-subtitle span em {
+				font-style: normal;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<ul class="content-list" id="content-list">
+				<li></li>
+				<li class="clearfix content-link" content_href="./novel.html">
+					<div class="content-img fr">
+						<img src="https://wx2.sinaimg.cn/mw690/005zUkPPly1fy1te5nvi4j30eu0aen37.jpg" alt="" />
+					</div>
+					<div class="content-inner fl">
+						<div class="content-title">撞见隔壁小媳妇自慰，她哀求我用手帮她……</div>
+						<div class="content-subtitle">
+							<span>79439阅读</span>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix content-link" content_href="./novel.html">
+					<div class="content-img fr">
+						<img src="https://wx2.sinaimg.cn/mw690/005zUkPPly1fy1te5nvi4j30eu0aen37.jpg" alt="" />
+					</div>
+					<div class="content-inner fl">
+						<div class="content-title">撞见隔壁小媳妇自慰，她哀求我用手帮她……</div>
+						<div class="content-subtitle">
+							<span>79439阅读</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<!--浮窗-->
+			<div id="xfAdv" style="position: fixed;z-index: 1000;top: 65%;left: 79%;width: 70px;">
+				<a href="#">
+					<img id="img1" width="100%" src="">
+				</a>
+			</div>
+			<!--浮窗-->
+		</div>
+	</body>
+	<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		})
+	</script>
+	<script type="text/javascript">
+		$(function() {
+			$('#content-list').on('click', 'li.content-link', function() {
+				window.location.href = $(this).attr('content_href');
+			})
+			var img1Array = new Array();
+			/*浮窗*/
+			img1Array[0] = 'https://hdggcdn.bayimob.com/buoyelement/25_20180403164349_136.gif';
+			img1Array[1] = 'https://hdggcdn.bayimob.com/buoyelement/14_20180403164235_346.gif';
+			img1Array[2] = 'https://hdggcdn.bayimob.com/buoyelement/11_20180403164210_462.gif';
+			img1Array[3] = 'https://hdggcdn.bayimob.com/buoyelement/26_20180403164355_401.gif';
+			var img1Random = Math.floor((Math.random() * img1Array.length));
+			$('#img1').attr('src', img1Array[img1Random]);
+		})
+	</script>
+</html>
