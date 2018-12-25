@@ -21,9 +21,9 @@ router.get('/back/novel/:id',async(req,res,next) => {
 	let skip = parseInt(Math.random()*(length-1))
 	let recommends = await RecommendNovelModel.find({id: id},{id:1}).skip(skip).limit(1)
 	if(recommends.length){
-		res.redirect('/recommend/novel/'+recommends[0]._id)
+    res.send({id: recommends[0]._id})
 	}else{
-		res.redirect('/recommend/list/'+id)
+    res.send({id: id})
 	}
 });
 

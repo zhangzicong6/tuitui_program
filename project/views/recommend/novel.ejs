@@ -333,7 +333,7 @@
             url: '/recommend/back/novel/' + data[0].id,
             async: true,
             success: (res) => {
-              console.log(res)
+              location.href = domain + '/recommend/novel/' + res.id
             },
             error: (err) => {
               console.log(err)
