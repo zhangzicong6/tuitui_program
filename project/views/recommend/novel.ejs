@@ -317,7 +317,7 @@
             `;
             $("#xiangtop").append(cont)
           })
-          hrefs(data)
+          hrefs(data, domain)
 				},
 				error: function(err) {
 					console.log(err)
@@ -326,7 +326,7 @@
 			$('#content-list').on('click', 'li.content-link', function() {
 				window.location.href = $(this).attr('content_href');
       })
-      function hrefs(arr) {
+      function hrefs(arr, domain) {
         window.history.pushState('forward', null, null);
         if(window.history && window.history.pushState) {
           window.onpopstate = async function() {
