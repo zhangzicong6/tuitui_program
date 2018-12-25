@@ -177,8 +177,27 @@
 			});
 			$('#content-list').on('click', 'li.content-link', function() {
 				window.location.href = $(this).attr('content_href');
-			})
-		})
+      })
+      function hrefs() {
+        window.history.pushState('forward', null, location.pathname + location.search);
+      }
+      hrefs()
+      if(window.history && window.history.pushState) {
+        window.onpopstate = async function() {
+          $.ajax({
+            type: 'get',
+            url: '/recommend/back/novel/' + data[0].id,
+            async: true,
+            success: (res) => {
+              console.log(res)
+            },
+            error: (err) => {
+              console.log(err)
+            }
+          })
+        }
+      }
+    })
 	</script>
 
 </html>
