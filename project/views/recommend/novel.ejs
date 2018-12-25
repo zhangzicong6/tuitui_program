@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-		<title></title>
+		<title><%= title %></title>
 		<style type="text/css">
 			* {
 				margin: 0;
@@ -22,18 +22,18 @@
 			}
 			
 			.container {
-				padding: 1rem;
+				padding: .32rem;
 				max-width: 740px;
 				min-width: 320px;
 				margin: 0 auto;
-				height: 30rem;
+				height: 10rem;
         box-sizing: border-box;
 				overflow: hidden;
 			}
 			
 			.article-title {
-				font-size: 1.4rem;
-				line-height: 30px;
+				font-size: .48rem;
+				line-height: .48rem;
 			}
 			
 			.article-title p {
@@ -42,13 +42,13 @@
 			}
 			
 			.date {
-				line-height: 3rem;
-				font-size: .9rem;
+				line-height: 1rem;
+				font-size: .3rem;
 			}
 			
 			.date span {
 				color: #ACACAC;
-				margin: 0 1rem 0 0;
+				margin: 0 .33rem 0 0;
 			}
 			
 			.date a {
@@ -68,17 +68,17 @@
 			    color: #10B0F3;
 			    white-space: nowrap;
 			    text-decoration: none;
-			    line-height: 2.2rem;
+			    line-height: .7rem;
 			    width: 100%;
 			    overflow: hidden;
 			    text-overflow: ellipsis;
-			    font-size: .9rem;
+			    font-size: .3rem;
 			}
 			
 			.xiangg a em {
-			    font-size: 2rem;
-			    vertical-align: -.4rem;
-			    margin: 0 .5rem;
+			    font-size: .6rem;
+			    vertical-align: -.1rem;
+			    margin: 0 .2rem;
 			    color: #868686;
 			}
 
@@ -89,47 +89,49 @@
 			}
 			
 			.chapter {
-				padding: 10px 10px 0;
+				padding: .8rem .2rem 0;
 				margin: 0 auto;
 				font-size: 16px;
 			}
 			
 			.chapter p {
-				margin-top: 25px;
-				line-height: 29px;
+				margin-top: .5rem;
+				line-height: .6rem;
 				text-indent: 2em;
 			}
 			
 			.continue-read {
 				background: url(http://douzhuan.oss-cn-qingdao.aliyuncs.com/jscss/dfcssimg/hide_content_bg.png) repeat-x 0 0;
 				width: 100%;
-				height: 100px;
-				margin: -5rem 0 -1rem;
+				height: 2rem;
+				margin: -1.6rem 0 -.3rem;
 				z-index: 1;
 				position: relative;
 				text-align: center;
 			}
 			
 			.continue-read a {
-				margin-top: 3rem;
+				margin-top: .8rem;
 				color: #fff;
 				display: inline-block;
 				width: 70%;
 				line-height: 280%;
 				background-color: #fe7d39;
-				border-radius: 50px;
+				border-radius: 1rem;
 				text-align: center;
 				text-decoration: none;
+        font-size: .3rem
 			}
 			
 			.other-see {
-				height: 3rem;
-				line-height: 3rem;
+				height: 1rem;
+				line-height: 1rem;
 				color: #fe7d39;
-				margin: 1rem;
+				margin: .3rem;
 				margin-bottom: 0;
 				border-top: 1px solid #eee;
 				border-bottom: 2px solid #eee;
+        font-size: .36rem
 			}
 			
 			/*小说列表*/
@@ -152,10 +154,14 @@
 				font-size: 0;
 				clear: both;
 			}
+
+      .content-list {
+				padding-bottom: .3rem;
+      }
 			
 			.content-list li {
-				margin: 0 .8rem;
-				padding: 1rem 0 .8rem;
+				margin: 0 .26rem;
+				padding: .3rem 0 .24rem;
 				border-bottom: 1px solid #EFEFEF;
 				cursor: pointer;
 			}
@@ -170,7 +176,7 @@
 				background: no-repeat 100% 100%;
 				background-size: cover;
 				width: 100%;
-				height: 70px;
+				height: 1.4rem;
 				cursor: pointer;
 				display: block;
 			}
@@ -178,28 +184,29 @@
 			.content-inner {
 				color: #555555;
 				padding: .2rem .2rem 0 0;
-				width: 66%
+				width: 66%;
+        box-sizing: border-box;
 			}
 			
 			.content-inner .content-title {
-				font-size: 1.1rem;
+				font-size: .36rem;
 				font-weight: 600;
 				width: 100%;
 				color: #333;
-				line-height: 1.4rem;
-				height: 42px;
-				margin: -.2rem 0 .5rem 0;
+				line-height: .5rem;
+				height: .8rem;
+				margin: -.1rem 0 .1rem .1rem;
 			}
 			
 			.content-subtitle {
 				color: #A6A6A6;
-				font-size: .6rem;
-				margin: .4rem 0 0 .1rem
+				font-size: .2rem;
+				margin: .1rem 0 0 .1rem;
 			}
 			
 			.content-subtitle span {
-				margin: 0.3rem .6rem 0 0;
-				font-size: .6rem;
+				margin: .1rem .2rem 0 0;
+				font-size: .2rem;
 			}
 			
 			.content-subtitle span.hot {
@@ -247,7 +254,7 @@
 						<%= date %>
 					</span>
 					<a href="<%= linkUrl %>" id="advText">我要抽大奖</a>
-					<img class="dong" src="/tuijian/click_me.gif" style="position:absolute;width: 4.5rem;top: .8rem;left: 11rem10rem;">
+					<img class="dong" src="/tuijian/click_me.gif" style="position:absolute;width: 1.8rem;top: .3rem;left: 3.8rem;">
 				</div>
 				
 				
