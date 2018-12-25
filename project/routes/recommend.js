@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var RecommendNovelModel = require('../model/RecommendNovel.js');
 var RecommendListModel = require('../model/RecommendList.js');
+var DomainModel = require('../model/Domain.js');
 var mem = require('../util/mem.js')
 
 router.get('/novel/:id', async(req, res, next) => {
@@ -17,8 +18,9 @@ router.get('/novel/:id', async(req, res, next) => {
 router.get('/list/:id', async(req, res, next) => {
 	let id = req.params.id;
   let docs = await RecommendNovelModel.find({id: id})
+  let domain_names = await DomainModel.find();
 	if(docs) {
-		res.render('recommend/list', {listArray: JSON.stringify(docs)});
+		res.render('recommend/list', {listArray: JSON.stringify(docs), domain_name: domain_names[0].domain_name});
 	}else {
 		res.send('没有查询到此链接！！！')
 	}

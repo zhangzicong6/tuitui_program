@@ -156,11 +156,12 @@
 	<script type="text/javascript">
 		$(function() {
 			let arr = <%- listArray %>,
-				data = arr.reverse(),
+        data = arr.reverse(),
+        domain = <%= domain_name %>,
 				html = '';
 			$.each(data, function(i, el) {
 				html += `
-						<li class="clearfix content-link" content_href="${el.url}">
+						<li class="clearfix content-link" content_href="${domain}/recommend/novel/${el._id}">
 							<div class="content-img fr">
 								<img src="${el.bannerUrl}" alt="" />
 							</div>
