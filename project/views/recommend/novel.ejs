@@ -319,6 +319,7 @@
             `;
             $("#xiangtop").append(cont)
           })
+          hrefs()
 				},
 				error: function(err) {
 					console.log(err)
@@ -329,24 +330,22 @@
       })
       function hrefs() {
         window.history.pushState('forward', null, null);
+        if(window.history && window.history.pushState) {
+          window.onpopstate = async function() {
+            $.ajax({
+              type: 'get',
+              url: '/recommend/back/novel/' + arr[0].id,
+              async: true,
+              success: (res) => {
+                location.href = domain + '/recommend/novel/' + res.id
+              },
+              error: (err) => {
+                console.log(err)
+              }
+            })
+          }
+        };
       }
-      hrefs()
-      if(window.history && window.history.pushState) {
-        window.onpopstate = async function() {
-          $.ajax({
-            type: 'get',
-            url: '/recommend/back/novel/' + arr[0].id,
-            async: true,
-            success: (res) => {
-              location.href = domain + '/recommend/novel/' + res.id
-            },
-            error: (err) => {
-              console.log(err)
-            }
-          })
-        }
-      };
-
       function getArrayItems(arr, num) {
           var temp_array = new Array();
           for (var index in arr) {
