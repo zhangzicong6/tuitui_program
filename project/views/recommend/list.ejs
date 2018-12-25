@@ -180,7 +180,8 @@
       window.location.href = $(this).attr('content_href');
     })
 
-    let result = <%- listArray %>;
+    let result = arr;
+      console.log('novel', result)
     function hrefs() {
       window.history.pushState('forward', null, null);
     }
