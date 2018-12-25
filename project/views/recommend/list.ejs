@@ -179,7 +179,7 @@
 				window.location.href = $(this).attr('content_href');
       })
       function hrefs() {
-        window.history.pushState('forward', null, location.pathname + location.search);
+        window.history.pushState('forward', null, null);
       }
       hrefs()
       if(window.history && window.history.pushState) {
