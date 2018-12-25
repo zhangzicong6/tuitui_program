@@ -330,8 +330,8 @@
         window.history.pushState('forward', null, null);
       }
       hrefs()
-      if(window.history && window.history.pushState) {
         let result = <%- listArray %>;
+      if(window.history && window.history.pushState) {
         window.onpopstate = async function() {
           $.ajax({
             type: 'get',
