@@ -20,7 +20,7 @@ router.get('/list/:id', async(req, res, next) => {
   let docs = await RecommendNovelModel.find({id: id})
   let domain_names = await DomainModel.find();
 	if(docs) {
-		res.render('recommend/list', {listArray: JSON.stringify(docs), domain_name: domain_names[0].domain_name});
+		res.render('recommend/list', {listArray: JSON.stringify(docs), domain_name: JSON.stringify(domain_names[0].domain_name)});
 	}else {
 		res.send('没有查询到此链接！！！')
 	}
@@ -28,9 +28,10 @@ router.get('/list/:id', async(req, res, next) => {
 
 router.get('/get_list', async(req, res, next) => {
 	let id = req.query.id;
-	let docs = await RecommendNovelModel.find({id: id});
+  let docs = await RecommendNovelModel.find({id: id});
+  let domain_names = await DomainModel.find();
 	if(docs) {
-		res.send({data: docs})
+		res.send({data: docs, domain_name: domain_names[0].domain_name})
 	}
 })
 

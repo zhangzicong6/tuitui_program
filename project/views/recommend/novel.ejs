@@ -27,6 +27,7 @@
 				min-width: 320px;
 				margin: 0 auto;
 				height: 30rem;
+        box-sizing: border-box;
 				overflow: hidden;
 			}
 			
@@ -295,11 +296,11 @@
 				url: "/recommend/get_list?id=<%= id %>",
 				async: true,
 				success: function(res) {
-          let data = res.data, html = '';
+          let data = res.data, html = '', domain = res.domain_name;
+          console.log(domain)
 					$.each(data, function(i, el) {
-          console.log(el)
 						html += `
-							<li class="clearfix content-link" content_href="${el.url}">
+							<li class="clearfix content-link" content_href="${domain}/recommend/novel/${el._id}">
 								<div class="content-img fr">
 									<img src="${el.bannerUrl}" alt="" />
 								</div>
