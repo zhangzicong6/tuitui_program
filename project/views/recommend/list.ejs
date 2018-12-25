@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="font-size: 100px;">
+<html>
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -123,7 +123,6 @@
     }
   </style>
   <script type="text/javascript">
-    window.onload = function () {
       (function (doc, win) {
         var docEl = doc.documentElement,
           resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
@@ -141,7 +140,6 @@
         win.addEventListener(resizeEvt, recalc, false);
         doc.addEventListener('DOMContentLoaded', recalc, false);
       })(document, window);
-    }
   </script>
 </head>
 
