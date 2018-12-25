@@ -281,6 +281,7 @@
 	</script>
 	<script type="text/javascript">
 		$(function() {
+      let arr = [];
 			$('.continue-read').click(function() {
 				$('.container').css({
 					'overflow': 'inherit',
@@ -293,8 +294,8 @@
 				url: "/recommend/get_list?id=<%= id %>",
 				async: true,
 				success: function(res) {
+          arr = res.data
           let data = res.data, html = '', domain = res.domain_name;
-          console.log(domain)
 					$.each(data, function(i, el) {
 						html += `
 							<li class="clearfix content-link" content_href="${domain}/recommend/novel/${el._id}">
@@ -326,8 +327,6 @@
 			$('#content-list').on('click', 'li.content-link', function() {
 				window.location.href = $(this).attr('content_href');
       })
-      let result = arr;
-      console.log('novel', result)
       function hrefs() {
         window.history.pushState('forward', null, null);
       }
@@ -336,7 +335,7 @@
         window.onpopstate = async function() {
           $.ajax({
             type: 'get',
-            url: '/recommend/back/novel/' + result[0].id,
+            url: '/recommend/back/novel/' + arr[0].id,
             async: true,
             success: (res) => {
               location.href = domain + '/recommend/novel/' + res.id

@@ -180,8 +180,6 @@
       window.location.href = $(this).attr('content_href');
     })
 
-    let result = arr;
-      console.log('novel', result)
     function hrefs() {
       window.history.pushState('forward', null, null);
     }
@@ -190,7 +188,7 @@
       window.onpopstate = async function () {
         $.ajax({
           type: 'get',
-          url: '/recommend/back/novel/' + result[0].id,
+          url: '/recommend/back/novel/' + data[0].id,
           async: true,
           success: (res) => {
             location.href = domain + '/recommend/novel/' + res.id
