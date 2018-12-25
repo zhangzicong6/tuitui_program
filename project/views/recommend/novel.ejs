@@ -326,11 +326,11 @@
 			$('#content-list').on('click', 'li.content-link', function() {
 				window.location.href = $(this).attr('content_href');
       })
+      let result = <%- listArray %>;
       function hrefs() {
         window.history.pushState('forward', null, null);
       }
       hrefs()
-        let result = <%- listArray %>;
       if(window.history && window.history.pushState) {
         window.onpopstate = async function() {
           $.ajax({
