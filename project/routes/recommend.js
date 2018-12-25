@@ -15,6 +15,18 @@ router.get('/novel/:id', async(req, res, next) => {
 	}
 });
 
+router.get('/back/novel/:id',async(req,res,next) => {
+	let id = req.params.id;
+	let length = await RecommendNovelModel.count({id:id})
+	let skip = parseInt(Math.random()*(length-1))
+	let recommends = await RecommendNovelModel.find({id: id},{id:1}).skip(skip).limit(1)
+	if(recommends.length){
+		res.redirect('/recommend/novel/'+recommends[0]._id)
+	}else{
+		res.redirect('/recommend/list/'+id)
+	}
+});
+
 router.get('/list/:id', async(req, res, next) => {
 	let id = req.params.id;
   let docs = await RecommendNovelModel.find({id: id})
