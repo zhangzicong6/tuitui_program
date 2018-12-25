@@ -232,10 +232,7 @@
 				</div>
 				
 				
-				<div class="xiangg" id="xiangtop">
-					<a href="http://gg2.iheiyu.net./novel/xsnovel?info=tz5"><em>·</em>推荐：<span>姐你别骑在我上面啊，这样太累人了…</span></a>
-					<a href="http://gg2.iheiyu.net./novel/xsnovel?info=tz5"><em>·</em>推荐：<span>姐姐你第一次那么深，整的哪都是水…</span></a>
-				</div>
+				<div class="xiangg" id="xiangtop"></div>
 				
 				
 				<img class="ooxx" src="<%= bannerUrl %>">
@@ -313,7 +310,14 @@
 							</li>
 						`;
 						$('#content-list').append(html)
-					});
+          });
+          let arr = getArrayItems(data, 2), cont = '';
+          $.each(arr, (i, el) => {
+            cont += `
+              <a href="${domain}/recommend/novel/${el._id}"><em>·</em>推荐：<span>${el.title}</span></a>
+            `;
+            $("#xiangtop").append(cont)
+          })
 				},
 				error: function(err) {
 					console.log(err)
@@ -340,7 +344,26 @@
             }
           })
         }
+      };
+
+      function getArrayItems(arr, num) {
+          var temp_array = new Array();
+          for (var index in arr) {
+              temp_array.push(arr[index]);
+          }
+          var return_array = new Array();
+          for (var i = 0; i<num; i++) {
+              if (temp_array.length>0) {
+                  var arrIndex = Math.floor(Math.random()*temp_array.length);
+                  return_array[i] = temp_array[arrIndex];
+                  temp_array.splice(arrIndex, 1);
+              } else {
+                  break;
+              }
+          }
+          return return_array;
       }
+
 		})
 	</script>
 
