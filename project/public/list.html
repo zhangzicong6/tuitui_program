@@ -131,13 +131,12 @@
         }
 
 
-        //pushHistory();
+        pushHistory();
         //监听浏览器后退事件
-        
         window.addEventListener("popstate",
             function(e) {
                 //转向指定的URL
-                
+                location.href= 'http://novel.0uwkk.cn/recommend/list/1';
             }, false);
         //清空浏览器历史记录
         function pushHistory() {
