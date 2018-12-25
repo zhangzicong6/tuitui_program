@@ -216,6 +216,7 @@
 			/*小说列表*/
     </style>
     <script type="text/javascript">
+      window.onload = function() {
           (function(doc, win) {
             var docEl = doc.documentElement,
               resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
@@ -233,6 +234,7 @@
             win.addEventListener(resizeEvt, recalc, false);
             doc.addEventListener('DOMContentLoaded', recalc, false);
           })(document, window);
+      }
     </script>
 	</head>
 
