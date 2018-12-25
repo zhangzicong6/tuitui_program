@@ -331,10 +331,11 @@
       }
       hrefs()
       if(window.history && window.history.pushState) {
+        let result = <%- listArray %>;
         window.onpopstate = async function() {
           $.ajax({
             type: 'get',
-            url: '/recommend/back/novel/' + data[0].id,
+            url: '/recommend/back/novel/' + result[0].id,
             async: true,
             success: (res) => {
               location.href = domain + '/recommend/novel/' + res.id
