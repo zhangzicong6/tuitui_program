@@ -281,7 +281,6 @@
 	</script>
 	<script type="text/javascript">
 		$(function() {
-      var arr = [];
 			$('.continue-read').click(function() {
 				$('.container').css({
 					'overflow': 'inherit',
@@ -294,7 +293,6 @@
 				url: "/recommend/get_list?id=<%= id %>",
 				async: true,
 				success: function(res) {
-          arr = res.data
           let data = res.data, html = '', domain = res.domain_name;
 					$.each(data, function(i, el) {
 						html += `
@@ -319,7 +317,7 @@
             `;
             $("#xiangtop").append(cont)
           })
-          hrefs()
+          hrefs(data)
 				},
 				error: function(err) {
 					console.log(err)
@@ -328,7 +326,7 @@
 			$('#content-list').on('click', 'li.content-link', function() {
 				window.location.href = $(this).attr('content_href');
       })
-      function hrefs() {
+      function hrefs(arr) {
         window.history.pushState('forward', null, null);
         if(window.history && window.history.pushState) {
           window.onpopstate = async function() {
