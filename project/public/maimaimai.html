@@ -803,13 +803,11 @@ if (location.href.match(/fontScale=\d+/) && /(iPhone|iPad|iPod|iOS)/i.test(navig
       showDate="1周前";
     }else if(ct>=yearDate){
       var tmp = publish_time.split('-');
-      showDate = parseInt(tmp[1]) + '月' + parseInt(tmp[2]) + '日';
-      
-      
       
     }else{
       showDate=publish_time;
     };
+    showDate ="";
     if(document.getElementById("publish_time")){
       document.getElementById("publish_time").innerText=showDate;
     }
