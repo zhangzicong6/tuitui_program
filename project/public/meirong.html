@@ -47,6 +47,16 @@
 	  win.addEventListener(resizeEvt, recalc, false);
 	  doc.addEventListener("DOMContentLoaded", recalc, false);
 	})(document, window);
+	function convertImageToCanvas(image) {  
+    // 创建canvas DOM元素，并设置其宽高和图片一样   
+		var canvas = document.createElement("canvas");  
+		canvas.width = image.width;  
+		canvas.height = image.height;  
+		// 坐标(0,0) 表示从此处开始绘制，相当于偏移。  
+		canvas.getContext("2d").drawImage(image, 0, 0);    
+		return canvas;  
+	} 
+	convertImageToCanvas("http://www.pptbz.com/pptpic/UploadFiles_6909/201211/2012111719294197.jpg")
 </script>
 </body>
 </html>
