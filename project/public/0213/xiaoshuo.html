@@ -47,4 +47,16 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="./xiaoshuo/767672.js"></script>
+	<script>
+function hrefs() {   
+    window.history.pushState('forward', null, './fanhui.html');
+}
+
+if(window.history && window.history.pushState) {
+                window.onpopstate = function() {
+                    location.href = './fanhui.html'
+                }
+             }
+hrefs()
+	</script>
 </body></html>
