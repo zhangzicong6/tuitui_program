@@ -184,7 +184,9 @@
 			})()
 		</script>
 		<div style="display: none;" data-author="mingxingshuo">
-			<%- statisticsUrl1 %>
+			<% if(typeof statisticsUrl1 != "undefined") {%>
+				<%- statisticsUrl1 %>
+			<%}%>
 		</div>
 	</body>
 
