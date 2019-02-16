@@ -59,8 +59,6 @@ router.get('/singlepage/:index', function(req, res, next) {
             console.log(value);
             console.log('------------------')*/
             var res_data = JSON.parse(value);
-            console.log('------mem cache-----')
-            console.log(res_data)
             res.render('tuiguang/singlepage',res_data);
         }else{
             var selector = {id: req.params.index}
@@ -79,8 +77,6 @@ router.get('/singlepage/:index', function(req, res, next) {
                             capter1: data[0].capter1,
                             statisticsUrl1: data[0].statisticsUrl1
                         }
-                        console.log('------mongo-----')
-                        console.log(res_data)
                         mem.set('singlepage_'+req.params.index,JSON.stringify(res_data),60).then(function(){
                              //console.log('---------set singlepage value---------')
                         })
