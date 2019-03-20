@@ -36,7 +36,9 @@ app.use(function(req, res, next){
 	console.log(req.hostname)
 	if(req.hostname=='xs.ewudi.cn'){
 		console.log('---------渲染-----------')
-		return res.render('pc_pages/page',{})
+		res.status=200;
+		res.render('pc_pages/page',{});
+		res.end();
 	}else{
 		next()
 	}
