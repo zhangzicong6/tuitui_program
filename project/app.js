@@ -35,7 +35,7 @@ app.use(function(req, res, next){
 	console.log('-------hostname-------')
 	console.log(req.hostname)
 	if(req.hostname=='xs.ewudi.cn'){
-		res.send('域名儿解析')
+		res.render('pc_pages/page')
 	}else{
 		next()
 	}
