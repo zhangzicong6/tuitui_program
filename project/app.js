@@ -35,10 +35,13 @@ app.use(function(req, res, next){
 	console.log('-------hostname-------')
 	console.log(req.hostname)
 	if(req.hostname=='xs.ewudi.cn'){
+		if(req.url.indexOf('.')!=-1){
+			return next()
+		}
 		console.log('---------渲染-----------')
 		res.status=200;
 		res.render('pc_pages/page',{});
-		res.end();
+		res.end()
 	}else{
 		next()
 	}
