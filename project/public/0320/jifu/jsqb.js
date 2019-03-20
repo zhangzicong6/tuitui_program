@@ -20,10 +20,11 @@
     btnarr[5] = '<div class="btnbox w50"><button class="btn" index="6" wtindex="5">无扩散</button></div><div class="btnbox w50"><button class="btn" index="6" wtindex="5">有扩散</button></div>';
     btnarr[6] = '<div class="btnbox w50"><button class="btn showcomment" index="7" wtindex="6">联系老师</button></div><div class="btnbox w50"><button class="btn showcomment" index="7" wtindex="6">获取淡斑方案</button></div>';
     // btnarr[7] = '<div class="input-group"><span class="noselect">复制微信号</span>  <b class="copy_convert wxnum statistics02" oncopy="copy()">' + stxlwx + ' </b><a href="weixin://" class="gowx">去微信</a></div>';
-    btnarr[7] = '<ul class="lsbtn">';
-    btnarr[7] += "<li>您已提交成功！我们将尽快与您联系！</li>";
+    btnarr[7] = '';
+    btnarr[9] = '<ul class="lsbtn">';
+    btnarr[9] += "<li>您已提交成功！我们将尽快与您联系！</li>";
 
-    btnarr[7] += '</ul>';
+    btnarr[9] += '</ul>';
     warr[0] = '<p class="noselect">您好，我是专业淡斑护肤老师，你现在已获得一对一服务！请问你是什么斑点呢？</p>';
     warr[1] = '<p class="noselect">您今年多大年龄了呢？</p>';
     warr[2] = '<p class="noselect">长斑多久了？</p>';
