@@ -1,0 +1,338 @@
+<!-- saved from url=(0024)http://s.5431954.cn/002/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <title>在线咨询</title>
+    <link href="mingan/style.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="mingan/jquery-1.10.1.min.js"></script>
+    <!--<script type="text/javascript" src="/lq/0321/mingan/mingan/js/js.js"></script>-->
+    <style>
+        .hander {
+            height: 20px;
+            width: 100%;
+            overflow: hidden;
+            text-align: center;
+            max-width: 750px;
+            min-width: 320px;
+            font-family: "微软雅黑";
+            color: #fff;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 0
+        }
+
+        .nav {
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            margin: 0 auto;
+        }
+
+        .nav ul {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .nav ul li {
+            float: left;
+            width: 25%;
+            text-align: center;
+            display: inline;
+        }
+
+        .nav ul li a {
+            color: #000;
+            font-family: "微软雅黑";
+            font-size: 12px;
+            display: block;
+            margin-left: 5px;
+            text-align: center;
+            height: 20px;
+            line-height: 20px;
+            overflow: hidden;
+        }
+
+        .nav ul li a span {
+            display: block;
+            font-family: "微软雅黑";
+            vertical-align: middle;
+            font-size: 13px;
+        }
+        .box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .7);
+            z-index: 100;
+        }
+        .box img {
+            position: absolute;
+            width: 80%;
+            top: 20%;
+            left: 10%;
+        }
+    </style>
+    <script>
+        $(function () {
+            if (typeof (global_weixin) == "undefined") {
+                global_weixin = '<span class="t_wx">meiyan3596</span>';
+            } else {
+                global_weixin = '<span class="t_wx">meiyan3596</span>';
+            }
+            var text = [];
+            var warr = [];
+            var loadstr = '<div class="loading">连线中  <span></span><span></span><span></span><span></span><span></span></div>';
+//				var str1 = '<div class="line ly-hide" style="display: block;" id="fp"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div id="lx"><i></i> 咱们是要解决皮肤问题？<br><span>点击下方按钮即可↓</span></div></div><div class="ly-clear"></div></div>';
+
+            text[0] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>面部过敏一般是因为肌肤接触到过敏物质后引起的，也可能是因为个人肤质的原因引起过敏。面部过敏多数分布在脸颊额头等位置，为了能更好的帮助你，老师需要先了解一下你的情况，请认真回答老师接下来提问你的问题哦。</div></div><div class="ly-clear"></div></div>';
+            text[1] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>红血丝一般是因为面部角质层薄弱、皮肤毛细血管扩张、淤堵、紫外线过度照射、长期乱用激素、不当美容等有关。这种皮肤薄而敏感，过冷、过热、情绪激动时脸色更红。起初不易被人发觉，一旦确定，证明红血丝已经严重。为了能更好的帮助你，老师需要先了解一下你的情况，请认真回答老师接下来提问你的问题哦。</div></div><div class="ly-clear"></div></div>';
+            text[2] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>激素脸一般会引起角质层变薄，受激素的抑制作用影响，皮肤的免疫能力会逐渐减弱，经不起刺激，肌肤变得越来越敏感；脂类的合成被抑制，脂类组成的脂质双分子层的完整性就会逐渐被破坏，皮肤就会失去锁住水分的能力，阻止不了外界物质侵入体内；一旦停止使用含激素的产品，皮肤就会突发性的变红，发痒，长痘，肌肤会变得特别的干、敏感、出现红血丝，严重还会皮肤萎缩，这就是激素依赖性皮炎。为了能更好的帮助你，老师需要先了解一下你的情况，请认真回答老师接下来提问你的问题哦。</div></div><div class="ly-clear"></div></div>';
+            text[3] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>干痒脱皮一般是因为受损的皮肤屏障，肌肤内部水分蒸发加，且保水力极差，皮肤干燥缺水甚至起皮，表面触感粗糙，滋生干性细纹。为了能更好的帮助你，老师需要先了解一下你的情况，请认真回答老师接下来提问你的问题哦。</div></div><div class="ly-clear"></div></div>';
+            text[4] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>脸上长痘主要是因为皮脂分泌过多、毛囊皮脂腺导管堵塞而产生的，多数分布在脸颊鼻翼等位置，为了能更好的帮助你，老师需要先了解一下你的情况，请认真回答老师接下来提问你的问题哦。</div></div><div class="ly-clear"></div></div>';
+            text[5] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>毛囊皮脂腺导管的角化异常造成导管堵塞形成痤疮，主要表现为白头、黑头粉刺、炎性丘疹、脓疱等问题，为了更好的帮助你，老师先了解一下你的情况，请认真回答老师接下来提问你的问题哦</div></div><div class="ly-clear"></div></div>';
+
+            warr[0] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>您今年多大年龄了呢？</div></div><div class="ly-clear"></div></div>';
+            warr[1] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>出现这个情况多久了？</div></div><div class="ly-clear"></div></div>';
+            warr[2] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>皮肤会不会经常出现上述问题？</div></div><div class="ly-clear"></div></div>';
+            warr[3] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>好的，明白，那大概长在哪个位置呢？</div></div><div class="ly-clear"></div></div>';
+            warr[4] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>那请问严重吗？</div></div><div class="ly-clear"></div></div>';
+
+            warr[5] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>好的，经过老师初步断定，你的问题是由于角质层较薄，肌肤容易受外界刺激，因此引起肌肤反复过敏，出现发红，发肿，刺痛，发烫，红血丝等状况。你也不用担心，就你目前现状而言，如果能够得到及时的护理，是可以解决的，但是拖着不管的话，可能会越来越严重的。</div></div><div class="ly-clear"></div></div>';
+            warr[6] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>方便的话，加一下老师的微信，咱们加了好友后呢，你可以拍张照片发给我，老师了解了你现在的肌肤状态，会更具有针对性的帮你进行更深入的分析，这样才可以更好的帮助你改善肌肤问题。你也可以看到老师朋友圈的一些护肤的资料和适合自己肌肤的护理方法。</div></div><div class="ly-clear"></div></div>';
+            warr[7] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>这是老师的微信号 <span id="wx" class="t_wx">' + global_weixin + '</span>，打开微信直接搜索添加，老师会耐心指导你正确改善肌肤问题，帮你变美不花冤枉钱！为了更好的诊断肌肤问题，可以点击下方图片并长按识别二维码，添加老师的私人微信号一对一交流。</div></div><div class="ly-clear"></div></div>'
+            warr[8] = '<div class="line"><div class="left"> <img src="/lq/0321/mingan/mingan/tou.jpg" style="border-radius: 50%;" width="40px"><div class="laoshi"> <i></i>这是老师的微信号 <span id="wx" class="t_wx">' + global_weixin + '</span>  ，打开微信直接搜索添加，免费获取咨询祛红血丝方法呦！为了更好的诊断肌肤问题，可以点击下方图片并长按识别二维码，添加老师的私人微信号一对一交流。</div></div><div class="ly-clear"></div></div>'
+
+            setTimeout(function () {
+                $('.ly-section1 .line:first')["fadeIn"](100)
+            }, 300);
+            setTimeout(function () {
+                $('.ly-section1 .nav')["fadeIn"](100)
+            }, 300);
+            setTimeout(function () {
+                $('.ly-section1 .bq')["fadeIn"](100)
+            }, 300);
+            setTimeout(function () {
+                $('.ly-section1 .line_zizhi')["fadeIn"](100)
+            }, 600);
+            setTimeout(function () {
+                $("#messbox")["append"](loadstr)
+            }, 1000);
+            setTimeout(function () {
+                $(".loading")["fadeOut"](0);
+                $(".line")["css"]('display', 'block')
+            }, 3000);
+            setTimeout(function () {
+                $("#fp").show();
+                window["scrollTo"](0, window["document"]["body"]["scrollHeight"])
+            }, 3000);
+            setTimeout(function () {
+                $("#option_1")["fadeIn"](400)
+            }, 3500);
+            // 点击答案
+            $(".select_botton a")["click"](function () {
+                var p_id = $(this).attr('data-w');
+                var p_value = $(this).text();
+                var wtindex = $(this).attr('wtindex');
+                var index = $(this).attr('index');
+                $("#msg").append(pj_html(p_value));
+                window.scrollTo(0, document.body.scrollHeight);
+                // 第一个答案
+                if (p_id <= text.length) {
+                    addHtml(text[p_id - 1], 1000);
+                }
+                setTimeout(function () {
+                    if (wtindex < warr.length - 2) {
+                        addHtml(warr[wtindex - 1], 1000);
+                        if (wtindex <= 5) {
+                            wtindex++;
+                            setTimeout(function () {
+                                $("#option_" + wtindex).fadeIn(400);
+                            }, 1300);
+                        }
+                        if (index == 0) {
+                            setTimeout(function () {
+                                addHtml(warr[wtindex], 1000);
+                                wtindex++;
+                                setTimeout(function () {
+                                    $("#option_" + wtindex).fadeIn(400)
+                                }, 1300);
+                            }, 1000);
+                        }
+                    }
+                    // 最后一个答案选择
+                    if (wtindex == 7) {
+                        if (index == 1) {
+                            setTimeout(function () {
+                                $('.end1').show();
+                            }, 1000)
+                        } else if (index == 2) {
+                            wtindex++;
+                            setTimeout(function () {
+                                $('.end2').show();
+                            }, 1000)
+                        }
+                        setTimeout(function () {
+                            $(".mm").show();
+                            $("#bq").remove();
+                            $("#nav").remove();
+                            $(".talk").css('padding', '10px 0 20px 0')
+                        }, 1000);
+                    }
+                }, 500);
+
+                $(".select_botton").fadeOut(400)
+            });
+
+            function pj_html(str) {
+                var pzixun = '<div class="line"><div class="right"> <img src="/lq/0321/mingan/mingan/header2.png" width="40px"><div><i></i> ' + str + '</div></div><div class="ly-clear"></div></div>';
+                return pzixun
+            }
+
+            function addHtml(S4, KdIHmU5) {
+                KdIHmU5 = KdIHmU5 || 3000;
+                setTimeout(function () {
+                    $("#msg")["append"](S4);
+
+                    window["scrollTo"](0, window["document"]["body"]["scrollHeight"])
+                }, KdIHmU5)
+            }
+        })
+    </script>
+    <script type="text/javascript" src="mingan/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="mingan/copy.css">
+</head>
+
+<body style="">
+
+<header class="ly-header">
+    <nav>
+        <img src="mingan/nav.jpg" style="width: 100%;">
+    </nav>
+</header>
+
+<section class="ly-section1" style="position: relative;padding: 85px 0 0;">
+    <div class="talk" id="messbox">
+        <div>
+            <div class="line ly-hide" style="display: block;">
+                <div class="left">
+                    <img src="mingan/tou.jpg" style="border-radius: 50%;" width="40px">
+                    <div class="laoshi"><i></i>您好，系统已为您分配专业老师，一对一为您服务！</div>
+                </div>
+                <div class="ly-clear"></div>
+            </div>
+            <div class="line ly-hide line_zizhi" style="display: block;">
+                <div class="left">
+                    <img src="mingan/tou.jpg" style="border-radius: 50%;" width="40px">
+                    <div class="zizhi laoshi"><i></i><img src="mingan/zizhi.png"></div>
+                </div>
+                <div class="ly-clear"></div>
+            </div>
+            <div class="line ly-hide line_wx" style="display: none;">
+                <div class="left"><img src="mingan/tou.jpg" style="border-radius: 50%;" width="40px">
+                    <div class="laoshi"><i></i> 您好，我是专业护肤老师，非常高兴为您服务！</div>
+                </div>
+                <div class="ly-clear"></div>
+            </div>
+            <div class="line ly-hide line_wx" style="display: none;" id="fp">
+                <div class="left">
+                    <img src="mingan/tou.jpg" style="border-radius: 50%;" width="40px">
+                    <div id="lx" class="laoshi">
+                        <i></i> 咱们是要解决皮肤问题？<br>
+                        <span>点击下方按钮即可↓</span>
+                    </div>
+                </div>
+                <div class="ly-clear"></div>
+            </div>
+            <div id="msg"></div>
+        </div>
+        <div class="end1" style="display: none;">
+            <div class="left">
+                <img src="mingan/tou.jpg" style="border-radius: 50%;" width="40px">
+                <div class="laoshi">
+                    <i></i>这是老师的微信号 <span id="wx" class="t_wx" ontouchstart="return false;" style="position: relative;">meiyan3596<div
+                        class="btn_box"><button class="btn_copy" data-clipboard-text="meiyan3596"><div
+                        class="t_copyy"></div>复制</button></div></span>
+                    ，打开微信直接搜索添加，免费获取咨询祛红血丝方法呦！为了更好的诊断肌肤问题，可以点击下方图片并长按识别二维码，添加老师的私人微信号一对一交流。
+                </div>
+            </div>
+            <div class="ly-clear"></div>
+            <div class="box">
+                <img src="mingan/erweima1.jpg" alt="">
+            </div>
+        </div>
+        <div class="end2" style="display: none;">
+            <div class="left">
+                <img src="mingan/tou.jpg" style="border-radius: 50%;" width="40px">
+                <div class="laoshi">
+                    <i></i>这是老师的微信号 <span id="wx" class="t_wx" ontouchstart="return false;" style="position: relative;">meiyan3596<div
+                        class="btn_box"><button class="btn_copy" data-clipboard-text="meiyan3596"><div
+                        class="t_copyy"></div>复制</button></div></span>
+                    ，打开微信直接搜索添加，老师会耐心指导你正确改善肌肤问题，帮你变美不花冤枉钱！为了更好的诊断肌肤问题，可以点击下方图片并长按识别二维码，添加老师的私人微信号一对一交流。
+                </div>
+            </div>
+            <div class="ly-clear"></div>
+            <div class="box">
+                <img src="mingan/erweima.jpg" alt="">
+            </div>
+        </div>
+        <div class="loading" style="display: none;">连线中
+            <span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+</section>
+<div class="select_botton" style="display:none;" id="option_1">
+    <a href="javascript:" wtindex="1" data-w="1" style="width: 30%;">面部过敏</a>
+    <a href="javascript:" wtindex="1" data-w="2" style="width: 30%;">红血丝</a>
+    <a href="javascript:" wtindex="1" data-w="3" style="width: 30%;">激素脸</a>
+    <a href="javascript:" wtindex="1" data-w="4" style="width: 30%;">干痒脱皮</a>
+    <a href="javascript:" wtindex="1" data-w="5" style="width: 30%;">痘痘</a>
+</div>
+<div class="select_botton" style="display:none;" id="option_2">
+    <a href="javascript:" wtindex="2" style="width: 40%;">16岁以下</a>
+    <a href="javascript:" wtindex="2" style="width: 40%;">16-25岁</a>
+    <a href="javascript:" wtindex="2" style="width: 40%;">26-35岁</a>
+    <a href="javascript:" wtindex="2" style="width: 40%;">35岁以上</a>
+</div>
+<div class="select_botton" style="display:none;" id="option_3">
+    <a href="javascript:" wtindex="3" style="width: 40%;">1年以下</a>
+    <a href="javascript:" wtindex="3" style="width: 40%;">1-3年</a>
+    <a href="javascript:" wtindex="3" style="width: 40%;">3-5年</a>
+    <a href="javascript:" wtindex="3" style="width: 40%;">5年以上</a>
+</div>
+<div class="select_botton" style="display:none;" id="option_4">
+    <a href="javascript:" wtindex="4" style="width: 45%;">会</a>
+    <a href="javascript:" wtindex="4" style="width: 45%;">不会</a>
+</div>
+<div class="select_botton" style="display:none;" id="option_5">
+    <a href="javascript:" wtindex="5" style="width: 30%;">脸颊</a>
+    <a href="javascript:" wtindex="5" style="width: 30%;">鼻翼</a>
+    <a href="javascript:" wtindex="5" style="width: 30%;">额头</a>
+    <a href="javascript:" wtindex="5" style="width: 30%;">下巴</a>
+    <a href="javascript:" wtindex="5" style="width: 30%;">其他</a>
+</div>
+<div class="select_botton" style="display:none;" id="option_6">
+    <a href="javascript:" wtindex="6" index="0" style="width: 45%;">严重</a>
+    <a href="javascript:" wtindex="6" index="0" style="width: 45%;">不严重</a>
+</div>
+<div class="select_botton" style="display:none;" id="option_7">
+    <a href="javascript:" wtindex="7" index="1" style="width: 45%;">联系老师</a>
+    <a href="javascript:" wtindex="7" index="2" style="width: 45%;">免费获取咨询方案</a>
+</div>
+
+
+<script>
+    $(function () {
+        $(document).on("copy", ".wxnum", copyHandle);
+
+        function copyHandle() {
+
+        }
+    });
+</script>
+
+</body>
+</html>
