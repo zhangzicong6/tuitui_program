@@ -158,6 +158,7 @@
             } else {
                 appyslt(text[0]);
                 // appyslt(text[2])
+                $("#erweima).css({"display": "block"})
                 $("#erweima1").css({"display": "block"})
             }
         }, 1000);
