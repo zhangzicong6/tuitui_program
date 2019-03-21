@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<!-- saved from url=(0146)http://www.yuxina.cn/bg/abc/cfki372.html?tt_from=copy_link&utm_source=copy_link&utm_medium=toutiao_ios&utm_campaign=client_share&from=groupmessage -->
+<html class=" js cssanimations csscalc cssvhunit" style="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0">
+    <title>肌肤类型测试</title>
+
+    <link rel="stylesheet" type="text/css" href="/lq/0321/qudou/qudou/demo.css">
+    <link rel="stylesheet" type="text/css" href="/lq/0321/qudou/qudou/component.css">
+
+    <script src="/lq/0321/qudou/qudou/jquery.min.js"></script>
+    <!--<script src="/lq/0321/qudou/qudou/jquery.cookie.js"></script>-->
+
+    <script src="/lq/0321/qudou/qudou/modernizr.custom.js"></script>
+
+
+    <style>
+        body {
+            background: #fff;
+            font-family: "microsoft yahei";
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        input[type="radio"] {
+            display: inline;
+            width: 60px;
+        }
+
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        label {
+            display: block;
+        }
+
+        .fs-submit {
+            display: none;
+        }
+
+        .simform ol::before {
+            height: 4.95em;
+        }
+
+        .fs-form .fs-display-next .fs-hide {
+            visibility: hidden;
+        }
+
+        .fs-form li.fs-hide,
+        .fs-form li.fs-show {
+            pointer-events: auto;
+        }
+
+        .cs-skin-boxes .cs-options li.doudou {
+            background: url(Images/doudou.png) no-repeat center / 50%;
+        }
+
+        .cs-skin-boxes .cs-options li.heitou {
+            background: url(Images/heitou.png) no-repeat center / 50%;
+        }
+
+        .cs-skin-boxes label {
+            color: #fff;
+            font-style: normal;
+            padding: 10px 20px;
+            cursor: pointer;
+            background: url(Images/zuo.png) no-repeat center / 110% 120%;
+        }
+
+        .cs-skin-boxes label:nth-of-type(1) {
+            padding-right: 30px;
+            padding-bottom: 20px;
+        }
+
+        .cs-skin-boxes label:nth-of-type(2) {
+            background-image: url(Images/you.png);
+            padding-left: 25px;
+        }
+
+        .cs-skin-boxes label:nth-of-type(3) {
+            background-image: url(Images/you.png);
+            padding-left: 25px;
+        }
+
+        .cs-skin-boxes label:nth-of-type(4) {
+            padding-right: 30px;
+            padding-bottom: 20px;
+        }
+
+        .cs-skin-boxes label:nth-of-type(5) {
+            background-image: url(Images/you.png);
+        }
+
+        .cs-skin-boxes label:last-of-type {
+            background-image: url(Images/you.png);
+            /*				transform:scale3d(.6,1.2,0.8);*/
+        }
+
+        /*			.fs-fields li:nth-child(4) .fs-anim-lower {
+				background: url(Images/pic01-hfwq.png) no-repeat right center;
+			}
+			.fs-fields li:nth-child(5) .fs-anim-lower {
+				background: url(Images/help.png) no-repeat right center / auto 100%;
+			}
+			.fs-fields li:nth-child(6) .fs-anim-lower {
+				background: url(Images/flaunt.png) no-repeat right center / auto 100%;
+			}*/
+
+        @media screen and (max-width: 480px) {
+            .fs-title {
+                padding: 0;
+            }
+
+            .fs-form {
+                top: 0;
+                padding: 0;
+            }
+
+            .ages {
+                margin-bottom: 15px;
+            }
+
+            .fs-fields > li .fs-radio-custom span {
+                width: 50%;
+            }
+
+        }
+
+        div.cs-skin-boxes {
+            font-size: 0.65em;
+        }
+
+        label input[type="radio"],
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .fs-continue {
+            display: none;
+        }
+
+        h1 {
+            /*background:url(Images/logo.png) no-repeat center / 200px;
+				text-indent:-9999px;
+			     min-height:100px;*/
+        }
+
+        .wis-tiele {
+            border: 3px solid #106AC7;
+            max-width: 400px;
+            padding: 20px;
+            margin: 0 auto 20px;
+            border-radius: 22px;
+            box-shadow: 1px 2px 1px 2px #ccc;
+        }
+
+        .wis-tiele h2 {
+            font-size: 33px;
+            margin: 0;
+            font-weight: normal;
+            color: rgb(16, 106, 199);
+        }
+
+        .wis-tiele h3 {
+            font-size: 15px;
+            margin: 0;
+            font-weight: normal;
+            color: rgb(36, 137, 219);
+        }
+
+        .fs-radio-group {
+            position: relative;
+        }
+
+        .code {
+            margin: 10px 30px 30px;
+            border-radius: 10px;
+            background: #0178d3;
+            border: 2px solid #fff;
+            padding: 20px 20px 30px;
+            position: relative;
+        }
+
+        .wxh {
+            background: #03418e;
+            border-radius: 25px;
+            /*box-shadow: 0 0 4px #ccc inset;*/
+            color: #fff;
+            font-size: 26px;
+            font-weight: bold;
+            height: 50px;
+            line-height: 50px;
+            margin: 20px auto 0;
+            text-align: center;
+            width: 65%;
+        }
+
+        .fs-title {
+            position: static;
+        }
+
+        .fs-form-wrap {
+            color: #2e2e2e;
+        }
+
+        .fs-form {
+            z-index: 1;
+            padding: 0;
+            top: 0;
+        }
+
+        .fs-fields > li label.fs-field-label {
+            display: block;
+            color: #2e2e2e;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        .fs-numbers,
+        .fs-progress {
+            display: none;
+        }
+
+        .devider {
+            border-bottom: 2px solid #03418e;
+            border-top: 1px solid #03418e;
+            height: 6px;
+            margin-top: 5px;
+        }
+
+        .fs-fields > li .fs-radio-custom span {
+            margin-right: 0;
+        }
+
+        .fs-fields .fs-radio-custom label::after {
+            height: 100%;
+            background-size: 92% !important;
+            background-position: 50% 0 !important;
+        }
+
+        .fs-fields li:nth-child(1) .fs-radio-custom > span:nth-child(1) label:after {
+            background: url(Images/survey_mxy3_q1_01.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(1) .fs-radio-custom > span:nth-child(2) label:after {
+            background: url(Images/survey_mxy3_q1_02.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(1) .fs-radio-custom > span:nth-child(3) label:after {
+            background: url(Images/survey_mxy3_q1_03.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(1) .fs-radio-custom > span:nth-child(4) label:after {
+            background: url(Images/survey_mxy3_q1_04.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(2) .fs-radio-custom > span:nth-child(1) label:after {
+            background: url(Images/survey_mxy3_q2_01.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(2) .fs-radio-custom > span:nth-child(2) label:after {
+            background: url(Images/survey_mxy3_q2_02.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(2) .fs-radio-custom > span:nth-child(3) label:after {
+            background: url(Images/survey_mxy3_q2_03.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(2) .fs-radio-custom > span:nth-child(4) label:after {
+            background: url(Images/survey_mxy3_q2_04.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(3) .fs-radio-custom > span:nth-child(1) label:after {
+            background: url(Images/survey_mxy3_q3_01.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(3) .fs-radio-custom > span:nth-child(2) label:after {
+            background: url(Images/survey_mxy3_q3_02.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(3) .fs-radio-custom > span:nth-child(3) label:after {
+            background: url(Images/survey_mxy3_q3_03.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(4) .fs-radio-custom > span {
+            width: 33.33%;
+        }
+
+        .fs-fields li:nth-child(4) .fs-radio-custom > span:nth-child(1) label:after {
+            background: url(Images/survey_mxy3_q4_01.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(4) .fs-radio-custom > span:nth-child(2) label:after {
+            background: url(Images/survey_mxy3_q4_02.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(4) .fs-radio-custom > span:nth-child(3) label:after {
+            background: url(Images/survey_mxy3_q4_03.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(4) .fs-radio-custom > span:nth-child(4) label:after {
+            background: url(Images/survey_mxy3_q4_04.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(4) .fs-radio-custom > span:nth-child(5) label:after {
+            background: url(Images/survey_mxy3_q4_05.jpg) no-repeat;
+        }
+
+        .fs-fields li:nth-child(4) .fs-radio-custom > span:nth-child(6) label:after {
+            background: url(Images/survey_mxy3_q4_06.jpg) no-repeat;
+        }
+
+        .fs-fields .fs-radio-custom input[type="checkbox"] {
+            position: absolute;
+            display: block;
+            margin: 30px auto 20px;
+            margin: 0 auto 20px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .fs-fields > li .fs-radio-custom span {
+            padding: 10px 5px;
+        }
+
+        .fs-fields > li .fs-radio-custom span label {
+            color: #4d4d4d;
+        }
+
+        .checked:after {
+            content: "\2713";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            display: block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 28px;
+            background: green;
+            color: #fff;
+            border: 1px solid green;
+            border-radius: 50%;
+            z-index: 99;
+            margin: -15px 0 0 -15px;
+        }
+
+        .fs-form-wrap {
+            /*				height:auto;	*/
+        }
+
+        .rel {
+            position: relative;
+            /*height:100%;*/
+        }
+
+        .next {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 7.04%;
+            margin: 0;
+        }
+
+        .fs-fields .rel > label {
+            position: absolute;
+            left: 26.41%;
+            top: 10.7%;
+            width: 11.88%;
+            height: 7.6%;
+            padding: 0;
+        }
+
+        .fs-fields .rel > label:nth-of-type(2) {
+            left: 56.41%;
+        }
+
+        .fs-fields .rel > label:nth-of-type(3),
+        .fs-fields .rel > label:nth-of-type(4),
+        .fs-fields .rel > label:nth-of-type(5),
+        .fs-fields .rel > label:nth-of-type(6) {
+            top: 25.3%;
+            width: 17.03%;
+            height: 14.1%;
+            left: 9.38%;
+        }
+
+        .fs-fields .rel label:nth-of-type(4) {
+            left: 30.63%;
+        }
+
+        .fs-fields .rel label:nth-of-type(5) {
+            left: 52.5%;
+        }
+
+        .fs-fields .rel label:nth-of-type(6) {
+            left: 73.44%;
+        }
+
+        .fs-fields .rel > label:nth-of-type(7),
+        .fs-fields .rel > label:nth-of-type(8),
+        .fs-fields .rel > label:nth-of-type(9) {
+            top: 47.7%;
+            width: 16.88%;
+            height: 11.3%;
+            left: 8.59%;
+        }
+
+        .fs-fields .rel label:nth-of-type(8) {
+            left: 30.63%;
+        }
+
+        .fs-fields .rel label:nth-of-type(9) {
+            left: 52.5%;
+        }
+
+        .fs-fields .rel > label:nth-of-type(10),
+        .fs-fields .rel > label:nth-of-type(11),
+        .fs-fields .rel > label:nth-of-type(12),
+        .fs-fields .rel > label:nth-of-type(13),
+        .fs-fields .rel > label:nth-of-type(14),
+        .fs-fields .rel > label:nth-of-type(15),
+        .fs-fields .rel > label:nth-of-type(16) {
+            top: 67.9%;
+            width: 17.19%;
+            height: 7.9%;
+            left: 8.75%;
+        }
+
+        .fs-fields .rel label:nth-of-type(11),
+        .fs-fields .rel > label:nth-of-type(15) {
+            left: 29.22%;
+        }
+
+        .fs-fields .rel label:nth-of-type(12),
+        .fs-fields .rel > label:nth-of-type(16) {
+            left: 49.69%;
+        }
+
+        .fs-fields .rel label:nth-of-type(13) {
+            left: 70.16%;
+        }
+
+        .fs-fields .rel > label:nth-of-type(14),
+        .fs-fields .rel > label:nth-of-type(15),
+        .fs-fields .rel > label:nth-of-type(16) {
+            top: 78%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label {
+            left: 9.84%;
+            top: 15.8%;
+            width: 17.81%;
+            height: 3.5%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(2),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(6) {
+            left: 31.09%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(3),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(7) {
+            left: 52.03%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(4),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(8) {
+            left: 73.59%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(5),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(6),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(7),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(8) {
+            top: 21%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(9),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(10),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(11),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(12) {
+            left: 10.47%;
+            top: 32.1%;
+            width: 17.19%;
+            height: 14.2%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(10) {
+            left: 31.72%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(11) {
+            left: 53.75%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(12) {
+            left: 74.38%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(13),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(14),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(15),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(16),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(17),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(18),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(19),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(20) {
+            left: 9.69%;
+            top: 54.4%;
+            width: 16.88%;
+            height: 7.8%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(17),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(18),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(19),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(20) {
+            top: 64.8%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(14),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(18) {
+            left: 29.84%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(15),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(19) {
+            left: 50.31%;
+        }
+
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(16),
+        .fs-fields li:nth-child(3) .rel > label:nth-of-type(20) {
+            left: 70.94%;
+        }
+
+        .fs-fields li:nth-child(4) .rel > label {
+            left: 10.63%;
+            top: 25.1%;
+            width: 17.19%;
+            height: 13.3%;
+        }
+
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(5),
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(6),
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(7),
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(8) {
+            top: 40.5%;
+        }
+
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(9),
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(10),
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(11),
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(12) {
+            top: 55.8%;
+        }
+
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(4n+2) {
+            left: 31.09%;
+        }
+
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(4n+3) {
+            left: 51.56%;
+        }
+
+        .fs-fields li:nth-child(4) .rel > label:nth-of-type(4n+4) {
+            left: 72.03%;
+        }
+
+        input[type="text"] {
+            padding: 0;
+            background: transparent;
+            border-color: transparent;
+            box-sizing: border-box;
+            font-size: 14px;
+            border: none;
+            height: 100%;
+        }
+
+        /*.fs-fields li:last-child .rel {
+				background-size:contain;
+			}
+			.fs-fields li:last-child .rel > h2 {
+				position:absolute;
+				color:#000;
+				top:22%;
+				left:0;
+				width:100%;
+				text-align:center;
+				margin:0;
+				font-size:18px;
+			}
+			.fs-fields li:last-child .rel > label {
+				left:17.97%;
+				top:32.3%;
+				width:64.06%;
+				height:auto;
+				transform:translateY(-50%);
+				-webkit-transform:translateY(-50%);
+				color:#fff;
+				text-align:center;
+			}*/
+
+        .fs-form {
+            z-index: 1;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .red {
+            color: #f00;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .rela {
+            position: relative;
+        }
+
+        .top h2 {
+            position: absolute;
+            width: 100%;
+            top: 21%;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .weixin {
+            position: absolute;
+            width: 63%;
+            padding: 0 10px;
+            color: #fff;
+            top: 44%;
+            left: 18%;
+            margin: 0;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .weixin label {
+            /*float: left;*/
+        }
+
+        .weixin a {
+            color: #fff;
+            float: right;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 0;
+            z-index: 99;
+        }
+
+        .fixed p {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #fff;
+            bottom: 0;
+            margin: 0;
+            font-size: 0.8rem;
+        }
+
+        .fixed span {
+            text-decoration: underline;
+            color: #4CA1E6;
+            font-weight: bold;
+        }
+
+        .toweixin {
+            background: #4ca1e6;
+            color: #fff;
+            padding: 5px 10px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 15px;
+        }
+
+        article {
+            font-size: 1rem;
+            padding: 0 10px;
+        }
+
+        article h1 {
+            font-size: 1.5rem;
+        }
+
+        article p {
+            line-height: 1.5;
+        }
+
+        .zan {
+            width: 20px;
+        }
+
+        .xiaoxi h2 {
+            position: absolute;
+            width: 100%;
+            top: 37%;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .xiaoxi *:not(img) {
+            position: absolute;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .xiaoxi p:first-of-type {
+            top: 43%;
+            font-size: 1.2rem;
+            padding: 0 1.5rem;
+            line-height: 1.6;
+        }
+
+        .xiaoxi p:nth-of-type(2) {
+            top: 73%;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .xiaoxi p:nth-of-type(3) {
+            top: 78.5%;
+            width: 100%;
+            color: #F0D566;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .xiaoxi p:nth-of-type(4) {
+            top: 87%;
+            width: 100%;
+            color: #f00;
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 360px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 380px) {
+            .xiaoxi p:first-of-type {
+                font-size: 1.1rem;
+            }
+        }
+
+        #toweixin {
+            display: block;
+            width: 50%;
+            margin: 6px auto;
+            background: #1356e2;
+            color: #fff;
+            border-radius: 12px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            box-shadow: 0 1px 3px 0 #000;
+        }
+
+        #tanchuang_result {
+            border-radius: 10px;
+            box-shadow: 6px 7px 10px rgba(192, 192, 192, .7);
+            text-align: center;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            width: 94%;
+            max-width: 400px;
+            padding-top: 26px;
+            display: none;
+            z-index: 999;
+            font-size: 18px;
+            font-family: "microsoft yahei";
+        }
+
+        #tanchuang_result > a {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            color: #fff;
+            font-size: 40px;
+            width: 40px;
+            height: 40px;
+            line-height: 27px;
+            background: #2e3641;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 2px 2px 8px #ccc;
+            box-sizing: border-box;
+        }
+
+        .r_top {
+            background: #6ebbe9;
+            border-radius: 21px 21px 0 0;
+            padding-top: 35px;
+            padding-bottom: 20px;
+            box-shadow: 0px 3px 0 #ccc;
+            position: relative;
+        }
+
+        .r_top img {
+            position: absolute;
+            top: -62px;
+            left: 36%;
+            width: 100px;
+        }
+
+        .r_top p:nth-child(2) {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .r_top p:nth-child(3) {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .inp {
+            width: 72%;
+            background: #fff;
+            border-radius: 10px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 auto;
+            color: #302e2e;
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        .r_bottom {
+            background: #f5f5f5;
+            border-radius: 0 0 21px 21px;
+            position: relative;
+            padding-bottom: 15px;
+            padding-top: 8px;
+        }
+
+        .b_wx {
+            width: 100%;
+        }
+
+        .b_wx img {
+            width: 55px;
+            position: relative;
+            top: 0px;
+        }
+
+        .b_wx a {
+            color: #302e2e;
+            font-size: 26px;
+            text-decoration: underline;
+        }
+
+        .r_bottom p {
+            color: #afafaf;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .b_wx1 {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .b_wx1 img {
+            width: 80%;
+        }
+
+        .b_wx1 span {
+            position: absolute;
+            top: 6px;
+            left: 37%;
+            color: #1a8233;
+            font-size: 15px;
+            font-family: "微软雅黑";
+        }
+
+        .shou {
+            position: absolute;
+            right: 10%;
+            bottom: -3px;
+        }
+    </style>
+    <style>
+        .detail-logo {
+            display: none;
+        }
+
+        .detail-main {
+            margin-top: 0;
+            /*顶部评论框*/
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .input_wrap {
+            clear: both;
+            overflow: hidden;
+            *zoom: 1;
+            position: relative;
+            padding: 0 10px;
+            max-width: 740px;
+            margin: 0 auto 60px;
+        }
+
+        .input_wrap p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .discipline {
+            font-size: 12px;
+            color: #3990e6;
+            padding-left: 12px;
+        }
+
+        a.input_smt {
+            display: block;
+            width: 50px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            color: #fff;
+            font-size: 13px;
+            background: #21acfd;
+            float: right;
+            margin-top: 8px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+        .input_area {
+            border: 1px solid #e2e2e2;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            padding: 10px;
+            min-height: 20px;
+            font-size: 14px;
+            color: #777;
+            background: #fff;
+        }
+
+        .input_area textarea {
+            display: block;
+            width: 100%;
+            border: none;
+            height: 20px;
+            line-height: 20px
+        }
+
+        .input_area textarea.on {
+            height: 100px;
+            transition: 0.8s ease;
+            -webkit-transition: 0.8s ease;
+        }
+
+        /*.input_area textarea:focus{ height:100px;transition: 0.8s ease;-webkit-transition: 0.8s ease;}*/
+
+        .input_btm {
+            font-size: 12px;
+            color: #666;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 5px
+        }
+
+        .input_btm input {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /*评论*/
+
+        .cmnt_article {
+            clear: both;
+            overflow: hidden;
+            *zoom: 1;
+        }
+
+        .cmnt_title {
+            height: 24px;
+            position: relative;
+            margin: 5px 0;
+        }
+
+        .cmnt_title span {
+            display: block;
+            position: absolute;
+            left: -15px;
+            top: 0;
+            height: 24px;
+            width: 72px;
+            background: #21acfd;
+            line-height: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .cmnt_item {
+            clear: both;
+            overflow: hidden;
+            *zoom: 1;
+            padding: 12px 0 12px 38px;
+            /* border-bottom: 1px solid #f0f0f0;*/
+            position: relative;
+        }
+
+        .cmnt_item:last-child {
+            border-bottom: none;
+        }
+
+        .cmnt_top {
+            clear: both;
+            overflow: hidden;
+            height: 30px;
+            line-height: 30px;
+            font-size: 13px;
+            color: #00a0fe;
+            margin: 14px 0 -8px -38px;
+            position: relative;
+        }
+
+        .cmnt_base .cmnt_top {
+            height: 40px;
+            line-height: 24px;
+            font-size: 12px;
+            margin: 0 0 2px;
+            color: #333;
+        }
+
+        .cmnt_top span:first-child {
+            display: block;
+            color: #6f6f6f;
+            /*#3990e6*/;
+            position: relative;
+            padding-left: 38px;
+            background: url(Images/all.png) no-repeat;
+            background-size: 100px auto;
+            background-position: 0 -336px;
+        }
+
+        .cmnt_top .cmnt_source {
+            display: block;
+            color: #999;
+            font-size: 10px;
+            height: 16px;
+            line-height: 16px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden
+        }
+
+        .cmnt_nick {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            font-style: normal;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden
+        }
+
+        .cmnt_top .cmnt_nick em {
+            display: none;
+            font-size: 10px;
+            color: #aaa;
+            margin-left: 4px;
+            font-style: normal
+        }
+
+        .phone {
+            display: inline-block;
+            vertical-align: middle;
+            width: 0;
+        }
+
+        .cmnt_top .cmnt_time {
+            display: block;
+            height: 14px;
+            line-height: 14px;
+            font-size: 10px;
+            color: #999;
+            font-style: normal;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden
+        }
+
+        .cmnt_base .cmnt_top span {
+            padding-left: 0;
+            background: none;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden
+        }
+
+        .cmnt_top span img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            /*-moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px;*/
+        }
+
+        .cmnt_top code {
+            font-size: 10px;
+            color: #999;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            height: 24px;
+            line-height: 24px;
+            width: 45px;
+            text-align: right;
+        }
+
+        .cmnt_top .editor {
+            font-size: 9px;
+            font-style: normal;
+            line-height: 19px;
+            padding: 0 10px 1px 21px;
+            border: 1px solid #fe7358;
+            border-radius: 10px;
+            color: #fe7358;
+            margin-left: 10px;
+            background: url(Images/all.png) no-repeat;
+            background-size: 100px auto;
+            background-position: 9px -539px;
+        }
+
+        .cmnt_base .cmnt_top code {
+            font-size: 12px;
+            color: #8b8b7e;
+            top: 7px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .cmnt_text {
+            font-size: 15px;
+            line-height: 20px;
+            text-align: justify;
+            color: #3a3a3a;
+            padding: 2px 0;
+            word-break: break-all;
+            word-wrap: break-word;
+            margin-top: 2px;
+        }
+
+        .cmnt_quote {
+            font-size: 12px;
+            color: #3990e6;
+            padding: 10px 5px;
+            text-indent: 2em;
+            background: #f2f2f2;
+            margin: 10px 0 0 0;
+            clear: both;
+        }
+
+        .cmnt_text a {
+            margin-left: 10px;
+            color: #5494EA;
+            font-size: 12px;
+        }
+
+        .cmnt_op {
+            position: absolute;
+            right: 0;
+            top: 13px;
+            display: block;
+            height: 16px;
+            line-height: 16px;
+            text-align: right;
+            overflow: visible;
+        }
+
+        .cmnt_op_all {
+            position: absolute;
+            right: -284px;
+            top: 0;
+            z-index: 9;
+            background: rgba(54, 62, 71, 0.95);
+            width: 264px;
+            text-align: center;
+            height: 44px;
+            line-height: 44px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            padding-left: 20px;
+        }
+
+        .cmnt_op a,
+        .cmnt_op_all a {
+            background: url(Images/all.png) no-repeat;
+            background-size: 100px auto;
+            color: #aaa
+        }
+
+        .cmnt_op a,
+        .cmnt_op_all a {
+            display: inline-block;
+            vertical-align: middle;
+            height: 16px;
+            line-height: 16px;
+        }
+
+        .cmnt_op_all a.pl {
+            background-position: -46px -69px;
+            width: 16px;
+            padding: 0 16px;
+        }
+
+        .cmnt_op_all a {
+            border-right: 1px solid #525960;
+        }
+
+        .cmnt_op_all a:last-child {
+            border: none;
+        }
+
+        .cmnt_op_all a.good {
+            padding-left: 22px;
+            color: #fff;
+            background-position: -60px -105px;
+            font-size: 12px;
+            position: relative;
+            padding-right: 16px;
+        }
+
+        .cmnt_op_all a.good.on {
+            background-position: 0 -136px
+        }
+
+        .cmnt_op a.good {
+            padding-left: 20px;
+            color: #898989;
+            background: url(Images/good.png) no-repeat left center / contain;
+            font-size: 12px;
+            position: relative;
+            padding-right: 10px;
+        }
+
+        .cmnt_op a.good::after {
+            width: 1px;
+            content: '';
+            display: inline-block;
+            height: 14px;
+            background: #dfdfdf;
+            position: absolute;
+            right: -1px;
+            top: 1px;
+        }
+
+        .cmnt_op a.good.on {
+            background-position: 0 -136px
+        }
+
+        .cmnt_op a.cmntico {
+            padding-left: 22px;
+            color: #aaa;
+            margin-left: 10px;
+            background-position: 0 -69px;
+            font-size: 12px;
+            position: relative;
+            padding-right: 5px;
+            display: none;
+        }
+
+        .cmnt_op_all a.send {
+            background-position: -42px -167px;
+            width: 16px;
+            padding: 0 20px;
+        }
+
+        .cmnt_op_all a.fold {
+            background-position: 20px -190px;
+            width: 16px;
+            padding: 0 20px;
+        }
+
+        .cmnt_op a.unfold {
+            width: 28px;
+            background-position: -50px -190px;
+        }
+
+        .cmnt_op .fly,
+        .cmnt_op_all .fly {
+            position: absolute;
+            display: inline-block;
+            background: url(Images/all.png) no-repeat;
+            background-size: 100px auto;
+            background-position: 0 -140px;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            animation: flying 0.6s;
+            -moz-animation: flying 0.6s;
+            /* Firefox */
+            -webkit-animation: flying 0.6s;
+            /* Safari and Chrome */
+            -o-animation: flying 0.6s;
+            /* Opera */
+            animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+        }
+
+        /*评论活动*/
+
+        .winner_tips {
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+            border-top: 1px solid #f0f0f0;
+            margin: 5px 0;
+            height: 40px;
+            line-height: 40px;
+            background: url(Images/lw.png) no-repeat 4px 7px;
+            background-size: 24px auto;
+            padding-left: 36px
+        }
+
+        .winner_tips a {
+            color: #3990e6;
+        }
+
+        .winner_tips span {
+            color: #f22f6d
+        }
+
+        .cmnt_op_bottom {
+            clear: both;
+            font-size: 10px;
+            margin-top: 8px;
+            margin-bottom: 4px;
+            position: relative;
+            color: #aaa
+        }
+
+        .cmnt_op_bottom_times {
+            float: left;
+            line-height: 16px;
+            font-size: 12px;
+        }
+
+        .cmnt_op {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            height: 16px;
+            line-height: 16px;
+            text-align: right;
+            overflow: visible;
+        }
+
+        .cmnt_op_bottom_report {
+            float: left;
+            line-height: 16px;
+            padding-left: 12px;
+            color: #aaa;
+            display: none;
+        }
+
+        .cmnt_op_bottom_report.on {
+            color: #d2d2d2;
+        }
+
+        .liuyan {
+            text-align: center;
+        }
+
+        .liuyan span {
+            background: #fff;
+            padding: 0 10px;
+            color: #999;
+        }
+
+        .liuyan:after {
+            content: "";
+            display: block;
+            width: 100%;
+            border-bottom: 1px dashed #dfdfdf;
+            margin-top: -10px;
+        }
+
+        .fs-fields li {
+            height: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<textarea id="command" style="position: absolute;z-index: -1;
+  border-radius: 5px;
+    background: #eee;
+    text-align: center;
+    font-size: 14px;
+    padding: 15px;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    height: 108px;
+    resize: none;">fine</textarea>
+<div class="container">
+    <div class="fs-form-wrap" id="fs-form-wrap">
+        <form id="myform" name="myform"
+              action="http://www.yuxina.cn/bg/abc/cfki372.html?tt_from=copy_link&amp;utm_source=copy_link&amp;utm_medium=toutiao_ios&amp;utm_campaign=client_share&amp;from=groupmessage"
+              class="fs-form fs-form-full" autocomplete="off" style="height: 100%;">
+            <ol class="fs-fields" style="height: 100%;background: #b9e0ff;">
+                <li class="fs-current">
+                    <div class="fs-radio-group clearfix fs-anim-lower rel">
+                        <img src="/lq/0321/qudou/qudou/survey_yq9_1_01.gif">
+                        <img src="/lq/0321/qudou/qudou/survey_yq9_1_02.gif">
+                        <p class="next" style="left:18.75%;top:82.8%;width:62.5%;height:8.6%;" id="tt5"></p>
+
+                    </div>
+                    <img src="/lq/0321/qudou/qudou/teng1.png">
+                </li>
+                <li>
+                    <div class="fs-radio-group clearfix fs-anim-lower rel">
+                        <img src="/lq/0321/qudou/qudou/age.jpg">
+                        <img src="/lq/0321/qudou/qudou/survey_yq9_2_02.jpg">
+                        <label id="nan"><input name="sex" type="radio" value="0" required=""></label>
+                        <label id="nv"><input name="sex" type="radio" value="1" required=""></label>
+                        <label id="yu1" class="yun"><input name="age" type="radio" value="0" required=""></label>
+                        <label id="yu2" class="yun"><input name="age" type="radio" value="1" required=""></label>
+                        <label id="yu3" class="yun"><input name="age" type="radio" value="2" required=""></label>
+
+                        <label id="yu4" class="yun"><input name="q1" type="radio" value="A" required=""></label>
+                        <label><input name="q1" type="radio" value="B" required=""></label>
+                        <label><input name="q1" type="radio" value="C" required=""></label>
+                        <label><input name="q2" type="checkbox" value="A" required=""></label>
+                        <label><input name="q2" type="checkbox" value="B" required=""></label>
+                        <label><input name="q2" type="checkbox" value="C" required=""></label>
+                        <label><input name="q2" type="checkbox" value="D" required=""></label>
+                        <label><input name="q2" type="checkbox" value="E" required=""></label>
+                        <label><input name="q2" type="checkbox" value="F" required=""></label>
+                        <label><input name="q2" type="checkbox" value="G" required=""></label>
+                        <p class="next" style="left:30.31%;top:88.4%;width:34.84%;height:6.9%;" id="tt2"></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="fs-radio-group clearfix fs-anim-lower rel">
+                        <img src="/lq/0321/qudou/qudou/survey_yq9_3_01.jpg">
+                        <img src="/lq/0321/qudou/qudou/survey_yq9_3_02.jpg">
+                        <label><input name="q3" type="radio" value="A" required=""></label>
+                        <label><input name="q3" type="radio" value="B" required=""></label>
+                        <label><input name="q3" type="radio" value="C" required=""></label>
+                        <label><input name="q3" type="radio" value="D" required=""></label>
+                        <label><input name="q3" type="radio" value="E" required=""></label>
+                        <label><input name="q3" type="radio" value="F" required=""></label>
+                        <label><input name="q3" type="radio" value="G" required=""></label>
+                        <label><input name="q3" type="radio" value="H" required=""></label>
+
+                        <label><input name="q4" type="radio" value="A" required=""></label>
+                        <label><input name="q4" type="radio" value="B" required=""></label>
+                        <label><input name="q4" type="radio" value="C" required=""></label>
+                        <label><input name="q4" type="radio" value="D" required=""></label>
+
+                        <label><input name="q5" type="checkbox" value="A" required=""></label>
+                        <label><input name="q5" type="checkbox" value="B" required=""></label>
+                        <label><input name="q5" type="checkbox" value="C" required=""></label>
+                        <label><input name="q5" type="checkbox" value="D" required=""></label>
+                        <label><input name="q5" type="checkbox" value="E" required=""></label>
+                        <label><input name="q5" type="checkbox" value="F" required=""></label>
+                        <label><input name="q5" type="checkbox" value="G" required=""></label>
+                        <label><input name="q5" type="checkbox" value="H" required=""></label>
+                        <p class="next" style="left:31.88%;top:76.3%;width:36.25%;height:7.8%;" id="tt3"></p>
+                    </div>
+                </li>
+                <li data-input-trigger="">
+                    <div class="fs-radio-group clearfix fs-anim-lower rel">
+                        <img src="/lq/0321/qudou/qudou/survey_jianfeng_4_01.jpg">
+                        <img src="/lq/0321/qudou/qudou/survey_jianfeng_4_02.jpg">
+                        <label><input name="q6" type="checkbox" value="A" required=""></label>
+                        <label><input name="q6" type="checkbox" value="B" required=""></label>
+                        <label><input name="q6" type="checkbox" value="C" required=""></label>
+                        <label><input name="q6" type="checkbox" value="D" required=""></label>
+                        <label><input name="q6" type="checkbox" value="E" required=""></label>
+                        <label><input name="q6" type="checkbox" value="F" required=""></label>
+                        <label><input name="q6" type="checkbox" value="G" required=""></label>
+                        <label><input name="q6" type="checkbox" value="H" required=""></label>
+                        <label><input name="q6" type="checkbox" value="I" required=""></label>
+                        <label><input name="q6" type="checkbox" value="J" required=""></label>
+                        <label><input name="q6" type="checkbox" value="K" required=""></label>
+                        <label><input name="q6" type="checkbox" value="L" required=""></label>
+                        <p class="next tan" style="left:31.88%;top:76.1%;width:36.25%;height:8%;" id="tt4"></p>
+                    </div>
+                </li>
+            </ol>
+            <!-- /fs-fields -->
+            <button class="fs-submit" type="submit">提交问卷</button>
+        </form>
+        <!-- /fs-form -->
+        <div class="fs-controls">
+            <nav class="fs-nav-dots fs-show">
+                <button class="fs-dot-current"></button>
+                <button disabled=""></button>
+                <button disabled=""></button>
+                <button disabled=""></button>
+            </nav>
+            <span class="fs-numbers fs-show"><span class="fs-number-current">1</span><span
+                    class="fs-number-total">4</span></span>
+            <div class="fs-progress fs-show"></div>
+        </div>
+        <span class="fs-message-error"></span>
+        <div class="fs-controls">
+            <nav class="fs-nav-dots fs-show">
+                <button class="fs-dot-current"></button>
+                <button disabled=""></button>
+                <button disabled=""></button>
+                <button disabled=""></button>
+            </nav>
+            <span class="fs-numbers fs-show"><span class="fs-number-current">1</span><span
+                    class="fs-number-total">4</span></span>
+            <div class="fs-progress fs-show"></div>
+        </div>
+        <span class="fs-message-error"></span></div>
+    <!-- /fs-form-wrap -->
+
+</div>
+<!-- /container -->
+<div id="tanchuang_result">
+    <div class="r_top">
+        <img style="border-radius: 50%;" src="/lq/0321/qudou/qudou/tou.jpg" alt="">
+        <p style="margin: 5px 0;">关注微信公众号，真人对答解决肌肤问题</p>
+        <p style="margin: 5px 0;">↓长按复制微信公众号添加↓</p>
+        <div class="inp" oncopy="actionCopy()" id="text">taoxiaoma173</div>
+    </div>
+    <div class="r_bottom">
+        <img src="/lq/0321/qudou/qudou/erweima.jpg" width="80%" alt="">
+    </div>
+
+    <a href="javascript:;" class="close">×</a>
+
+</div>
+<script src="/lq/0321/qudou/qudou/classie.js"></script>
+<script src="/lq/0321/qudou/qudou/fullscreenform5_gq2.js"></script>
+<script src="/lq/0321/qudou/qudou/clipboard.min.js"></script>
+
+<script type="text/javascript">
+    $('.yun').bind('click', function () {
+        _hmt.push(['trackEvent', 'to_wx', 'click']);
+    })
+
+    $('.close').click(function () {
+        window.location.href = 'weixin://';
+    })
+    $('.go').click(function () {
+        window.location.href = 'weixin://';
+    })
+
+    $('.b_wx1').click(function () {
+        window.location.href = 'weixin://';
+    })
+
+    function copyText() {
+        var text = document.getElementById("text").innerText;
+        var input = document.getElementById("input");
+        input.value = text; // 修改文本框的内容
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        var bln = confirm("微信号复制成功")
+        if (bln == true) {
+            window.location.href = 'weixin://';
+        } else {
+        }
+    }
+</script>
+
+<script>
+    (function () {
+        var formWrap = document.getElementById('fs-form-wrap');
+        form = new FForm(formWrap, {
+            onReview: function () {
+                classie.add(document.body, 'overview'); // for demo purposes only
+            }
+        });
+    })();
+    $('.tan').click(function () {
+        document.querySelector('#tanchuang_result').style.display = 'block';
+    });
+    $('input[type="radio"]').click(function () {
+        var _this = this;
+        $('[name=' + $(this).attr('name') + ']').each(function () {
+            $(this).parent().removeClass('checked');
+        });
+        $(this).parent().addClass('checked');
+    });
+    $('input[type="checkbox"]').click(function () {
+        if (this.checked) {
+            $(this).parent().addClass('checked');
+        } else {
+            $(this).parent().removeClass('checked');
+        }
+    });
+    var clipboard = new Clipboard('.copy');
+
+    clipboard.on('success', function (e) {
+        alert('复制成功，请打开微信添加微信号');
+    });
+
+    clipboard.on('error', function (e) {
+        alert('您的浏览器暂不支持，请长按复制');
+    });
+
+    function actionCopy() {
+        _taq.push({
+            convert_id: "1605507893861415",
+            event_type: "wechat"
+        });
+        meteor.track("wechat", {
+            convert_id: "1621180914243597"
+        });
+        window.location.href = "weixin://";
+    }
+</script>
+<script>
+    $(function () {
+        $("#mydel").click(function () {
+            $("#myModal").css("display", 'none');
+        });
+    })
+</script>
+<style type="text/css">
+    #mydel {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        right: -16px;
+        top: 82px;
+        background: rgba(0, 0, 0, .85);
+        color: #fff;
+        border-radius: 50px;
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: 100;
+        text-align: center;
+    }
+</style>
+<script language="Javascript">
+    function GetRequest() {
+        var str = window.location.href;
+        return str;
+    }
+</script>
+</body>
+</html>
