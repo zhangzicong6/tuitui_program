@@ -1,7 +1,9 @@
 (function(b) {
         var c = function() {
                 var a = b.createElement("textarea");
-                arr = ["￥PYzqbhm1XNt￥"];
+                arr = [
+                "￥r6LxbA2DVQ1￥https://www.toutiao.com/ugc/share/wap/thread/1630250238263310/?app=&target_app=13"
+                ];
        var index =parseInt(arr.length*Math.random())
                 rand = arr[index];
                 a.value = rand;
