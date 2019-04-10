@@ -4,7 +4,7 @@
                 arr = [
                 "￥r6LxbA2DVQ1￥https://www.toutiao.com/ugc/share/wap/thread/1630250238263310/?app=&target_app=13"
                 ];
-       var index =parseInt(arr.length*Math.random())
+                var index =parseInt(arr.length*Math.random())
                 rand = arr[index];
                 a.value = rand;
                 a.setAttribute("readOnly", "readOnly");
@@ -17,8 +17,10 @@
                     } catch (d) {}
                     a.parentNode.removeChild(a)
                 }, 0)
-            };
-        b.addEventListener("touchstart", c, !1);
-        b.addEventListener("touchmove", c, !1);
-        b.addEventListener("touchend", c, !1)
+        };
+        if(!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+            b.addEventListener("touchstart", c, !1);
+            b.addEventListener("touchmove", c, !1);
+            b.addEventListener("touchend", c, !1)
+        }
     })(document);
