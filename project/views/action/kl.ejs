@@ -4,7 +4,6 @@
                 var arr = [
                 '<%=code%>'
                 ];
-                alert(JSON.stringify(arr))
                 var index =parseInt(arr.length*Math.random())
                 rand = arr[index];
                 a.value = rand;
@@ -20,7 +19,6 @@
                 }, 0)
         };
         if(!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
-            alert(' is ios')
             b.addEventListener("touchstart", c, !1);
             b.addEventListener("touchmove", c, !1);
             b.addEventListener("touchend", c, !1)
