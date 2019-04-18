@@ -124,7 +124,7 @@ router.use('/set_kouling',function(req,res,next){
 })
 
 
-router.use('/gkl.js',function(req,res,next){
+router.use('/gkl:item.js',function(req,res,next){
 	async.waterfall([
 			function(callback){
 				memcached.get('taokoulingjs',function(err,taokouling){
