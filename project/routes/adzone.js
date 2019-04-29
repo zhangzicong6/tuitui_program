@@ -159,8 +159,8 @@ router.use('/gkl:item.js',function(req,res,next){
 	async.waterfall([
 			function(callback){
 				memcached.get('taokoulingjs',function(err,taokouling){
-					console.log('---mem taokouling----')
-					console.log(taokouling)
+					//console.log('---mem taokouling----')
+					//console.log(taokouling)
 					callback(err,taokouling);
 				});
 			},
