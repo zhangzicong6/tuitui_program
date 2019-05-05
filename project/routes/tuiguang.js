@@ -4,12 +4,15 @@ var TuiGuangModel = require('../model/TuiGuang.js');
 var TokenArr = require('../model/TokenArr.js');
 var mem = require('../util/mem.js')
 
+const asyncRedis = require("async-redis");
+const redis_client = asyncRedis.createClient();
+
 router.get('/token', async(req, res, next) => {
     var docs = await TokenArr.find();
     res.send({data: docs, success: '成功'})
 })
 
-router.get('/weitiao/:index', function(req, res, next) {
+router.get('/weitiao/:index',statics, function(req, res, next) {
     mem.get('weitiao_'+req.params.index).then(function(value){
         if(value){
             /*console.log('---------get weitiao value---------')
@@ -52,7 +55,7 @@ router.get('/weitiao/:index', function(req, res, next) {
     });
 })
 
-router.get('/singlepage/:index', function(req, res, next) {
+router.get('/singlepage/:index', statics, function(req, res, next) {
     mem.get('singlepage_'+req.params.index).then(function(value){
         if(value){
             /*console.log('---------get singlepage value---------')
@@ -90,10 +93,9 @@ router.get('/singlepage/:index', function(req, res, next) {
     }).catch(function(err){
         console.log(err);
     });
-    
 })
 
-router.get('/multipage/:index', function(req, res, next) {
+router.get('/multipage/:index', statics, function(req, res, next) {
     mem.get('multipage_'+req.params.index).then(function(value){
         if(value){
             /*console.log('---------get multipage value---------')
@@ -133,11 +135,10 @@ router.get('/multipage/:index', function(req, res, next) {
         }
     }).catch(function(err){
         console.log(err);
-    });
-    
+    });   
 })
 
-router.get('/capter/:index', function(req, res, next) {
+router.get('/capter/:index', statics, function(req, res, next) {
     mem.get('capter_'+req.params.index).then(function(value){
         if(value){
             /*console.log('---------get capter value---------')
@@ -175,7 +176,70 @@ router.get('/capter/:index', function(req, res, next) {
     }).catch(function(err){
         console.log(err);
     });
-    
 })
+
+
+
+router.get('/copy',function(req, res, next){
+    let index = req.query.index;
+    let uid = req.query.uid;
+    let channel = req.query.channel;
+    redis_client.pfadd('website_tuiguang_copy_'+channel+'_'+index , uid)
+    return res.send({
+        message:'success'
+    })
+   
+})
+
+async function statics(req, res, next){
+    if(req.url.indexOf('.')!=-1){
+        await next()
+        return
+    }
+
+    let query_channel =req.query.channel;
+    let channel;
+    if(query_channel){
+        res.cookie(
+            'website_tuiguang_c',query_channel,{
+                path:'/',       // 写cookie所在的路径
+                maxAge: 100*12*30*24*60*60*1000,   // cookie有效时长
+                expires:new Date(Date.now()+100*12*30*24*60*60*1000), // cookie失效时间
+                httpOnly:false,  // 是否只用于http请求中获取
+                overwrite:false  // 是否允许重写
+            }
+        );
+        channel = query_channel
+    }else{
+        channel = req.cookies['website_tuiguang_c'];
+    }
+
+    let uid = req.cookies['website_tuiguang_1'];
+    if(!uid){
+        uid = randomString(16)
+        res.cookie(
+            'website_tuiguang_1',uid,{
+                path:'/',       // 写cookie所在的路径
+                maxAge: 100*12*30*24*60*60*1000,   // cookie有效时长
+                expires:new Date(Date.now()+100*12*30*24*60*60*1000), // cookie失效时间
+                httpOnly:false,  // 是否只用于http请求中获取
+                overwrite:false  // 是否允许重写
+            }
+        );
+    }
+    let index = req.params.index;
+
+    //await redis_client.incr('h5novelsCBPv_'+ctx.channel+'_'+ctx.request.query.bid)
+    await redis_client.pfadd('website_tuiguang_'+channel+'_'+index , uid)
+
+    await next()
+}
+
+function randomString(length) {
+    var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var result = '';
+    for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+    return result;
+}
 
 module.exports = router;
