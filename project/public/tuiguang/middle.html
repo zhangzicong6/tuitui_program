@@ -70,6 +70,7 @@
 <script>
   $(function () {
     let  name = location.search.split('=')[1];
+    name = decodeURI(name);
     $("#name").html(name);
     $('to-wechat').click(function () {
       alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
