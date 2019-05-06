@@ -722,12 +722,7 @@
 				// };
 				btn.addEventListener('click', function(){
 					copy()
-					$.ajax({
-						url: '/tuiguang/middle?name=' + "<%= name %>",
-						success: function (res) {
-							console.log(res)
-						}
-					})
+					window.location.href = '/tuiguang/middle.html?name=' + "<%= name %>";
 					// statics(function(){
 					// })
 					// alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");

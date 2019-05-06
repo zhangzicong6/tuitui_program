@@ -95,12 +95,6 @@ router.get('/singlepage/:index', statics, function(req, res, next) {
     });
 })
 
-
-router.get('/middle', async (req, res, next) => {
-    let name = req.query.name;
-    res.render('tuiguang/middle', name)
-});
-
 router.get('/multipage/:index', statics, function(req, res, next) {
     mem.get('multipage_'+req.params.index).then(function(value){
         if(value){

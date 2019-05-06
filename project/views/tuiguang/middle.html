@@ -59,11 +59,22 @@
 <body>
   <div class="header">
     <h3>已成功复制公众号</h3>
-    <span id="name"><%= name %></span>
+    <span id="name"></span>
   </div>
   <a class="to-wechat">去微信搜索添加</a>
   <div class="img-wrapper">
     <img src="https://img30.360buyimg.com/jdsurvey/jfs/t1/22108/32/1082/347643/5c0f21a7E61e81669/b457220087273675.gif" alt="">
   </div>
 </body>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script>
+  $(function () {
+    let  name = location.search.split('=')[1];
+    $("#name").html(name);
+    $('to-wechat').click(function () {
+      alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
+      window.location.replace('weixin://');
+    })
+  })
+</script>
 </html>
