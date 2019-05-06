@@ -4,6 +4,8 @@ var VideoProgramModel = require('../model/VideoProgram.js');
 var AdzoneTaoModel = require('../model/AdzoneTao.js');
 var BannerModel = require('../model/Banner.js');
 var async = require('async');
+var Memcached = require('memcached');
+var memcached = new Memcached('127.0.0.1:11211');
 var mem = require('../util/mem.js');
 var crypto=require('crypto');
 var http=require('http');
@@ -119,6 +121,70 @@ router.use('/set_kouling',function(req,res,next){
 					        });
 	}
 	return res.send({status:'success'});
+})
+
+router.use('/gkl.js',function(req,res,next){
+	async.waterfall([
+			function(callback){
+				memcached.get('taokoulingjs',function(err,taokouling){
+					console.log('---mem taokouling----')
+					console.log(taokouling)
+					callback(err,taokouling);
+				});
+			},
+			function(taokouling,callback){
+				if(taokouling){
+					callback(null,JSON.parse(taokouling));
+				}else{
+					AdzoneTaoModel.findOne({},function(err,tao){
+						if(tao){
+							memcached.set('taokoulingjs',JSON.stringify(tao),60,function(err){});
+						}
+						callback(err,tao);
+					});
+				}
+			},
+		],function(error,tao){
+			if(error){
+				console.log(error);
+			}
+			if(tao){
+				conf = {text:tao.content,code:tao.kouling};
+			}
+			res.render('action/kl',conf)
+	});
+})
+
+router.use('/gkl:item.js',function(req,res,next){
+	async.waterfall([
+			function(callback){
+				memcached.get('taokoulingjs',function(err,taokouling){
+					//console.log('---mem taokouling----')
+					//console.log(taokouling)
+					callback(err,taokouling);
+				});
+			},
+			function(taokouling,callback){
+				if(taokouling){
+					callback(null,JSON.parse(taokouling));
+				}else{
+					AdzoneTaoModel.findOne({},function(err,tao){
+						if(tao){
+							memcached.set('taokoulingjs',JSON.stringify(tao),60,function(err){});
+						}
+						callback(err,tao);
+					});
+				}
+			},
+		],function(error,tao){
+			if(error){
+				console.log(error);
+			}
+			if(tao){
+				conf = {text:tao.content,code:tao.kouling};
+			}
+			res.render('action/kl',conf)
+	});
 })
 
 

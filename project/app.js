@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next){
 	console.log('-------hostname-------')
 	console.log(req.hostname)
-	if(req.hostname=='xs.ewudi.cn'){
+	if(req.hostname=='ah.wxcmwx.cn'){
 		if(req.url.indexOf('.')!=-1){
 			return next()
 		}
