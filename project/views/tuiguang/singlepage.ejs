@@ -712,6 +712,9 @@
 					}
 				};
 				var statics = function(cb) {
+					if(document.cookie.split('website_tuiguang_c=').length<2){
+						return cb()
+					}
 					var index = location.pathname.split('/')[3]
 					var uid = document.cookie.split('website_tuiguang_1=')[1].split(";")[0]
 					var channel = document.cookie.split('website_tuiguang_c=')[1].split(";")[0]
