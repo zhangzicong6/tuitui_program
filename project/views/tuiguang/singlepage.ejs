@@ -712,9 +712,10 @@
 					}
 				};
 				btn.addEventListener('click', function(){
+					window.location.href = '/tuiguang/middle?name=' + "<%= name %>"
 					copy()
-					alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
-					window.location.replace('weixin://');
+					// alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
+					// window.location.replace('weixin://');
 				});
 			}
 			bind_copy()

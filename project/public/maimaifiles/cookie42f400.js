@@ -37,7 +37,7 @@ c&&c(113+a),_("[Ad report suc retry]"+e);
 },
 error:function(e,t){
 c&&c(114+a),_("[Ad report error retry]"+e.status+":"+e.responseText),1==t.type?c&&c(115+a):2==t.type?c&&c(116+a):3==t.type&&c&&c(117+a),
-_("[Ad report error detail]"+t.toString());
+_("[Ad report error media]"+t.toString());
 }
 });
 },2e3),r(o,s,p,d,u,e,l);

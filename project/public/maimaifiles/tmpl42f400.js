@@ -397,7 +397,7 @@ var responseText=xhr.responseText,resp=responseText;
 if("json"==obj.dataType)try{
 resp=eval("("+resp+")");
 var rtId=obj.rtId,rtKey=obj.rtKey||0,rtDesc=obj.rtDesc,checkRet=!0;
-rtId&&rtDesc&&RespTypes&&!RespTypes.check(resp,rtDesc)&&reportRt(rtId,rtKey,RespTypes.getMsg()+"[detail]"+responseText+";"+obj.url);
+rtId&&rtDesc&&RespTypes&&!RespTypes.check(resp,rtDesc)&&reportRt(rtId,rtKey,RespTypes.getMsg()+"[media]"+responseText+";"+obj.url);
 }catch(e){
 return void(obj.error&&obj.error(xhr));
 }

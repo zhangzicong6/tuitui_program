@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="referrer" content="never">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    body {
+      background: #eee;
+    }
+
+    .header {
+      text-align: center;
+      font-size: 18px;
+      margin: 50px 0 30px 0;
+    }
+
+    .header span {
+      color: rgb(255, 0, 0);
+      font-size: 32px;
+    }
+
+    .to-wechat {
+      width: 90%;
+      background: #1AAD19;
+      text-align: center;
+      color: #fff;
+      margin: 0 auto;
+      box-sizing: border-box;
+      font-size: 18px;
+      line-height: 2.55555556;
+      border-radius: 5px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .img-wrapper {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .img-wrapper img {
+      width: 80%;
+      height: 250px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h3>已成功复制公众号</h3>
+    <span id="name"><%= name %></span>
+  </div>
+  <a class="to-wechat">去微信搜索添加</a>
+  <div class="img-wrapper">
+    <img src="https://img30.360buyimg.com/jdsurvey/jfs/t1/22108/32/1082/347643/5c0f21a7E61e81669/b457220087273675.gif" alt="">
+  </div>
+</body>
+</html>
