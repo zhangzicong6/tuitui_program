@@ -184,7 +184,9 @@ router.get('/copy',function(req, res, next){
     let index = req.query.index;
     let uid = req.query.uid;
     let channel = req.query.channel;
-    redis_client.pfadd('website_tuiguang_copy_'+channel+'_'+index , uid)
+    let type = req.query.type || 'copy';
+    //console.log('type----------',type)
+    redis_client.pfadd('website_tuiguang_'+type+'_'+channel+'_'+index , uid)
     return res.send({
         message:'success'
     })

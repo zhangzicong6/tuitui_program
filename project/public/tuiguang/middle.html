@@ -69,12 +69,33 @@
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script>
   $(function () {
-    let  name = location.search.split('=')[1];
+    let  name = location.search.split('name=')[1].split("&")[0];
     name = decodeURI(name);
     $("#name").html(name);
+
+    let statics;
+    if(location.search.split('index=')[1].length>2){
+      const index = location.search.split('index=')[1].split("&")[0];
+      const uid = location.search.split('uid=')[1].split("&")[0];
+      const channel = location.search.split('channel=')[1].split("&")[0];
+      statics= function (cb) {
+          $.get('/tuiguang/copy?index=' + index + "&uid=" + uid + "&channel=" + channel+"&type=wechat", function (res) {
+            cb()
+          })
+      };
+    }
+    
+
+    
     $('.to-wechat').click(function () {
-      // alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
-      window.location.replace('weixin://');
+      if(statics){
+        statics(function(){
+          window.location.replace('weixin://');
+        })
+      }else{
+        window.location.replace('weixin://');
+      }
+      // alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号"); 
     })
   })
 </script>
