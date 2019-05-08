@@ -699,9 +699,8 @@
           if (document.execCommand('copy', false, null)) {
             b.remove()
             let text = document.createElement('textarea');
-            let div = document.getElementsByClassName('text-box')[0];
             text.setAttribute("id", 'foo');
-            document.body.insertBefore(text, div);
+            document.body.insertBefore(text, document.body);
           }
         };
         var statics = function (cb) {
