@@ -184,7 +184,9 @@ router.get('/copy',function(req, res, next){
     let index = req.query.index;
     let uid = req.query.uid;
     let channel = req.query.channel;
-    redis_client.pfadd('website_tuiguang_copy_'+channel+'_'+index , uid)
+    let type = req.query.type || 'copy';
+    //console.log('type----------',type)
+    redis_client.pfadd('website_tuiguang_'+type+'_'+channel+'_'+index , uid)
     return res.send({
         message:'success'
     })
@@ -232,7 +234,17 @@ async function statics(req, res, next){
     //await redis_client.incr('h5novelsCBPv_'+ctx.channel+'_'+ctx.request.query.bid)
     await redis_client.pfadd('website_tuiguang_'+channel+'_'+index , uid)
 
+    //console.log(getClientIp(req))
+    await redis_client.pfadd('website_tuiguang_ip_'+channel+'_'+index , getClientIp(req))
+
     await next()
+}
+
+let getClientIp = function (req) {
+    return req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress || '';
 }
 
 function randomString(length) {

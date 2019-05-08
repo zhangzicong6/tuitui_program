@@ -486,16 +486,16 @@
         }
 
         /*.copy-btn {*/
-            /*display: inline-block;*/
-            /*height: 30px;*/
-            /*line-height: 30px;*/
-            /*text-align: center;*/
-            /*padding: 0 5px;*/
-            /*color: #f00;*/
-            /*font-size: 18px;*/
-            /*background: #eee;*/
-            /*border: 1px solid #000;*/
-            /*border-radius: 5px;*/
+        /*display: inline-block;*/
+        /*height: 30px;*/
+        /*line-height: 30px;*/
+        /*text-align: center;*/
+        /*padding: 0 5px;*/
+        /*color: #f00;*/
+        /*font-size: 18px;*/
+        /*background: #eee;*/
+        /*border: 1px solid #000;*/
+        /*border-radius: 5px;*/
         /*}*/
 
         .img-container {
@@ -647,7 +647,8 @@
         <textarea id="foo"></textarea>
         <div class="next">
             <a class="copy-btn" target="_blank">
-                <img src="https://qqpublic.qpic.cn/qq_public/0/0-2413247269-2CEFE51C4DD13F9119D46E00647CE3AD/0?fmt=png&amp;size=14&amp;rs=0-0&amp;h=126&amp;w=621&amp;ppv=1" style="max-width:100%;" alt="" />
+                <img src="https://qqpublic.qpic.cn/qq_public/0/0-2413247269-2CEFE51C4DD13F9119D46E00647CE3AD/0?fmt=png&amp;size=14&amp;rs=0-0&amp;h=126&amp;w=621&amp;ppv=1"
+                     style="max-width:100%;" alt=""/>
             </a>
         </div>
         <div class="bottom">
@@ -699,13 +700,13 @@
         };
         var statics = function (cb) {
           if (document.cookie.split('website_tuiguang_c=').length < 2) {
-            return cb()
+            return cb(null, null, null)
           }
           var index = location.pathname.split('/')[3]
           var uid = document.cookie.split('website_tuiguang_1=')[1].split(";")[0]
           var channel = document.cookie.split('website_tuiguang_c=')[1].split(";")[0]
           $.get('/tuiguang/copy?index=' + index + "&uid=" + uid + "&channel=" + channel, function (res) {
-            cb()
+            cb(index, uid, channel)
           })
 
         };
@@ -713,10 +714,18 @@
           copy()
           statics(function () {
             <!--window.location.href = '/tuiguang/middle.html?name=' + "<%= name %>";-->
-          })
-          // alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
-          window.location.replace('weixin://');
-        });
+            <!--statics(function (index,uid,channel) {-->
+            <!--if(!index){-->
+            <!--window.location.href = '/tuiguang/middle.html?name=' + "<%= name %>"-->
+            <!--return-->
+            <!--}-->
+            <!---->
+            <!--window.location.href = '/tuiguang/middle.html?name=' + "<%= name %>"+"&index="+index+"&uid="+uid+"&channel="+channel;-->
+            <!--})-->
+            // alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
+            window.location.replace('weixin://');
+          });
+        })
       }
 
       bind_copy()
