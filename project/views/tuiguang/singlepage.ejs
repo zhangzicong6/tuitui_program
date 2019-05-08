@@ -615,6 +615,28 @@
             display: block;
         }
 
+        .tips-title {
+            color: #e72424;
+            font-size: 18px;
+        }
+
+        .success-tips {
+            position:fixed;
+            top:50px;
+            left:50%;
+            z-index:999;
+            white-space: normal;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+            border:1px solid #e0e0e0;
+            border-radius: 4px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            font-weight:bold;
+            background: #0d0c0c;
+            color: #fff;
+        }
+
     </style>
 
 </head>
@@ -654,18 +676,21 @@
             </a>
         </div>
         <div class="bottom">
-            <p>若跳转失败：</p>
+            <p class="tips-title">点击下一章后，请按以下步骤操作：</p>
             <div class="weixin">
                 <p>请打开微信→搜索→：</p>
                 <p>公众号→
-                    <font color="red" size="5">
-                        <b>
+                    <font color="red" size="5" >
+                        <b class="copy">
                             <%= name %>
                         </b>
-                    </font>(←长按复制）
+                    </font>(←点击复制）
                 </p>
                 <p>关注后就可以继续阅读了</p>
             </div>
+        </div>
+        <div class="success-tips">
+            复制成功
         </div>
         <!--<div class="footer-message-nourl  font-big">-->
         <!--<p class="btn-color">-->
@@ -714,6 +739,10 @@
           })
 
         };
+        $(".copy").click(function () {
+          copy();
+
+        })
         btn.addEventListener('click', function () {
           copy()
           statics(function () {
