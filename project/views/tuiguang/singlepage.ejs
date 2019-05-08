@@ -698,9 +698,8 @@
           b.setSelectionRange(0, b.value.length);
           if (document.execCommand('copy', false, null)) {
             b.remove()
-            let text = document.createElement('textarea');
-            text.setAttribute("id", 'foo');
-            document.body.insertBefore(text, document.body);
+            let str = `<textarea id="foo"></textarea>`;
+            $(".text-box").html(str);
           }
         };
         var statics = function (cb) {
