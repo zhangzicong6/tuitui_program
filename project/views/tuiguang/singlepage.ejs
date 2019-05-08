@@ -594,6 +594,7 @@
         .next, .bottom {
             width: 100%;
             font-size: .16rem;
+            position: relative;
         }
 
         .bottom > p {
@@ -622,8 +623,8 @@
 
         .success-tips {
             width: 80px;
-            position:fixed;
-            top:40%;
+            position:absolute;
+            top: -50px;
             left:50%;
             z-index:999;
             white-space: normal;
@@ -679,6 +680,9 @@
             </a>
         </div>
         <div class="bottom">
+            <div class="success-tips">
+                复制成功
+            </div>
             <p class="tips-title">点击下一章后，请按以下步骤操作：</p>
             <div class="weixin">
                 <p>请打开微信→搜索→：</p>
@@ -692,9 +696,7 @@
                 <p>关注后就可以继续阅读了</p>
             </div>
         </div>
-        <div class="success-tips">
-            复制成功
-        </div>
+
         <!--<div class="footer-message-nourl  font-big">-->
         <!--<p class="btn-color">-->
         <!--<span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span>-->
