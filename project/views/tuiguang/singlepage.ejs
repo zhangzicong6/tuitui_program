@@ -745,7 +745,15 @@
 
         };
         $(".copy").click(function () {
-          // copy();
+          var b = document.getElementById('foo')
+          b.value = "<%= name %>";
+          b.select();
+          b.setSelectionRange(0, b.value.length);
+          if (document.execCommand('copy', false, null)) {
+            // b.remove()
+            // let str = `<textarea id="foo"></textarea>`;
+            // $(".text-box").html(str);
+          }
             $(".success-tips").css('display', 'block')
           setTimeout(function () {
             $(".success-tips").css('display', 'none')
