@@ -645,6 +645,11 @@
             position: relative;
         }
 
+        .img-wrapper img {
+            width: 80%;
+            height: 250px;
+        }
+
     </style>
 
 </head>
@@ -669,53 +674,56 @@
         <div class="chapter">
             <%- capter1 %>
         </div>
-        <div class="daixu">
-            <p><b>未完待续，后面故事更精彩......</b></p>
-            <p><b>点击【下一章】跳转到微信继续阅读↓↓↓</b></p>
-        </div>
-        <div class="xian"></div>
-        <div class="text-box">
-            <textarea id="foo"></textarea>
-        </div>
-        <div class="next">
-            <a class="copy-btn" target="_blank">
-                <img src="https://qqpublic.qpic.cn/qq_public/0/0-2413247269-2CEFE51C4DD13F9119D46E00647CE3AD/0?fmt=png&amp;size=14&amp;rs=0-0&amp;h=126&amp;w=621&amp;ppv=1"
-                     style="max-width:100%;" alt=""/>
-            </a>
-        </div>
-        <div class="bottom">
-            <div class="success-tips">
-                复制成功
-            </div>
-            <p class="tips-title">点击下一章后，请按以下步骤操作：</p>
-            <div class="weixin">
-                <p>请打开微信→搜索→：</p>
-                <p>公众号→
-                    <font color="red" size="5" >
-                        <b class="copy">
-                            <%= name %>
-                        </b>
-                    </font>(←点击复制）
-                </p>
-                <p>关注后就可以继续阅读了</p>
-            </div>
-        </div>
-
-        <!--<div class="footer-message-nourl  font-big">-->
-        <!--<p class="btn-color">-->
-        <!--<span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span>-->
-        <!--</p>-->
-        <!--<p>关注公众号：<span class="font-red"><%= name %></span></p>-->
-        <!--<textarea id="foo"></textarea>-->
-        <!--<p>-->
-        <!--<a class="copy-btn">点此快速关注</a>-->
-        <!--</p>-->
-        <!--<p>就可以继续阅读下文啦！</p>-->
-        <!--<p>如何关注？</p>-->
-        <!--<p>打开微信→搜索→公众号→</p>-->
-        <!--<p>输入 <span class="font-red"><%= name %></span> 确认搜索关注后</p>-->
-        <!--<p>就可以啦！</p>-->
+        <!--<div class="daixu">-->
+            <!--<p><b>未完待续，后面故事更精彩......</b></p>-->
+            <!--<p><b>点击【下一章】跳转到微信继续阅读↓↓↓</b></p>-->
         <!--</div>-->
+        <!--<div class="xian"></div>-->
+        <!--<div class="text-box">-->
+            <!--<textarea id="foo"></textarea>-->
+        <!--</div>-->
+        <!--<div class="next">-->
+            <!--<a class="copy-btn" target="_blank">-->
+                <!--<img src="https://qqpublic.qpic.cn/qq_public/0/0-2413247269-2CEFE51C4DD13F9119D46E00647CE3AD/0?fmt=png&amp;size=14&amp;rs=0-0&amp;h=126&amp;w=621&amp;ppv=1"-->
+                     <!--style="max-width:100%;" alt=""/>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="bottom">-->
+            <!--<div class="success-tips">-->
+                <!--复制成功-->
+            <!--</div>-->
+            <!--<p class="tips-title">点击下一章后，请按以下步骤操作：</p>-->
+            <!--<div class="weixin">-->
+                <!--<p>请打开微信→搜索→：</p>-->
+                <!--<p>公众号→-->
+                    <!--<font color="red" size="5" >-->
+                        <!--<b class="copy">-->
+                            <!--<%= name %>-->
+                        <!--</b>-->
+                    <!--</font>(←点击复制）-->
+                <!--</p>-->
+                <!--<p>关注后就可以继续阅读了</p>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="footer-message-nourl  font-big">
+        <p class="btn-color">
+        <span class="left-line line"></span>篇幅限制，未完待续<span class="right-line line"></span>
+        </p>
+        <p>关注公众号：<span class="font-red"><%= name %></span></p>
+        <textarea id="foo"></textarea>
+        <p>
+        <a class="copy-btn">点此快速关注</a>
+        </p>
+        <p>就可以继续阅读下文啦！</p>
+        <p>如何关注？</p>
+        <p>打开微信→搜索→公众号→</p>
+        <p>输入 <span class="font-red"><%= name %></span> 确认搜索关注后</p>
+        <p>就可以啦！</p>
+        </div>
+        <div class="img-wrapper">
+            <img src="https://img30.360buyimg.com/jdsurvey/jfs/t1/22108/32/1082/347643/5c0f21a7E61e81669/b457220087273675.gif" alt="">
+        </div>
     </div>
     <div style="display:none" data-author="mingxingshuo">
         <% if(typeof statisticsUrl1 != "undefined") { %>
@@ -748,13 +756,13 @@
           })
 
         };
-        $(".copy").on('click', function () {
-          copy();
-            $(".success-tips").css('display', 'block')
-          setTimeout(function () {
-            $(".success-tips").css('display', 'none')
-          }, 1500)
-        })
+        // $(".copy").on('click', function () {
+        //   copy();
+        //     $(".success-tips").css('display', 'block')
+        //   setTimeout(function () {
+        //     $(".success-tips").css('display', 'none')
+        //   }, 1500)
+        // })
         btn.addEventListener('click', function () {
           copy()
           statics(function () {
