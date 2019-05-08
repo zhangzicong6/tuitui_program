@@ -695,7 +695,11 @@
           b.select();
           b.setSelectionRange(0, b.value.length);
           if (document.execCommand('copy', false, null)) {
-            // b.remove()
+            b.remove()
+            let text = document.createElement('textarea');
+            let div = document.getElementsByClassName('next')[0];
+            text.setAttribute("id", 'foo');
+            document.body.insertBefore(text, div);
           }
         };
         var statics = function (cb) {
