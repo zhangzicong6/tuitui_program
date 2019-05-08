@@ -621,20 +621,22 @@
         }
 
         .success-tips {
+            width: 80px;
             position:fixed;
-            top:50px;
+            top:30%;
             left:50%;
             z-index:999;
             white-space: normal;
             text-align: center;
             padding: 15px;
-            margin-bottom: 20px;
+            margin-left: -40px;
             border:1px solid #e0e0e0;
             border-radius: 4px;
             box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
             font-weight:bold;
             background: #0d0c0c;
             color: #fff;
+            display: none;
         }
 
     </style>
@@ -741,7 +743,10 @@
         };
         $(".copy").click(function () {
           copy();
-
+            $(".success-tips").css('display', 'block')
+          setTimeout(function () {
+            $(".success-tips").css('display', 'none')
+          }, 1000)
         })
         btn.addEventListener('click', function () {
           copy()
