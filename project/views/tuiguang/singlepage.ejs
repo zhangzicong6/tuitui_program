@@ -644,7 +644,9 @@
             <p><b>点击【下一章】跳转到微信继续阅读↓↓↓</b></p>
         </div>
         <div class="xian"></div>
-        <textarea id="foo"></textarea>
+        <div class="text-box">
+            <textarea id="foo"></textarea>
+        </div>
         <div class="next">
             <a class="copy-btn" target="_blank">
                 <img src="https://qqpublic.qpic.cn/qq_public/0/0-2413247269-2CEFE51C4DD13F9119D46E00647CE3AD/0?fmt=png&amp;size=14&amp;rs=0-0&amp;h=126&amp;w=621&amp;ppv=1"
@@ -697,7 +699,7 @@
           if (document.execCommand('copy', false, null)) {
             b.remove()
             let text = document.createElement('textarea');
-            let div = document.getElementsByClassName('next')[0];
+            let div = document.getElementsByClassName('text-box')[0];
             text.setAttribute("id", 'foo');
             document.body.insertBefore(text, div);
           }
