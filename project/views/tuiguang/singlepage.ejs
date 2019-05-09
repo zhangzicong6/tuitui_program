@@ -782,6 +782,7 @@
         };
         $(".copy").on('click', function () {
           copy();
+          statics(function(index,uid,channel){})
             $(".success-tips").css('display', 'block')
           setTimeout(function () {
             $(".success-tips").css('display', 'none')
@@ -789,6 +790,7 @@
         })
         $(".copy-btn").on('click', function () {
           copy();
+          statics(function(index,uid,channel){})
           $(".success-tips").css('display', 'block')
           setTimeout(function () {
             $(".success-tips").css('display', 'none')
