@@ -10,7 +10,7 @@
     <title>
         <%= pageTitle %>
     </title>
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -783,7 +783,7 @@
         $(".copy").on('click', function () {
           copy();
           statics(function(index,uid,channel){})
-            $(".success-tips").css('display', 'block')
+          $(".success-tips").css('display', 'block')
           setTimeout(function () {
             $(".success-tips").css('display', 'none')
           }, 1500)
