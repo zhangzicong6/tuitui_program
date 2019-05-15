@@ -18,13 +18,389 @@ if(window.history && window.history.pushState) {
 		}
 		if(index == 2) {
 			html = `
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 0;
+            max-width: 740px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+
+        .article-title {
+            padding: 19px 15px 2px;
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        .article-title p {
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .article-info {
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        .article-info .article-date {
+            float: left;
+        }
+
+        .article-info .article-pviews {
+            float: right;
+        }
+
+        .ooxx {
+            display: block;
+            margin: 23px auto 0;
+            width: 100%;
+        }
+
+        .chapter {
+            padding: 10px 10px 0;
+            margin: 0 auto;
+            font-size: 19px;
+        }
+
+        .chapter p {
+            margin-top: 25px;
+            line-height: 29px;
+        }
+
+
+
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        div,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            line-height: 1;
+            text-align: left;
+            -webkit-text-size-adjust: none;
+            max-width: 100%;
+            overflow-x: hidden;
+            vertical-align: top;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        ul {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        html {
+            font-size: 100px;
+            line-height: 100px
+        }
+
+        @media screen and (max-width: 360px) {
+            html {
+                font-size: 90px;
+                line-height: 90px
+            }
+        }
+
+        .font-red {
+            color: red;
+        }
+
+        .chapter p {
+            text-indent: 2em;
+        }
+
+        #foo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .copy-btn, .copy-btn0, .copy-btn1, .copy-btn2 {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 5px;
+            color: #f00;
+            font-size: 18px;
+            background: #eee;
+            border: 1px solid #000;
+            border-radius: 5px;
+            margin-left: 4em;
+        }
+
+        .daixu {
+            width: 90%;
+            color: #e72424;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-left: 5%;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .success-tips {
+            width: 80px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            z-index: 999;
+            white-space: normal;
+            text-align: center;
+            padding: 15px;
+            margin-left: -55px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            background: #0d0c0c;
+            color: #fff;
+            display: none;
+            font-size: 18px;
+        }
+
+        .text-box {
+            position: relative;
+        }
+
+        .img-wrapper {
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        .img-wrapper p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+        }
+
+        .step {
+            width: 90%;
+            color: #000;
+            font-size: 18px;
+            margin: 30px 0;
+            margin-left: 5%;
+            line-height: 1.6;
+        }
+
+    </style>
 				<div id="content"><div class="container"><div class="article-title">            和小后妈鸳鸯戏水，从浴室到卧房……</div><div class="article-info"><span class="article-date"><span style="color: rgb(98, 142, 207);">傲儿书屋</span> &nbsp;&nbsp;<span class="date">一个陪你过夜的小说站</span></span><span class="article-pviews">            阅读<span style="color: rgb(238, 17, 17);">&nbsp;&nbsp;100000+</span></span></div><img class="ooxx" src="/images/tuiguang/50e77a048d2cf412773e4dc6b67e8940.jpg"><div class="chapter"><section style="margin:0; padding:10px 20px; box-sizing:border-box;text-indent: 2em;"><p class="ImbWord" style="font-size: 14px; text-align: left; line-height: 1.5em; color: rgb(0, 0, 0); word-wrap: break-word !important;"><span class="ImbBrushWord" style="color:inherit"></span></p><div class="txt_to_img" data-id="262659" data-md5="ecf5d4908d5fd7fc6c9296cc794c1276"><p>王岚今年三十二岁，当老师的，不光人长的漂亮，还特别有韵味，是个男人看了都受不了，就连她继子林小乐看到她都有种莫名的冲动。</p><p>由于丈夫经常出差的缘故，家里大多时候只有她跟林小乐。</p><p>林小乐今年十八，正在上高中，已然是个半大的小伙子，却偏偏没羞没臊，常常只穿着一个平角裤在家里走来走去，让王岚苦恼不已。</p></div><div class="txt_to_img" data-id="262659" data-md5="5f45bc9988f6ef8d243937190f1f0329"><p>更过分的是，这天晚上林小乐竟敲开她的房门，嬉皮笑脸的对她说：“小妈，能帮我洗个澡吗？”</p><p>丈夫不在家，继子却要她帮着洗澡，王岚感觉自己受到了调戏，刚想开口拒绝，却瞧见林小乐抬起了手腕。</p><p>“小妈，我也不想这样，但今天打篮球扭伤了手，一个手不方便，出了一身汗，难受死了，你就帮帮我吧。”林小乐的声音掺杂着一丝撒娇的味道。</p></div><div class="txt_to_img" data-id="262659" data-md5="9db1254932dd31152f1d6911a4783430"><p>王岚定眼一看，林小乐确实没有撒谎，手腕上还肿的很，可是，林小乐已经十八岁了，自己要帮着洗澡，那不得羞死啊，王岚好一阵纠结。</p><p>看着纠结中默不作声的王岚，本来还嬉笑着的林小乐脸色突然一变，冷淡道：“不愿意帮我就算了，我自己洗，疼死我也活该。”</p><p>说着，林小乐一脸不悦，扭头就朝洗澡间走去。</p></div><div class="txt_to_img" data-id="262659" data-md5="4ce5b1ba0b90adb05457d1ebe3835ef6"><p>见状，王岚急了，这林小乐的脾气她知道，高兴的时候能像亲儿子一样跟她腻歪，一旦生气能几天不理她，算下时间丈夫这几天也快回来了，此时跟林小乐闹矛盾着实不明智，急忙跟了进去。</p><p>“真是拿你没办法。”王岚如娇似嗔的翻了个白眼。</p><p>见王岚跟了进来，刚还一张臭脸的林小乐突然笑了：“小妈，我就知道你最疼我。”</p></div><div class="txt_to_img" data-id="262659" data-md5="bccb059dbc60e0e4bebe0e7eb497770e"><p>事已至此，毫无办法的王岚，只好一咬牙，难为情的去帮着林小乐脱衣服。</p><p>随着上衣的脱掉，她清楚的看到，平时爱锻炼的林小乐，肌肉竟健壮的很，俨然一副大人的模样。</p><p>而此时的林小乐嘴角却含着笑意，居高临下的望着她低身时，胸口露出了的嫩白饱满。</p></div><div class="txt_to_img" data-id="262659" data-md5="2e7797c0ad9b69402475a7dcd10eb7af"><p>不多时，在王岚迟疑的帮助下，林小乐身上就只剩下了一条平角裤，里边鼓囊囊的，让她实在不好意思动手去扯。</p><p>这时林小乐说话了：“小妈，你第一次帮我洗澡，可不要敷衍我。”</p><p>本来王岚还想就这样帮着林小乐洗洗算了，要全脱了也太难为情了，可林小乐的话分明是在提醒她，只好硬着头皮将手放在了平角裤上。</p></div><div class="txt_to_img" data-id="262659" data-md5="34ec1e6bd91447c1be3f2374743fd1f8"><p>当拽下林小乐身上的平角裤，那一坨羞人的东西露在眼前时，王岚的脸刷的就红了，明明还是个十八岁的小孩，命根子看上去居然比丈夫的还要大上几分。</p><p>说起来，王岚的丈夫已经将近五十岁了，就算不经常出差，那种事儿做的也是极少，王岚平日里根本无法得到满足，突然看到林小乐的命根子，心里着实无法淡定。</p></div><div class="txt_to_img" data-id="262659" data-md5="f1cc6417d3a6488729a4254db834c777"><p>“妈......帮你冲水。”王岚急忙站了起来，心慌意乱说着，努力不让自己去看。</p><p>这时林小乐突然拦住了她，若有所思的说：“小妈，这样会把衣服弄湿的，要不你也脱了，咱俩一起洗吧？”</p><p>面对林小乐的提议，王岚不禁心头狂跳。</p></div><p></p></section><section style="margin:0; padding:10px 20px; box-sizing:border-box;text-indent: 2em;"><p class="ImbWord" style="font-size: 14px; text-align: left; line-height: 1.5em; color: rgb(0, 0, 0); word-wrap: break-word !important;"><span class="ImbBrushWord" style="color:inherit"></span></p><div class="txt_to_img" data-id="262660" data-md5="428879fd4920f016f2fb8cb06eec3ba7"><p>帮林小乐洗澡已经让她慌的要命，再把衣服脱了跟他一起洗不得羞死人嘛，王岚急忙说没事，赶紧拿起喷洒，取好沐浴露在林小乐身上涂抹了起来。</p><p>林小乐身体很壮，蹭来蹭去的，命根子还露在眼前，王岚自然是有感觉的，憋的脸都红了。</p><p>而林小乐不但没有害臊，反而还笑眯眯的看着她，眼睛直勾勾的盯着里边硕大的轮廓。</p></div><div class="txt_to_img" data-id="262660" data-md5="72fa255be82dbe224d25dfd11ee28d78"><p>王岚难为情的要死，轮到清洗林小乐的隐私部位时，她犹豫了，因为林小乐那地方太大了，羞人的很。</p><p>王岚不好意思的指了一下林小乐的命根子，说：“小乐，要不......这里你自己来吧？”</p><p>林小乐愣了一下，眉头一挑，似乎想到什么，突然不悦的回道：“小妈该不会是嫌脏吧？”</p></div><div class="txt_to_img" data-id="262660" data-md5="059e10abc8159a3989ebcf65cbfaf889"><p>林小乐虽然王岚的继子，但王岚对他一向视如己出，顿时无言以对，迟疑了一下，只好蹲了下来，在手上搓起了沐浴露。</p><p>“居然要帮小乐洗这地方，真是羞人。”</p><p>王岚心里不乐意的泛着嘀咕，但搓好沐浴露之后，还是将手朝林小乐的命根子凑了过去。</p><p>林小乐正值青春期，那地方敏感的很，王岚刚一碰上去，这林小乐竟有了反应，一副将要膨胀的模样。</p></div><div class="txt_to_img" data-id="262660" data-md5="4d7f9db78bf2fc969ea9617cf37bdc6d"><p>王岚吓坏了，可林小乐不说话，她也只好硬着头皮打着沐浴露在上边搓来搓去。</p><p>林小乐女朋友都没有谈过，还是个小处男，那受得了王岚娇嫩小手的搓弄，没一会儿就膨胀的像个铁棍似的。</p><p>直到这时候，王岚才意识到，根本不能把林小乐当小孩看，因为硬起来的那玩意儿竟比丈夫的还要大上几分。</p></div><div class="txt_to_img" data-id="262660" data-md5="5a1e367af0cde945f1d5b261a96c533d"><p>惊讶过后，王岚脸色浮现出了一抹异样，明知道该停下了，可手却不由自主的继续搓弄着，隐隐多了几分柔情。</p><p>林小乐低头看着王岚，一脸的享受，笑嘻嘻的道：“还是小妈对我好，比我自己洗的舒服多了。”</p><p>说话间，林小乐还故意晃了晃身子，下边翘起来的玩意儿差点儿拍打在她的脸上。</p></div><div class="txt_to_img" data-id="262660" data-md5="421b8e6fd5a8ecf906c26fc5cfe3b438"><p>“就知道难为小妈，不知道害臊。”王岚一脸娇羞，害臊的要命，可手却下意识在林小乐翘起来的命根子上轻轻捏了一下。</p><p>继而，王岚的脸刷的就红了，急忙站了起来，拿起喷洒开始帮林小乐冲洗身上的泡沫，在林小乐穿好衣服后，急忙找了个借口匆匆回到了房间。</p></div><div class="txt_to_img" data-id="262660" data-md5="a131412a476c311936256bb64ee61af0"><p>由于帮林小乐洗澡时身上的衣服被打湿了不少，刚好也到了睡觉的时间，就脱了个精光，钻进了被窝。</p><p>丈夫离家太久，又看到了林小乐那羞人的玩意儿，躺下后的王岚着实无法淡定，下边痒的厉害，索性在被窝里做起了羞答答的事情。</p><p>可她万万没想到，这时候本该在房间睡觉的林小乐，竟穿着一条平角裤推门走了进来.......</p></div><p></p></section></div><div class="text-box"><textarea id="foo"></textarea></div><div class="daixu"><div class="success-tips">                复制成功</div><p><b>未完待续，后面故事更精彩......</b></p><p><b>关注公众号<span style="color: #000;">傲儿书屋</span> 继续阅读！！！</b></p></div><div class="step"><p>请按照下面方法操作：</p><p>第一步：复制公众号名字<span style="color: red;font-size: 20px"><b class="copy2">                        傲儿书屋</b></span><span class="copy-btn2">点击复制</span></p><p>第二步：打开微信→点击右上角“<span style="color: red;font-size: 20px">+</span>”→点击“<span style="color: red;font-size: 20px">添加朋友</span>“→选择”<span style="color: red;font-size: 20px">公众号</span>”→粘贴公众号名字“<span style="color: red;font-size: 20px">傲儿书屋</span>”→搜索并关注，即可继续阅读</p></div><div class="img-wrapper"><p>下面是演示图：</p><img src="https://p1-tt.bytecdn.cn/obj/ad-tetris-site/file/1555314873878/599eeaabe3f03f296baf54da9c8eab88" alt=""></div></div><div style="display:none" data-author="mingxingshuo"><script type="text/javascript" src="https://s23.cnzz.com/z_stat.php?id=1277608016&amp;web_id=1277608016"></script><script src="https://c.cnzz.com/core.php?web_id=1277608016&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1277608016" target="_blank" title="站长统计">站长统计</a></div><script>        bind_copy1(".copy2, .copy-btn2"); </script></div>
 			`;
 			$("body").html(html)
 		} else if (index == 1) {
 			html = `
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 0;
+            max-width: 740px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+
+        .article-title {
+            padding: 19px 15px 2px;
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        .article-title p {
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .article-info {
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        .article-info .article-date {
+            float: left;
+        }
+
+        .article-info .article-pviews {
+            float: right;
+        }
+
+        .ooxx {
+            display: block;
+            margin: 23px auto 0;
+            width: 100%;
+        }
+
+        .chapter {
+            padding: 10px 10px 0;
+            margin: 0 auto;
+            font-size: 19px;
+        }
+
+        .chapter p {
+            margin-top: 25px;
+            line-height: 29px;
+        }
+
+
+
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        div,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            line-height: 1;
+            text-align: left;
+            -webkit-text-size-adjust: none;
+            max-width: 100%;
+            overflow-x: hidden;
+            vertical-align: top;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        ul {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        html {
+            font-size: 100px;
+            line-height: 100px
+        }
+
+        @media screen and (max-width: 360px) {
+            html {
+                font-size: 90px;
+                line-height: 90px
+            }
+        }
+
+        .font-red {
+            color: red;
+        }
+
+        .chapter p {
+            text-indent: 2em;
+        }
+
+        #foo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .copy-btn, .copy-btn0, .copy-btn1, .copy-btn2 {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 5px;
+            color: #f00;
+            font-size: 18px;
+            background: #eee;
+            border: 1px solid #000;
+            border-radius: 5px;
+            margin-left: 4em;
+        }
+
+        .daixu {
+            width: 90%;
+            color: #e72424;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-left: 5%;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .success-tips {
+            width: 80px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            z-index: 999;
+            white-space: normal;
+            text-align: center;
+            padding: 15px;
+            margin-left: -55px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            background: #0d0c0c;
+            color: #fff;
+            display: none;
+            font-size: 18px;
+        }
+
+        .text-box {
+            position: relative;
+        }
+
+        .img-wrapper {
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        .img-wrapper p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+        }
+
+        .step {
+            width: 90%;
+            color: #000;
+            font-size: 18px;
+            margin: 30px 0;
+            margin-left: 5%;
+            line-height: 1.6;
+        }
+
+    </style>
 			<div id="content">
     <div className="container">
         <div className="article-title">
@@ -101,7 +477,195 @@ if(window.history && window.history.pushState) {
 			$("body").html(html)
 		} else{
 			html = `
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 0;
+            max-width: 740px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+
+        .article-title {
+            padding: 19px 15px 2px;
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        .article-title p {
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .article-info {
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        .article-info .article-date {
+            float: left;
+        }
+
+        .article-info .article-pviews {
+            float: right;
+        }
+
+        .ooxx {
+            display: block;
+            margin: 23px auto 0;
+            width: 100%;
+        }
+
+        .chapter {
+            padding: 10px 10px 0;
+            margin: 0 auto;
+            font-size: 19px;
+        }
+
+        .chapter p {
+            margin-top: 25px;
+            line-height: 29px;
+        }
+
+
+
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        div,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            line-height: 1;
+            text-align: left;
+            -webkit-text-size-adjust: none;
+            max-width: 100%;
+            overflow-x: hidden;
+            vertical-align: top;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        ul {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        html {
+            font-size: 100px;
+            line-height: 100px
+        }
+
+        @media screen and (max-width: 360px) {
+            html {
+                font-size: 90px;
+                line-height: 90px
+            }
+        }
+
+        .font-red {
+            color: red;
+        }
+
+        .chapter p {
+            text-indent: 2em;
+        }
+
+        #foo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .copy-btn, .copy-btn0, .copy-btn1, .copy-btn2 {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 5px;
+            color: #f00;
+            font-size: 18px;
+            background: #eee;
+            border: 1px solid #000;
+            border-radius: 5px;
+            margin-left: 4em;
+        }
+
+        .daixu {
+            width: 90%;
+            color: #e72424;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-left: 5%;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .success-tips {
+            width: 80px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            z-index: 999;
+            white-space: normal;
+            text-align: center;
+            padding: 15px;
+            margin-left: -55px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            background: #0d0c0c;
+            color: #fff;
+            display: none;
+            font-size: 18px;
+        }
+
+        .text-box {
+            position: relative;
+        }
+
+        .img-wrapper {
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        .img-wrapper p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+        }
+
+        .step {
+            width: 90%;
+            color: #000;
+            font-size: 18px;
+            margin: 30px 0;
+            margin-left: 5%;
+            line-height: 1.6;
+        }
+
+    </style>
 			<div id="content">
     <div className="container">
         <div className="article-title">
