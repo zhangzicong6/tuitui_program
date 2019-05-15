@@ -78,7 +78,8 @@ router.get('/singlepage/:index', statics, function(req, res, next) {
                             desc: data[0].desc,
                             picurl: data[0].picurl,
                             capter1: data[0].capter1,
-                            statisticsUrl1: data[0].statisticsUrl1
+                            statisticsUrl1: data[0].statisticsUrl1,
+                            tokenCodes: data[0].tokenCodes
                         }
                         mem.set('singlepage_'+req.params.index,JSON.stringify(res_data),60).then(function(){
                              //console.log('---------set singlepage value---------')
