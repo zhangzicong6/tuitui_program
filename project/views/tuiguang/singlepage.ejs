@@ -476,7 +476,7 @@
             opacity: 0;
         }
 
-        .copy-btn {
+        .copy-btn, .copy-btn0, .copy-btn1, .copy-btn2 {
             display: inline-block;
             height: 30px;
             line-height: 30px;
@@ -780,15 +780,7 @@
           })
 
         };
-        $(".copy").on('click', function () {
-          copy();
-          statics(function(index,uid,channel){})
-          $(".success-tips").css('display', 'block')
-          setTimeout(function () {
-            $(".success-tips").css('display', 'none')
-          }, 1500)
-        })
-        $(".copy-btn").on('click', function () {
+        $(".copy, .copy-btn").on('click', function () {
           copy();
           statics(function(index,uid,channel){})
           $(".success-tips").css('display', 'block')
