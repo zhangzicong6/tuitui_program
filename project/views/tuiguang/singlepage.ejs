@@ -806,6 +806,10 @@
                 location.href = back
             }
         }  
+    }else if(location.href.indexOf('history=')!=-1){
+        let hlen = location.href.split('history=')[1].split('&')[0]
+        hlen = parseInt(hlen)
+        window.history.go(-(hlen+1))
     }
     </script>
 </div>
