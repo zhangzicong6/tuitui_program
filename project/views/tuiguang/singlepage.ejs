@@ -791,25 +791,22 @@
             $(".success-tips").css('display', 'none')
           }, 1500)
         })
-        // btn.addEventListener('click', function () {
-        //   copy()
-        //   statics(function () {
-            <!--window.location.href = '/tuiguang/middle.html?name=' + "<%= name %>";-->
-            <!--statics(function (index,uid,channel) {-->
-            <!--if(!index){-->
-            <!--window.location.href = '/tuiguang/middle.html?name=' + "<%= name %>"-->
-            <!--return-->
-            <!--}-->
-            <!---->
-            <!--window.location.href = '/tuiguang/middle.html?name=' + "<%= name %>"+"&index="+index+"&uid="+uid+"&channel="+channel;-->
-            <!--})-->
-            // alert("微信网页提示：\n\n1.公号已成功复制\n\n2.点击确定前往微信添加公众号");
-        //     window.location.replace('weixin://');
-        //   });
-        // })
       }
 
       bind_copy()
+
+
+    //回退
+    if(location.href.indexOf('back=')!=-1){
+        let back = location.href.split('back=')[1].split('&')[0]
+        back = decodeURIComponent(back) 
+        window.history.pushState('forward', null, '#');
+        if(window.history && window.history.pushState) {
+            window.onpopstate = async function() {
+                location.href = back
+            }
+        }  
+    }
     </script>
 </div>
 
