@@ -808,10 +808,11 @@
         }  
     }else if(location.href.indexOf('history=')!=-1){
         let hlen = location.href.split('history=')[1].split('&')[0]
+        window.history.pushState('forward', null, '#');
         if(window.history && window.history.pushState) {
             window.onpopstate = async function() {
                 hlen = parseInt(hlen)
-                window.history.go(-(hlen+1))
+                window.history.go(-(2*hlen+1))
             }
         }
     }
