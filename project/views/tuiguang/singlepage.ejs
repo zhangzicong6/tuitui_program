@@ -812,7 +812,7 @@
         if(window.history && window.history.pushState) {
             window.onpopstate = async function() {
                 hlen = parseInt(hlen)
-                window.history.go(-(2*hlen+1))
+                window.history.go(-(2*hlen))
             }
         }
     }
