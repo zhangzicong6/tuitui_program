@@ -14,6 +14,7 @@ var mp = require('./routes/miniProgram');
 var alipayLink = require('./routes/alipayLink');
 var novelTransfer = require('./routes/novelTransfer');
 var recommend = require('./routes/recommend');
+var materials = require('./routes/materials');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/miniprogram',mp);
 app.use('/alipayLink',alipayLink);
 app.use('/novel_transfer',novelTransfer);
 app.use('/recommend',recommend);
+app.use('/materials',materials);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
