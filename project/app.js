@@ -35,7 +35,7 @@ app.use(function(req, res, next) {
    //console.log('---hostname----')
    //console.log(req.hostname)
   if(req.hostname == material_domain){
-  	if(req.url.indexOf('/materials')==-1){
+  	if(req.url.indexOf('/materials')!=-1){
   		next()
   	}else{
   		res.send({message:'功能正在开发'})
