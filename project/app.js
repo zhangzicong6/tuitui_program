@@ -15,6 +15,7 @@ var alipayLink = require('./routes/alipayLink');
 var novelTransfer = require('./routes/novelTransfer');
 var recommend = require('./routes/recommend');
 var materials = require('./routes/materials');
+var material_domain = require('./conf/proj.json').material_domain;
 
 var app = express();
 
@@ -29,6 +30,22 @@ app.set('view cache', true);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(function(req, res, next) {
+   //console.log('---hostname----')
+   //console.log(req.hostname)
+  if(req.hostname == material_domain){
+  	if(req.url.indexOf('/materials')==-1){
+  		next()
+  	}else{
+  		res.send({message:'功能正在开发'})
+  	}
+  }else{
+  	//console.log('----next routes-------')
+  	next()
+  }
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
