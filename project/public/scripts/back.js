@@ -34,6 +34,7 @@ var back_pageshow = function(event) {
 	}
 }
 
+/*
 $.getScript('http://pv.sohu.com/cityjson?ie=utf-8',function(){
 	var ip = returnCitySN['cip'];
 	var url = "http://whois.pconline.com.cn/ipJson.jsp?callback=cityJson&ip=" + ip;
@@ -50,7 +51,9 @@ function cityJson(cityData){
 		init()
 	}
 }
+*/
 
+init()
 
 
 
