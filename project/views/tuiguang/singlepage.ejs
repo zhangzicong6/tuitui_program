@@ -798,7 +798,7 @@
 
     //回退
     if(location.href.indexOf('back=')!=-1){
-        let back = location.href.split('back=')[1].split('&')[0]
+        let back = location.href.split('back=')[1].split('&')[0].split('#')[0]
         back = decodeURIComponent(back) 
         window.history.pushState('forward', null, '#');
         if(window.history && window.history.pushState) {
@@ -807,12 +807,13 @@
             }
         }
     }else if(location.href.indexOf('history=')!=-1){
-        let hlen = location.href.split('history=')[1].split('&')[0]
+        let hlen = location.href.split('history=')[1].split('&')[0].split('#')[0]
         window.history.pushState('forward', null, '#');
         if(window.history && window.history.pushState) {
             window.onpopstate = async function() {
                 hlen = parseInt(hlen)
-                window.history.go(-(2*hlen))
+                console.log(hlen)
+                window.history.go((-1)*(hlen+1))
             }
         }
     }
