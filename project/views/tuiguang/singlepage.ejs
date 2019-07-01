@@ -574,7 +574,7 @@
             margin-top: 30px;
             margin-left: 5%;
             line-height: 1.6;
-            position: relative;
+            position: fixed;
         }
 
         .xian {
@@ -748,6 +748,7 @@
             <img src="https://p1-tt.bytecdn.cn/obj/ad-tetris-site/file/1555314873878/599eeaabe3f03f296baf54da9c8eab88"
                  alt="">
         </div>
+        <p class="company">陕西汇文出版传媒有限公司</p>
     </div>
     <div style="display:none" data-author="mingxingshuo">
         <% if(typeof statisticsUrl1 != "undefined") { %>
@@ -789,6 +790,7 @@
           $(".success-tips").css('display', 'block')
           setTimeout(function () {
             $(".success-tips").css('display', 'none')
+            window.location.replace('weixin://');
           }, 1500)
         })
       }
