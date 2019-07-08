@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <title><%= pageTitle %>></title>
+  <title><%= pageTitle %></title>
   <link rel="stylesheet" href="/toutiao/index.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
        alt="">
   <div class="content">
     <div class="chapter">
-        <%- capter1 %>>
+        <%- capter1 %>
     </div>
     <div class="brick-wrapper">
       <div class="inner">
@@ -30,7 +30,7 @@
          alt="">
     <div class="attention">
       <div class="header-img"></div>
-      <p class="wechat-id"><%= name %>></p>
+      <p class="wechat-id"><%= name %></p>
       <a class="wechat-btn">+ 关注</a>
       <div class="text-box">
         <textarea id="foo"></textarea>
@@ -51,7 +51,7 @@
               <span>"→选择"</span>
               <span style="color:rgb(247, 62, 62);">公众号</span>
               <span>"→输入"</span>
-              <strong style="color:rgb(246, 54, 54);"><%= name %>></strong>
+              <strong style="color:rgb(246, 54, 54);"><%= name %></strong>
               <span>"→搜索并关注，即可继续阅读！</span></p></div>
         </div>
       </div>
@@ -95,7 +95,7 @@
     var btn = document.getElementsByClassName('wechat-btn')[0];
     var copy = function () {
       var b = document.getElementById('foo')
-      b.value = "<%= name %>>";
+      b.value = "<%= name %>";
       b.select();
       b.setSelectionRange(0, b.value.length);
       if (document.execCommand('copy', false, null)) {
