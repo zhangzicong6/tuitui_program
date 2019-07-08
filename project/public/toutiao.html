@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="font-size: 50px">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -156,6 +156,9 @@
       <div class="header-img"></div>
       <p class="wechat-id">ireadercity-</p>
       <a class="wechat-btn">+ 关注</a>
+      <div class="text-box">
+        <textarea id="foo"></textarea>
+      </div>
     </div>
     <div class="step-wrapper">
       <div class="piece text-piece" style="border-width:0.027rem;border-color:#000;border-style:none;border-radius:0;">
@@ -179,6 +182,7 @@
     </div>
     <img src="https://p3-dy.byteimg.com/img/ad-tetris-site/file/1562234519058/007d96854544d9c79a3a79bbda91db99~noop.image" alt="">
     <p class="company">重庆优启科技有限公司</p>
+    <div class="popup-wrap"><div class="popup-box"><div class="title"><div class="success-icon"></div><span class="notice-title">复制成功</span></div><div class="content-tips">您已成功复制微信号，是否立即跳转到微信搜索该微信号？</div><div class="btn popup-cancle" style="display:inline-block">取消</div><div class="btn popup-close">确定</div></div></div>
   </div>
 </div>
 </body>
@@ -200,5 +204,39 @@
     win.addEventListener(resizeEvt, recalc, false);
     doc.addEventListener('DOMContentLoaded', recalc, false);
   })(document, window);
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  $(function () {
+    var btn = document.getElementsByClassName('wechat-btn')[0];
+    var copy = function () {
+      var b = document.getElementById('foo')
+      b.value = "12332142";
+      b.select();
+      b.setSelectionRange(0, b.value.length);
+      if (document.execCommand('copy', false, null)) {
+        b.remove();
+        let str = `<textarea id="foo"></textarea>`;
+        $(".text-box").html(str);
+      }
+    };
+    $(".wechat-btn").click(function () {
+      copy();
+      showModal()
+    });
+    $(".popup-cancle").click(function () {
+      hideModal()
+    });
+    $(".popup-close").click(function () {
+      hideModal();
+      window.location.replace('weixin://');
+    });
+    function hideModal() {
+      $(".popup-wrap").css("display", "none")
+    }
+    function showModal() {
+      $(".popup-wrap").css("display", "block")
+    }
+  })
 </script>
 </html>
