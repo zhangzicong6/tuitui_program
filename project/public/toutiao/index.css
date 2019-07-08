@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+}
+
+.content {
+  background: url(https://p1-tt.byteimg.com/obj/ad-tetris-site/file/1562308912665/ad1c91e0dfd30bdce8ac77235bf10216);
+  background-size: 100% 100%;
+}
+
+.content > .chapter {
+  padding: .3rem .4rem;
+}
+
+.content > .chapter p {
+  text-indent: 2em;
+  margin-bottom: .5rem;
+}
+
+.brick-wrapper p {
+  text-indent: 0;
+  margin: 0;
+  line-height: 2;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.attention {
+  background-color: #fff;
+  color: #000;
+  padding: 0.2rem 0.4rem;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.header-img {
+  background: url(https://p1-tt.byteimg.com/obj/ad-tetris-site/file/1561530607920/bce61f54468df8558028eb4b43c43dd9) no-repeat center;
+  background-size: cover;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  float: left;
+  border: 0.027rem solid #e8e8e8;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.wechat-id {
+  float: left;
+  line-height: 0.6rem;
+  margin-left: .2rem;
+  width: 58%;
+  font-size: 12px;
+  overflow: hidden;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+  white-space: nowrap;
+}
+
+.wechat-btn {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 0.6rem;
+  border-radius: .3rem;
+  color: #fff;
+  line-height: 0.6rem;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  font-family: PingFangSC-Regular;
+  letter-spacing: 0;
+  float: right;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  background-color: #f85959;
+}
+
+.step-wrapper {
+  font-size: 18px;
+  line-height: 1.5;
+  padding: .15rem .3rem;
+}
+
+.company {
+  font-size: 14px;
+  color: rgb(153, 153, 153);
+  text-align: center;
+  line-height: 1.5;
+  padding: .2rem 0;
+}
