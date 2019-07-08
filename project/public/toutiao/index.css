@@ -76,7 +76,7 @@ img {
 }
 
 .attention {
-  background-color: #fff;
+  background-color: rgb(239, 153, 153);
   color: #000;
   padding: 0.2rem 0.4rem;
   overflow: hidden;
@@ -84,7 +84,7 @@ img {
 }
 
 .header-img {
-  background: url(https://p1-tt.byteimg.com/obj/ad-tetris-site/file/1561530607920/bce61f54468df8558028eb4b43c43dd9) no-repeat center;
+  background: url(https://p1-tt.byteimg.com/obj/ad-tetris-site/file/1561713639655/3b51b8bae969a10d336e76f7522df799) no-repeat center;
   background-size: cover;
   width: 0.6rem;
   height: 0.6rem;
