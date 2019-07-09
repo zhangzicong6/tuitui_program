@@ -63,7 +63,7 @@ img {
 
 .content > .chapter a {
   font-size: .5rem;
-  display: inline-block;
+  display: block;
   text-align: center;
 }
 
