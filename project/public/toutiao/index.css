@@ -71,6 +71,7 @@ img {
 .content > .chapter p span {
   text-indent: 2em;
   display: inline-block;
+  line-height: 2;
 }
 
 .brick-wrapper p {
