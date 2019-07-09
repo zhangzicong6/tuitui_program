@@ -57,9 +57,9 @@ img {
   background-size: 100% 100%;
 }
 
-.content > .chapter {
-  padding: .3rem .4rem;
-}
+/*.content > .chapter {*/
+  /*padding: .3rem .4rem;*/
+/*}*/
 
 .content > .chapter a {
   font-size: .5rem;
