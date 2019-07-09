@@ -65,6 +65,7 @@ img {
   font-size: .5rem;
   display: block;
   text-align: center;
+  margin-top: .5rem;
 }
 
 .content > .chapter p span {
