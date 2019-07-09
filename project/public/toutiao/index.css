@@ -57,6 +57,11 @@ img {
   background-size: 100% 100%;
 }
 
+.head-line {
+  width: 100%;
+  position: relative;
+}
+
 .head-line .head-wrapper-new h2 {
   height: 0.587rem;
   line-height: 0.587rem;
