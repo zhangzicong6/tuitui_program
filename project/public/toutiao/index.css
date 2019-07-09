@@ -64,6 +64,7 @@ img {
 
 .head-line .head-wrapper-new {
   display: flex;
+  height: .8rem;
 }
 
 .head-line .head-wrapper-new h2 {
