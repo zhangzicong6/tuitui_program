@@ -57,15 +57,66 @@ img {
   background-size: 100% 100%;
 }
 
+.head-line .head-wrapper-new h2 {
+  height: 0.587rem;
+  line-height: 0.587rem;
+}
+
+.head-line .head-wrapper-new .head-left-decorate, .head-line .head-wrapper-new .head-right-decorate {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.head-line .head-text {
+  max-width: 90%;
+}
+
+.head-line .head-wrapper-new .head-text {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+
 /*.content > .chapter {*/
   /*padding: .3rem .4rem;*/
 /*}*/
 
-.content > .chapter a {
-  font-size: .5rem;
-  display: block;
-  text-align: center;
-  margin-top: .5rem;
+.head-line .head-text a.text-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.head-line .head-wrapper-new .head-left-decorate, .head-line .head-wrapper-new .head-right-decorate {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.head-line .head-wrapper-new .head-left-decorate .head-decorate-line, .head-line .head-wrapper-new .head-right-decorate .head-decorate-line {
+  position: absolute;
+  top: 50%;
+  left: 0.267rem;
+  right: 0.267rem;
+  height: 0.053rem;
+  margin-top: -0.027rem;
+}
+
+.head-line .head-wrapper-new .head-left-decorate .head-decorate-line, .head-line .head-wrapper-new .head-left-decorate .head-decorate-border {
+  left: 0;
+}
+
+.head-line .head-wrapper-new .head-right-decorate .head-decorate-line, .head-line .head-wrapper-new .head-right-decorate .head-decorate-border {
+  right: 0;
 }
 
 .content > .chapter p span {
