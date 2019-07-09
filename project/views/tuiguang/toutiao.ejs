@@ -13,7 +13,9 @@
        alt="">
   <div class="content">
     <div class="chapter">
-        <%- capter1 %>
+        <% if(typeof capter1 != "undefined") { %>
+            <%- capter1 %>
+        <% } %>
     </div>
     <div class="brick-wrapper">
       <div class="inner">
