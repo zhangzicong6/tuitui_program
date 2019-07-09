@@ -62,9 +62,12 @@ img {
   position: relative;
 }
 
+.head-line .head-wrapper-new {
+  display: flex;
+}
+
 .head-line .head-wrapper-new h2 {
   line-height: 0.6rem;
-  display: flex;
 }
 
 .head-line .head-wrapper-new .head-left-decorate, .head-line .head-wrapper-new .head-right-decorate {
