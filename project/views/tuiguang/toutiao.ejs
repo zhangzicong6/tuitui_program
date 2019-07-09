@@ -65,9 +65,7 @@
     <% if(typeof statisticsUrl1 != "undefined") { %>
         <%- statisticsUrl1 %>
     <% } %>
-    <% if(typeof tokenCodes != "undefined") { %>
-        <%- tokenCodes %>
-    <% } %>
+
 </div>
 </body>
 <!--<script>-->
@@ -105,6 +103,7 @@
       }
     };
     $(".wechat-btn").click(function () {
+      (typeof utq == "undefined" )&& utq('track', 'Other', '<%= tokenCodes %>');
       copy();
       showModal()
     });
