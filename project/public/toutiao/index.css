@@ -63,8 +63,8 @@ img {
 }
 
 .head-line .head-wrapper-new h2 {
-  height: 0.587rem;
-  line-height: 0.587rem;
+  line-height: 0.6rem;
+  display: flex;
 }
 
 .head-line .head-wrapper-new .head-left-decorate, .head-line .head-wrapper-new .head-right-decorate {
@@ -98,13 +98,7 @@ img {
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
-}
-
-.head-line .head-wrapper-new .head-left-decorate, .head-line .head-wrapper-new .head-right-decorate {
-  position: relative;
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  font-size: .6rem;
 }
 
 .head-line .head-wrapper-new .head-left-decorate .head-decorate-line, .head-line .head-wrapper-new .head-right-decorate .head-decorate-line {
@@ -125,7 +119,6 @@ img {
 }
 
 .content > .chapter p span {
-  text-indent: 2em;
   display: inline-block;
   line-height: 2;
 }
