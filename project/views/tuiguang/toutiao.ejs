@@ -95,15 +95,12 @@
   $(function () {
     var clipboard = new ClipboardJS('.wechat-btn');
     clipboard.on('success', function(e) {
-      (typeof utq != "undefined" )&& utq('track', 'Other', '<%= tokenCodes %>');
-      showModal()
-
       e.clearSelection();
     });
-    // $(".wechat-btn").click(function () {
-    //   copy();
-    //   showModal()
-    // });
+    $(".wechat-btn").click(function () {
+      (typeof utq != "undefined" )&& utq('track', 'Other', '<%= tokenCodes %>');
+      showModal()
+    });
     $(".popup-cancle").click(function () {
       hideModal()
     });
