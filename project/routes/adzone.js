@@ -182,8 +182,9 @@ router.use('/kljsonp.js',function(req,res,next){
 			}
 			if(tao){
 				res.send('gkl("'+tao.kouling+'")')
+			}else{
+				res.send('gkl("")')
 			}
-			res.send('gkl("")')
 	});
 })
 
