@@ -324,3 +324,7 @@ img {
   margin: 0.267rem auto 0.293rem;
   padding: 0;
 }
+
+.rich-text p {
+  font-size: 1px;
+}
