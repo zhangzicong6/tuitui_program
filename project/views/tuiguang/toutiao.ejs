@@ -1,67 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" style="font-size: 37.5px">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <title><%= pageTitle %></title>
-  <link rel="stylesheet" href="/toutiao/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/toutiao/index.css">
+    <style>
+        .header-img {
+            background: url(https://p1-tt.byteimg.com/obj/ad-tetris-site/file/1564393925030/fd8980058d206d33b2bd9fe59291bd75) no-repeat center;
+            background-size: cover;
+            width: .8rem;
+            height: .8rem;
+            border-radius: 50%;
+            float: left;
+            border: 0.027rem solid #e8e8e8;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-  <img src="<%= picurl %>"
-       alt="">
-  <div class="content">
-    <div class="chapter">
-        <% if(typeof capter1 != "undefined") { %>
-            <%- capter1 %>
-        <% } %>
-    </div>
-    <div class="brick-wrapper">
-      <div class="inner">
-        <p><strong>篇幅有限，更多精彩内容关注</strong></p>
-        <p>
-          微信公众号："
-          <span style="color:rgb(232, 67, 67); font-weight: 400"><%= name %></span>
-          "阅读全文
-        </p>
-      </div>
-    </div>
-    <img class="tips-img"
-         src="https://p3-dy.byteimg.com/img/ad-tetris-site/file/1561519022337/b0b50d3fc83d45f294693120c22574ab~noop.image"
+    <img src="<%= picurl %>"
          alt="">
-    <div class="attention">
-      <div class="header-img"></div>
-      <p class="wechat-id"><%= name %></p>
-      <a class="wechat-btn" data-clipboard-text="<%= name %>">+ 关注</a>
-      <div class="text-box">
-        <textarea id="foo"></textarea>
-      </div>
-    </div>
-    <div class="step-wrapper">
-      <div class="piece text-piece" style="border-width:0.027rem;border-color:#000;border-style:none;border-radius:0;">
-        <div class="rich-text">
-          <div class="inner"><p><span >操作步骤：</span></p>
-            <p><span >1、点击&nbsp;"</span><span
-              style="color:rgb(247, 62, 62);">+关注</span><span >"复制公众号</span>
-            </p>
-            <p>
-              <span >2、打开微信→点击右上角"</span>
-              <span style="color:rgb(247, 62, 62);">+</span>
-              <span>"→点击"</span>
-              <span style="color:rgb(247, 62, 62);">添加朋友</span>
-              <span>"→选择"</span>
-              <span style="color:rgb(247, 62, 62);">公众号</span>
-              <span>"→输入"</span>
-              <strong style="color:rgb(246, 54, 54);"><%= name %></strong>
-              <span>"→搜索并关注，即可继续阅读！</span></p></div>
+    <div class="content">
+        <div class="chapter">
+            <% if(typeof capter1 != "undefined") { %>
+                <%- capter1 %>
+            <% } %>
         </div>
-      </div>
+        <div class="brick-wrapper">
+            <div class="inner">
+                <p><strong>篇幅有限，更多精彩内容关注</strong></p>
+                <p>
+                    微信公众号："
+                    <span style="color:rgb(232, 67, 67); font-weight: 400"><%= name %></span>
+                    "阅读全文
+                </p>
+            </div>
+        </div>
+        <img class="tips-img"
+             src="https://p3-dy.byteimg.com/img/ad-tetris-site/file/1561519022337/b0b50d3fc83d45f294693120c22574ab~noop.image"
+             alt="">
+        <div class="attention">
+            <div class="header-img"></div>
+            <p class="wechat-id"><%= name %></p>
+            <a class="wechat-btn" data-clipboard-text="<%= name %>">+ 关注</a>
+            <div class="text-box">
+                <textarea id="foo"></textarea>
+            </div>
+        </div>
+        <div class="step-wrapper">
+            <div class="piece text-piece"
+                 style="border-width:0.027rem;border-color:#000;border-style:none;border-radius:0;">
+                <div class="rich-text">
+                    <div class="inner"><p><span>操作步骤：</span></p>
+                        <p><span>1、点击&nbsp;"</span><span
+                                    style="color:rgb(247, 62, 62);">+关注</span><span>"复制公众号</span>
+                        </p>
+                        <p>
+                            <span>2、打开微信→点击右上角"</span>
+                            <span style="color:rgb(247, 62, 62);">+</span>
+                            <span>"→点击"</span>
+                            <span style="color:rgb(247, 62, 62);">添加朋友</span>
+                            <span>"→选择"</span>
+                            <span style="color:rgb(247, 62, 62);">公众号</span>
+                            <span>"→输入"</span>
+                            <strong style="color:rgb(246, 54, 54);"><%= name %></strong>
+                            <span>"→搜索并关注，即可继续阅读！</span></p></div>
+                </div>
+            </div>
+        </div>
+        <img src="<%= finalImg %>" alt="">
+        <p class="company">陕西汇文出版传媒有限公司</p>
+        <div class="popup-wrap">
+            <div class="popup-box">
+                <div class="title">
+                    <div class="success-icon"></div>
+                    <span class="notice-title">复制成功</span></div>
+                <div class="content-tips">您已成功复制微信号，是否立即跳转到微信搜索该微信号？</div>
+                <div class="btn popup-cancle" style="display:inline-block">取消</div>
+                <div class="btn popup-close">确定</div>
+            </div>
+        </div>
     </div>
-    <img src="<%= finalImg %>" alt="">
-    <p class="company">陕西汇文出版传媒有限公司</p>
-    <div class="popup-wrap"><div class="popup-box"><div class="title"><div class="success-icon"></div><span class="notice-title">复制成功</span></div><div class="content-tips">您已成功复制微信号，是否立即跳转到微信搜索该微信号？</div><div class="btn popup-cancle" style="display:inline-block">取消</div><div class="btn popup-close">确定</div></div></div>
-  </div>
 </div>
 <div style="display:none" data-author="mingxingshuo">
     <% if(typeof statisticsUrl1 != "undefined") { %>
@@ -71,34 +97,34 @@
 </div>
 </body>
 <!--<script>-->
-  <!--(function (doc, win) {-->
-    <!--var docEl = doc.documentElement,-->
-      <!--resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',-->
-      <!--recalc = function () {-->
-        <!--var clientWidth = docEl.clientWidth;-->
-        <!--if (!clientWidth) return;-->
-        <!--if (clientWidth >= 640) {-->
-          <!--docEl.style.fontSize = '75px';-->
-        <!--} else {-->
-          <!--docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';-->
-        <!--}-->
-      <!--};-->
+<!--(function (doc, win) {-->
+<!--var docEl = doc.documentElement,-->
+<!--resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',-->
+<!--recalc = function () {-->
+<!--var clientWidth = docEl.clientWidth;-->
+<!--if (!clientWidth) return;-->
+<!--if (clientWidth >= 640) {-->
+<!--docEl.style.fontSize = '75px';-->
+<!--} else {-->
+<!--docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';-->
+<!--}-->
+<!--};-->
 
-    <!--if (!doc.addEventListener) return;-->
-    <!--win.addEventListener(resizeEvt, recalc, false);-->
-    <!--doc.addEventListener('DOMContentLoaded', recalc, false);-->
-  <!--})(document, window);-->
+<!--if (!doc.addEventListener) return;-->
+<!--win.addEventListener(resizeEvt, recalc, false);-->
+<!--doc.addEventListener('DOMContentLoaded', recalc, false);-->
+<!--})(document, window);-->
 <!--</script>-->
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script src="/toutiao/clipboard.min.js"></script>
 <script>
   $(function () {
     var clipboard = new ClipboardJS('.wechat-btn');
-    clipboard.on('success', function(e) {
+    clipboard.on('success', function (e) {
       e.clearSelection();
     });
     $(".wechat-btn").click(function () {
-      (typeof utq != "undefined" )&& utq('track', 'Other', '<%= tokenCodes %>');
+      (typeof utq != "undefined") && utq('track', 'Other', '<%= tokenCodes %>');
       showModal()
     });
     $(".popup-cancle").click(function () {
@@ -108,9 +134,11 @@
       hideModal();
       window.location.replace('weixin://');
     });
+
     function hideModal() {
       $(".popup-wrap").css("display", "none")
     }
+
     function showModal() {
       $(".popup-wrap").css("display", "block")
     }
