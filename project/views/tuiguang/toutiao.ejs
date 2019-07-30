@@ -124,8 +124,8 @@
       e.clearSelection();
     });
     $(".wechat-btn").click(function () {
-      (typeof utq != "undefined") && utq('track', 'Other', '<%= tokenCodes %>');
-      showModal()
+      <%= tokenCodes %>;
+      showModal();
     });
     $(".popup-cancle").click(function () {
       hideModal()
