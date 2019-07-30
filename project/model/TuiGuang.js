@@ -22,6 +22,10 @@ var TuiGuangSchema = new Schema({
   finalImg: {
     type: String,
     default: ""
+  },
+  gonghaoLogo: {
+    type: String,
+    default: ""
   }
 });
 

@@ -26,6 +26,7 @@ router.get('/toutiao/:index', statics, async (req, res, next) => {
         desc: data[0].desc,
         picurl: data[0].picurl,
         finalImg: data[0].finalImg,
+        gonghaoLogo: data[0].gonghaoLogo,
         capter1: data[0].capter1,
         tokenCodes: data[0].tokenCodes,
         statisticsUrl1: data[0].statisticsUrl1,
