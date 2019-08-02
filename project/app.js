@@ -57,7 +57,8 @@ app.use('/miniprogram',mp);
 app.use('/alipayLink',alipayLink);
 app.use('/novel_transfer',novelTransfer);
 app.use('/recommend',recommend);
-app.use('/materials',materials);
+
+//app.use('/materials',materials);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
