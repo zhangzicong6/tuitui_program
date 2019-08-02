@@ -33,6 +33,11 @@ router.get('/toutiao/:index', async (req, res, next) => {
         company: data[0].company
       };
 
+      if(req.hostname=='xs7.pgqdkh.com'){
+        res_data.picurl =  'http://novel.jtjsmp.top'+data[0].picurl;
+        res_data.finalImg= 'http://novel.jtjsmp.top'+data[0].finalImg;
+      }
+      
       await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
       res.render('tuiguang/toutiao', res_data);
     }
