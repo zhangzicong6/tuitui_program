@@ -216,7 +216,7 @@ router.get('/copy', function (req, res, next) {
 
 })
 
-async functio(req, res, next) {
+async function(req, res, next) {
   if (req.url.indexOf('.') != -1) {
     await next()
     return
