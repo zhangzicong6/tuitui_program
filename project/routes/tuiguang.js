@@ -4,15 +4,15 @@ var TuiGuangModel = require('../model/TuiGuang.js');
 var TokenArr = require('../model/TokenArr.js');
 var mem = require('../util/mem.js')
 
-const asyncRedis = require("async-redis");
-const redis_client = asyncRedis.createClient();
+//const asyncRedis = require("async-redis");
+//const redis_client = asyncRedis.createClient();
 
 router.get('/token', async (req, res, next) => {
   var docs = await TokenArr.find();
   res.send({data: docs, success: '成功'})
 })
 
-router.get('/toutiao/:index', statics, async (req, res, next) => {
+router.get('/toutiao/:index', async (req, res, next) => {
   let value = await mem.get('toutiao_' + req.params.index);
   if (value) {
     let res_data = JSON.parse(value);
@@ -39,7 +39,7 @@ router.get('/toutiao/:index', statics, async (req, res, next) => {
   }
 });
 
-router.get('/weitiao/:index', statics, function (req, res, next) {
+router.get('/weitiao/:index', function (req, res, next) {
   mem.get('weitiao_' + req.params.index).then(function (value) {
     if (value) {
       /*console.log('---------get weitiao value---------')
@@ -81,7 +81,7 @@ router.get('/weitiao/:index', statics, function (req, res, next) {
   });
 })
 
-router.get('/singlepage/:index', statics, function (req, res, next) {
+router.get('/singlepage/:index', function (req, res, next) {
   mem.get('singlepage_' + req.params.index).then(function (value) {
     if (value) {
       /*console.log('---------get singlepage value---------')
@@ -121,7 +121,7 @@ router.get('/singlepage/:index', statics, function (req, res, next) {
   });
 })
 
-router.get('/multipage/:index', statics, function (req, res, next) {
+router.get('/multipage/:index', function (req, res, next) {
   mem.get('multipage_' + req.params.index).then(function (value) {
     if (value) {
       /*console.log('---------get multipage value---------')
@@ -209,14 +209,14 @@ router.get('/copy', function (req, res, next) {
   let channel = req.query.channel;
   let type = req.query.type || 'copy';
   //console.log('type----------',type)
-  redis_client.pfadd('website_tuiguang_' + type + '_' + channel + '_' + index, uid)
+  //redis_client.pfadd('website_tuiguang_' + type + '_' + channel + '_' + index, uid)
   return res.send({
     message: 'success'
   })
 
 })
 
-async function statics(req, res, next) {
+async functio(req, res, next) {
   if (req.url.indexOf('.') != -1) {
     await next()
     return
@@ -255,10 +255,10 @@ async function statics(req, res, next) {
   let index = req.params.index;
 
   //await redis_client.incr('h5novelsCBPv_'+ctx.channel+'_'+ctx.request.query.bid)
-  await redis_client.pfadd('website_tuiguang_' + channel + '_' + index, uid)
+  //await redis_client.pfadd('website_tuiguang_' + channel + '_' + index, uid)
 
   //console.log(getClientIp(req))
-  await redis_client.pfadd('website_tuiguang_ip_' + channel + '_' + index, getClientIp(req))
+  //await redis_client.pfadd('website_tuiguang_ip_' + channel + '_' + index, getClientIp(req))
 
   await next()
 }
