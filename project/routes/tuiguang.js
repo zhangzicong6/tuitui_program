@@ -163,7 +163,7 @@ router.get('/multipage/:index', function (req, res, next) {
   });
 })
 
-router.get('/capter/:index', statics, function (req, res, next) {
+router.get('/capter/:index', function (req, res, next) {
   mem.get('capter_' + req.params.index).then(function (value) {
     if (value) {
       /*console.log('---------get capter value---------')
@@ -216,7 +216,7 @@ router.get('/copy', function (req, res, next) {
 
 })
 
-async function(req, res, next) {
+async function statics(req, res, next) {
   if (req.url.indexOf('.') != -1) {
     await next()
     return
