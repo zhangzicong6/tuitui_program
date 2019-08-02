@@ -14,7 +14,7 @@ var mp = require('./routes/miniProgram');
 var alipayLink = require('./routes/alipayLink');
 var novelTransfer = require('./routes/novelTransfer');
 var recommend = require('./routes/recommend');
-var materials = require('./routes/materials');
+//var materials = require('./routes/materials');
 var material_domain = require('./conf/proj.json').material_domain;
 
 var app = express();
