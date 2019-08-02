@@ -19,6 +19,10 @@ var TuiGuangSchema = new Schema({
   tokenCodes: String,
   channel: String,
   remarks: String,
+  company: {
+    type: String,
+    default: ""
+  },
   finalImg: {
     type: String,
     default: ""
