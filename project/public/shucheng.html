@@ -53,7 +53,8 @@
 		<h3>长按上图，识别二维码关注</h3>
 	
 	</div>
-	
+
+	<iframe id="postwx"></iframe>
 	<div id="postdiv"></div>
 
 	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -91,8 +92,9 @@
 　　　　　　　　var html = response;
 　　　　　　　　html = html.replace(/data-src/g, "src").replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/g, '').replace(/https/g,'http');
 
+			$('#postwx').attr('srcdoc',html)
 			//$('#postdiv').load(html);
-			$('#postdiv')[0].innerHTML = html
+			//$('#postdiv')[0].innerHTML = html
 		});
 	</script>
 	
