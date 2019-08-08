@@ -89,9 +89,9 @@
 　　　　var showSrc = 'https://mp.weixin.qq.com/s/79s2hL1w6b37KFUuBkYCPw'
 　　　　$.get( showSrc, function (response){
 　　　　　　　　var html = response;
-　　　　　　　　html = html.replace(/data-src/g, "src").replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/g, '').replace(/https/g,'http://cors-anywhere.herokuapp.com');
+　　　　　　　　html = html.replace(/data-src/g, "src").replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/g, '')
 
-			//$('#postdiv').load(html);
+			$('#postdiv').load(html);
 			$('#postdiv')[0].innerHTML = html
 		});
 	</script>
