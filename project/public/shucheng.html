@@ -6,19 +6,6 @@
 	<meta name="referrer" content="never"> 
 	<title>支持正版，关注我们</title>
 	
-	<script>
-		(function () {
-			var cw = document.documentElement.clientWidth || document.body.clientWidth, zoom = cw / 320;
-			if (cw > 640) zoom = 2;
-			document.write('<style id="htmlzoom">html{font-size:' + (zoom * 50) + 'px;}</style>');
-			window.addEventListener('resize', function () {
-				cw = document.documentElement.clientWidth || document.body.clientWidth, zoom = cw / 320;
-				if (cw > 640) zoom = 2;
-				document.getElementById('htmlzoom').innerHTML = 'html{font-size:' + (zoom * 50) + 'px;}';
-			});
-		})();
-	</script>
-	
 	<style id="htmlzoom">
 		html {
 			font-size: 100px;
@@ -66,7 +53,34 @@
 		<h3>长按上图，识别二维码关注</h3>
 		<img src="http://m.rrdtjj.top/materials/img/3"/>
 	</div>
-	<script type="text/javascript" src="/dm/zz.js"></script>
+	
+	<iframe id="postwx" src=""></iframe>
+
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		function getUrl(url) {
+			var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+            url = http + '//cors-anywhere.herokuapp.com/'+url;
+            $.ajax({
+			    url: url,
+			    type: 'get',
+			    /*cache: false,
+			    contentType: false,
+			    processData: false,*/
+			    success: function(data) {
+			        if(data){
+			        	data = data.replace(/data-src/g, 'src');
+			        	let htmlSrc = 'data:text/html;charset=utf-8,' + data;
+			        	$('#postwx').attr('src',htmlSrc)
+			        }
+			    },
+			    error: function(e) {}
+			});
+		}
+		getUrl('https://mp.weixin.qq.com/s/79s2hL1w6b37KFUuBkYCPw')
+	</script>
+	
 </body>
 
 </html>
