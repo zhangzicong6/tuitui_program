@@ -55,6 +55,7 @@
 	</div>
 	
 	<iframe id="postwx" src=""></iframe>
+	<div id="postdiv"></div>
 
 	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 
@@ -80,6 +81,21 @@
 			});
 		}
 		getUrl('https://mp.weixin.qq.com/s/79s2hL1w6b37KFUuBkYCPw')
+
+		$.ajaxPrefilter( function (options) {
+    　　　　if (options.crossDomain && jQuery.support.cors) {
+        　　　　var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+        　　　　options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+    　　　　};
+　　　　 });
+　　　　var showSrc = 'https://mp.weixin.qq.com/s/79s2hL1w6b37KFUuBkYCPw'
+　　　　$.get( showSrc, function (response){
+　　　　　　　　var html = response;
+　　　　　　　　html = html.replace(/data-src/g, "src").replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/g, '').replace(/https/g,'http');
+
+　　　　　　　var html_src = 'data:text/html;charset=utf-8,' + html;
+
+			$('#postdiv').load(html);
 	</script>
 	
 </body>
