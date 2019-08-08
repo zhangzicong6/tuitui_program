@@ -51,7 +51,7 @@
 		<p>由于版权问题，请关注后继续阅读</p>
 		<div id="content"></div>
 		<h3>长按上图，识别二维码关注</h3>
-		<!-- <img src="http://m.rrdtjj.top/materials/img/3"/> -->
+	
 	</div>
 	
 	<iframe id="postwx" src=""></iframe>
@@ -70,8 +70,7 @@
 			    processData: false,*/
 			    success: function(data) {
 			        if(data){
-			        	data = data.replace(/data-src/g, 'src');
-			        	data=data.replace(/document.domain="qq.com"/,'_sdx=0');
+			        	data = data.replace(/data-src/g, "src").replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/g, '').replace(/https/g,'http');
 			        	console.log(data);
 			        	let htmlSrc = 'data:text/html;charset=utf-8,' + data;
 			        	$('#postwx').attr('src',htmlSrc)
