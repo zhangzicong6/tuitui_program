@@ -16,6 +16,10 @@ router.get('/toutiao/:index', async (req, res, next) => {
   let value = await mem.get('toutiao_' + req.params.index);
   if (value) {
     let res_data = JSON.parse(value);
+    if(res_data.suffix){
+        let sufs = res_data.suffix.split(',')
+        res_data.name += sufs[parseInt(Math.random()*sufs.length)]
+    }
     res.render('tuiguang/toutiao', res_data);
   } else {
     let data = await TuiGuangModel.find({id: req.params.index});
@@ -30,15 +34,14 @@ router.get('/toutiao/:index', async (req, res, next) => {
         capter1: data[0].capter1,
         tokenCodes: data[0].tokenCodes,
         statisticsUrl1: data[0].statisticsUrl1,
-        company: data[0].company
+        company: data[0].company,
+        suffix : data[0].suffix
       };
-
-      if(req.hostname=='ks1.lqxydz.cn'){
-        res_data.picurl =  'http://novel.jtjsmp.top'+data[0].picurl;
-        res_data.finalImg= 'http://novel.jtjsmp.top'+data[0].finalImg;
-      }
-
       await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
+      if(res_data.suffix){
+        let sufs = res_data.suffix.split(',')
+        res_data.name += sufs[parseInt(Math.random()*sufs.length)]
+      }
       res.render('tuiguang/toutiao', res_data);
     }
   }

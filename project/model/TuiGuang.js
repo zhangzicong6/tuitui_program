@@ -30,7 +30,8 @@ var TuiGuangSchema = new Schema({
   gonghaoLogo: {
     type: String,
     default: ""
-  }
+  },
+  suffix : String
 });
 
 var TuiGuangModel = db.model('TuiGuang', TuiGuangSchema);
