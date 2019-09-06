@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://gzh.qiangxiangedu.cn/20/ -->
+<html data-dpr="1" style="font-size: 54px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./index_files/css.css">
+
+    
+<!-- <script src="./index_files/jquery-2.js" type="text/javascript" charset="utf-8"></script>
+<script src="./index_files/jquery00.js"></script>
+<script src="./index_files/jquery.js"></script> -->
+
+<!--<script src="./index_files/saved_resource"> -->
+    
+</script>
+	<style>
+	.search {
+		text-align: center;
+		margin-top: 4vw;
+		font-size: 4.4vw;
+	}
+	.search .h_btn2 {
+		padding: 2px 4px;
+		background: #4CAF50;
+		border-radius: 1.33333333vw;
+		color: #fff;
+		font-size: 20px;
+		display: inline-block;
+		width: 150px;
+	}
+	
+	</style>
+
+</head>
+
+<body style="font-size: 12px;">
+    <div class="main" style=""><!----> 
+        <div class="title"><h1></h1></div>  <div class="content"></div> 
+
+        <input type="text" style="display: none;" value="yywxsw">  <div class="guide-3"><div id="xxt" class="hint"><span>按照下面步骤操作</span> <span class="blue">关注下方公众号</span> <span class="red">继续阅读</span></div> <div class="down-img"><img src="./index_files/down_icon.png"></div> <!----> <div class="step"> <span style="text-align: center;"> 
+
+        
+
+    <div class="course">
+    <!-- <script>document.write(znwx_img)</script> -->
+    <img src="./index_files/微信图片_20190905194709.png" style="width:90% !important;"></div> 
+
+</span></div> 
+
+
+    <div class="search" style="margin-top: 10px;"><!----> <span style="font-weight:bold;font-size:25px;">公众号:</span><span style="color:red;font-weight:bold;font-size:30px;" id="xsname">玄东文库</span> <!----> <span class="h_btn"></span></div>
+
+     <div class="btns" style="margin-top: -20px;"><button class="kj_copy_btn wxfz" id="copyxs" onclick="copyxsname()">一键复制微信号</button></div> <!----> 
+    <!--  <div class="follow " style=""><span>关注"</span> <span class="red"><script>document.write(znstxlwx)</script></span> <span>"后，继续阅读全篇</span></div>  -->
+     <!----> 
+<img src="./index_files/22.gif" class="course-img" style="width:100%;">
+
+
+
+    <!-- <div class="course"><img src="index_files/22.gif" class="course-img"></div> -->
+
+</div> 
+
+
+</div>
+<script type="text/javascript">
+        function copyios(event){
+            const range = document.createRange();
+            var textxsname2 = '玄东文库'
+            // eval( "var word=" +  '"\\u' + (Math.round(Math.random() * 20901) + 19968).toString(16)+'"')//生成随机汉字
+            // var textxsname1 = document.getElementById("xsname").innerHTML;//得到input的value值
+            // var textxsname2 = textxsname1.concat(word);//用concat方法 拼接value值和随机生成的汉字
+            document.getElementById("xsname").innerHTML = textxsname2;//写入新value到input覆盖原来的值
+            
+            range.selectNode(document.querySelector("#xsname"));//通过对象获得新value的值
+            const selection = window.getSelection();
+            if(selection.rangeCount > 0) selection.removeAllRanges();//判断对象是否有内容（好像是的 源码没有注释）
+            selection.addRange(range);//选中被复制对象
+            document.execCommand('Copy');//执行复制命令
+            alert("复制成功，可到微信粘贴");
+            window.location.href="weixin://"
+        }
+        document.querySelector("#copyxs").addEventListener('click', copyios, false);
+    </script>
+
+
+    
+ 
+   
+
+
+
+
+</body></html>
