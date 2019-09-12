@@ -57,8 +57,9 @@ body {
 }
 
 .container > .banner-head {
-  padding: .2rem;
-  border-radius: .3rem;
+  margin: .3rem;
+  border-radius: .1rem;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
