@@ -55,6 +55,7 @@ img {
 .container > img {
   padding: .2rem;
   border-radius: .3rem;
+  box-sizing: border-box;
 }
 
 /*.content {*/
