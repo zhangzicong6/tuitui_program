@@ -149,6 +149,14 @@ img {
   font-size: 18px;
 }
 
+.inner p {
+  margin-top: 10px;
+}
+
+.inner p strong {
+  font-weight: 700;
+}
+
 
 
 .wechat-id {
