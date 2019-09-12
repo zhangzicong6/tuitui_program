@@ -48,6 +48,10 @@ img {
   display: block;
 }
 
+body {
+  background: #fff;
+}
+
 .container {
   width: 100%;
 }
