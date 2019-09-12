@@ -52,6 +52,11 @@ img {
   width: 100%;
 }
 
+.container > img {
+  padding: .2rem;
+  border-radius: .3rem;
+}
+
 /*.content {*/
   /*background: url(http://novel.jtjsmp.top/images/website/b0aa08eae53c92ca6cd63b89ef042180.jpg);*/
   /*background-size: 100% 100%;*/
@@ -137,7 +142,7 @@ img {
 }
 
 .attention {
-  background-color: rgb(239, 153, 153);
+  background-color: rgb(238, 238, 238);
   color: #000;
   padding: 0.2rem 0.4rem;
   overflow: hidden;
