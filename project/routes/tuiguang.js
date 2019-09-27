@@ -27,6 +27,7 @@ router.get('/toutiao/:index', async (req, res, next) => {
       let res_data = {
         pageTitle: data[0].pageTitle,
         name: data[0].name,
+        gonghao_id: data[0].gonghao_id,
         desc: data[0].desc,
         picurl: data[0].picurl,
         finalImg: data[0].finalImg,

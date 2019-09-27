@@ -19,6 +19,7 @@ var TuiGuangSchema = new Schema({
   tokenCodes: String,
   channel: String,
   remarks: String,
+  gonghao_id: { type: String, default: ""},
   company: {
     type: String,
     default: ""

@@ -103,9 +103,9 @@ body {
 }
 
 
-/*.content > .chapter {*/
-  /*padding: .3rem .4rem;*/
-/*}*/
+.content > .chapter {
+  padding: 0 .2rem;
+}
 
 .head-line .head-text a.text-ellipsis {
   width: 100%;
