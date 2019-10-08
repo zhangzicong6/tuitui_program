@@ -41,7 +41,7 @@ router.get('/toutiao/:index', async (req, res, next) => {
       await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
-        res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
+        res_data.name += sufs[parseInt(Math.random()*sufs.length)]
       }
       res.render('tuiguang/toutiao', res_data);
     }
