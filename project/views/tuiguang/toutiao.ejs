@@ -80,7 +80,7 @@
         </section>
         <img style="margin-top: .8rem" src="<%= finalImg %>" alt="">
         <p class="company"><%= company %></p>
-        <div class="popup-wrap popup-cancle">
+        <div class="popup-wrap">
             <div class="popup-box" onclick="return false;">
                 <div class="title">
                     <div class="success-icon"></div>
@@ -136,6 +136,9 @@
       hideModal();
       window.location.replace('weixin://');
     });
+    $("document").click(function (e) {
+      console.log(e.target)
+    })
 
     function hideModal() {
       $(".popup-wrap").css("display", "none")
