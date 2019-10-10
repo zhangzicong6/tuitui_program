@@ -81,7 +81,7 @@
         <img style="margin-top: .8rem" src="<%= finalImg %>" alt="">
         <p class="company"><%= company %></p>
         <div class="popup-wrap popup-cancle">
-            <div class="popup-box">
+            <div class="popup-box" onclick="return false;">
                 <div class="title">
                     <div class="success-icon"></div>
                     <span class="notice-title">复制成功</span></div>
@@ -132,7 +132,6 @@
       hideModal()
     });
     $(".popup-close").click(function (e) {
-      e.stopPropagation();
         <%- tokenCodes %>;
       hideModal();
       window.location.replace('weixin://');
