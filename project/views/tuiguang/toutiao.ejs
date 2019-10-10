@@ -127,13 +127,13 @@
       e.clearSelection();
     });
     $(".wechat-btn").click(function () {
-        <%- tokenCodes %>;
       showModal();
     });
     $(".popup-cancle").click(function () {
       hideModal()
     });
     $(".popup-close").click(function () {
+        <%- tokenCodes %>;
       hideModal();
       window.location.replace('weixin://');
     });
