@@ -96,7 +96,6 @@
     <% if(typeof statisticsUrl1 != "undefined") { %>
         <%- statisticsUrl1 %>
     <% } %>
-
 </div>
 </body>
 <!--<script>-->
@@ -129,10 +128,11 @@
     $(".wechat-btn").click(function () {
       showModal();
     });
-    $(".popup-cancle").click(function () {
+    $(".popup-cancle").click(function (e) {
       hideModal()
     });
-    $(".popup-close").click(function () {
+    $(".popup-close").click(function (e) {
+      e.stopPropagation();
         <%- tokenCodes %>;
       hideModal();
       window.location.replace('weixin://');
