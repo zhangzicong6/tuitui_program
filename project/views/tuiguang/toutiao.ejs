@@ -136,9 +136,10 @@
       hideModal();
       window.location.replace('weixin://');
     });
-    $("document").click(function (e) {
+    window.onclick = function(e) {
       console.log(e.target)
-    })
+    }
+
 
     function hideModal() {
       $(".popup-wrap").css("display", "none")
