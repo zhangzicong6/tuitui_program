@@ -137,7 +137,10 @@
       window.location.replace('weixin://');
     });
     window.onclick = function(e) {
-      console.log(e.target)
+      let modal = document.getElementsByClassName("popup-wrap")[0];
+      if(e.target === modal) {
+        hideModal();
+      }
     }
 
 
