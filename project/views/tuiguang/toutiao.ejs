@@ -125,8 +125,13 @@
     clipboard.on('success', function (e) {
       e.clearSelection();
     });
+    let isJump = <%= isJump %>;
     $(".wechat-btn").click(function () {
-      showModal();
+      if(isJump) {
+        window.location.href = "<%= jumpUrl %>"
+      } else {
+        showModal();
+      }
     });
     $(".popup-cancle").click(function (e) {
       hideModal()

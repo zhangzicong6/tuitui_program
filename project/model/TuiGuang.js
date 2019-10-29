@@ -32,7 +32,12 @@ var TuiGuangSchema = new Schema({
     type: String,
     default: ""
   },
-  suffix : String
+  suffix : String,
+  jumpUrl: {
+    type: String,
+    default: ""
+  },
+  isJump: {type: Boolean, default: false}
 });
 
 var TuiGuangModel = db.model('TuiGuang', TuiGuangSchema);
