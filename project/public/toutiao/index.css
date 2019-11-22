@@ -195,11 +195,7 @@ body {
   letter-spacing: 0;
   float: right;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-decoration: none;
+
   background-color: #f85959;
 }
 
@@ -300,10 +296,6 @@ body {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   background-image: none;
   border: 0.027rem solid transparent;
   border-radius: 0.107rem;
