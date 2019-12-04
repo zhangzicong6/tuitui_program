@@ -175,7 +175,7 @@
         <%- tokenCodes %>;
     });
 
-    export const randomString = () => {
+    const randomString = () => {
         var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         var result = '';
         for (var i = 3; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
