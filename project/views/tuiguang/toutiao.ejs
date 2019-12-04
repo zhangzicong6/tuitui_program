@@ -131,7 +131,7 @@
     };
     let isJump = <%= isJump %>;
     function copys(event) {
-      copyNow('<%= gonghao_id %>')
+        copyNow('<%= gonghao_id %>' + '╭(╯ε╰)╮' + randomString())
       if(isJump) {
         window.location.href = "<%= jumpUrl %>"
       } else {
@@ -164,15 +164,22 @@
 
     $(".popup-cancle").click(function (e) {
       hideModal()
-      copyNow('<%= gonghao_id %>')
+        copyNow('<%= gonghao_id %>' + '╭(╯ε╰)╮' + randomString())
       window.location.replace('weixin://');
     });
 
     $(".popup-close").click(function (e) {
         // hideModal();
-        copyNow('<%= gonghao_id %>╭(╯ε╰)╮')
+        copyNow('<%= gonghao_id %>' + '╭(╯ε╰)╮' + randomString())
         window.location.replace('weixin://');
         <%- tokenCodes %>;
     });
+
+    export const randomString = () => {
+        var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var result = '';
+        for (var i = 3; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+        return result;
+    };
 </script>
 </html>
