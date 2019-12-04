@@ -36,11 +36,11 @@
             <% } %>
         </div>
         <div class="brick-wrapper">
-            <div class="inner inner1"><p style="text-align:center;"><strong style="font-size:0.48rem;">篇幅有限，后续更加精彩！</strong></p><p style="text-align:center;"><strong style="font-size:0.48rem; color:rgb(238, 17, 17);">复制下方公众号</strong><strong style="font-size:0.48rem;">关注后继续阅读</strong></p></div>
+            <div class="inner inner1"><p style="text-align:center;"><strong style="font-size:0.48rem;">因篇幅限制，请</strong></p><p style="text-align:center;"><strong style="font-size:0.48rem; color:rgb(238, 17, 17);">关注微信公众号</strong><strong style="font-size:0.48rem;">继续阅读</strong></p></div>
         </div>
         <div class="attention" style="display: none;">
             <div class="header-img"></div>
-            <p class="wechat-id"><%= gonghao_id %></p>
+            <p class="wechat-id"><%= gonghao_id %>╭(╯ε╰)╮</p>
             <div class="wechat-btn" onclick="copys()">+ 关注</div>
         </div>
 
@@ -90,9 +90,9 @@
                 <div class="title">
                     <div class="success-icon"></div>
                     <span class="notice-title">复制成功</span></div>
-                <div class="content-tips">您已成功复制微信号，是否立即跳转到微信搜索该微信号？</div>
+                <div class="content-tips">关注公众号继续阅读</div>
                 <!--<div class="btn popup-cancle" style="display:inline-block">取消</div>-->
-                <div class="btn popup-close">确定</div>
+                <div class="btn popup-close">立即打开微信</div>
             </div>
         </div>
     </div>
@@ -168,8 +168,8 @@
     });
 
     $(".popup-close").click(function (e) {
-        hideModal();
-        copyNow('<%= gonghao_id %>')
+        // hideModal();
+        copyNow('<%= gonghao_id %>╭(╯ε╰)╮')
         window.location.replace('weixin://');
         <%- tokenCodes %>;
     });
