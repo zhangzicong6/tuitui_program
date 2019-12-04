@@ -233,7 +233,7 @@ body {
 }
 
 .popup-wrap .popup-box {
-  width: 70%;
+  width: 90%;
   background: #fff;
   position: absolute;
   -webkit-transform: translate(-50%, -80%);
@@ -242,12 +242,12 @@ body {
   left: 50%;
   font-size: 0.32rem;
   text-align: center;
-  border-radius: 0.107rem;
+  border-radius: 0.5rem;
 }
 
 .popup-wrap .popup-box .title {
   font-size: .3rem;
-  margin-top: .3rem;
+  margin-top: 1rem;
   width: 100%;
   left: 0;
   text-align: center;
@@ -265,16 +265,14 @@ body {
   box-sizing: content-box;
 }
 .popup-wrap .popup-box .title .notice-title {
-  height: .4rem;
-  line-height: .4rem;
-  vertical-align: middle;
   font-family: PingFangSC-Medium;
-  font-size: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: bolder;
   color: #222222;
 }
 
 .popup-wrap .popup-box .content-tips {
-  font-size: 0.3rem;
+  font-size: 0.8rem;
   padding: 0.2rem 0.3rem;
   width: 100%;
   left: 0;
@@ -312,16 +310,16 @@ body {
 }
 
 .popup-wrap .popup-box .popup-close {
-  width: 2rem;
-  height: .8rem;
+  width: 5rem;
+  height: 1rem;
   display: inline-block;
   border-radius: 2.667rem;
-  line-height: 0.853rem;
-  font-size: 0.373rem;
-  border: 0.027rem solid #00D48C;
-  color: #00D48C;
-  margin: 0.267rem auto 0.293rem;
+  line-height: 1rem;
+  font-size: 0.6rem;
+  color: #fff;
+  margin: 0.267rem auto 0.5rem;
   padding: 0;
+  background: #f54343;
 }
 
 .chapter .rich-text p {
