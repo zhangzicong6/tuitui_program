@@ -49,7 +49,7 @@ img {
 }
 
 body {
-  background: #fff;
+  /*background: #fff;*/
 }
 
 .container {
@@ -58,7 +58,7 @@ body {
 
 .container > .banner-head {
   margin: .3rem;
-  border-radius: .1rem;
+  border-radius: .3rem;
   overflow: hidden;
   box-sizing: border-box;
 }
