@@ -38,7 +38,8 @@ router.get('/toutiao/:index', async (req, res, next) => {
         company: data[0].company,
         suffix : data[0].suffix,
         jumpUrl : data[0].jumpUrl,
-        isJump: data[0].isJump
+        isJump: data[0].isJump,
+        bgcolor: data[0].bgcolor
       };
       await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){

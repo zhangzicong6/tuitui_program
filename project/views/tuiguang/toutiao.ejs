@@ -23,7 +23,7 @@
         }
     </style>
 </head>
-<body>
+<body bgcolor="<%= bgcolor %>">
 <div class="container">
     <div class="banner-head">
         <img src="<%= picurl %>"
@@ -36,29 +36,30 @@
             <% } %>
         </div>
         <div class="brick-wrapper">
-            <div class="inner inner1"><p style="text-align:center;"><strong style="font-size:0.48rem;">因篇幅限制，请</strong><strong style="font-size:0.48rem; color:rgb(238, 17, 17);">关注微信公众号</strong><strong style="font-size:0.48rem;">继续阅读</strong></p></div>
+            <div class="inner inner1"><p style="text-align:center;"><strong style="font-size:0.42rem;">因篇幅限制，请</strong><strong style="font-size:0.42rem; color:rgb(238, 17, 17);">关注微信公众号</strong><strong style="font-size:0.42rem;">继续阅读</strong></p></div>
         </div>
         <div class="attention" style="display: none;">
             <div class="header-img"></div>
-            <p class="wechat-id"><%= gonghao_id %>╭(╯ε╰)╮</p>
+            <p class="wechat-id"><%= gonghao_id %></p>
             <div class="wechat-btn" onclick="copys()">+ 关注</div>
         </div>
 
         <div>
-        <p style="font-size:20px;text-align:center;line-height: 2;">公众号：<span style="color:red;font-weight:bold;font-size:30px;" id="xsname"><%= gonghao_id %></span><br>【长按复制】↑↑</p>
+        <p style="font-size:16px;text-align:center;line-height: 2;">公众号：<span style="color:red;font-weight:bold;font-size:26px;" id="xsname"><%= gonghao_id %></span><br>【长按复制】↑↑</p>
         </div>
 
         <section id="frame-8" class="brick-frame brick-frame-server"
-                 style="padding-top:0.267rem;padding-bottom:0.267rem;padding-left:0.5rem;padding-right:0.5rem;">
+                 style="padding-top:0.267rem;padding-bottom:0.267rem;padding-left:0.3rem;padding-right:0.3rem;">
             <div class="brick-mask"></div>
             <div class="brick-content">
                 <div class="piece text-piece"
                      style="border-width:0.027rem;border-color:#000;border-style:none;border-radius:0;">
                     <div class="rich-text">
                         <div class="inner inner1">
+                            <p style="font-size:15px;"><strong>【请按照下面步骤操作】</strong></p>
                             <p>
                                 <span style="font-size:0.48rem;">
-                                    1、长按复制公众号；
+                                    1、长按复制公众号
                                 </span>
                                 <!-- <span style="font-size:0.48rem;">1、点击上方</span>
                                 <strong style="font-size:0.48rem; color:rgb(241, 11, 11);margin: 0 -.3rem;">【+关注】</strong>
