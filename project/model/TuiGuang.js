@@ -38,7 +38,7 @@ var TuiGuangSchema = new Schema({
   },
   isClick : {
     type: Boolean,
-    default: true
+    default: false
   },
   jumpUrl: {
     type: String,
