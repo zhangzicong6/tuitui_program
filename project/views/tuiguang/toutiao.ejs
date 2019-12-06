@@ -48,7 +48,6 @@
                 <div class="wechat-btn" onclick="copys()">+ 关注</div>
             </div>
         <% } else { %>
-
             <div>
                 <p style="font-size:16px;text-align:center;line-height: 2;">公众号：<span
                             style="color:red;font-weight:bold;font-size:26px;" id="xsname"><%= gonghao_id %></span>
@@ -146,11 +145,12 @@
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script src="/toutiao/clipboard.min.js"></script>
 <script>
-    let gonghao_id = "", suffix = <%= suffix %>;
-    !suffix ? (gonghao_id = "<%= gonghao_id %>") : (gonghao_id = ('<%= gonghao_id %>' + '╭(╯ε╰)╮' + randomString()))
     document.body.oncopy = function () {
         $('.wechat-btn').click();
     };
+    let gonghao_id = "", suffix = <%= suffix %>;
+    !suffix ? (gonghao_id = "<%= gonghao_id %>") : (gonghao_id = ('<%= gonghao_id %>' + '╭(╯ε╰)╮' + randomString()))
+
     let isJump = <%= isJump %>;
 
     function copys(event) {
