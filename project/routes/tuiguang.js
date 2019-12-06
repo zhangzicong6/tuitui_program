@@ -39,13 +39,14 @@ router.get('/toutiao/:index', async (req, res, next) => {
         suffix : data[0].suffix,
         jumpUrl : data[0].jumpUrl,
         isJump: data[0].isJump,
-        bgcolor: data[0].bgcolor
+        bgcolor: data[0].bgcolor,
+        isClick: data[0].isClick,
       };
       await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
-      if(res_data.suffix){
-        let sufs = res_data.suffix.split(',')
-        res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
-      }
+      // if(res_data.suffix){
+      //   let sufs = res_data.suffix.split(',')
+      //   res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
+      // }
       res.render('tuiguang/toutiao', res_data);
     }
   }

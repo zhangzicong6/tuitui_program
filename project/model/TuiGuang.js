@@ -32,7 +32,14 @@ var TuiGuangSchema = new Schema({
     type: String,
     default: ""
   },
-  suffix : String,
+  suffix : {
+    type: Boolean,
+    default: true
+  },
+  isClick : {
+    type: Boolean,
+    default: true
+  },
   jumpUrl: {
     type: String,
     default: ""
