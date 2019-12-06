@@ -180,11 +180,13 @@
     }
 
     function hideModal() {
-        $(".popup-wrap").css("display", "none")
+        $(".popup-wrap").css("display", "none");
+        $("body").css("overflow", "auto")
     }
 
     function showModal() {
         $(".popup-wrap").css("display", "block")
+        $("body").css("overflow", "hidden")
     }
 
     $(".popup-cancle").click(function (e) {
