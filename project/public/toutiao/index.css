@@ -254,13 +254,17 @@ body {
   vertical-align: middle;
 }
 
+.popup-wrap .popup-box .title1 {
+  margin-top: .3rem;
+}
+
 .popup-wrap .popup-box .title .success-icon {
-  width: .8rem;
-  height: .8rem;
+  width: 1rem;
+  height: 1rem;
   background: url(https://p6.pstatp.com/origin/404e0000669dcd274d73) no-repeat center;
   background-size: contain;
   display: block;
-  margin: 0 auto 0.1rem auto;
+  margin: 0 auto 0.1rem;
   vertical-align: middle;
   box-sizing: content-box;
 }
@@ -269,6 +273,15 @@ body {
   font-family: PingFangSC-Medium;
   font-size: 0.7rem;
   font-weight: bolder;
+  color: #222222;
+}
+
+.popup-wrap .popup-box .title .notice-title1 {
+  height: .4rem;
+  line-height: .4rem;
+  vertical-align: middle;
+  font-family: PingFangSC-Medium;
+  font-size: 0.3rem;
   color: #222222;
 }
 
