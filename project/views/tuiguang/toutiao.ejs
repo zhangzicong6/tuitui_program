@@ -149,8 +149,7 @@
     document.body.oncopy = function () {
         $('.wechat-btn').click();
     };
-    let gonghao_id = "", suffix = <%= suffix %>;
-    !suffix ? (gonghao_id = "<%= gonghao_id %>") : (gonghao_id = ('<%= gonghao_id %>' + '╭(╯ε╰)╮' + randomString()))
+    let gonghao_id = "<%= gonghao_id %>";
 
     let isJump = <%= isJump %>;
 

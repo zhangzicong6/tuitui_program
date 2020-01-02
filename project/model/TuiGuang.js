@@ -33,8 +33,8 @@ var TuiGuangSchema = new Schema({
     default: ""
   },
   suffix : {
-    type: Boolean,
-    default: true
+    type: String,
+    default: ""
   },
   isClick : {
     type: Boolean,
