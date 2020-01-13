@@ -42,6 +42,13 @@ router.get('/toutiao/:index', async (req, res, next) => {
         bgcolor: data[0].bgcolor,
         isClick: data[0].isClick,
       };
+
+      if(req.hostname=='mingxing.dfcfz.cn'){
+        res_data.picurl = 'http://novel.jtjsmp.top/'+res_data.picurl;
+        res_data.finalImg = 'http://novel.jtjsmp.top/'+res_data.finalImg;
+        res_data.gonghaoLogo = 'http://novel.jtjsmp.top/'+res_data.gonghaoLogo;
+      }
+
       await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
