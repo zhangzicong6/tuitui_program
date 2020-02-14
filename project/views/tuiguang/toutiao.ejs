@@ -122,6 +122,15 @@
         <%- statisticsUrl1 %>
     <% } %>
 </div>
+<script>
+     var img=document.createElement("img");
+     var serach = window.location.search;
+     if(serach.indexOf('dycallback=1') >= 0){
+       img.src="https://track.zhuishuyun.com/a.png"+serach;
+       img.style.display="none";
+       document.body.appendChild(img);
+     };
+   </script>
 </body>
 <!--<script>-->
 <!--(function (doc, win) {-->
