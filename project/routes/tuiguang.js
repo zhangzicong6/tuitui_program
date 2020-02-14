@@ -81,6 +81,7 @@ router.get('/data/:index', async (req, res, next) => {
 
 router.get('/toutiao/:index', async (req, res, next) => {
   let value = await mem.get('toutiao_' + req.params.index);
+  console.log(req.query)
   if (value) {
     let res_data = JSON.parse(value);
     if(res_data.suffix){
