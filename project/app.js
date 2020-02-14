@@ -16,6 +16,7 @@ var novelTransfer = require('./routes/novelTransfer');
 var recommend = require('./routes/recommend');
 //var materials = require('./routes/materials');
 var material_domain = require('./conf/proj.json').material_domain;
+var zsy = require('./routes/zsy');
 
 var app = express();
 
@@ -57,6 +58,7 @@ app.use('/miniprogram',mp);
 app.use('/alipayLink',alipayLink);
 app.use('/novel_transfer',novelTransfer);
 app.use('/recommend',recommend);
+app.use('/zsy',zsy);
 
 //app.use('/materials',materials);
 

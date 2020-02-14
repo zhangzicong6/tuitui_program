@@ -19,8 +19,10 @@ var PlatformDataSchema = new Schema({
     wx_ua: String,    // 微信的ua 需要处理
     isfollow: Number, // 是否关注 1已关注
     wx_id: String,
-    wx_platfrom: String,
-    ispay: String,    // 是否支付 1只支付
+    wx_platfrom: Number,
+    regtime : Number,
+    order_time : Number,
+    ispay: Number,    // 是否支付 1已支付
     amount: Number,   // 金额    
     seruid: String,  // 服务号id
     createAt: {
