@@ -25,8 +25,17 @@ router.get('/:id', function (req, res, next) {
 })
 
 let get_link = (data,req) =>{
-    return data.tuiguang_link+'?dycallback=1&channel_id='+data.channel_id
+    let link = data.tuiguang_link+'?dycallback=1&channel_id='+data.channel_id
                 +'&ip='+getClientIp(req)+'&ua='+req.headers['user-agent'];
+    let args = req.query;
+    let args = []
+    for (let key in params) {
+        args.push(key+'='+params[key])
+    }
+    if(args.length){
+        link += '&'+args.join('&')
+    }
+    return link;
 }
 
 let getClientIp = function (req) {
