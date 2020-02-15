@@ -25,8 +25,8 @@ router.get('/:id', function (req, res, next) {
 })
 
 let get_link = (data,req) =>{
-    console.log('----------追书云--------')
-    console.log(req.clientIp)
+    /*console.log('----------追书云--------')
+    console.log(req.clientIp)*/
     let link = data.tuiguang_link+'?dycallback=1&channel_id='+data.channel_id
                 +'&ip='+req.clientIp+'&ua='+req.headers['user-agent'];
     let params = req.query;
@@ -37,6 +37,8 @@ let get_link = (data,req) =>{
     if(args.length){
         link += '&'+args.join('&')
     }
+    console.log('-------追书云落地页拼接链接---------')
+    console.log(link)
     return link;
 }
 
