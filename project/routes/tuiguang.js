@@ -30,6 +30,8 @@ router.get('/data/:index', async (req, res, next) => {
   let h_ua = ua.substring(0,ua.indexOf(')',ua.indexOf(')')+1)+1);
 
   console.log('------数据回传-----')
+  console.log(req.ip)
+  console.log('----------------')
   console.log(ip)
 
   let toutiao_data = {
