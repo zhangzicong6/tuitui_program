@@ -361,6 +361,11 @@ let getClientIp = function (req) {
     req.connection.remoteAddress ||
     req.socket.remoteAddress ||
     req.connection.socket.remoteAddress || '';
+    console.log('-----ip-----')
+    console.log(req.headers['x-forwarded-for']);
+    console.log(req.connection.remoteAddress);
+    console.log(req.socket.remoteAddress);
+    console.log(req.connection.socket.remoteAddress);
 }
 
 function randomString(length) {
