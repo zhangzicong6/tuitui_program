@@ -30,7 +30,7 @@ router.get('/data/:index', async (req, res, next) => {
   let h_ua = ua.substring(0,ua.indexOf(')',ua.indexOf(')')+1)+1);
 
   console.log('------数据回传-----')
-  console.log(req.ip)
+  console.log(req.clientIp)
   console.log('----------------')
   console.log(ip)
 
@@ -363,7 +363,9 @@ let getClientIp = function (req) {
     //console.log(req.connection?req.connection.remoteAddress:'');
     //console.log(req.socket.remoteAddress);
     //console.log(req.connection?req.connection.socket.remoteAddress:'');
-  return req.headers['x-forwarded-for'] ||
+  return 
+    req.headers["x-real-ip"] ||
+    req.headers['x-forwarded-for'] ||
     req.connection.remoteAddress ||
     req.socket.remoteAddress ||
     req.connection.socket.remoteAddress || '';
