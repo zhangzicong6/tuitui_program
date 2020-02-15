@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(equestIp.mw())
+app.use(requestIp.mw())
 
 app.use(function(req, res, next) {
    //console.log('---hostname----')
