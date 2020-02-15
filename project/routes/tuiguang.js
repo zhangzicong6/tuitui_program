@@ -29,6 +29,9 @@ router.get('/data/:index', async (req, res, next) => {
   let ua = req.headers['user-agent'];
   let h_ua = ua.substring(0,ua.indexOf(')',ua.indexOf(')')+1)+1);
 
+  console.log('------数据回传-----')
+  console.log(ip)
+
   let toutiao_data = {
     uni_ip_h_ua : ip+h_ua,
     td_ua : ua,
