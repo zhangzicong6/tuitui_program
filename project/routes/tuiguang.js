@@ -358,7 +358,7 @@ async function statics(req, res, next) {
 
 let getClientIp = function (req) {
     console.log('-----ip-----')
-    console.log(req.headers["X-Real-IP"]);
+    console.log(req.headers["x-real-ip"]);
     console.log(req.headers['x-forwarded-for']);
     //console.log(req.connection?req.connection.remoteAddress:'');
     //console.log(req.socket.remoteAddress);
