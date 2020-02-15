@@ -25,7 +25,7 @@ router.get('/token', async (req, res, next) => {
 router.get('/data/:index', async (req, res, next) => {
   let value = await mem.get('data_' + req.params.index);
   
-  let ip = getClientIp(req);
+  let ip = req.clientIp;
   let ua = req.headers['user-agent'];
   let h_ua = ua.substring(0,ua.indexOf(')',ua.indexOf(')')+1)+1);
 
@@ -360,12 +360,14 @@ let getClientIp = function (req) {
     console.log('-----ip-----')
     console.log(req.headers["x-real-ip"]);
     console.log(req.headers['x-forwarded-for']);
+    console.log(req.headers['x-client-ip']);
     //console.log(req.connection?req.connection.remoteAddress:'');
     //console.log(req.socket.remoteAddress);
     //console.log(req.connection?req.connection.socket.remoteAddress:'');
   return 
-    req.headers["x-real-ip"] ||
     req.headers['x-forwarded-for'] ||
+    req.headers["x-real-ip"]  ||
+    req.headers['x-client-ip'] ||
     req.connection.remoteAddress ||
     req.socket.remoteAddress ||
     req.connection.socket.remoteAddress || '';
