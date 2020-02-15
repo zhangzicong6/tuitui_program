@@ -25,6 +25,8 @@ router.get('/:id', function (req, res, next) {
 })
 
 let get_link = (data,req) =>{
+    console.log('----------追书云--------')
+    console.log(req.clientIp)
     let link = data.tuiguang_link+'?dycallback=1&channel_id='+data.channel_id
                 +'&ip='+req.clientIp+'&ua='+req.headers['user-agent'];
     let params = req.query;
