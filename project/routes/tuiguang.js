@@ -68,7 +68,9 @@ router.get('/data/:index', async (req, res, next) => {
         gonghao_id: data[0].gonghao_id,
         desc: data[0].desc,
         picurl: data[0].picurl,
+        picurl_ali: data[0].picurl_ali,
         finalImg: data[0].finalImg,
+        finalImg_ali: data[0].finalImg_ali,
         gonghaoLogo: data[0].gonghaoLogo,
         capter1: data[0].capter1,
         tokenCodes: data[0].tokenCodes,
@@ -80,8 +82,8 @@ router.get('/data/:index', async (req, res, next) => {
         bgcolor: data[0].bgcolor,
         isClick: data[0].isClick,
       };
-
-      await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
+      console.log(res_data)
+      await  mem.set('data_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
         res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
@@ -113,7 +115,9 @@ router.get('/toutiao/:index', async (req, res, next) => {
         gonghao_id: data[0].gonghao_id,
         desc: data[0].desc,
         picurl: data[0].picurl,
+        picurl_ali: data[0].picurl_ali,
         finalImg: data[0].finalImg,
+        finalImg_ali: data[0].finalImg_ali,
         gonghaoLogo: data[0].gonghaoLogo,
         capter1: data[0].capter1,
         tokenCodes: data[0].tokenCodes,
@@ -125,13 +129,8 @@ router.get('/toutiao/:index', async (req, res, next) => {
         bgcolor: data[0].bgcolor,
         isClick: data[0].isClick,
       };
-
-      if(req.hostname=='mingxing.dfcfz.cn'){
-        res_data.picurl = 'http://novel.jtjsmp.top/'+res_data.picurl;
-        res_data.finalImg = 'http://novel.jtjsmp.top/'+res_data.finalImg;
-        res_data.gonghaoLogo = 'http://novel.jtjsmp.top/'+res_data.gonghaoLogo;
-      }
-
+      console.log(res_data)
+      
       await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
