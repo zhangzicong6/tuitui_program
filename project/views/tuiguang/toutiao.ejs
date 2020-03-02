@@ -35,8 +35,7 @@
 </script>
 <div class="container">
     <div class="banner-head">
-        <span>加载中...</span>
-        <img src="" alt="">
+        <img src="https://tuiguang-td.oss-cn-beijing.aliyuncs.com/5c14b500de5138fda329dad62e0a3713.gif" data-src="<% if(typeof picurl_ali != 'undefined' && picurl_ali ) {%><%=  picurl_ali%><%} else { %><%= picurl %><%}%>" alt="">
     </div>
     <div class="content">
         <div class="chapter">
@@ -105,7 +104,7 @@
                 </div>
             </div>
         </section>
-        <img style="margin-top: .8rem" src="<% if(typeof finalImg_ali != 'undefined' && finalImg_ali ) {%><%=  finalImg_ali%><%} else { %><%= finalImg %><%}%>" alt="">
+        <img style="margin-top: .8rem" data-src="<% if(typeof finalImg_ali != 'undefined' && finalImg_ali ) {%><%=  finalImg_ali%><%} else { %><%= finalImg %><%}%>" src="https://tuiguang-td.oss-cn-beijing.aliyuncs.com/5c14b500de5138fda329dad62e0a3713.gif" alt="">
         <p class="company"><%= company %></p>
         <div class="popup-wrap">
             <div class="popup-box" onclick="return false;">
@@ -158,14 +157,10 @@
     //     $('.wechat-btn').click();
     // };
     $(function () {
-        let picurl_ali = "<%= picurl_ali %>", picurl;
-        if(typeof picurl_ali != 'undefined' && picurl_ali) {
-            picurl = picurl_ali
-        } else {
-            picurl = "<%= picurl %>"
-        }
-        $(".banner-head span").css('display', 'none')
-        $(".banner-head img").attr('src', picurl).css('display', 'block')
+        $("img").each(function () {
+            let src = $(this).data("src")
+            $(this).attr("src", src)
+        })
     });
     let gonghao_id = "<%= gonghao_id %>";
 
