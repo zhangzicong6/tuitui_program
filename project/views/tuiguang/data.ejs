@@ -26,9 +26,8 @@
 <body bgcolor="<%= bgcolor %>">
 <div class="container">
     <div class="banner-head">
-        <img src="<% if(typeof picurl_ali != 'undefined' && picurl_ali 
-        ){ %><%= picurl_ali %><% } else { %><%= picurl %><%}%>"
-             alt="">
+        <span>加载中...</span>
+        <img src="" alt="">
     </div>
     <div class="content">
         <div class="chapter">
@@ -149,6 +148,16 @@
     // document.body.oncopy = function () {
     //     $('.wechat-btn').click();
     // };
+    $(function () {
+        let picurl_ali = "<%= picurl_ali %>", picurl;
+        if(typeof picurl_ali != 'undefined' && picurl_ali) {
+            picurl = picurl_ali
+        } else {
+            picurl = "<%= picurl %>"
+        }
+        $(".banner-head span").css('display', 'none')
+        $(".banner-head img").attr('src', picurl).css('display', 'block')
+    });
     let gonghao_id = "<%= gonghao_id %>";
 
     let isJump = <%= isJump %>;
