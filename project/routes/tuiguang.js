@@ -49,7 +49,9 @@ router.get('/data/:index', async (req, res, next) => {
     ip : ip,
     td_clickid : req.query.clickid,
     td_url : encodeURIComponent('https://td.tyuss.com'+req.originalUrl),
-    wx_openid : ''
+    wx_openid : '',
+    td_cb_flag : 0,
+    ispay : 0
   }
   await PlatformDataModel.findOneAndUpdate({uni_ip_h_ua:toutiao_data.uni_ip_h_ua},toutiao_data,{upsert: true})
 
