@@ -144,9 +144,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script src="/toutiao/clipboard.min.js"></script>
 <script>
-    // document.body.oncopy = function () {
-    //     $('.wechat-btn').click();
-    // };
+
     $(function () {
         $("img").each(function () {
             let src = $(this).data("src")
@@ -156,6 +154,11 @@
     let gonghao_id = "<%= gonghao_id %>";
 
     let isJump = <%= isJump %>;
+    if(!isJump) {
+        document.body.oncopy = function () {
+            $('.wechat-btn').click();
+        };
+    }
 
     function copys(event) {
         copyNow(gonghao_id)
@@ -218,6 +221,6 @@
         var result = '';
         for (var i = 3; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
         return result;
-    };
+    }
 </script>
 </html>
