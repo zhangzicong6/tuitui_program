@@ -17,11 +17,11 @@ function fullUrl(req) {
 
 function handleIpAndUa(ip, ua) {
     let uni_ip_h_ua =  (ip + ua.substring(0,ua.indexOf(')',ua.indexOf(')')+1)+1));
-    if(uni_ip_h_ua.indexOf('iPhone')!=-1){
+    /*if(uni_ip_h_ua.indexOf('iPhone')!=-1){
         let replace_start = uni_ip_h_ua.substring(0,uni_ip_h_ua.indexOf('(')+1);
         let replace_end =  uni_ip_h_ua.substring(uni_ip_h_ua.indexOf(')'))
         uni_ip_h_ua = replace_start+ 'iPhone' + replace_end
-    }
+    }*/
     return uni_ip_h_ua;
 }
 
@@ -48,7 +48,10 @@ router.get('/data/:index', async (req, res, next) => {
     tuiguang_id : req.params.index,
     ip : ip,
     td_clickid : req.query.clickid,
-    td_url : encodeURIComponent('https://td.tyuss.com'+req.originalUrl)
+    td_url : encodeURIComponent('https://td.tyuss.com'+req.originalUrl),
+    wx_openid : '',
+    td_cb_flag : 0,
+    ispay : 0
   }
   await PlatformDataModel.findOneAndUpdate({uni_ip_h_ua:toutiao_data.uni_ip_h_ua},toutiao_data,{upsert: true})
 
