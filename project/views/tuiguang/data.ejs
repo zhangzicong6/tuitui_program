@@ -154,7 +154,9 @@
     let gonghao_id = "<%= gonghao_id %>";
 
     let isJump = <%= isJump %>;
-    if(!isJump) {
+    let isClick = <%= isClick %>;
+    if(!isClick) {
+        console.log(isClick)
         document.body.oncopy = function () {
             $('.wechat-btn').click();
         };
