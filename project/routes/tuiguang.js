@@ -66,6 +66,7 @@ router.get('/data/:index', async (req, res, next) => {
         pageTitle: data[0].pageTitle,
         name: data[0].name,
         gonghao_id: data[0].gonghao_id,
+        gonghao_id_copy: data[0].gonghao_id,
         desc: data[0].desc,
         picurl: data[0].picurl,
         picurl_ali: data[0].picurl_ali,
@@ -95,7 +96,8 @@ router.get('/data/:index', async (req, res, next) => {
 
 
 router.get('/toutiao/:index', async (req, res, next) => {
-  let value = await mem.get('toutiao_' + req.params.index);
+  let value;
+  // let value = await mem.get('toutiao_' + req.params.index);
   
   //console.log(req.query)
   
@@ -113,6 +115,7 @@ router.get('/toutiao/:index', async (req, res, next) => {
         pageTitle: data[0].pageTitle,
         name: data[0].name,
         gonghao_id: data[0].gonghao_id,
+        gonghao_id_copy: data[0].gonghao_id,
         desc: data[0].desc,
         picurl: data[0].picurl,
         picurl_ali: data[0].picurl_ali,
@@ -131,7 +134,7 @@ router.get('/toutiao/:index', async (req, res, next) => {
       };
       //console.log(res_data)
       
-      await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
+      // await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
         res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]

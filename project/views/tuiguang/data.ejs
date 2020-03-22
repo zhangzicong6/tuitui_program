@@ -35,10 +35,21 @@
             <% } %>
         </div>
         <div class="brick-wrapper">
-            <div class="inner inner1"><p style="text-align:center;"><strong
-                            style="font-size:0.42rem;">因篇幅限制，请</strong><strong
-                            style="font-size:0.42rem; color:rgb(238, 17, 17);">关注微信公众号</strong><strong
-                            style="font-size:0.42rem;">继续阅读</strong></p></div>
+            <% if(!isClick) { %>
+                <div class="inner inner1">
+                    <p style="text-align:center;">
+                        <strong style="font-size:0.5rem;">长按复制下方公众号，添加关注继续阅读</strong>
+                    </p>
+                </div>
+            <% } else { %>
+                <div class="inner inner1">
+                    <p style="text-align:center;">
+                        <strong style="font-size:0.42rem;">因篇幅限制，请</strong>
+                        <strong style="font-size:0.42rem; color:rgb(238, 17, 17);">关注微信公众号</strong>
+                        <strong style="font-size:0.42rem;">继续阅读</strong>
+                    </p>
+                </div>
+            <% } %>
         </div>
         <div class="wechat-btn" onclick="copys()" style="display: none">+ 关注</div>
         <% if (isClick) { %>
@@ -50,7 +61,7 @@
         <% } else { %>
             <div>
                 <p style="font-size:16px;text-align:center;line-height: 2;">公众号：<span
-                            style="color:red;font-weight:bold;font-size:26px;" id="xsname"><%= gonghao_id %></span>
+                            style="color:red;font-weight:bold;font-size:26px;" id="xsname"><%= gonghao_id_copy %></span>
                     ←【长按复制】
                 </p>
             </div>
