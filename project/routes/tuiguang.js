@@ -82,7 +82,7 @@ router.get('/data/:index', async (req, res, next) => {
         bgcolor: data[0].bgcolor,
         isClick: data[0].isClick,
       };
-      console.log(res_data)
+      //console.log(res_data)
       await  mem.set('data_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
@@ -129,7 +129,7 @@ router.get('/toutiao/:index', async (req, res, next) => {
         bgcolor: data[0].bgcolor,
         isClick: data[0].isClick,
       };
-      console.log(res_data)
+      //console.log(res_data)
       
       await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
