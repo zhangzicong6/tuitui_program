@@ -96,8 +96,7 @@ router.get('/data/:index', async (req, res, next) => {
 
 
 router.get('/toutiao/:index', async (req, res, next) => {
-  let value;
-  // let value = await mem.get('toutiao_' + req.params.index);
+  let value = await mem.get('toutiao_' + req.params.index);
   
   //console.log(req.query)
   
@@ -134,7 +133,7 @@ router.get('/toutiao/:index', async (req, res, next) => {
       };
       //console.log(res_data)
       
-      // await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
+      await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
         res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
