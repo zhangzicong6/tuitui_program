@@ -54,6 +54,7 @@ router.get('/data/:index', async (req, res, next) => {
 
   if (value) {
     let res_data = JSON.parse(value);
+    res_data.gonghao_id_copy = res_data.gonghao_id;
     if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
         res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
@@ -102,8 +103,9 @@ router.get('/toutiao/:index', async (req, res, next) => {
   
   if (value) {
     let res_data = JSON.parse(value);
+    res_data.gonghao_id_copy = res_data.gonghao_id;
     if(res_data.suffix){
-        let sufs = res_data.suffix.split(',')
+        let sufs = res_data.suffix.split(',');
         res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
     }
     res.render('tuiguang/toutiao', res_data);
