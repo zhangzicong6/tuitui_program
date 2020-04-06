@@ -17,11 +17,8 @@ function fullUrl(req) {
 
 function handleIpAndUa(ip, ua) {
     let uni_ip_h_ua =  (ip + ua.substring(0,ua.indexOf(')',ua.indexOf(')')+1)+1));
-    if(uni_ip_h_ua.indexOf('iPhone')!=-1){
-        let replace_start = uni_ip_h_ua.substring(0,uni_ip_h_ua.indexOf('(')+1);
-        let replace_end =  uni_ip_h_ua.substring(uni_ip_h_ua.indexOf(')'))
-        uni_ip_h_ua = replace_start+ 'iPhone' + replace_end
-    }
+    uni_ip_h_ua = uni_ip_h_ua.replace(' U;','');
+    uni_ip_h_ua = uni_ip_h_ua.replace('; wv','');
     return uni_ip_h_ua;
 }
 
@@ -48,12 +45,16 @@ router.get('/data/:index', async (req, res, next) => {
     tuiguang_id : req.params.index,
     ip : ip,
     td_clickid : req.query.clickid,
-    td_url : encodeURIComponent('https://td.tyuss.com'+req.originalUrl)
+    td_url : encodeURIComponent('https://td.tyuss.com'+req.originalUrl),
+    wx_openid : '',
+    td_cb_flag : 0,
+    ispay : 0
   }
   await PlatformDataModel.findOneAndUpdate({uni_ip_h_ua:toutiao_data.uni_ip_h_ua},toutiao_data,{upsert: true})
 
   if (value) {
     let res_data = JSON.parse(value);
+    res_data.gonghao_id_copy = res_data.gonghao_id;
     if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
         res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
@@ -66,9 +67,12 @@ router.get('/data/:index', async (req, res, next) => {
         pageTitle: data[0].pageTitle,
         name: data[0].name,
         gonghao_id: data[0].gonghao_id,
+        gonghao_id_copy: data[0].gonghao_id,
         desc: data[0].desc,
         picurl: data[0].picurl,
+        picurl_ali: data[0].picurl_ali,
         finalImg: data[0].finalImg,
+        finalImg_ali: data[0].finalImg_ali,
         gonghaoLogo: data[0].gonghaoLogo,
         capter1: data[0].capter1,
         tokenCodes: data[0].tokenCodes,
@@ -80,8 +84,8 @@ router.get('/data/:index', async (req, res, next) => {
         bgcolor: data[0].bgcolor,
         isClick: data[0].isClick,
       };
-
-      await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
+      //console.log(res_data)
+      await  mem.set('data_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
         res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
@@ -99,8 +103,9 @@ router.get('/toutiao/:index', async (req, res, next) => {
   
   if (value) {
     let res_data = JSON.parse(value);
+    res_data.gonghao_id_copy = res_data.gonghao_id;
     if(res_data.suffix){
-        let sufs = res_data.suffix.split(',')
+        let sufs = res_data.suffix.split(',');
         res_data.gonghao_id += sufs[parseInt(Math.random()*sufs.length)]
     }
     res.render('tuiguang/toutiao', res_data);
@@ -111,9 +116,12 @@ router.get('/toutiao/:index', async (req, res, next) => {
         pageTitle: data[0].pageTitle,
         name: data[0].name,
         gonghao_id: data[0].gonghao_id,
+        gonghao_id_copy: data[0].gonghao_id,
         desc: data[0].desc,
         picurl: data[0].picurl,
+        picurl_ali: data[0].picurl_ali,
         finalImg: data[0].finalImg,
+        finalImg_ali: data[0].finalImg_ali,
         gonghaoLogo: data[0].gonghaoLogo,
         capter1: data[0].capter1,
         tokenCodes: data[0].tokenCodes,
@@ -125,13 +133,8 @@ router.get('/toutiao/:index', async (req, res, next) => {
         bgcolor: data[0].bgcolor,
         isClick: data[0].isClick,
       };
-
-      if(req.hostname=='mingxing.dfcfz.cn'){
-        res_data.picurl = 'http://novel.jtjsmp.top/'+res_data.picurl;
-        res_data.finalImg = 'http://novel.jtjsmp.top/'+res_data.finalImg;
-        res_data.gonghaoLogo = 'http://novel.jtjsmp.top/'+res_data.gonghaoLogo;
-      }
-
+      //console.log(res_data)
+      
       await  mem.set('toutiao_' + req.params.index, JSON.stringify(res_data), 60)
       if(res_data.suffix){
         let sufs = res_data.suffix.split(',')
