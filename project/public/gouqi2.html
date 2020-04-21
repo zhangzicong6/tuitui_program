@@ -10,12 +10,6 @@
 <script src="./js/jquery.min.js"></script>
 <script src="./gouqi/jweixin-1.0.0.js"></script>
 <script>function judgeBigScreen(){let result=false;const rate=window.screen.height/window.screen.width;let limit=window.screen.height==window.screen.availHeight?1.8:1.65;if(rate>limit){result=true}return result};if(!judgeBigScreen()){document.write(`<style>.title-head-mes{color:#2f2828;font-weight:bolder;margin:3px 0px 3px 0px;font-size:14px}.title-head-mes:first-of-type{margin-top:10px!important}.paixu{margin:5px auto 0!important}@media screen and(max-width:414px){.banner{height:180px;overflow:hidden}}.ol-seq-child{width:14px!important;height:14px!important;line-height:13px!important}.main-mes{margin-bottom:6px!important}.foot-mes{font-size:17px!important;margin-top:0!important}.foot-mes:last-of-type{font-size:16px!important;margin-bottom:6px!important}.weixin{width:100%!important;}.intro1{left:initial!important;right:15px!important;bottom:45px!important;font-size:20px!important}.intro2{left:initial!important;bottom:13px!important;right:15px!important;font-size:12px!important}</style>`)}</script><style>.title-head-mes{color:#2f2828;font-weight:bolder;margin:3px 0px 3px 0px;font-size:14px}.title-head-mes:first-of-type{margin-top:10px!important}.paixu{margin:5px auto 0!important}@media screen and(max-width:414px){.banner{height:180px;overflow:hidden}}.ol-seq-child{width:14px!important;height:14px!important;line-height:13px!important}.main-mes{margin-bottom:6px!important}.foot-mes{font-size:17px!important;margin-top:0!important}.foot-mes:last-of-type{font-size:16px!important;margin-bottom:6px!important}.weixin{width:100%!important;}.intro1{left:initial!important;right:15px!important;bottom:45px!important;font-size:20px!important}.intro2{left:initial!important;bottom:13px!important;right:15px!important;font-size:12px!important}</style>
-    <script>
-        $(function () {
-            let index = window.location.search.split('index=')[1], img = './gouqi/qrcode/' + index + '.gif?_t=' + Date.now();
-            $('.banner img').attr('src',img)
-        })
-    </script>
 </head>
 <body style="">　
 <title>长按识别二维码</title>
@@ -26,7 +20,7 @@
 <span class="mask-tip-close iconfont-guanbi" onclick="tip_close()"></span>
 </div>
 <div class="banner" style="position: relative">
-<img src="./gouqi/qrcode/1.gif" alt="" style="width: 100%" data-img="wx">
+<img src="./gouqi/qrcode/2.gif" alt="" style="width: 100%" data-img="wx">
 </div>
 <div data-v-1d0c841a="" data-v-7cfcdd48="" class="message-tip">
 <div data-v-1d0c841a="" class="message-tip-list">
