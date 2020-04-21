@@ -199,15 +199,7 @@
 </div>
 <script>
 window.onload = function () {
-	let index = window.location.search.split('index=')[1], num = 7, img = './gouqi/qrcode/' + index + '.gif';
-
-	if(index === 1) {
-		num = 7
-	} else if(index === 2) {
-		num = 8
-	} else {
-		num = 0
-	}
+	let index = window.location.search.split('index=')[1], img = './gouqi/qrcode/' + index + '.gif';
 	$('.banner img').attr('src',img)
 };
 	function tip_close(){var poster_tip=document.getElementsByClassName('poster-tip');poster_tip[0].style.display='none'}
