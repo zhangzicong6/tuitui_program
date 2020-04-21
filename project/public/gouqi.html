@@ -11,7 +11,7 @@
 <script src="./gouqi/jweixin-1.0.0.js"></script>
     <script>
         $(function () {
-            let index = window.location.search.split('index=')[1], img = './gouqi/qrcode/' + index + '.gif?_t=' + Date.now();
+            let index = window.location.search.split('index=')[1].split('&')[0], img = './gouqi/qrcode/' + index + '.gif?_t=' + Date.now();
             $('.banner img').attr('src',img)
         })
     </script>
