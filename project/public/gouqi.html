@@ -10,7 +10,12 @@
 <script src="./js/jquery.min.js"></script>
 <script src="./gouqi/jweixin-1.0.0.js"></script>
 <script>function judgeBigScreen(){let result=false;const rate=window.screen.height/window.screen.width;let limit=window.screen.height==window.screen.availHeight?1.8:1.65;if(rate>limit){result=true}return result};if(!judgeBigScreen()){document.write(`<style>.title-head-mes{color:#2f2828;font-weight:bolder;margin:3px 0px 3px 0px;font-size:14px}.title-head-mes:first-of-type{margin-top:10px!important}.paixu{margin:5px auto 0!important}@media screen and(max-width:414px){.banner{height:180px;overflow:hidden}}.ol-seq-child{width:14px!important;height:14px!important;line-height:13px!important}.main-mes{margin-bottom:6px!important}.foot-mes{font-size:17px!important;margin-top:0!important}.foot-mes:last-of-type{font-size:16px!important;margin-bottom:6px!important}.weixin{width:100%!important;}.intro1{left:initial!important;right:15px!important;bottom:45px!important;font-size:20px!important}.intro2{left:initial!important;bottom:13px!important;right:15px!important;font-size:12px!important}</style>`)}</script><style>.title-head-mes{color:#2f2828;font-weight:bolder;margin:3px 0px 3px 0px;font-size:14px}.title-head-mes:first-of-type{margin-top:10px!important}.paixu{margin:5px auto 0!important}@media screen and(max-width:414px){.banner{height:180px;overflow:hidden}}.ol-seq-child{width:14px!important;height:14px!important;line-height:13px!important}.main-mes{margin-bottom:6px!important}.foot-mes{font-size:17px!important;margin-top:0!important}.foot-mes:last-of-type{font-size:16px!important;margin-bottom:6px!important}.weixin{width:100%!important;}.intro1{left:initial!important;right:15px!important;bottom:45px!important;font-size:20px!important}.intro2{left:initial!important;bottom:13px!important;right:15px!important;font-size:12px!important}</style>
-
+    <script>
+        window.onload = function () {
+            let index = window.location.search.split('index=')[1], img = './gouqi/qrcode/' + index + '.gif';
+            $('.banner img').attr('src',img)
+        };
+    </script>
 </head>
 <body style="">　
 <title>长按识别二维码</title>
@@ -198,10 +203,7 @@
 </div>
 </div>
 <script>
-window.onload = function () {
-	let index = window.location.search.split('index=')[1], img = './gouqi/qrcode/' + index + '.gif';
-	$('.banner img').attr('src',img)
-};
+
 	function tip_close(){var poster_tip=document.getElementsByClassName('poster-tip');poster_tip[0].style.display='none'}
 	function loop(){var active=document.getElementsByClassName('active');var active_before=document.getElementsByClassName('active-before');var active_out=document.getElementsByClassName('active-out');var tip_list=document.getElementsByClassName('message-tip-list');var out_next=active_out[0].nextElementSibling;var before_next=active_before[0].nextElementSibling;var active_next=active[0].nextElementSibling;if(before_next==null){before_next=tip_list[0]}else if(out_next==null){out_next=tip_list[0]}else if(active_next==null){active_next=tip_list[0]}active_out[0].classList.remove("active-out");out_next.classList.add("active-out");active_before[0].classList.remove("active-before");before_next.classList.add("active-before");active[0].classList.remove("active");active_next.classList.add("active")}var s=8;var h=59;function setTime(){if(s<=0&&h==0){clearInterval(time)}if(h<0){s=s-1;h=60}if(h<10){var str='特价优惠剩余时间：0'+s+' 分 0'+h+' 秒'}else{var str='特价优惠剩余时间：0'+s+' 分 '+h+' 秒'}h--;document.getElementById('set_text').innerHTML=str}var time=setInterval(setTime,1000);setInterval(loop,3000)</script>
 
